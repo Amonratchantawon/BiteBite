@@ -1,0 +1,45 @@
+<ion-header>
+
+  <ion-navbar color="bite">
+    <ion-title>{{ 'REGISTER'| translate}}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+
+  <button *ngIf="!inApp" ion-button clear color="bite" class="btn-skip" (click)="onSkip()">{{ 'SKIP' | translate }}</button>
+
+  <ion-grid class="register">
+    <ion-row>
+      <ion-col col-12>
+        <button ion-button outline block color="dark" (click)="onFacebook()">
+          <ion-grid>
+            <ion-row>
+              <ion-col col-2>
+                <img src="./assets/icon/button/facebook.png" class="social-icon-fb">
+              </ion-col>
+              <ion-col col-8 align-self-center>
+                {{ 'REGISTER_VIA_FACEBOOK' | translate}}
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </button>
+        <button ion-button outline block color="dark" (click)="onEmail()">
+          <ion-grid>
+            <ion-row>
+              <ion-col col-2>
+                <img src="./assets/icon/button/Gmail_Icon.png" class="social-icon-email">
+              </ion-col>
+              <ion-col col-8 align-self-center>
+                {{ 'REGISTER_VIA_EMAIL' | translate}}
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>

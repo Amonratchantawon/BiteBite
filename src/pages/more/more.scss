@@ -1,0 +1,30 @@
+page-more {
+    ion-title {
+        position: absolute;
+        top: 0;
+        left: 0;
+        padding: 0 90px 1px;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+    }
+    ion-avatar {
+        width: 40px !important;
+        .preload-profile-image {
+            border-radius: 100% !important;
+        }
+    }
+    .avatar-profile {
+        width: 50px;
+    }
+    ion-buttons[start] {
+        order: 1 !important;
+        height: 50px;
+    }
+    .bar-button {
+        height: 50px;
+    }
+    .content {
+        background-color: #f4f4f4;
+    }
+}

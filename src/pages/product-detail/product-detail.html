@@ -1,0 +1,45 @@
+<ion-content>
+  <ion-header>
+    <ion-navbar>
+      <ion-buttons end>
+        <button ion-button color="drak" large (click)="close()" class="close-close">
+          <ion-icon name="md-close-circle"></ion-icon>
+        </button>
+      </ion-buttons>
+    </ion-navbar>
+  </ion-header>
+
+  <ion-slides pager>
+    <ion-slide *ngFor="let item of productData.images">
+      <img src="{{item}}" alt="imgErr">
+    </ion-slide>
+  </ion-slides>
+  <h2 text-center>{{productData.name}}</h2>
+  <ion-searchbar mode="ios" placeholder="รายละเอียดเพิ่มเติม">
+  </ion-searchbar>
+  <div text-center class="count">
+    <button ion-button outline color="bite" class="count-radias" (click)="countDelete()">-</button>
+    <button ion-button round color="bite" class="count-radiascenter">{{numberCount}}</button>
+    <button ion-button outline color="bite" class="count-radias" (click)="countPlus()">+</button>
+  </div>
+
+  <ion-footer class="footer-product">
+    <ion-toolbar>
+      <button ion-button block color="bite" (click)="addToCartSusses()">
+        <ion-grid>
+          <ion-row>
+            <ion-col col-4>
+              {{numberCount}}
+            </ion-col>
+            <ion-col col-4>
+              Add to cart
+            </ion-col>
+            <ion-col col-4>
+              {{amount}} ฿
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </button>
+    </ion-toolbar>
+  </ion-footer>
+</ion-content>

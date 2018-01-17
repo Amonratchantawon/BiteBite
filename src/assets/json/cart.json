@@ -1,0 +1,37 @@
+{
+    "shop": {
+        "_id": "shop01",
+        "name": "ครัวคุณโก๋",
+        "detail": "Coffice Idea Space",
+        "address": {
+            "address": "55/6",
+            "district": "ลำลูกกา",
+            "subdistrict": "บึงคำพร้อย",
+            "province": "ปทุมธานี",
+            "postcode": "12150",
+            "remark": "ตรงข้าม big c"
+        }
+    },
+    "items": [
+        {
+            "product": {
+                "name": "ชาอูหลง",
+                "price": 50
+            },
+            "remark": "",
+            "qty": 5,
+            "amount": 250
+        },
+        {
+            "product": {
+                "name": "ลาเต้ร้อน size L",
+                "price": 50
+            },
+            "remark": "หวานน้อย",
+            "qty": 2,
+            "amount": 100
+        }
+    ],
+    "qty": 7,
+    "amount": 350
+}

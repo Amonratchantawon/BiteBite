@@ -1,0 +1,421 @@
+[{
+    "title": "NEAR_BY",
+    "items": [{
+        "_id": "pro0001",
+        "name": "ข้าวหมูแดงอาก๋งง",
+        "rating": 5,
+        "distance": 5.2,
+        "isAds": true,
+        "image": "./assets/imgs/shop/shop1.png"
+      },
+      {
+        "_id": "pro0002",
+        "name": "Bottle Kitchen",
+        "rating": 4,
+        "distance": 10.5,
+        "isAds": true,
+        "image": "./assets/imgs/shop/shop2.png"
+      },
+      {
+        "_id": "pro0003",
+        "name": "Steak House",
+        "rating": 3,
+        "distance": 2.4,
+        "isAds": false,
+        "image": "./assets/imgs/shop/shop3.png"
+      },
+      {
+        "_id": "pro0004",
+        "name": "ครัวคุณโก๋",
+        "rating": 5,
+        "distance": 15.3,
+        "isAds": false,
+        "image": "./assets/imgs/shop/shop4.png"
+      },
+      {
+        "_id": "pro0005",
+        "name": "Poppen",
+        "rating": 4,
+        "distance": 4.2,
+        "isAds": false,
+        "image": "./assets/imgs/shop/shop5.png"
+      },
+      {
+        "_id": "nb0003",
+        "name": "แซ่บแน่",
+        "rating": 4,
+        "distance": 2.1,
+        "isAds": false,
+        "image": "./assets/imgs/shop/shop6.png"
+      },
+      {
+        "_id": "nb0004",
+        "name": "Sushi World",
+        "rating": 4,
+        "distance": 3.9,
+        "isAds": false,
+        "image": "./assets/imgs/shop/shop7.png"
+      },
+      {
+        "_id": "pop0001",
+        "name": "ภัตตาคารหลวง",
+        "rating": 5,
+        "distance": 5.2,
+        "isAds": false,
+        "image": "./assets/imgs/shop/shop8.png"
+      },
+      {
+        "_id": "pop0003",
+        "name": "ร้านบ้านสวน",
+        "rating": 4,
+        "distance": 8.2,
+        "isAds": false,
+        "image": "./assets/imgs/shop/shop9.png"
+      },
+      {
+        "_id": "fav0004",
+        "name": "บ้านขนม",
+        "rating": 3,
+        "distance": 4.1,
+        "isAds": false,
+        "image": "./assets/imgs/shop/shop10.png"
+      },
+      {
+        "_id": "fav0005",
+        "name": "LAMOUR",
+        "rating": 4,
+        "distance": 5.6,
+        "isAds": false,
+        "image": "./assets/imgs/shop/shop11.png"
+      },
+      {
+        "_id": "fav0006",
+        "name": "Steak Ville",
+        "rating": 5,
+        "distance": 1.1,
+        "isAds": false,
+        "image": "./assets/imgs/shop/shop12.png"
+      },
+      {
+        "_id": "fav0007",
+        "name": "ห้องอาหารคุณแพร",
+        "rating": 4,
+        "distance": 4.7,
+        "isAds": false,
+        "image": "./assets/imgs/shop/shop13.png"
+      },
+      {
+        "_id": "fav0008",
+        "name": "Davika",
+        "rating": 3,
+        "distance": 3.9,
+        "isAds": false,
+        "image": "./assets/imgs/shop/shop14.png"
+      },
+      {
+        "_id": "fav0009",
+        "name": "WAN-WAN",
+        "rating": 4,
+        "distance": 4.1,
+        "isAds": false,
+        "image": "./assets/imgs/shop/shop15.png"
+      },
+      {
+        "_id": "fav0010",
+        "name": "LALATEL",
+        "rating": 5,
+        "distance": 11.2,
+        "isAds": false,
+        "image": "./assets/imgs/shop/shop16.png"
+      },
+      {
+        "_id": "fav0011",
+        "name": "EAGLE STREET",
+        "rating": 3,
+        "distance": 7.6,
+        "isAds": false,
+        "image": "./assets/imgs/shop/shop17.png"
+      }
+    ]
+  },
+  {
+    "title": "POPULAR",
+    "items": [{
+        "_id": "pro0001",
+        "name": "ข้าวหมูแดงอาก๋ง",
+        "rating": 5,
+        "distance": 5.2,
+        "isAds": true,
+        "image": "./assets/imgs/shop/shop1.png"
+      },
+      {
+        "_id": "pro0002",
+        "name": "Bottle Kitchen",
+        "rating": 4,
+        "distance": 10.5,
+        "isAds": true,
+        "image": "./assets/imgs/shop/shop2.png"
+      },
+      {
+        "_id": "pro0003",
+        "name": "Steak House",
+        "rating": 3,
+        "distance": 2.4,
+        "isAds": false,
+        "image": "./assets/imgs/shop/shop3.png"
+      },
+      {
+        "_id": "pro0004",
+        "name": "ครัวคุณโก๋",
+        "rating": 5,
+        "distance": 15.3,
+        "isAds": false,
+        "image": "./assets/imgs/shop/shop4.png"
+      },
+      {
+        "_id": "pro0005",
+        "name": "Poppen",
+        "rating": 4,
+        "distance": 4.2,
+        "isAds": false,
+        "image": "./assets/imgs/shop/shop5.png"
+      },
+      {
+        "_id": "nb0003",
+        "name": "แซ่บแน่",
+        "rating": 4,
+        "distance": 2.1,
+        "isAds": false,
+        "image": "./assets/imgs/shop/shop6.png"
+      },
+      {
+        "_id": "nb0004",
+        "name": "Sushi World",
+        "rating": 4,
+        "distance": 3.9,
+        "isAds": false,
+        "image": "./assets/imgs/shop/shop7.png"
+      },
+      {
+        "_id": "pop0001",
+        "name": "ภัตตาคารหลวง",
+        "rating": 5,
+        "distance": 5.2,
+        "isAds": false,
+        "image": "./assets/imgs/shop/shop8.png"
+      },
+      {
+        "_id": "pop0003",
+        "name": "ร้านบ้านสวน",
+        "rating": 4,
+        "distance": 8.2,
+        "isAds": false,
+        "image": "./assets/imgs/shop/shop9.png"
+      },
+      {
+        "_id": "fav0004",
+        "name": "บ้านขนม",
+        "rating": 3,
+        "distance": 4.1,
+        "isAds": false,
+        "image": "./assets/imgs/shop/shop10.png"
+      },
+      {
+        "_id": "fav0005",
+        "name": "LAMOUR",
+        "rating": 4,
+        "distance": 5.6,
+        "isAds": false,
+        "image": "./assets/imgs/shop/shop11.png"
+      },
+      {
+        "_id": "fav0006",
+        "name": "Steak Ville",
+        "rating": 5,
+        "distance": 1.1,
+        "isAds": false,
+        "image": "./assets/imgs/shop/shop12.png"
+      },
+      {
+        "_id": "fav0007",
+        "name": "ห้องอาหารคุณแพร",
+        "rating": 4,
+        "distance": 4.7,
+        "isAds": false,
+        "image": "./assets/imgs/shop/shop13.png"
+      },
+      {
+        "_id": "fav0008",
+        "name": "Davika",
+        "rating": 3,
+        "distance": 3.9,
+        "isAds": false,
+        "image": "./assets/imgs/shop/shop14.png"
+      },
+      {
+        "_id": "fav0009",
+        "name": "WAN-WAN",
+        "rating": 4,
+        "distance": 4.1,
+        "isAds": false,
+        "image": "./assets/imgs/shop/shop15.png"
+      },
+      {
+        "_id": "fav0010",
+        "name": "LALATEL",
+        "rating": 5,
+        "distance": 11.2,
+        "isAds": false,
+        "image": "./assets/imgs/shop/shop16.png"
+      },
+      {
+        "_id": "fav0011",
+        "name": "EAGLE STREET",
+        "rating": 3,
+        "distance": 7.6,
+        "isAds": false,
+        "image": "./assets/imgs/shop/shop17.png"
+      }
+    ]
+  },
+  {
+    "title": "FAVORITE",
+    "items": [{
+        "_id": "pro0001",
+        "name": "ข้าวหมูแดงอาก๋ง",
+        "rating": 5,
+        "distance": 5.2,
+        "isAds": true,
+        "image": "./assets/imgs/shop/shop1.png"
+      },
+      {
+        "_id": "pro0002",
+        "name": "Bottle Kitchen",
+        "rating": 4,
+        "distance": 10.5,
+        "isAds": true,
+        "image": "./assets/imgs/shop/shop2.png"
+      },
+      {
+        "_id": "pro0003",
+        "name": "Steak House",
+        "rating": 3,
+        "distance": 2.4,
+        "isAds": false,
+        "image": "./assets/imgs/shop/shop3.png"
+      },
+      {
+        "_id": "pro0004",
+        "name": "ครัวคุณโก๋",
+        "rating": 5,
+        "distance": 15.3,
+        "isAds": false,
+        "image": "./assets/imgs/shop/shop4.png"
+      },
+      {
+        "_id": "pro0005",
+        "name": "Poppen",
+        "rating": 4,
+        "distance": 4.2,
+        "isAds": false,
+        "image": "./assets/imgs/shop/shop5.png"
+      },
+      {
+        "_id": "nb0003",
+        "name": "แซ่บแน่",
+        "rating": 4,
+        "distance": 2.1,
+        "isAds": false,
+        "image": "./assets/imgs/shop/shop6.png"
+      },
+      {
+        "_id": "nb0004",
+        "name": "Sushi World",
+        "rating": 4,
+        "distance": 3.9,
+        "isAds": false,
+        "image": "./assets/imgs/shop/shop7.png"
+      },
+      {
+        "_id": "pop0001",
+        "name": "ภัตตาคารหลวง",
+        "rating": 5,
+        "distance": 5.2,
+        "isAds": false,
+        "image": "./assets/imgs/shop/shop8.png"
+      },
+      {
+        "_id": "pop0003",
+        "name": "ร้านบ้านสวน",
+        "rating": 4,
+        "distance": 8.2,
+        "isAds": false,
+        "image": "./assets/imgs/shop/shop9.png"
+      },
+      {
+        "_id": "fav0004",
+        "name": "บ้านขนม",
+        "rating": 3,
+        "distance": 4.1,
+        "isAds": false,
+        "image": "./assets/imgs/shop/shop10.png"
+      },
+      {
+        "_id": "fav0005",
+        "name": "LAMOUR",
+        "rating": 4,
+        "distance": 5.6,
+        "isAds": false,
+        "image": "./assets/imgs/shop/shop11.png"
+      },
+      {
+        "_id": "fav0006",
+        "name": "Steak Ville",
+        "rating": 5,
+        "distance": 1.1,
+        "isAds": false,
+        "image": "./assets/imgs/shop/shop12.png"
+      },
+      {
+        "_id": "fav0007",
+        "name": "ห้องอาหารคุณแพร",
+        "rating": 4,
+        "distance": 4.7,
+        "isAds": false,
+        "image": "./assets/imgs/shop/shop13.png"
+      },
+      {
+        "_id": "fav0008",
+        "name": "Davika",
+        "rating": 3,
+        "distance": 3.9,
+        "isAds": false,
+        "image": "./assets/imgs/shop/shop14.png"
+      },
+      {
+        "_id": "fav0009",
+        "name": "WAN-WAN",
+        "rating": 4,
+        "distance": 4.1,
+        "isAds": false,
+        "image": "./assets/imgs/shop/shop15.png"
+      },
+      {
+        "_id": "fav0010",
+        "name": "LALATEL",
+        "rating": 5,
+        "distance": 11.2,
+        "isAds": false,
+        "image": "./assets/imgs/shop/shop16.png"
+      },
+      {
+        "_id": "fav0011",
+        "name": "EAGLE STREET",
+        "rating": 3,
+        "distance": 7.6,
+        "isAds": false,
+        "image": "./assets/imgs/shop/shop17.png"
+      }
+    ]
+  }
+]

@@ -1,0 +1,24 @@
+page-find-shop-review {
+    ion-textarea {
+        resize: none;
+    }
+    .write-review-title {
+        width: 100%;
+        border: 2px !important;
+        border-radius: 5 !important;
+        background: transparent;
+        margin-left: 0px;
+    }
+    .text-input{
+        margin: 2px !important;
+    }
+    .btn-review {
+        margin-top: 30px !important;
+    }
+    ion-icon {
+        display: inline-block;
+        font-size: 2em;
+        margin-left: -10px;
+        margin-right: 10px;
+    }
+}

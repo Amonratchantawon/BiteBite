@@ -1,0 +1,33 @@
+page-cart {
+    .count-radias {
+        height: 32px;
+        width: 26px;
+        border-radius: 81px;
+    }
+
+    .searchbar-ios .searchbar-input {
+        background-color: #eeeded !important;
+        border-radius: 15px !important;
+    }
+    .searchbar-ios {
+        background: white !important;
+        text-align: center;
+        border-bottom: none !important;
+    }
+    .searchbar-input-container {
+        margin-top: 6px;
+    }
+
+    .searchbar-ios .searchbar-search-icon{
+        background-image: none;
+    }
+    .footer-cart {
+        .toolbar {
+            min-height: 40px !important;
+            max-height: 40px !important;
+        }
+    }
+    .price-name{
+        color: rgb(168, 168, 168);
+    }
+}

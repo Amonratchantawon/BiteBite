@@ -1,0 +1,11 @@
+<ion-tabs color="bite" #tabs>
+  <ion-tab [root]="homeRoot" tabTitle="{{'HOME'|translate}}" tabIcon="icon-tab-home" (ionSelect)="onSelectChange('0')"></ion-tab>
+  <ion-tab [root]="recommentedRoot" tabTitle="{{'REVIEW'|translate}}" tabIcon="icon-tab-recommented" (ionSelect)="onSelectChange('1')"></ion-tab>
+  <ion-tab [root]="rewardRoot" tabTitle="{{'REWARD'|translate}}" tabIcon="icon-tab-reword" (ionSelect)="onSelectChange('2')"></ion-tab>
+  <ion-fab bottom center mode="ios" (ionSelect)="onSelectChange('2')">
+    <button ion-fab class="fab-bite" (click)="onReword()" [ngStyle]="{'background-color':color}">
+    </button>
+  </ion-fab>
+  <ion-tab [root]="statusRoot" tabTitle="{{'STATUS'|translate}}" tabIcon="icon-tab-status" (ionSelect)="onSelectChange('3')"></ion-tab>
+  <ion-tab [root]="moreRoot" tabTitle="{{'MORE'|translate}}" tabIcon="icon-tab-more" (ionSelect)="onSelectChange('4')"></ion-tab>
+</ion-tabs>

@@ -1,0 +1,70 @@
+grid-shop-y {
+    .shops {
+        padding: 2px;
+        ion-col {
+            padding: 2px;
+        }
+        img {
+            object-fit: cover;
+            height: 100% !important;
+        }
+        .shop-desc {
+            padding-top: 4px;
+            position: absolute;
+            top: 50%;
+        }
+        .product-name {
+            margin-left: 6px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 16px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .text-hover-product {
+            text-align: left;
+            position: absolute;
+            margin-top: -47px;
+            background-color: rgba(255, 255, 255, 0.73);
+            width: calc(100% - 4px);
+            color: #2e2e2e;
+            height: 48px;
+            padding-top: 2px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            font-weight: 400 !important;
+            font-size: 100%;
+        }
+        .distance {
+            padding: 0px;
+            position: absolute;
+            margin-top: 25px;
+            left: 6px;
+            font-size: 100%;
+        }
+        ul {
+            padding: 0px;
+            position: absolute;
+            margin-top: -15px;
+            margin-right: 0px;
+            right: 8px;
+            &.rating li {
+                padding: 0px !important;
+                background: none;
+                color: #ff5566;
+                ion-icon {
+                    margin-right: -2px;
+                    font-size: 14px;
+                }
+            }
+        }
+        .icon-ads {
+            position: absolute;
+            right: 4px;
+            top: 4px;
+            background-color: #ff5566;
+        }
+    }
+}

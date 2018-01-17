@@ -1,0 +1,16 @@
+<div class="shops">
+  <ion-row>
+    <ion-col col-6 col-md-4 col-lg-4 *ngFor="let item of items" (click)="selected(item)">
+      <preload-image [ratio]="{w:1, h:1}" [src]="item.image" title="shops"></preload-image>
+      <div class="text-hover-product">
+        <span class="product-name">{{item.name}}</span>
+        <span class="distance">{{item.distance}} km.</span>
+        <p text-center>
+          <rating [(ngModel)]="item.rating" readOnly="true" max="5" emptyStarIconName="md-heart-outline" halfStarIconName="md-heart-outline"
+            starIconName="md-heart"></rating>
+        </p>
+      </div>
+      <ion-badge *ngIf="item.isAds" class="icon-ads" item-end color="bite">Ad</ion-badge>
+    </ion-col>
+  </ion-row>
+</div>

@@ -1,0 +1,33 @@
+page-agreement {
+    .scroll-content {
+        overflow-y: auto !important;
+        padding: 10px !important;
+    }
+    h3 {
+        text-align: center;
+    }
+    ion-scroll {
+        height: 85%;
+    }
+    .row-custom2 {
+        flex-wrap: inherit !important;
+        margin-top: 0px;
+    }
+    .footer-agreement {
+        .toolbar {
+            min-height: 40px !important;
+            max-height: 40px !important;
+        }
+    }
+    ion-infinite-scroll-content{
+        height: 1px !important;
+        min-height: 1px !important;
+    }
+
+    h5{
+        margin-bottom: 0px !important;
+    }
+    p{
+        margin: 0px !important ;
+    }
+}

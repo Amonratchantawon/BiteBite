@@ -1,0 +1,155 @@
+@import url('https://fonts.googleapis.com/css?family=Kanit');
+page-home {
+    ion-title {
+        position: absolute;
+        top: 0;
+        left: 0;
+        padding: 0 90px 1px;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+    }
+    ion-avatar {
+        .preload-profile-image {
+            border-radius: 100% !important;
+        }
+        width: 40px !important;
+    }
+    .avatar-profile {
+        width: 50px;
+    }
+    ion-buttons[start] {
+        order: 1 !important;
+        height: 50px;
+    }
+    .bar-button {
+        height: 50px;
+    }
+    ion-slides {
+        height: auto !important;
+    }
+    .swiper-pagination-bullet-active {
+        background: $bite-color;
+        opacity: 1;
+    }
+    .categories {
+        ion-scroll {
+            height: 28vw;
+        }
+        .row-custom {
+            flex-wrap: inherit !important;
+        }
+    }
+    .hotprices {
+        ion-scroll {
+            height: 44vw;
+        }
+        .row-custom {
+            flex-wrap: inherit !important;
+            margin-top: -4px;
+        }
+        ion-col {
+            padding: 1px;
+        }
+    }
+    .shops {
+        ion-scroll {
+            height: 36vw;
+        }
+        .row-custom {
+            flex-wrap: inherit !important;
+        }
+        ion-col {
+            padding: 1px;
+        }
+        img {
+            object-fit: cover;
+            height: 100% !important;
+        }
+        .shop-desc {
+            padding-top: 4px;
+            position: absolute;
+            top: 50%;
+        }
+        .product-name {
+            margin-left: 5px !important;
+            text-align: left;
+            font-weight: 600;
+            font-size: 14px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .text-hover-product {
+            text-align: left;
+            position: absolute;
+            margin-top: -40px;
+            background-color: rgba(255, 255, 255, 0.73);
+            width: 100%;
+            color: #2e2e2e;
+            height: 40px;
+            padding-top: 2px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            font-weight: 400 !important;
+            font-size: 100%;
+        }
+        .distance {
+            padding: 0px;
+            position: absolute;
+            margin-top: 20px;
+            left: 5px;
+            font-size: 70%;
+        }
+        ul {
+            padding: 0px;
+            position: absolute;
+            margin-top: -18px;
+            margin-right: -3px;
+            right: 10px;
+            &.rating li {
+                padding: 0px !important;
+                background: none;
+                color: #ff5566;
+                ion-icon {
+                    margin-right: -2px;
+                    font-size: 12px;
+                }
+            }
+        }
+        .icon-ads {
+            position: absolute;
+            right: 4px;
+            top: 4px;
+            background-color: #ff5566;
+        }
+    }
+    /* segment*/
+    ion-segment {
+        display: block;
+        white-space: nowrap !important;
+        overflow-x: scroll !important;
+        background-color: #ffffff !important;
+        height: 45px !important; // margin-top: -4px !important;
+        .segment-button {
+            display: inline-block !important;
+            min-width: auto !important;
+            padding-left: 8px !important;
+            width: auto !important;
+            border: 0 !important;
+            color: #607D8B !important;
+            font-size: 14px !important;
+        }
+        .segment-button.active-page {
+            color: $bite-color !important;
+            border-bottom: 4px solid !important;
+            width: auto !important;
+        }
+    }
+    /* segment*/
+    .cate-seeall {
+        color: rgb(73, 67, 67);
+        font-family: 'Kanit', sans-serif; // margin-bottom: 40px;
+    }
+}

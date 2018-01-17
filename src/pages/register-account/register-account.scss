@@ -1,0 +1,25 @@
+page-register-account {
+    .scroll-content {
+        overflow-y: auto !important;
+    }
+    .register {
+        position: absolute;
+        height: 100%;
+        justify-content: center;
+        .col {
+            padding: 16px !important;
+        }
+        .col-logo {
+            padding: 0px !important;
+            .image-logo {
+                width: 100% !important;
+            }
+        }
+    }
+    .item {
+        padding-left: 0px !important;
+    }
+    .danger {
+        color: #F44336 !important;
+    }
+}

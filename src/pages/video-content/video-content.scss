@@ -1,0 +1,37 @@
+page-video-content {
+    .header-md::after {
+        background-image: none !important;
+    }
+    ion-content {
+        background-color: #303030 !important;
+        color: aliceblue;
+    }
+    .scroll-content {
+        overflow-y: auto !important;
+    }
+    .toolbar-background {
+        background-color: #303030 !important;
+    }
+    h3 {
+        color: rgb(165, 168, 172);
+    }
+    h4 {
+        color: rgb(165, 168, 172);
+        margin-bottom: 0px !important;
+    }
+    p {
+        margin-top: 0px !important;
+        color: rgb(214, 216, 219);
+    }
+    .bar-button {
+        font-size: 2.4rem !important;
+    }
+    ion-title h3 {
+        white-space: nowrap;
+        text-align: center;
+    }
+    .toolbar-title {
+        padding-right: 0px !important;
+        margin-left: 24px !important;
+    }
+}

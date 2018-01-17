@@ -1,0 +1,89 @@
+page-reward {
+    ion-title {
+        position: absolute;
+        top: 0;
+        left: 0;
+        padding: 0 90px 1px;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+    }
+    ion-avatar {
+        width: 40px !important;
+        .preload-profile-image {
+            border-radius: 100% !important;
+        }
+    }
+    .avatar-profile {
+        width: 50px;
+    }
+    ion-buttons[start] {
+        order: 1 !important;
+        height: 50px;
+    }
+    .bar-button {
+        height: 50px;
+    }
+
+    // .coin{
+    //   object-fit: cover;
+    // }
+
+    // p{
+    //     font-size: 8vh;
+    //     position: relative;
+    //     top: -250px;
+    //     color: rgb(149, 170, 173);
+    //     align-self: center ;
+    //     text-align: center !important;
+    //     width: 100%;
+    //     font-weight: 600;
+    // }
+
+    .container {
+        position: relative;
+        text-align: center;
+        color: white;
+    }
+    
+    /* Bottom left text */
+    .bottom-left {
+        position: absolute;
+        bottom: 8px;
+        left: 16px;
+    }
+    
+    /* Top left text */
+    .top-left {
+        position: absolute;
+        top: 8px;
+        left: 16px;
+    }
+    
+    /* Top right text */
+    .top-right {
+        position: absolute;
+        top: 8px;
+        right: 16px;
+    }
+    
+    /* Bottom right text */
+    .bottom-right {
+        position: absolute;
+        bottom: 8px;
+        right: 16px;
+    }
+    
+    /* Centered text */
+    .centered {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-weight: 200;
+        font-size: 15vw
+    }
+    .conquest{
+        color: rgb(23, 40, 54)
+    }
+}

@@ -1,0 +1,84 @@
+<ion-header>
+
+  <ion-navbar color="bite">
+    <ion-title>cart</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content>
+
+  <ion-list>
+    <ion-item>
+      <h3>{{cartData.shop.name}}</h3>
+      <p>{{cartData.shop.detail}}</p>
+      <p>{{cartData.shop.address.remark}}</p>
+    </ion-item>
+  </ion-list>
+
+  <ion-list>
+    <ion-item *ngFor="let item of cartData.items">
+      <ion-grid>
+        <ion-row>
+          <ion-col col-6>
+            <h4>{{item.product.name}}<span class="price-name">  ({{item.product.price}}) THB</span></h4>
+          </ion-col>
+          <ion-col col-6>
+            <ion-buttons end>
+              <ion-icon ios="ios-trash" md="md-trash"></ion-icon>
+            </ion-buttons>
+          </ion-col>
+        </ion-row>
+
+        <ion-row>
+          <ion-col col-6 align-self-center>
+            <h4>{{item.amount}} Baht</h4>
+          </ion-col>
+          <ion-col col-6>
+            <ion-row>
+              <ion-col col-4>
+                <button ion-button outline color="bite" class="count-radias" (click)="countDelete(item)">-</button>
+              </ion-col>
+              <ion-col col-4 align-self-center text-center>
+                <h4>{{item.qty}}</h4>
+              </ion-col>
+              <ion-col col-4>
+                <button ion-button outline color="bite" class="count-radias" (click)="countPlus(item)">+</button>
+              </ion-col>
+            </ion-row>
+
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-searchbar mode="ios" placeholder="รายละเอียดเพิ่มเติม" [(ngModel)]="item.remark">
+          </ion-searchbar>
+        </ion-row>
+      </ion-grid>
+    </ion-item>
+  </ion-list>
+
+  <ion-row justify-content-center>
+    <button ion-button round outline text-center>+ add more</button>
+  </ion-row>
+
+</ion-content>
+
+<ion-footer class="footer-cart">
+  <ion-toolbar>
+    <button ion-button block color="bite" (click)="checkOut()">
+      <ion-grid>
+        <ion-row>
+          <ion-col col-4>
+            {{cartData.qty}}
+          </ion-col>
+          <ion-col col-4>
+            Checkout
+          </ion-col>
+          <ion-col col-4>
+            {{cartData.amount}} ฿
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </button>
+  </ion-toolbar>
+</ion-footer>

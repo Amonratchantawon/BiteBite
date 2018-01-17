@@ -1,0 +1,50 @@
+page-create-review {
+    .write-review-title {
+        width: 100%;
+        border: 2px !important;
+        border-radius: 5 !important;
+        background: transparent;
+        margin-top: 18px;
+    }
+    .write-review-detail {
+        width: 100%;
+        border: 2px !important;
+        border-radius: 5 !important;
+        background: transparent;
+    }
+    .write-review-image {
+        width: 100%;
+        object-fit: cover;
+        height: 100% !important;
+    }
+    textarea[placeholder].write-review-detail {
+        font-size: 20px;
+    }
+    textarea {
+        resize: none;
+    }
+    .card {
+        box-shadow: none !important;
+        border: none;
+        margin: 0px 0px 12px 0px !important;
+        width: 100% !important;
+        padding: 0px !important;
+    }
+    .footer-agreement {
+        .toolbar {
+            min-height: 50px !important;
+            max-height: 50px !important;
+        }
+        button {
+            margin: 0px !important;
+            height: 2.8em !important;
+            font-size: 1.6rem !important;
+        }
+    }
+    ion-avatar {
+        width: 40px !important;
+        .preload-profile-image {
+            border-radius: 100% !important;
+        }
+    }
+}

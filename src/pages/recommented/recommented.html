@@ -1,0 +1,72 @@
+<ion-header>
+  <ion-navbar color="bite">
+    <ion-buttons start *ngIf="user && user.profileImageURL">
+      <button ion-button clear (click)="goToProfile()">
+        <ion-avatar class="avatar-profile">
+          <preload-image class="preload-profile-image" [ratio]="{w:1, h:1}" [src]="user.profileImageURL" [isIcon]="true"></preload-image>
+        </ion-avatar>
+      </button>
+    </ion-buttons>
+    <ion-title>{{ 'REVIEW' | translate}}</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only clear end (click)="findShopReview()">
+        <ion-icon name="camera"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+
+  
+<ion-content #content>
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content pullingIcon="arrow-down" pullingText="{{ 'PULL_TO_REFRESH' | translate }}" refreshingSpinner="dots"
+      refreshingText="{{ 'REFRESHING' | translate }}"></ion-refresher-content>
+  </ion-refresher>
+
+  <search-input ></search-input>
+
+  <ion-card *ngFor="let item of dataReview; let i = index;">
+
+    <ion-item>
+      <ion-avatar item-start>
+        <preload-image class="preload-profile-image" [ratio]="{w:1, h:1}" [src]="item.user.profileImageURL" title="profile-image"></preload-image>
+      </ion-avatar>
+      <p>
+        <b>{{item.user.displayName}}</b>
+      </p>
+      <p>{{getMoment(item.created)}}</p>
+    </ion-item>
+
+    <ion-card-content>
+      <preload-image [ratio]="{w:1, h:1}" [src]="item.image" title="review-image"></preload-image>
+      <div class="card-description">
+        <p>
+          <b>{{item.title}}</b>
+        </p>
+        <p>{{item.description}}</p>
+      </div>
+    </ion-card-content>
+    <ion-row>
+      <ion-col col-6 text-left>
+        <button ion-button icon-left clear large (tap)="isLike(item,i)">
+          <ion-icon name="md-heart" color="danger" *ngIf="item.islike"></ion-icon>
+          <ion-icon name="md-heart-outline" color="danger" *ngIf="!item.islike"></ion-icon>
+        </button>
+      </ion-col>
+      <ion-col col-6 text-right align-self-center>
+        <p *ngIf="item.countlike">
+          <b>{{item.countlike | number:x}} {{ 'LIKES' | translate }}</b>
+        </p>
+        <p *ngIf="!item.countlike">
+          <b> 0 {{ 'LIKES' | translate }}</b>
+        </p>
+      </ion-col>
+    </ion-row>
+
+  </ion-card>
+  <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+    <ion-infinite-scroll-content loadingSpinner="crescent" loadingText="{{ 'LOAD_MORE' | translate }}">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+</ion-content>

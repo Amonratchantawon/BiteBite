@@ -1,0 +1,39 @@
+page-image-content {
+    .header-md::after {
+        background-image: none !important;
+    }
+    ion-slides {
+        height: auto !important;
+    }
+    .toolbar-background {
+        background-color: #f4f4f4 !important
+    }
+    ion-content {
+        background-color: #f4f4f4 !important;
+    }
+    .scroll-content {
+        overflow-y: auto !important;
+    }
+    h3 {
+        color: rgb(48, 48, 48);
+    }
+    h4 {
+        color: rgb(48, 48, 48);
+        margin-bottom: 0px !important;
+    }
+    p {
+        margin-top: 0px !important;
+        color: rgb(48, 48, 48);
+    }
+    .bar-button {
+        font-size: 2.4rem !important;
+    }
+    ion-title h3 {
+        white-space: nowrap;
+        text-align: center;
+    }
+    .toolbar-title {
+        padding-right: 0px !important;
+        margin-left: 24px !important;
+    }
+}

@@ -1,0 +1,24 @@
+<ion-header>
+
+  <ion-navbar color="bite">
+    <ion-buttons start *ngIf="user && user.profileImageURL">
+      <button ion-button clear (click)="goToProfile()">
+        <ion-avatar class="avatar-profile">
+            <preload-image class="preload-profile-image" [ratio]="{w:1, h:1}" [src]="user.profileImageURL" [isIcon]="true"></preload-image>
+        </ion-avatar>
+      </button>
+    </ion-buttons>
+    <ion-title>{{ 'STATUS' | translate }}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content>
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content pullingIcon="arrow-down" pullingText="{{ 'PULL_TO_REFRESH' | translate }}" refreshingSpinner="dots"
+      refreshingText="{{ 'REFRESHING' | translate }}"></ion-refresher-content>
+  </ion-refresher>
+
+  <search-input></search-input>
+
+</ion-content>

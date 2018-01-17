@@ -1,0 +1,52 @@
+<ion-header>
+
+  <ion-navbar color="bite">
+    <ion-buttons start *ngIf="user && user.profileImageURL">
+      <button ion-button clear (click)="goToProfile()">
+        <ion-avatar class="avatar-profile">
+            <preload-image class="preload-profile-image" [ratio]="{w:1, h:1}" [src]="user.profileImageURL" [isIcon]="true"></preload-image>
+        </ion-avatar>
+      </button>
+    </ion-buttons>
+    <ion-title>{{ 'MORE' | translate }}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <ion-list *ngIf="!user || !user.username">
+    <button ion-item item-start (click)="goLogin()">
+      <ion-icon name="md-log-in" item-start></ion-icon>
+      {{ 'LOGIN' | translate }}
+    </button>
+  </ion-list>
+  <ion-list>
+    <button ion-item item-start>
+      <ion-icon name="md-card" item-start></ion-icon>
+      {{ 'SERVICE_CHARGE' | translate }}
+    </button>
+    <button ion-item item-start>
+      <ion-icon name="md-help" item-start></ion-icon>
+      {{ 'QUESTIONS_&_ANSWERS' | translate }}
+    </button>
+    <button ion-item item-start>
+      <ion-icon name="md-contact" item-start></ion-icon>
+      {{ 'CONTANT_BITEBITE' | translate }}
+    </button>
+    <button ion-item item-start (click)="onSetting()">
+      <ion-icon name="md-settings" item-start></ion-icon>
+      {{ 'SETTINGS' | translate }}
+    </button>
+    <button ion-item item-start>
+      <ion-icon name="md-contacts" item-start></ion-icon>
+      {{ 'JOIN_WITH_BITEBITE' | translate }}
+    </button>
+  </ion-list>
+  <ion-list *ngIf="user && user.username">
+    <button ion-item item-start (click)="logout()">
+      <ion-icon name="md-log-out" item-start></ion-icon>
+      {{ 'LOGOUT' | translate }}
+    </button>
+  </ion-list>
+</ion-content>

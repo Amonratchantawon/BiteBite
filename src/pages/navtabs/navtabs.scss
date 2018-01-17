@@ -1,0 +1,176 @@
+$white:#ffffff;
+page-navtabs {
+    .tab-button[aria-selected=true] {
+        background-color: #b3222f;
+    }
+    .tab-button-icon {
+        color: $white !important;
+    }
+    .tab-button,
+    .tab-button-icon {
+        color: $white !important;
+    }
+    .ion-ios-icon-tab-home {
+        margin-top: 3px !important;
+        margin-bottom: -3px !important;
+    }
+    .ion-md-icon-tab-home {
+        margin-top: 3px !important;
+        margin-bottom: -3px !important;
+    }
+    .ion-ios-icon-tab-recommented {
+        margin-top: 3px !important;
+        margin-bottom: -3px !important;
+    }
+    .ion-md-icon-tab-recommented {
+        margin-top: 3px !important;
+        margin-bottom: -3px !important;
+    }
+    .ion-ios-icon-tab-reword-outline {
+        color: transparent !important;
+    }
+    .ion-ios-icon-tab-reword {
+        color: transparent !important;
+    }
+    .ion-md-icon-tab-reword {
+        color: transparent !important;
+    }
+    .ion-ios-icon-tab-status {
+        margin-top: 3px !important;
+        margin-bottom: -3px !important;
+    }
+    .ion-md-icon-tab-status {
+        margin-top: 3px !important;
+        margin-bottom: -3px !important;
+    }
+    .ion-ios-icon-tab-more {
+        margin-top: 7px !important;
+        margin-bottom: -7px !important;
+    }
+    .ion-md-icon-tab-more {
+        margin-top: 7px !important;
+        margin-bottom: -7px !important;
+    }
+    .tabs-ios-bite .tab-button[aria-selected=true] .tab-button-icon {
+        margin-top: 0px !important;
+    }
+    ion-fab[bottom] .fab-ios {
+        bottom: 10px !important;
+    }
+    ion-fab[bottom] .fab-md {
+        bottom: 10px !important;
+    }
+    .fab-ios.activated {
+        color: #fff;
+        background-color: $bite-color;
+    }
+    .fab-md.activated {
+        color: #fff;
+        background-color: $bite-color;
+    }
+    .fab-wp.activated {
+        color: #fff;
+        background-color: $bite-color;
+    }
+    .fab-md {
+        transition: none !important;
+    }
+    .fab-bite {
+        color: $white;
+        background-color: $bite-color;
+        box-shadow: none; // height: 65px;
+        // width: 65px;
+        // margin-left: -4px;
+        background-image: url("../assets/icon/reward_radius.png");
+        background-size: 50%;
+        background-repeat: no-repeat;
+        background-position: top center;
+        background-size: 50% 100%;
+        background-size: contain !important;
+    }
+}
+
+@font-face {
+    font-family: 'icomoon';
+    src: url('../assets/icon/icomoon-tab/fonts/icomoon.eot?2law6p');
+    src: url('../assets/icon/icomoon-tab/fonts/icomoon.eot?2law6p#iefix') format('embedded-opentype'), url('../assets/icon/icomoon-tab/fonts/icomoon.ttf?2law6p') format('truetype'), url('../assets/icon/icomoon-tab/fonts/icomoon.woff?2law6p') format('woff'), url('../assets/icon/icomoon-tab/fonts/icomoon.svg?2law6p#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@mixin makeIcon($arg,
+$val) {
+    .ion-ios-#{$arg}:before,
+    .ion-ios-#{$arg}-circle:before,
+    .ion-ios-#{$arg}-circle-outline:before,
+    .ion-ios-#{$arg}-outline:before,
+    .ion-md-#{$arg}:before,
+    .ion-md-#{$arg}-circle:before,
+    .ion-md-#{$arg}-circle-outline:before,
+    .ion-md-#{$arg}-outline:before {
+        font-family: "icomoon" !important;
+        content: $val;
+        font-weight: bold;
+    }
+}
+
+@include makeIcon(icon-tab-home,
+'\e901');
+@include makeIcon(icon-tab-recommented,
+'\e902');
+@include makeIcon(icon-tab-reword,
+'\e903');
+@include makeIcon(icon-tab-status,
+'\e904');
+@include makeIcon(icon-tab-more,
+'\e905');
+[class^="icon-tab"],
+[class*=" icon-tab"] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'icomoon' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-tab-home:before {
+    content: "\e901";
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+    margin-top: 4px;
+}
+
+.icon-tab-recommented:before {
+    content: "\e902";
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.icon-tab-reword:before {
+    content: "\e903";
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.icon-tab-status:before {
+    content: "\e904";
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.icon-tab-more:before {
+    content: "\e905";
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+}

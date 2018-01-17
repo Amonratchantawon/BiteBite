@@ -1,0 +1,9 @@
+{
+    "name":"ซูชิแซลมอน",
+    "images":[
+        "./assets/imgs/product/1.jpg",
+        "./assets/imgs/product/2.jpg",
+        "./assets/imgs/product/3.jpg"
+    ],
+    "price":159
+}

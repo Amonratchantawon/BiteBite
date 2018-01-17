@@ -1,0 +1,42 @@
+page-register-profile {
+    .scroll-content {
+        overflow-y: auto !important;
+    }
+    .profile-image {
+        width: 150px;
+        border-radius: 100%;
+    }
+    .col-input {
+        padding-left: 0px !important;
+        padding-right: 0px !important;
+    }
+    .gender-selected {
+        margin-top: 10px;
+    }
+    .label-md[floating] {
+        margin-top: 10px !important;
+    }
+    .item {
+        padding-right: 2px !important;
+    }
+    .list-ios>.item-block:first-child {
+        border-top: none !important;
+    }
+    .danger {
+        color: #F44336 !important;
+    }
+    preload-image {
+        border-radius: 100% !important;
+    }
+    ion-datetime {
+        .item-cover {
+            display: none !important;
+        }
+    }
+    .footer-agreement {
+        .toolbar {
+            min-height: 40px !important;
+            max-height: 40px !important;
+        }
+    }
+}

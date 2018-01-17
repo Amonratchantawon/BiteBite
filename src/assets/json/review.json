@@ -1,0 +1,83 @@
+[
+    {
+        "user": {
+            "displayName": "MooNoi",
+            "profileImageURL": "./assets/imgs/review/user1.png"
+        },
+        "image": "./assets/imgs/review/review1.png",
+        "shop": "After you",
+        "caption": "อร่อยมว๊ากกกกกกก ^^",
+        "islike": true,
+        "likes": 1520
+    },{
+        "user": {
+            "displayName": "Oishiiiiz",
+            "profileImageURL": "./assets/imgs/review/user2.png"
+        },
+        "image": "./assets/imgs/review/review2.png",
+        "shop": "Steak House",
+        "caption": "สเต็กเนื้อนุ่มสุดๆไปเลยครับ",
+        "islike": false,
+        "likes": 487
+    },{
+        "user": {
+            "displayName": "Nong Narak",
+            "profileImageURL": "./assets/imgs/review/user3.png"
+        },
+        "image": "./assets/imgs/review/review3.png",
+        "shop": "Wine I Love You",
+        "caption": "อาหารอร่อยบรรยากาศดีค่ะ",
+        "islike": true,
+        "likes": 461
+    },{
+        "user": {
+            "displayName": "Wandee",
+            "profileImageURL": "./assets/imgs/review/user4.png"
+        },
+        "image": "./assets/imgs/review/review4.png",
+        "shop": "แซ่บแน่",
+        "caption": "อาหารรสจัด ถูกปากมากๆค่ะ",
+        "islike": false,
+        "likes": 182
+    },{
+        "user": {
+            "displayName": "Pochi",
+            "profileImageURL": "./assets/imgs/review/user5.png"
+        },
+        "image": "./assets/imgs/review/review5.png",
+        "shop": "Foodvorite",
+        "caption": "สปาเก็ตตี้อร่อยมากครับ พนักงานสวยด้วย อิอิ",
+        "islike": false,
+        "likes": 201
+    },{
+        "user": {
+            "displayName": "Fahsai",
+            "profileImageURL": "./assets/imgs/review/user6.png"
+        },
+        "image": "./assets/imgs/review/review6.png",
+        "shop": "ละมุนภัณฑ์",
+        "caption": "Mixberry Smoothy :)",
+        "islike": true,
+        "likes": 517
+    },{
+        "user": {
+            "displayName": "Shiro",
+            "profileImageURL": "./assets/imgs/review/user7.png"
+        },
+        "image": "./assets/imgs/review/review7.png",
+        "shop": "Hamburger Truck",
+        "caption": "รสชาติเหมือนต้นตำรับมาเอง",
+        "islike": false,
+        "likes": 272
+    },{
+        "user": {
+            "displayName": "Nong Narak",
+            "profileImageURL": "./assets/imgs/review/user8.png"
+        },
+        "image": "./assets/imgs/review/review8.png",
+        "shop": "Wine I Love You",
+        "caption": "บรรยากาศดีๆ + ไวน์แสนอร่อย",
+        "islike": true,
+        "likes": 1290
+    }
+]

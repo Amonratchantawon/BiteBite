@@ -1,0 +1,41 @@
+page-walkthrough {
+    .scroll-content {
+        overflow-y: auto !important;
+    }
+    .button {
+        position: absolute;
+        top: 2px;
+        right: 2px;
+        z-index: 999;
+    }
+    .swiper-pagination-bullet-active {
+        background: $bite-color;
+        opacity: 1;
+    }
+    .bg-slide-1 {
+        background-image: url("../assets/imgs/greeting/step1.png");
+        background-size: cover;
+    }
+    .bg-slide-2 {
+        background-image: url("../assets/imgs/greeting/step2.png");
+        background-size: cover;
+    }
+    .bg-slide-3 {
+        background-image: url("../assets/imgs/greeting/step3.png");
+        background-size: cover;
+        overflow-y: auto;
+    }
+    .bg-slide-4 {
+        background-image: url("../assets/imgs/greeting/step4.png");
+        background-size: cover;
+        overflow-y: auto;
+    }
+    .bg-slide-5 {
+        background-image: url("../assets/imgs/greeting/step5.png");
+        background-size: cover;
+        overflow-y: auto;
+    }
+    .scroll-content {
+        padding-bottom: 0px !important;
+    }
+}

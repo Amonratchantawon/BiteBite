@@ -1,0 +1,23 @@
+<!--
+  Generated template for the SettingDetailPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="bite">
+    <ion-title>{{ 'SETTING_DETAIL' | translate }}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <ion-item>
+    <ion-label>{{ 'LANGUAGE' | translate }}</ion-label>
+    <ion-select [(ngModel)]="language" (ionChange)="selectLanguage()" interface="action-sheet">
+      <ion-option *ngFor="let item of languages" [value]="item.json">{{ item.language | translate }}</ion-option>
+    </ion-select>
+  </ion-item>
+</ion-content>

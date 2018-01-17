@@ -1,0 +1,113 @@
+<ion-header>
+
+  <ion-navbar color="bite">
+    <ion-buttons start *ngIf="user && user.profileImageURL">
+      <button ion-button clear (click)="goToProfile()">
+        <ion-avatar class="avatar-profile">
+          <!-- <img src="{{ user.profileImageURL }}"> -->
+          <preload-image class="preload-profile-image" [ratio]="{w:1, h:1}" [src]="user.profileImageURL" [isIcon]="true"></preload-image>
+        </ion-avatar>
+      </button>
+    </ion-buttons>
+    <ion-title>{{ 'HOME' | translate}}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content>
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content pullingIcon="arrow-down" pullingText="{{ 'PULL_TO_REFRESH' | translate }}" refreshingSpinner="dots"
+      refreshingText="{{ 'REFRESHING' | translate }}"></ion-refresher-content>
+  </ion-refresher>
+
+  <div *ngIf="homeData.ads.items">
+
+    <search-input></search-input>
+
+    <ion-slides pager autoplay="3000" loop="true" speed="1500">
+      <ion-slide *ngFor="let item of homeData.ads.items" (click)="openAds(item)">
+        <img src="{{item.image}}" alt="imgErr">
+        <!-- <preload-image [ratio]="{w:20, h:10}" [src]="item.image" title="ads"></preload-image> -->
+      </ion-slide>
+    </ion-slides>
+
+    <div class="hotprices">
+      <ion-grid>
+        <ion-row>
+          <ion-col col-6 text-left align-self-center>
+            <b>{{ 'HOT_PRICE' | translate }}</b>
+          </ion-col>
+          <ion-col col-6 text-right>
+            <button ion-button clear small class="cate-seeall" (click)="seeAllHotPrice()">
+              <b>{{ 'SEE_ALL' | translate }} >></b>
+            </button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+      <ion-scroll scrollX="true">
+        <ion-row class="row-custom">
+          <ion-col col-6 *ngFor="let item of homeData.hotprices.items1" (click)="goHotpriceShop(item)">
+            <preload-image [ratio]="{w:21, h:9}" [src]="item.image" title="hotprices"></preload-image>
+          </ion-col>
+        </ion-row>
+        <ion-row class="row-custom">
+          <ion-col col-6 *ngFor="let item of homeData.hotprices.items2" (click)="goHotpriceShop(item)">
+            <preload-image [ratio]="{w:21, h:9}" [src]="item.image" title="hotprices"></preload-image>
+          </ion-col>
+        </ion-row>
+      </ion-scroll>
+    </div>
+
+    <div class="categories">
+      <ion-grid>
+        <ion-row>
+          <ion-col col-6 text-left>
+            <b>{{ 'CATEGORIES' | translate }}</b>
+          </ion-col>
+
+        </ion-row>
+      </ion-grid>
+      <ion-scroll scrollX="true">
+        <ion-row class="row-custom">
+          <ion-col col-3 col-md-2 col-lg-2 *ngFor="let item of homeData.categories.items ; let i = index;" (click)="categoryPage(i,item)">
+            <preload-image [ratio]="{w:1, h:1}" [src]="item.image" title="categories"></preload-image>
+          </ion-col>
+        </ion-row>
+      </ion-scroll>
+    </div>
+
+    <div class="shops">
+      <div no-padding>
+        <ion-segment mode="md" [(ngModel)]="pages">
+          <ion-segment-button *ngFor="let segment of homeData.shops; let i = index;" [ngClass]="{'active-page' : i == pages}" (click)="onSelectedPage(i)">
+            {{ segment.title | translate }}
+          </ion-segment-button>
+        </ion-segment>
+      </div>
+      <ion-scroll scrollX="true">
+        <ion-row class="row-custom" *ngIf="homeData.shops && homeData.shops.length > 0">
+          <ion-col col-4 col-md-3 col-lg-3 *ngFor="let item of homeData.shops[pages].items" (click)="goToShop(item)">
+            <preload-image [ratio]="{w:1, h:1}" [src]="item.image" title="shops"></preload-image>
+            <div class="text-hover-product">
+              <label class="product-name">{{item.name}}</label>
+              <span class="distance">{{item.distance}} km.</span>
+              <p text-center>
+                <rating [(ngModel)]="item.rating" readOnly="true" max="5" emptyStarIconName="md-heart-outline" halfStarIconName="md-heart-outline"
+                  starIconName="md-heart"></rating>
+              </p>
+            </div>
+            <ion-badge *ngIf="item.isAds" class="icon-ads" item-end color="bite">Ad</ion-badge>
+          </ion-col>
+        </ion-row>
+      </ion-scroll>
+      <ion-row>
+        <ion-col text-right>
+          <button ion-button clear small class="cate-seeall" (click)="seeAllByCondition(homeData.shops[pages].title)">
+            <b>{{ 'SEE_ALL' | translate }} >></b>
+          </button>
+        </ion-col>
+      </ion-row>
+
+    </div>
+  </div>
+</ion-content>

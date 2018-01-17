@@ -1,0 +1,37 @@
+<ion-header>
+
+  <ion-navbar color="bite">
+    <ion-buttons start *ngIf="user && user.profileImageURL">
+      <button ion-button clear (click)="goToProfile()">
+        <ion-avatar class="avatar-profile">
+            <preload-image class="preload-profile-image" [ratio]="{w:1, h:1}" [src]="user.profileImageURL" [isIcon]="true"></preload-image>
+        </ion-avatar>
+      </button>
+    </ion-buttons>
+    <ion-title>{{ 'REWARD' | translate }}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content pullingIcon="arrow-down" pullingText="{{ 'PULL_TO_REFRESH' | translate }}" refreshingSpinner="dots"
+      refreshingText="{{ 'REFRESHING' | translate }}"></ion-refresher-content>
+  </ion-refresher>
+
+  <!-- {{rewardData | json}} -->
+
+  
+
+  <div class="container">
+  <img src="{{rewardData.coin.image}}" alt="" class="coin">
+  <!-- <img src="img_fjords_wide.jpg" alt="Norway" style="width:100%;"> -->
+    <div class="centered"><p> {{rewardData.coin.coinnumber}}  </p> </div>
+  </div>
+
+  
+  <img src="{{rewardData.conquest.image}}" alt="">
+  <div class="conquest"><p> {{rewardData.coin.name}} </p> </div>
+
+</ion-content>

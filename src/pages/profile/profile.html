@@ -1,0 +1,68 @@
+<!--
+  Generated template for the ProfilePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="bite">
+    <ion-title>{{ 'PROFILE' | translate}}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+
+
+  <ion-grid>
+    <ion-row>
+      <ion-col col-3>
+      </ion-col>
+      <ion-col col-6 text-center>
+        <preload-image class="preload-profile-image" [ratio]="{w:1, h:1}" [src]="user.profileImageURL" [isIcon]="true"></preload-image>
+        <!-- <button ion-button icon-only round color="light" class="camera-btn">
+          <ion-icon name="md-camera"></ion-icon>
+        </button> -->
+      </ion-col>
+    </ion-row>
+    <ion-row *ngIf="user.coin">
+      <ion-col text-center>
+        <h2 class="text-coin">{{ 'YOU_HAVE' | translate}} {{user.coin}} {{ 'COINS' | translate}}</h2>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-list class="user-data-content">
+    <ion-list-header>
+      <p>{{ 'PROFILE' | translate}}</p>
+    </ion-list-header>
+    <ion-item *ngIf="user.displayName">
+      <ion-label stacked>{{ 'DISPLAY_NAME' | translate}}</ion-label>
+      <ion-input [disabled]="true" type="text" [(ngModel)]="user.displayName"></ion-input>
+    </ion-item>
+    <ion-item *ngIf="user.email">
+      <ion-label stacked>{{ 'E_MAIL' | translate}}</ion-label>
+      <ion-input [disabled]="true" type="text" [(ngModel)]="user.email"></ion-input>
+    </ion-item>
+    <ion-item *ngIf="user.mobile">
+      <ion-label stacked>{{ 'TEL' | translate}}</ion-label>
+      <ion-input [disabled]="true" type="text" [(ngModel)]="user.mobile"></ion-input>
+    </ion-item>
+    <ion-item *ngIf="user.gender">
+      <ion-label stacked>{{ 'GENDER' | translate}}</ion-label>
+      <ion-input [disabled]="true" type="text" value="{{ user.gender | translate}}"></ion-input>
+    </ion-item>
+    <ion-item *ngIf="user.dateOfBirth">
+      <ion-label stacked>{{ 'BIRTHDAY' | translate}}</ion-label>
+      <ion-datetime [disabled]="true" displayFormat="DD MMMM YYYY" [(ngModel)]="user.dateOfBirth"></ion-datetime>
+    </ion-item>
+  </ion-list>
+  <!-- <ion-list>
+    <button ion-item item-start (click)="onToAddress()">
+      <ion-icon name="pin" item-start color="#503f3f"></ion-icon>
+      {{ 'ADDRESS' | translate}}
+    </button>
+  </ion-list> -->
+</ion-content>

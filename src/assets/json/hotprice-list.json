@@ -1,0 +1,39 @@
+[
+    {
+                "_id": "ht0001",
+                "image": "./assets/imgs/hot_price/hotprice1.png"
+            },{
+                "_id": "ht0002",
+                "image": "./assets/imgs/hot_price/hotprice2.png"
+            },{
+                "_id": "ht0003",
+                "image": "./assets/imgs/hot_price/hotprice3.png"
+            },{
+                "_id": "ht0004",
+                "image": "./assets/imgs/hot_price/hotprice4.png"
+            },{
+                "_id": "ht0005",
+                "image": "./assets/imgs/hot_price/hotprice5.png"
+            },{
+                "_id": "ht0006",
+                "image": "./assets/imgs/hot_price/hotprice6.png"
+            },{
+                "_id": "ht0007",
+                "image": "./assets/imgs/hot_price/hotprice7.png"
+            },{
+                "_id": "ht0008",
+                "image": "./assets/imgs/hot_price/hotprice8.png"
+            },{
+                "_id": "ht0009",
+                "image": "./assets/imgs/hot_price/hotprice9.png"
+            },{
+                "_id": "ht0010",
+                "image": "./assets/imgs/hot_price/hotprice10.png"
+            },{
+                "_id": "ht0011",
+                "image": "./assets/imgs/hot_price/hotprice11.png"
+            },{
+                "_id": "ht0012",
+                "image": "./assets/imgs/hot_price/hotprice12.png"
+            }
+]

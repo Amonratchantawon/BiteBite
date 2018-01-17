@@ -1,0 +1,57 @@
+page-login {
+    .btn-skip {
+        position: absolute;
+        top: 2px;
+        right: 2px;
+        z-index: 999;
+    }
+    .scroll-content {
+        overflow-y: auto !important;
+        padding-bottom: 0px !important;
+    }
+    .no-scroll .scroll-content {
+        overflow: hidden;
+    }
+    .login {
+        position: absolute;
+        height: 100%;
+        justify-content: center;
+        .col {
+            padding: 14px !important;
+        }
+        .col-logo {
+            padding: 0px !important;
+            .image-logo {
+                width: 100% !important;
+            }
+        }
+        .social-icon-fb {
+            margin-top: 3px;
+            width: 24px !important;
+        }
+        .col-btn-bottom {
+            padding: 0px !important;
+            .button {
+                padding: 0px !important;
+            }
+        }
+    }
+    .button {
+        box-shadow: none !important;
+        .col {
+            padding: 0px !important;
+        }
+    }
+    .btn-social {
+        padding: 0px !important;
+    }
+    .label-md[floating] {
+        margin-top: 10px !important;
+    }
+    .item {
+        padding-left: 0px !important;
+    }
+    .list-ios>.item-block:first-child {
+        border-top: none !important;
+    }
+}

@@ -1,0 +1,81 @@
+<ion-header>
+
+  <ion-navbar color="bite">
+    <ion-title>{{shopData.name}}</ion-title>
+    <ion-buttons end (click)="addCart()">
+      <button ion-button icon-only class="icon-cart">
+        <ion-icon name="cart"></ion-icon>
+      </button>
+      <ion-badge color="primary" class="badge-count" item-end>3</ion-badge>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <search-input></search-input>
+  <preload-image [ratio]="{w:20, h:9}" [src]="shopData.coverimage" [isIcon]="true"></preload-image>
+  <ion-grid>
+    <ion-row>
+      <ion-col col-12>
+        <ion-row>
+          {{shopData.name}}
+        </ion-row>
+        <ion-row>
+          {{shopData.detail}}
+        </ion-row>
+        <ion-row>
+          <span>{{shopData.address.addressdetail}}</span>&nbsp;
+          <ion-badge class="icon-ads" item-end color="bite" [ngClass]="{'open': shopData.isopen}">{{isO | translate}}</ion-badge>
+        </ion-row>
+
+        <button ion-button icon-left clear large class="like">
+          <ion-icon ios="ios-star-outline" md="md-star-outline"></ion-icon>
+        </button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-scroll scrollX="true">
+    <ion-row class="row-custom">
+      <ion-col col-3 *ngFor="let item of shopData.promoteimage; let i = index;" class="col-imgpromote">
+        <preload-image [ratio]="{w:1, h:1}" [src]="item" (click)="showPhoto(i)"></preload-image>
+      </ion-col>
+    </ion-row>
+  </ion-scroll>
+
+  <div padding>
+    <ion-segment mode="ios" color="bite" [(ngModel)]="category">
+      <ion-segment-button *ngFor="let segment of shopData.products; let i = index;" [ngClass]="{'active-page' : i == category}"
+        (click)="onSelectedConditionCate(i)">
+        {{ segment.title | translate }}
+      </ion-segment-button>
+    </ion-segment>
+  </div>
+
+  <h5 class="category-title">{{'PRODUCT_CATEGORY' | translate}}</h5>
+
+  <ion-scroll scrollX="true">
+    <ion-row class="row-custom">
+      <ion-col col-3 class="col-imgpromote" (click)="selectCate(0,null)">
+        <preload-image class="categories-image" [ratio]="{w:1, h:1}" src="./assets/imgs/Catagory/menu-all.png" [ngClass]="index === 0 ? 'selectedCategory' : ''"></preload-image>
+        <p class="cate-order">{{'PRODUCT_CATEGORY_ALL' | translate}}</p>
+      </ion-col>
+      <ion-col col-3 *ngFor="let cate of shopData.categories; let ii = index;" class="col-imgpromote" (click)="selectCate(ii + 1,cate)">
+        <preload-image class="categories-image" [ratio]="{w:1, h:1}" [src]="cate.image" [ngClass]="ii === (index - 1) ? 'selectedCategory' : ''"></preload-image>
+        <p class="cate-order">{{cate.name}}</p>
+      </ion-col>
+    </ion-row>
+  </ion-scroll>
+
+  <ion-list *ngIf="shopData.products && shopData.products.length">
+    <ion-item *ngFor="let productitem of shopData.products[category].items | filter:{cateid : selectedCateId}" (click)="selectProduct()">
+      <ion-thumbnail item-start>
+        <preload-image [ratio]="{w:1, h:1}" [src]="productitem.image"></preload-image>
+      </ion-thumbnail>
+      <h2>{{productitem.name}}</h2>
+      <p>{{productitem.price | number:'0.2-2'}} {{'THB' | translate}}</p>
+    </ion-item>
+  </ion-list>
+</ion-content>
