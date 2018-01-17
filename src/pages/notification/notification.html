@@ -7,12 +7,29 @@
 <ion-header>
 
   <ion-navbar color="bite">
-    <ion-title>notification</ion-title>
+    <ion-title>Notification</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
-<ion-content padding>
-
+<ion-content>
+  <ion-list>
+    <ion-item (click)="detail()">
+      <h5>9 กุมภาพันธ์ 2561 19:08:23</h5>
+      <p>รายการอาหารของคุณ Order B009228472 กำลังจัดส่งกรุณารอสักครู่</p>
+    </ion-item>
+    <ion-item (click)="detail()">
+      <h5>1 มีนาคม 2561 23:10:45</h5>
+      <p>ขอบคุณที่ใช้บริการ BiteBite คะ</p>
+    </ion-item>
+    <ion-item (click)="detail()">
+      <h5>17 มกราคม 2561 14:30:57</h5>
+      <p>เข้าสู่ระบบภายใน 19.00 ของวันนี้ รับฟรี 20 Coin !!!</p>
+    </ion-item>
+    <ion-item (click)="detail()">
+      <h5>12 มกราคม 2561 10:00:37</h5>
+      <p>คุณได้รับสิทธิพิเศษภายในเดือนเกิดของคุณ เพียงคุณสั่งซื้ออาหารลดทันที 50 % </p>
+    </ion-item>
+  </ion-list>
 </ion-content>

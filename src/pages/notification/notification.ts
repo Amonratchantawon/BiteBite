@@ -21,5 +21,7 @@ export class NotificationPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad NotificationPage');
   }
-
+  detail(){
+    this.navCtrl.push("NotificationDetailPage");
+  }
 }
