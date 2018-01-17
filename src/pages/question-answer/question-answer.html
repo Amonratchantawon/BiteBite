@@ -13,6 +13,22 @@
 </ion-header>
 
 
-<ion-content padding>
-
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let d of qas; let i=index" text-wrap (click)="toggleGroup(i)" [ngClass]="{active: isGroupShown(i)}">
+      <ion-row>
+        <ion-col col-10>
+          คำถาม : {{d.questions}}
+        </ion-col>
+        <ion-col col-2>
+          <ion-icon color="success" item-end class="icon-right" [name]="isGroupShown(i) ? 'arrow-dropdown' : 'arrow-dropright'"></ion-icon>
+        </ion-col>
+      </ion-row>
+      <ion-row *ngIf="isGroupShown(i)">
+        <ion-col col-12 class="answer">
+          คำตอบ : {{d.answers}}
+        </ion-col>
+      </ion-row>
+    </ion-item>
+  </ion-list>
 </ion-content>
