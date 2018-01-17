@@ -45,6 +45,31 @@ export class MorePage {
     this.navCtrl.push('LoginPage');
   }
 
+  onNotification(){
+    this.app.getRootNav().push('NotificationPage');    
+  }
+
+  onBenefit(){
+    this.app.getRootNav().push('BenefitPage');    
+  }
+
+  onServiceCharge(){
+    this.app.getRootNav().push('ServiceChargePage');    
+  }
+
+  onQA(){
+    this.app.getRootNav().push('QuestionAnswerPage');    
+  }
+
+  onContact(){
+    this.app.getRootNav().push('ContactBitebitePage');    
+  }
+
+  onJoin(){
+    this.app.getRootNav().push('JoinBitebitePage');    
+  }
+
+
   logout() {
     this.auth.logout();
     let language = this.translate.currentLang;
