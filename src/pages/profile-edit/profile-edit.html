@@ -1,0 +1,75 @@
+<!--
+  Generated template for the ProfileEditPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="bite">
+    <ion-title>Edit Profile</ion-title>
+  </ion-navbar>
+
+</ion-header>
+<ion-content>
+  <ion-row padding>
+    <ion-col col-3>
+    </ion-col>
+    <ion-col col-6 text-center>
+      <preload-image [ratio]="{w:1, h:1}" [src]="user.profileImageURL" title="ads"></preload-image>
+    </ion-col>
+    <ion-col col-3>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col col-12>
+      <ion-row>
+        <ion-col col-6 class="col-input">
+          <ion-item>
+            <ion-label floating>{{ 'FIRST_NAME' | translate}}
+              <span class="danger">*</span>
+            </ion-label>
+            <ion-input type="text" [(ngModel)]="user.firstName" [disabled]="provider === 'fb'"></ion-input>
+          </ion-item>
+        </ion-col>
+        <ion-col col-6 class="col-input">
+          <ion-item>
+            <ion-label floating>{{ 'LAST_NAME' | translate}}
+              <span class="danger">*</span>
+            </ion-label>
+            <ion-input type="text" [(ngModel)]="user.lastName" [disabled]="provider === 'fb'"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-list>
+        <ion-item>
+          <ion-label floating>{{ 'E_MAIL' | translate}}
+            <span class="danger">*</span>
+          </ion-label>
+          <!-- provider === 'fb' -->
+          <ion-input type="email" [(ngModel)]="user.email" [disabled]="isDisabled" ></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label floating>{{ 'TEL' | translate}}
+            <span class="danger">*</span>
+          </ion-label>
+          <ion-input type="number" [(ngModel)]="user.mobile"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label floating>{{ 'CITIZEN_ID' | translate}}</ion-label>
+          <ion-input type="number" [(ngModel)]="user.citizenid"></ion-input>
+        </ion-item>
+        <ion-item class="gender-selected">
+          <ion-label>{{ 'GENDER' | translate}}</ion-label>
+          <ion-select [(ngModel)]="user.gender" okText="{{ 'OK' | translate }}" cancelText="{{ 'CANCEL' | translate }}">
+            <ion-option value="female">{{ 'FEMALE' | translate}}</ion-option>
+            <ion-option value="male">{{ 'MALE' | translate}}</ion-option>
+          </ion-select>
+        </ion-item>
+        <p padding-top padding-left>{{ 'BIRTHDAY' | translate}}</p>
+        <ion-datetime placeholder="{{ 'BIRTHDAY_SELECTED' | translate}}" displayFormat="DD/MM/YYYY" [(ngModel)]="birthday"></ion-datetime>
+      </ion-list>
+    </ion-col>
+  </ion-row>
+  <button ion-button block (click)="backButton()">Save</button>
+</ion-content>
