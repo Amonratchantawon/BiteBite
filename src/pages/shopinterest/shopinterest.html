@@ -7,7 +7,7 @@
 <ion-header>
 
   <ion-navbar color="bite">
-    <ion-title>shopinterest</ion-title>
+    <ion-title>{{ 'REGISTER' | translate }}</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -18,7 +18,8 @@
   <ion-grid>
     <ion-row>
       <ion-col col-4>
-        <img src="./assets/imgs/Catagory/cat0.png" alt="">
+        <!-- <img src="./assets/imgs/success-png-success-icon-image-23194-400.png" class="imgeee"> -->
+        <img src="./assets/imgs/Catagory/cat0.png" alt="" (click)="selectCate()">
       </ion-col>
       <ion-col col-4>
         <img src="./assets/imgs/Catagory/cat1.png" alt="">
@@ -128,6 +129,6 @@
 
 <ion-footer class="footer-shopinterest">
   <ion-toolbar>
-    <button ion-button block (click)="shopinterest()" color="bite">NEXT</button>
+    <button ion-button block (click)="shopinterest()" color="bite">{{ 'NEXT' | translate}}</button>
   </ion-toolbar>
 </ion-footer>

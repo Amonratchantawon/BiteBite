@@ -1,3 +1,4 @@
+import { TranslateModule } from '@ngx-translate/core';
 import { NgModule } from '@angular/core';
 import { IonicPageModule } from 'ionic-angular';
 import { ShopinterestPage } from './shopinterest';
@@ -8,6 +9,7 @@ import { ShopinterestPage } from './shopinterest';
   ],
   imports: [
     IonicPageModule.forChild(ShopinterestPage),
+    TranslateModule.forChild(),
   ],
 })
 export class ShopinterestPageModule {}

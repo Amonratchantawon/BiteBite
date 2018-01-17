@@ -36,6 +36,8 @@ export class ShopinterestPage {
       } else{
         this.navCtrl.push('RegisterGiftPage', {inApp: this.inApp, user: this.user });
       }
-    
+  }
+  selectCate(){
+    alert('sssss');
   }
 }
