@@ -57,12 +57,14 @@
           </ion-label>
           <ion-input type="number" [(ngModel)]="user.mobile"></ion-input>
         </ion-item>
-        <ion-item>
+        <!-- <ion-item>
           <ion-label floating>{{ 'CITIZEN_ID' | translate}}</ion-label>
           <ion-input type="number" [(ngModel)]="user.citizenid"></ion-input>
-        </ion-item>
+        </ion-item> -->
         <ion-item class="gender-selected">
-          <ion-label>{{ 'GENDER' | translate}}</ion-label>
+          <ion-label>{{ 'GENDER' | translate}}
+            <span class="danger">*</span>
+          </ion-label>
           <ion-select [(ngModel)]="user.gender" okText="{{ 'OK' | translate }}" cancelText="{{ 'CANCEL' | translate }}">
             <ion-option value="female">{{ 'FEMALE' | translate}}</ion-option>
             <ion-option value="male">{{ 'MALE' | translate}}</ion-option>
@@ -77,6 +79,6 @@
 
 <ion-footer class="footer-agreement">
   <ion-toolbar>
-    <button ion-button no-shadow block color="bite" (click)="onRegister()" [disabled]="!user.firstName || user.firstName === '' || !user.lastName || user.lastName === ''|| !user.email || user.email === ''|| !user.mobile || user.mobile === ''">{{ 'REGISTER' | translate}}</button>
+    <button ion-button no-shadow block color="bite" (click)="onRegister()" [disabled]="!birthday || birthday === '' ||!user.gender || user.gender === '' || !user.firstName || user.firstName === '' || !user.lastName || user.lastName === ''|| !user.email || user.email === ''|| !user.mobile || user.mobile === ''">{{ 'REGISTER' | translate}}</button>
   </ion-toolbar>
 </ion-footer>

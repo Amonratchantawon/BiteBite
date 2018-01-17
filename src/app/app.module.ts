@@ -32,6 +32,7 @@ import { AuthProvider } from '../providers/auth/auth';
 import { ProductdetailProvider } from '../providers/productdetail/productdetail';
 import { CartProvider } from '../providers/cart/cart';
 import { RewardProvider } from '../providers/reward/reward';
+import { QuestionanswerProvider } from '../providers/questionanswer/questionanswer';
 
 
 @NgModule({
@@ -89,6 +90,7 @@ import { RewardProvider } from '../providers/reward/reward';
     ProductdetailProvider,
     CartProvider,
     RewardProvider,
+    QuestionanswerProvider,
   ]
 })
 export class AppModule { }
