@@ -54,7 +54,7 @@ export class RegisterProfilePage {
     this.user.dateOfBirth = date;
     this.loading.onLoading();
     this.auth.signup(this.user).then((res) => {
-      this.navCtrl.push('RegisterGiftPage', { inApp: this.inApp, user: res });
+      this.navCtrl.push('PromotioninterestPage', { inApp: this.inApp, user: res });
       this.loading.dismiss();
     }).catch((err) => {
       let language = this.translate.currentLang;
@@ -69,5 +69,9 @@ export class RegisterProfilePage {
       this.loading.dismiss();
     });
   }
+
+  // onRegister(){
+  //   this.navCtrl.push('PromotioninterestPage',{inApp: this.inApp});
+  // }
 
 }
