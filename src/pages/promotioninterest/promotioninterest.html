@@ -7,7 +7,7 @@
 <ion-header>
 
   <ion-navbar color="bite">
-    <ion-title>promotioninterest</ion-title>
+    <ion-title>{{ 'REGISTER_ACCOUNT' | translate }}</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -18,27 +18,15 @@
   <h3 text-center>เลือกโปรโมชั่นที่คุณชอบ</h3>
   <ion-list>
     <ion-item>
-      <ion-label>Daenerys Targaryen</ion-label>
+      <ion-label>ส่วนลด</ion-label>
       <ion-checkbox color="bite" checked="false"></ion-checkbox>
     </ion-item>
     <ion-item>
-      <ion-label>Daenerys Targaryen</ion-label>
+      <ion-label>ของแถม</ion-label>
       <ion-checkbox color="bite" checked="true"></ion-checkbox>
     </ion-item>
     <ion-item>
-      <ion-label>Daenerys Targaryen</ion-label>
-      <ion-checkbox color="bite" checked="false"></ion-checkbox>
-    </ion-item>
-    <ion-item>
-      <ion-label>Daenerys Targaryen</ion-label>
-      <ion-checkbox color="bite" checked="false"></ion-checkbox>
-    </ion-item>
-    <ion-item>
-      <ion-label>Daenerys Targaryen</ion-label>
-      <ion-checkbox color="bite" checked="false"></ion-checkbox>
-    </ion-item>
-    <ion-item>
-      <ion-label>Daenerys Targaryen</ion-label>
+      <ion-label>ฟรีค่าจัดส่ง</ion-label>
       <ion-checkbox color="bite" checked="false"></ion-checkbox>
     </ion-item>
 
@@ -48,6 +36,6 @@
 
 <ion-footer class="footer-promotioninterest">
   <ion-toolbar>
-    <button ion-button block (click)="promotioninterest()" color="bite">NEXT</button>
+    <button ion-button block (click)="promotioninterest()" color="bite">{{ 'NEXT' | translate}}</button>
   </ion-toolbar>
 </ion-footer>
