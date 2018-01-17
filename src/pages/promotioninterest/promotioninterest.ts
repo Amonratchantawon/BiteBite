@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 /**
- * Generated class for the NotificationPage page.
+ * Generated class for the PromotioninterestPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
@@ -10,18 +10,21 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 @IonicPage()
 @Component({
-  selector: 'page-notification',
-  templateUrl: 'notification.html',
+  selector: 'page-promotioninterest',
+  templateUrl: 'promotioninterest.html',
 })
-export class NotificationPage {
+export class PromotioninterestPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad NotificationPage');
+    console.log('ionViewDidLoad PromotioninterestPage');
+  
   }
-  detail(){
-    this.navCtrl.push("NotificationDetailPage");
+
+  promotioninterest(){
+    this.navCtrl.push('ShopinterestPage');
   }
+
 }
