@@ -39,4 +39,8 @@ export class ProfilePage {
     this.navCtrl.push('AddressPage');
   }
 
+  ProfileEditPage(){
+    this.navCtrl.push('ProfileEditPage');
+  }
+
 }
