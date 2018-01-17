@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { QuestionanswerProvider } from '../../providers/questionanswer/questionanswer';
+import { QuestionModel } from '../../assets/model/questionanswer.model';
 
 /**
  * Generated class for the QuestionAnswerPage page.
@@ -14,12 +16,33 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'question-answer.html',
 })
 export class QuestionAnswerPage {
-
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  qas: Array<QuestionModel>;
+  shownGroup = null;
+  constructor(public navCtrl: NavController, public navParams: NavParams, public QAservice: QuestionanswerProvider) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad QuestionAnswerPage');
+    this.getQA();
+  }
+
+  toggleGroup(group) {
+    if (this.isGroupShown(group)) {
+      this.shownGroup = null;
+    } else {
+      this.shownGroup = group;
+    }
+  };
+  isGroupShown(group) {
+    return this.shownGroup === group;
+  };
+  getQA() {
+    this.QAservice.getQuestion().then((data) => {
+      this.qas = data;
+      console.log(data);
+    }, (err) => {
+      console.log(err);
+    });
   }
 
 }

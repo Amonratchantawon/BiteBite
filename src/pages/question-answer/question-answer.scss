@@ -1,3 +1,15 @@
 page-question-answer {
-
+.icon-right{
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+.answer{
+    color: gray;
+}
+ion-icon {
+    display: inline-block !important;
+    font-size: 1.7em !important;
+    color: gray !important;
+}
 }
