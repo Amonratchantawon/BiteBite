@@ -27,6 +27,7 @@ export class ShopModel {
     isopen: boolean;
     promoteimage: Array<Promoteimage>
     address: AddressModel = new AddressModel();
+    categories: Array<ItemCategoriyModel>;
     products: Array<ProductModel>;
 }
 
