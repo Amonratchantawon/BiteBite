@@ -185,38 +185,6 @@
           "isAds": false
         }
       ]
-    },
-    {
-      "title": "FAVORITE",
-      "items": [{
-          "_id": "fav0001",
-          "name": "แซ่บแน่",
-          "rating": 4,
-          "distance": 11.4,
-          "image": "./assets/imgs/shop/shop6.png"
-        },
-        {
-          "_id": "fav0002",
-          "name": "ภัตตาคารหลวง",
-          "rating": 5,
-          "distance": 5.2,
-          "image": "./assets/imgs/shop/shop8.png"
-        },
-        {
-          "_id": "fav0003",
-          "name": "Poppen",
-          "rating": 4,
-          "distance": 15.7,
-          "image": "./assets/imgs/shop/shop5.png"
-        },
-        {
-          "_id": "fav0004",
-          "name": "บ้านขนม",
-          "rating": 3,
-          "distance": 4.1,
-          "image": "./assets/imgs/shop/shop10.png"
-        }
-      ]
     }
   ]
 }

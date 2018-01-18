@@ -38,6 +38,7 @@ export class CategoryListPage {
   }
 
   getCate() {
+    this.loading.onLoading();
     this.categoryProvider.getCategory().then(res => {
       this.categoryData = res;
       this.cate = this.navParams.get('index');
@@ -46,15 +47,15 @@ export class CategoryListPage {
         let scroll = document.getElementById('scroll');
         scroll.scrollLeft = 90 * this.cate;
       }, 0);
-      console.log();
+      this.loading.dismiss();      
       this.getCurrentPosition();
     }, (err) => {
+      this.loading.dismiss();      
     });
   }
 
   getCurrentPosition() {
     this.loading.onLoading();
-
     if (!this.platform.is('cordova')) { // serve test location in lumlukka
       let location = {
         coords: {
