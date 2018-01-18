@@ -1,3 +1,7 @@
+import { ShopInterestModel } from '../../assets/model/shopinterest.model';
+import { ShopinterestProvider } from '../../providers/shopinterest/shopinterest';
+import { PromotionInterestModel } from '../../assets/model/promotioninterest.model';
+import { PromotioninterestProvider } from '../../providers/promotioninterest/promotioninterest';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { AuthProvider } from '../../providers/auth/auth';
@@ -11,19 +15,27 @@ import { TranslateService } from '@ngx-translate/core';
   templateUrl: 'register-profile.html',
 })
 export class RegisterProfilePage {
+  promotioninterestPost:Array<any> = [];
+  promotioninterestData:PromotionInterestModel = new PromotionInterestModel();
+  shopinterestPost:Array<any> = [];
+  shopinterestData:ShopInterestModel = new ShopInterestModel();
   inApp: Boolean = false;
   birthday: string;
   provider: string;
   user: any = {};
   isDisabled:boolean = false;
+  language: string = '';
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
     private auth: AuthProvider,
     private loading: LoadingProvider,
     private translate: TranslateService,
-    private alert: AlertProvider
+    private alert: AlertProvider,
+    public promotioninterestProvider:PromotioninterestProvider,
+    public shopinterestProvider:ShopinterestProvider
   ) {
+
     this.inApp = this.navParams.data ? this.navParams.data.inApp : false;
     this.provider = this.navParams.get('provider');
     if (this.provider === 'fb') {
@@ -44,8 +56,15 @@ export class RegisterProfilePage {
     this.isDisabled =  this.user.email ? true : false;
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad RegisterProfilePage');
+ 
+  ionViewWillEnter(){
+    this.promotionInterest();
+    this.changeShopInterest();
+    this.onLanguage();
+  }
+
+  onLanguage() {
+    this.language = this.translate.currentLang;
   }
 
   onRegister() {
@@ -54,7 +73,12 @@ export class RegisterProfilePage {
     this.user.dateOfBirth = date;
     this.loading.onLoading();
     this.auth.signup(this.user).then((res) => {
-      this.navCtrl.push('RegisterGiftPage', { inApp: this.inApp, user: res });
+      // res.newregisterreward.items = null;
+      if (!res.newregisterreward || !res.newregisterreward.items|| res.newregisterreward.items.length === 0) {
+        this.navCtrl.setRoot('NavtabsPage');
+      } else{
+        this.navCtrl.push('RegisterGiftPage', {inApp: this.inApp, user: res });
+      }
       this.loading.dismiss();
     }).catch((err) => {
       let language = this.translate.currentLang;
@@ -68,6 +92,23 @@ export class RegisterProfilePage {
       }
       this.loading.dismiss();
     });
+  }
+
+  changeShopInterest(){
+    this.shopinterestProvider.getShopInterest().then((res)=>{
+      this.shopinterestData = res;
+    })
+  }
+
+  promotionInterest(){
+    this.promotioninterestProvider.getPromotionInterest().then((res)=>{
+      this.promotioninterestData = res;
+    })
+  }
+
+  checkData(){
+    console.log(this.shopinterestPost);
+    console.log(this.promotioninterestPost);
   }
 
 }

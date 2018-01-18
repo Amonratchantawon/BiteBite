@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { AlertController } from 'ionic-angular';
+import { AlertController, ModalController } from 'ionic-angular';
 
 /*
   Generated class for the AlertProvider provider.
@@ -13,7 +13,8 @@ export class AlertProvider {
 
   constructor(
     public http: HttpClient,
-    public alertCtrl: AlertController
+    public alertCtrl: AlertController,
+    public modalCtrl: ModalController
   ) {
   }
 
@@ -32,7 +33,7 @@ export class AlertProvider {
       subTitle: massage,
       mode: 'ios',
       buttons: [button],
-      enableBackdropDismiss: false      
+      enableBackdropDismiss: false
     });
     alert.present();
   }
@@ -44,6 +45,35 @@ export class AlertProvider {
       enableBackdropDismiss: false
     });
     let message = '<img src="' + image + '"><h2>' + title + '</h2><h6>' + description + '</h6><p>' + remark + '</p>';
+    alert.setMessage(message);
+    alert.present();
+  }
+
+  onDailyWelcomeAlertGif(image, title, remark, cancelText, confirmText) {
+    let alert = this.alertCtrl.create({
+      mode: 'ios',
+      buttons: [
+        {
+          text: cancelText,
+          role: 'cancel',
+          cssClass: 'cancel',
+          handler: () => {
+            console.log('Cancel clicked');
+          }
+        },
+        {
+          text: confirmText,
+          handler: () => {
+            let gifModal = this.modalCtrl.create('GiftCollectRandomPage', {}, {
+              enableBackdropDismiss: false
+            });
+            gifModal.present();
+          }
+        }
+      ],
+      enableBackdropDismiss: false
+    });
+    let message = '<img src="' + image + '"><h2>' + title + '</h2><p>' + remark + '</p>';
     alert.setMessage(message);
     alert.present();
   }

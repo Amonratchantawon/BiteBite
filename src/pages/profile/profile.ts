@@ -66,15 +66,16 @@ export class ProfilePage {
     }];
   }
 
-  editProfile() {
-    alert('Edit');
-  }
   segmentChanged(e) {
     // alert(JSON.stringify(this.segment));
   }
 
   onToAddress() {
     this.navCtrl.push('AddressPage');
+  }
+
+  ProfileEditPage(){
+    this.navCtrl.push('ProfileEditPage');
   }
 
 }

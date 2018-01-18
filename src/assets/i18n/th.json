@@ -95,5 +95,9 @@
   "PRODUCT_CATEGORY": "ประเภทอาหาร",
   "PRODUCT_CATEGORY_ALL": "เมนูทั้งหมด",
   "THB": "บาท",
-  "LOAD_MORE": "กำลังโหลดข้อมูล..."
+  "LOAD_MORE": "กำลังโหลดข้อมูล...",
+
+  "DAILY_GAME": "เกมประจำวัน",
+  "PLAY": "เล่นเลย"
+
 }

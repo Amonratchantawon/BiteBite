@@ -95,7 +95,9 @@
   "PRODUCT_CATEGORY": "Product category",
   "PRODUCT_CATEGORY_ALL": "All",
   "THB": "THB",
-  "LOAD_MORE": "Loading more data..."
+  "LOAD_MORE": "Loading more data...",
 
+  "DAILY_GAME": "Daily game",
+  "PLAY": "Play now."
 
 }
