@@ -20,33 +20,23 @@
     </ion-list-header>
     <ion-item>
       <ion-label>เลือกประเภทการติดต่อ</ion-label>
-      <ion-select>
-        <ion-option value="f">แนะนำบริการ</ion-option>
-        <ion-option value="m">สอบถามบริการ</ion-option>
+      <ion-select [(ngModel)]="selectChoices">
+        <ion-option *ngFor="let item of choices" value="{{item._id}}">{{item.name}}</ion-option>
       </ion-select>
     </ion-item>
     <ion-item>
       <ion-label>ข้อความ</ion-label>
-      <ion-textarea rows="5" type="text"></ion-textarea>
+      <ion-textarea [(ngModel)]="contact.description" rows="5" type="text"></ion-textarea>
     </ion-item>
   </ion-list>
-  <ion-row>
-    <ion-col class="font-2em">
-      <ion-icon name="md-images" (click)="uploadImage()"></ion-icon>
-    </ion-col>
-  </ion-row>
-  <ion-row *ngIf="isUpload">
-    <ion-col col-3>
-    </ion-col>
-
-    <ion-col col-6 text-center>
-      <preload-image class="preload-profile-image" [ratio]="{w:1, h:1}" [src]="'https://d30y9cdsu7xlg0.cloudfront.net/png/396915-200.png'"
-        [isIcon]="true"></preload-image>
-    </ion-col>
-  </ion-row>
+  <ion-fab right bottom>
+    <button ion-fab color="bite">
+      <ion-icon class="font-2em" name="md-images" ></ion-icon>
+    </button>
+  </ion-fab>
 </ion-content>
 <ion-footer>
   <ion-toolbar>
-    <button ion-button block color="bite">ส่ง</button>
+    <button (click)="sentContact()" ion-button block color="bite">ส่ง</button>
   </ion-toolbar>
 </ion-footer>
