@@ -1,10 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Constants } from '../../app/app.constants';
-import { AlertProvider } from '../../providers/alert/alert';
-import { TranslateService } from '@ngx-translate/core';
-import { AuthProvider } from '../../providers/auth/auth';
-import { LoadingProvider } from '../../providers/loading/loading';
 import { UserModel } from '../../assets/model/user.model';
 
 
@@ -29,11 +25,7 @@ export class ProfileEditPage {
   isDisabled: boolean = false;
   
   constructor(public navCtrl: NavController,
-    public navParams: NavParams,
-    private auth: AuthProvider,
-    private loading: LoadingProvider,
-    private translate: TranslateService,
-    private alert: AlertProvider
+    public navParams: NavParams
   ) {
   }
   ionViewDidLoad() {
