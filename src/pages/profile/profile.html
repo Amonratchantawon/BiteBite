@@ -38,7 +38,7 @@
     </ion-row> -->
     <ion-row>
       <ion-col class="text-name" text-center>
-        <div class="display">
+        <div class="display-flex">
           <h4>{{user.displayName}}</h4>
         </div>
         <span class="text-rank">(Rank : 1)</span>
@@ -63,18 +63,18 @@
       </ion-col>
     </ion-row> -->
     <ion-row>
-      <ion-col col-1 text-left>
+      <ion-col col-1>
         <ion-icon class="text-icon" name="ios-happy-outline" item-start></ion-icon>
       </ion-col>
-      <ion-col col-5 text-left>
+      <ion-col col-5>
         <div class="justify-content">
           <progress class="progress" max="100" value="90"></progress>
         </div>
       </ion-col>
-      <ion-col col-1 text-left>
+      <ion-col col-1>
         <ion-icon class="text-icon" name="help-buoy" item-start></ion-icon>
       </ion-col>
-      <ion-col col-5 text-left>
+      <ion-col col-5>
         <div class="justify-content">
           <span class="text-coin">50000</span>
         </div>
@@ -116,23 +116,24 @@
       <ion-list class="list-item">
         <ion-item *ngFor="let profile of makeProfile">
           <ion-row>
-            <ion-col class="avatar-middle" col-2>
+            <ion-col class="display-flex" col-2>
               <div>
                 <ion-icon name="ios-flag"></ion-icon>
                 {{profile.rank}}
               </div>
             </ion-col>
-            <ion-col col-2>
-              <ion-avatar>
-                <img src="{{profile.image}}">
-              </ion-avatar>
-            </ion-col>
-            <ion-col col-5>
-              <div class="display">
-                {{profile.name}}
+            <ion-col class="display-flex" col-7>
+              <div padding>
+                <ion-avatar>
+                  <img src="{{profile.image}}">
+                </ion-avatar>
+              </div>
+              <div>
+                <!-- {{profile.name}} -->
+                <progress class="progress"  max="100" value="90"></progress>
               </div>
             </ion-col>
-            <ion-col col-3>
+            <ion-col class="display-flex" col-3>
               <div>
                 <ion-icon name="help-buoy"></ion-icon>
                 {{profile.coin}}
