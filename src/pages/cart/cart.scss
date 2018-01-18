@@ -1,4 +1,7 @@
 page-cart {
+    .content {
+        background-color: #f4f4f4;
+    }
     .count-radias {
         height: 32px;
         width: 26px;
@@ -13,9 +16,10 @@ page-cart {
         text-align: center;
         border-bottom: none !important;
         padding: 0px !important;
+        margin-top: 10px;
     }
     .searchbar-input-container {
-        margin-top: 6px;
+        margin-top: 12px;
     }
     .searchbar-ios .searchbar-search-icon {
         background-image: none;
@@ -30,7 +34,8 @@ page-cart {
         color: rgb(168, 168, 168);
     }
     .icon-cart {
-        font-size: 15px !important;
+        font-size: 18px !important;
+        height: 28px !important;
         right: 0px;
     }
     .icon-trash {
@@ -38,5 +43,14 @@ page-cart {
         right: 20px;
         top: 12px;
         font-size: 18px;
+    }
+    .price {
+        margin-top: 14px;
+    }
+    .counter {
+        position: absolute;
+        right: 20px;
+        top: 44px;
+        z-index: 99;
     }
 }

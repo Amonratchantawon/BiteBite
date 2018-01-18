@@ -1,7 +1,7 @@
 <ion-header>
 
   <ion-navbar color="bite">
-    <ion-title>cart</ion-title>
+    <ion-title>{{ 'CART' | translate }}</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -19,13 +19,15 @@
   <ion-list>
     <ion-item *ngFor="let item of cartData.items">
       <h2>{{item.product.name}}
-        <span class="price-name"> ({{item.product.price}}) THB</span>
+        <span class="price-name"> ({{item.product.price}}) {{ 'THB' | translate}}</span>
       </h2>
       <ion-buttons class="icon-trash">
         <ion-icon ios="ios-trash" md="ios-trash"></ion-icon>
       </ion-buttons>
-      <p>{{item.amount}} {{ 'THB' | translate}}</p>
-      <div>
+
+      <p class="price">{{item.amount}} {{ 'THB' | translate}}</p>
+
+      <div class="counter">
         <button ion-button icon-only clear color="bite" class="icon-cart" (click)="countDelete(item)">
           <ion-icon name="ios-remove-circle-outline"></ion-icon>
         </button>
@@ -37,13 +39,13 @@
         </button>
       </div>
 
-      <ion-searchbar mode="ios" placeholder="รายละเอียดเพิ่มเติม" [(ngModel)]="item.remark">
+      <ion-searchbar mode="ios" placeholder="{{ 'PRODUCT_REMARK' | translate}}" [(ngModel)]="item.remark">
       </ion-searchbar>
     </ion-item>
   </ion-list>
 
   <ion-row justify-content-center>
-    <button ion-button round outline text-center>+ add more</button>
+    <button ion-button round outline text-center color="bite">{{ 'ADD_MORE' | translate }}</button>
   </ion-row>
 
 </ion-content>
@@ -57,10 +59,10 @@
             {{cartData.qty}}
           </ion-col>
           <ion-col col-4>
-            Checkout
+            {{ 'CHECK_OUT' | translate }}
           </ion-col>
           <ion-col col-4>
-            {{cartData.amount}} ฿
+            {{cartData.amount}} {{ 'THB' | translate }}
           </ion-col>
         </ion-row>
       </ion-grid>
