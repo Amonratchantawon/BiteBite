@@ -74,6 +74,11 @@ export class RegisterProfilePage {
     this.loading.onLoading();
     this.auth.signup(this.user).then((res) => {
       // res.newregisterreward.items = null;
+      let userinterest = {
+        promotioninterest:this.promotioninterestPost,
+        shopinterest:this.shopinterestPost
+      }
+      this.shopinterestProvider.postUserinter(userinterest);
       if (!res.newregisterreward || !res.newregisterreward.items|| res.newregisterreward.items.length === 0) {
         this.navCtrl.setRoot('NavtabsPage');
       } else{
