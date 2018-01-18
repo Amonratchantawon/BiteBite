@@ -71,7 +71,34 @@
           <span class="danger">*</span>
         </p>
         <ion-datetime placeholder="{{ 'BIRTHDAY_SELECTED' | translate}}" displayFormat="DD/MM/YYYY" [(ngModel)]="birthday"></ion-datetime>
-      </ion-list>
+      
+      
+      <ion-item>
+        <ion-label floating>ที่อยู่
+        </ion-label>
+        <ion-input type="text" [(ngModel)]="user.address"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>ตำบล/แขวง
+        </ion-label>
+        <ion-input type="text" [(ngModel)]="user.subdistrict"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>อำเภอ/เขต
+        </ion-label>
+        <ion-input type="text" [(ngModel)]="user.district"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>จังหวัด
+        </ion-label>
+        <ion-input type="text" [(ngModel)]="user.province"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>รหัสไปรษณีย์
+        </ion-label>
+        <ion-input type="number" [(ngModel)]="user.postcode"></ion-input>
+      </ion-item>
+    </ion-list>
     </ion-col>
   </ion-row>
 
