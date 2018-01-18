@@ -99,6 +99,8 @@
 
   "DAILY_GAME": "Daily game",
   "PLAY": "Play now.",
-  "PRODUCT_LIST": "Product list"
+  "PRODUCT_LIST": "Product list",
+  "PRODUCT_REMARK": "More detail",
+  "ADD_TO_CART": "Add to cart"      
 
 }

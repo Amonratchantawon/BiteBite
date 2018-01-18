@@ -4,7 +4,6 @@ page-cart {
         width: 26px;
         border-radius: 81px;
     }
-
     .searchbar-ios .searchbar-input {
         background-color: #eeeded !important;
         border-radius: 15px !important;
@@ -13,12 +12,12 @@ page-cart {
         background: white !important;
         text-align: center;
         border-bottom: none !important;
+        padding: 0px !important;
     }
     .searchbar-input-container {
         margin-top: 6px;
     }
-
-    .searchbar-ios .searchbar-search-icon{
+    .searchbar-ios .searchbar-search-icon {
         background-image: none;
     }
     .footer-cart {
@@ -27,7 +26,17 @@ page-cart {
             max-height: 40px !important;
         }
     }
-    .price-name{
+    .price-name {
         color: rgb(168, 168, 168);
+    }
+    .icon-cart {
+        font-size: 15px !important;
+        right: 0px;
+    }
+    .icon-trash {
+        position: absolute;
+        right: 20px;
+        top: 12px;
+        font-size: 18px;
     }
 }
