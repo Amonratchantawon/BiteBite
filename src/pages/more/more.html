@@ -22,7 +22,7 @@
     </button>
   </ion-list>
   <ion-list>
-    <button ion-item item-start (click)="onNotification()">
+    <button *ngIf="user && user.username" ion-item item-start (click)="onNotification()">
       <ion-icon name="md-notifications" item-start></ion-icon>
       <!-- {{ 'SERVICE_CHARGE' | translate }} -->
       Notification
@@ -44,7 +44,7 @@
       <ion-icon name="md-settings" item-start></ion-icon>
       {{ 'SETTINGS' | translate }}
     </button>
-    <button ion-item item-start (click)="onContact()">
+    <button *ngIf="user && user.username" ion-item item-start (click)="onContact()">
       <ion-icon name="md-contact" item-start></ion-icon>
       {{ 'CONTANT_BITEBITE' | translate }}
     </button>
