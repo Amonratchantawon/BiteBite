@@ -1,3 +1,5 @@
+import { ItemCategoriyModel } from "./category-master.model";
+
 
 export class ItemShopModel {
     _id: string;
@@ -14,17 +16,18 @@ export class ShopModel {
     name: string;
     detail: string;
     isopen: boolean;
-    promoteimage:Array<Promoteimage>
-    address:AddressModel = new AddressModel(); 
-    products:Array<ProductModel>;
+    promoteimage: Array<Promoteimage>
+    address: AddressModel = new AddressModel();
+    categories: Array<ItemCategoriyModel>;
+    products: Array<ItemProductModel>;
 }
 
-export class ProductModel{
-        title:string;
-        items: Array<ItemProductModel>
-}
+// export class ProductModel{
+//         title:string;
+//         items: Array<ItemProductModel>
+// }
 
-export class ItemProductModel{
+export class ItemProductModel {
     _id: string;
     cateid: string;
     name: string;
@@ -35,10 +38,10 @@ export class ItemProductModel{
     isrecommend: boolean;
 }
 
-export class AddressModel{
-    addressdetail:string;
+export class AddressModel {
+    addressdetail: string;
 }
 
-export class Promoteimage{
-    url:string;
+export class Promoteimage {
+    url: string;
 }

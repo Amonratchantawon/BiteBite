@@ -1,0 +1,14 @@
+<ion-list *ngIf="products && products.length">
+  <button ion-item *ngFor="let productitem of products | filter:{cateid : selectedCateId}" (click)="click(productitem)">
+    <ion-thumbnail item-start>
+      <preload-image class="products-image" [ratio]="{w:1, h:1}" [src]="productitem.image"></preload-image>
+    </ion-thumbnail>
+    <h2>{{productitem.name}}</h2>
+    <p>{{productitem.price | number:'0.2-2'}} {{'THB' | translate}}</p>
+    <!-- <div class="icon-status"> -->
+      <ion-badge color="bite" *ngIf="productitem.ispromotion">{{ 'PROMOTION' | translate }}</ion-badge>
+      <ion-badge color="primary" *ngIf="productitem.ispopular">{{ 'POPULAR' | translate }}</ion-badge>
+      <ion-badge color="secondary" *ngIf="productitem.isrecommend">{{ 'RECOMMEND' | translate }}</ion-badge>
+    <!-- </div> -->
+  </button>
+</ion-list>

@@ -29,7 +29,7 @@ import { AlertProvider } from '../providers/alert/alert';
 import * as ionicGalleryModal from 'ionic-gallery-modal';
 import { HAMMER_GESTURE_CONFIG } from '@angular/platform-browser';
 import { AuthProvider } from '../providers/auth/auth';
-import { ProductdetailProvider } from '../providers/productdetail/productdetail';
+import { ProductProvider } from '../providers/product/product';
 import { CartProvider } from '../providers/cart/cart';
 import { RewardProvider } from '../providers/reward/reward';
 import { QuestionanswerProvider } from '../providers/questionanswer/questionanswer';
@@ -90,7 +90,7 @@ import { PromotioninterestProvider } from '../providers/promotioninterest/promot
     LoadingProvider,
     AlertProvider,
     AuthProvider,
-    ProductdetailProvider,
+    ProductProvider,
     CartProvider,
     RewardProvider,
     QuestionanswerProvider,
