@@ -11,6 +11,8 @@ import { TranslateService } from '@ngx-translate/core';
   templateUrl: 'register-profile.html',
 })
 export class RegisterProfilePage {
+  promotioninterest:Array<any> = [];
+  shopinterest:Array<any> = [];
   inApp: Boolean = false;
   birthday: string;
   provider: string;
@@ -24,6 +26,7 @@ export class RegisterProfilePage {
     private translate: TranslateService,
     private alert: AlertProvider
   ) {
+    
     this.inApp = this.navParams.data ? this.navParams.data.inApp : false;
     this.provider = this.navParams.get('provider');
     if (this.provider === 'fb') {
@@ -45,6 +48,8 @@ export class RegisterProfilePage {
   }
 
   ionViewDidLoad() {
+    // console.log(this.promotioninterest);
+    // console.log(this.shopinterest);
     console.log('ionViewDidLoad RegisterProfilePage');
   }
 
@@ -54,7 +59,13 @@ export class RegisterProfilePage {
     this.user.dateOfBirth = date;
     this.loading.onLoading();
     this.auth.signup(this.user).then((res) => {
-      this.navCtrl.push('PromotioninterestPage', { inApp: this.inApp, user: res });
+      res.newregisterreward.items = null;
+      if (!res.newregisterreward || !res.newregisterreward.items|| res.newregisterreward.items.length === 0) {
+        this.navCtrl.setRoot('NavtabsPage');
+      } else{
+        this.navCtrl.push('RegisterGiftPage', {inApp: this.inApp, user: res });
+      }
+      // this.navCtrl.push('PromotioninterestPage', { inApp: this.inApp, user: res });
       this.loading.dismiss();
     }).catch((err) => {
       let language = this.translate.currentLang;
@@ -73,5 +84,13 @@ export class RegisterProfilePage {
   // onRegister(){
   //   this.navCtrl.push('PromotioninterestPage',{inApp: this.inApp});
   // }
+
+  shopInterest(){
+    console.log(this.shopinterest);
+  }
+
+  promotionInterest(){
+    console.log(this.promotioninterest);
+  }
 
 }
