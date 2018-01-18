@@ -79,48 +79,17 @@
   </ion-row>
   <ion-list>
     <ion-item>
-      <ion-label>โปรโมชั่นที่คุณชอบ <span class="danger">*</span></ion-label>
-      <ion-select [(ngModel)]="promotioninterest" multiple="true" cancelText="NO" okText="YES" (ionChange)="promotionInterest()">
-        <ion-option value="bacon" selected="false">ส่วนลด</ion-option>
-        <ion-option value="olives" selected="false">ของแถม</ion-option>
-        <ion-option value="xcheese" selected="false">ฟรีค่าจัดส่ง</ion-option>
+      <ion-label>{{ language === 'th' ? promotioninterestData.titleTH:promotioninterestData.titleEN}} <span class="danger">*</span></ion-label>
+      <ion-select [(ngModel)]="promotioninterestPost" multiple="true"  cancelText="NO" okText="YES" (ionChange)="checkData()">
+        <ion-option *ngFor="let item of promotioninterestData.items" value="{{item.promotioninterest}}" selected="false">{{item.promotioninterest}}</ion-option>
       </ion-select>
     </ion-item>
   </ion-list>
   <ion-list>
     <ion-item>
-      <ion-label>ร้านค้าอาหารที่คุณชอบ <span class="danger">*</span></ion-label>
-      <ion-select [(ngModel)]="shopinterest" multiple="true" cancelText="NO" okText="YES" (ionChange)="shopInterest()">
-        <ion-option value="bacon" selected="false">อาหารฟิวชั่น</ion-option>
-        <ion-option value="olives" selected="false">อาหารไทย</ion-option>
-        <ion-option value="xcheese" selected="false">อาหารเหนือ</ion-option>
-        <ion-option value="peppers" selected="false">อาหารอีสาน</ion-option>
-        <ion-option value="mushrooms" selected="false">อาหารใต้</ion-option>
-        <ion-option value="onions" selected="false">อาหารทะเล</ion-option>
-        <ion-option value="pepperoni" selected="false">อาหารนานาชาติ</ion-option>
-        <ion-option value="pineapple" selected="false">อาหารอิตาเลียน</ion-option>
-        <ion-option value="sausage" selected="false">อาหารญี่ปุ่น</ion-option>
-        <ion-option value="Spinach" selected="false">อาหารจีน</ion-option>
-        <ion-option value="Spinach" selected="false">อาหารเกาหลี</ion-option>
-        <ion-option value="Spinach" selected="false">อาหารมังสวิรัติ</ion-option>
-        <ion-option value="Spinach" selected="false">อาหารคลีน/สลัด</ion-option>
-        <ion-option value="Spinach" selected="false">อาหารอิสลาม/ฮาลาล</ion-option>
-        <ion-option value="Spinach" selected="false">อาหารจานเดียว/อาหารตามสั่</ion-option>
-        <ion-option value="Spinach" selected="false">อาหารกล่อง</ion-option>
-        <ion-option value="Spinach" selected="false">ก๋วยเตี๋ยว</ion-option>
-        <ion-option value="Spinach" selected="false">ชาบู/สุกี้ยากี้/หม้อไฟ</ion-option>
-        <ion-option value="Spinach" selected="false">ปิ้งย่าง/หมูกระทะ</ion-option>
-        <ion-option value="Spinach" selected="false">สเต๊ก</ion-option>
-        <ion-option value="Spinach" selected="false">ฟาสต์ฟู้ด</ion-option>
-        <ion-option value="Spinach" selected="false">สตรีทฟู้ด/รถเข็น</ion-option>
-        <ion-option value="Spinach" selected="false">กาแฟ</ion-option>
-        <ion-option value="Spinach" selected="false">เบเกอรี่/เค้ก</ion-option>
-        <ion-option value="Spinach" selected="false">เครื่องดื่ม/น้ำผลไม้</ion-option>
-        <ion-option value="Spinach" selected="false">ชาไข่มุก</ion-option>
-        <ion-option value="Spinach" selected="false">ขนมหวาน</ion-option>
-        <ion-option value="Spinach" selected="false">ไอศกรีม</ion-option>
-        <ion-option value="Spinach" selected="false">อาหารทานเล่น</ion-option>
-        <ion-option value="Spinach" selected="false">อื่นๆ</ion-option>
+      <ion-label>{{ language === 'th' ? shopinterestData.titleTH:shopinterestData.titleEN}}<span class="danger">*</span></ion-label>
+      <ion-select [(ngModel)]="shopinterestPost" multiple="true" cancelText="NO" okText="YES" (ionChange)="checkData()">
+        <ion-option *ngFor="let item of shopinterestData.items" value="{{item.shopinterest}}" selected="false">{{item.shopinterest}}</ion-option>
       </ion-select>
     </ion-item>
   </ion-list>

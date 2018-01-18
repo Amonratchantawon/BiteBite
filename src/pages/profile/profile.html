@@ -4,19 +4,22 @@
   See http://ionicframework.com/docs/components/#navigation for more info on
   Ionic pages and navigation.
 -->
-<ion-header>
+<ion-header no-border>
 
   <ion-navbar color="bite">
     <ion-title>{{ 'PROFILE' | translate}}</ion-title>
+    <ion-buttons right>
+      <button ion-button icon-only (click)="ProfileEditPage()">
+        <ion-icon name="ios-brush"></ion-icon>
+      </button>
+    </ion-buttons>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
-
-
-
+  <!-- <progress class="progress" max="100" value="99"></progress> -->
   <ion-grid>
     <ion-row>
       <ion-col col-3>
@@ -28,13 +31,135 @@
         </button> -->
       </ion-col>
     </ion-row>
-    <ion-row *ngIf="user.coin">
+    <!-- <ion-row *ngIf="user.coin">
       <ion-col text-center>
         <h2 class="text-coin">{{ 'YOU_HAVE' | translate}} {{user.coin}} {{ 'COINS' | translate}}</h2>
       </ion-col>
+    </ion-row> -->
+    <ion-row>
+      <ion-col class="text-name" text-center>
+        <div class="display">
+          <h4>{{user.displayName}}</h4>
+        </div>
+        <span class="text-rank">(Rank : 1)</span>
+      </ion-col>
+    </ion-row>
+    <!-- <ion-row>
+      <ion-col col-6 text-left>
+        <ion-list>
+          <ion-item class="item-content">
+            <ion-icon class="text-icon" name="ios-happy-outline" item-start></ion-icon>
+            <progress class="progress" max="100" value="10"></progress>
+          </ion-item>
+        </ion-list>
+      </ion-col>
+      <ion-col col-6 text-left>
+        <ion-list>
+          <ion-item class="item-content">
+            <ion-icon class="text-icon" name="help-buoy" item-start></ion-icon>
+            <span class="text-coin">100</span>
+          </ion-item>
+        </ion-list>
+      </ion-col>
+    </ion-row> -->
+    <ion-row>
+      <ion-col col-1 text-left>
+        <ion-icon class="text-icon" name="ios-happy-outline" item-start></ion-icon>
+      </ion-col>
+      <ion-col col-5 text-left>
+        <div class="justify-content">
+          <progress class="progress" max="100" value="90"></progress>
+        </div>
+      </ion-col>
+      <ion-col col-1 text-left>
+        <ion-icon class="text-icon" name="help-buoy" item-start></ion-icon>
+      </ion-col>
+      <ion-col col-5 text-left>
+        <div class="justify-content">
+          <span class="text-coin">50000</span>
+        </div>
+      </ion-col>
     </ion-row>
   </ion-grid>
-  <ion-list class="user-data-content">
+
+  <ion-segment [(ngModel)]="segment" color="light" (ionChange)="segmentChanged($event)">
+    <ion-segment-button value="collect">
+      My Collect
+    </ion-segment-button>
+    <ion-segment-button value="favorite">
+      My Favorite
+    </ion-segment-button>
+    <ion-segment-button value="history">
+      History
+    </ion-segment-button>
+  </ion-segment>
+
+  <div [ngSwitch]="segment" style="margin-top:5px;">
+    <ion-list *ngSwitchCase="'collect'">
+      <ion-item>
+        <ion-row>
+          <ion-col>
+            <ion-badge>99</ion-badge>
+            <img src="./assets/imgs/profile/vehicle1.png" width="60">
+          </ion-col>
+          <ion-col>
+            <ion-badge>99</ion-badge>
+            <img src="./assets/imgs/profile/vehicle2.png" width="60">
+          </ion-col>
+          <ion-col>
+            <ion-badge>99</ion-badge>
+            <img src="./assets/imgs/profile/vehicle3.png" width="60">
+          </ion-col>
+        </ion-row>
+      </ion-item>
+
+      <ion-list class="list-item">
+        <ion-item *ngFor="let profile of makeProfile">
+          <ion-row>
+            <ion-col class="avatar-middle" col-2>
+              <div>
+                <ion-icon name="ios-flag"></ion-icon>
+                {{profile.rank}}
+              </div>
+            </ion-col>
+            <ion-col col-2>
+              <ion-avatar>
+                <img src="{{profile.image}}">
+              </ion-avatar>
+            </ion-col>
+            <ion-col col-5>
+              <div class="display">
+                {{profile.name}}
+              </div>
+            </ion-col>
+            <ion-col col-3>
+              <div>
+                <ion-icon name="help-buoy"></ion-icon>
+                {{profile.coin}}
+              </div>
+            </ion-col>
+          </ion-row>
+
+        </ion-item>
+      </ion-list>
+    </ion-list>
+
+    <ion-list *ngSwitchCase="'favorite'">
+      <ion-item>
+        <ion-thumbnail item-start>
+          <img src="img/thumbnail-kitten-1.jpg">
+        </ion-thumbnail>
+        <h2>My Favorite</h2>
+      </ion-item>
+    </ion-list>
+
+    <ion-list *ngSwitchCase="'history'">
+      <ion-item>
+        <h1>History</h1>
+      </ion-item>
+    </ion-list>
+  </div>
+  <!-- <ion-list class="user-data-content">
     <ion-list-header>
       <p>{{ 'PROFILE' | translate}}</p>
     </ion-list-header>
@@ -58,12 +183,13 @@
       <ion-label stacked>{{ 'BIRTHDAY' | translate}}</ion-label>
       <ion-datetime [disabled]="true" displayFormat="DD MMMM YYYY" [(ngModel)]="user.dateOfBirth"></ion-datetime>
     </ion-item>
-  </ion-list>
+  </ion-list> -->
+
   <!-- <ion-list>
     <button ion-item item-start (click)="onToAddress()">
       <ion-icon name="pin" item-start color="#503f3f"></ion-icon>
       {{ 'ADDRESS' | translate}}
     </button>
   </ion-list> -->
-  <button ion-button block (click)="ProfileEditPage()">ProfileEditPage</button>
+
 </ion-content>
