@@ -46,6 +46,10 @@ page-profile {
         align-items: center;
         display: inline-flex;
     }
+    .display-grid {
+        align-items: center;
+        display: grid;
+    }
     .list-item {
         margin-top: 3px;
     } // .avatar-middle {
@@ -71,56 +75,58 @@ page-profile {
     } // .progress{
     //     width:115px;
     // }
-}
-
-ion-badge {
-    position: absolute;
-    bottom: 1.5rem;
-    right: 30px;
-    opacity: 0.9;
-}
-
-progress {
-    width: 130px;
-    /* 	height: 14px; */
-    /* 	margin: 50px auto; */
-    display: block;
-    /* Important Thing */
-    -webkit-appearance: none;
-    border: none;
-}
 
 
-/* All good till now. Now we'll style the background */
-
-progress::-webkit-progress-bar {
-    background: black;
-    border-radius: 50px;
-    padding: 2px;
-    box-shadow: 0 1px 0px 0 rgba(255, 255, 255, 0.2);
-}
-
-
-/* Now the value part */
-
-progress::-webkit-progress-value {
-    border-radius: 50px;
-    box-shadow: inset 0 1px 1px 0 #ffffff; // box-shadow: inset 0 1px 1px 0 rgba(255, 255, 255, 0.4);
-    background: -webkit-linear-gradient(45deg, transparent, transparent 33%, rgba(255, 255, 255, 0.25) 33%, rgba(255, 255, 255, 0.25) 66%, transparent 66%), // -webkit-linear-gradient(top, rgba(255, 255, 255, 0.25), rgba(0, 0, 0, 0.2)),
-    -webkit-linear-gradient(top, rgba(255, 255, 255, 0.25), rgba(0, 0, 0, 0.2)), -webkit-linear-gradient(left, #488aff, #2776ff);
-    /* Looks great, now animating it */
-    background-size: 25px 14px, 100% 100%, 100% 100%;
-    -webkit-animation: move 5s linear 0 infinite;
-}
-
-
-/* That's it! Now let's try creating a new stripe pattern and animate it using animation and keyframes properties  */
-
-@-webkit-keyframes move {
-    0% {
-        background-position: 0px 0px, 0 0, 0 0
+    ion-badge {
+        position: absolute;
+        bottom: 1.5rem;
+        right: 30px;
+        opacity: 0.9;
     }
-    100% {
-        background-position: -100px 0px, 0 0, 0 0
+    
+    progress {
+        width: 90%;
+        /* 	height: 14px; */
+        /* 	margin: 50px auto; */
+        display: block;
+        /* Important Thing */
+        -webkit-appearance: none;
+        border: none;
+    }
+    
+    
+    /* All good till now. Now we'll style the background */
+    
+    progress::-webkit-progress-bar {
+        background: black;
+        border-radius: 50px;
+        padding: 2px;
+        box-shadow: 0 1px 0px 0 rgba(255, 255, 255, 0.2);
+    }
+    
+    
+    /* Now the value part */
+    
+    progress::-webkit-progress-value {
+        border-radius: 50px;
+        box-shadow: inset 0 1px 1px 0 #ffffff; // box-shadow: inset 0 1px 1px 0 rgba(255, 255, 255, 0.4);
+        background: -webkit-linear-gradient(45deg, transparent, transparent 33%, rgba(255, 255, 255, 0.25) 33%, rgba(255, 255, 255, 0.25) 66%, transparent 66%), // -webkit-linear-gradient(top, rgba(255, 255, 255, 0.25), rgba(0, 0, 0, 0.2)),
+        -webkit-linear-gradient(top, rgba(255, 255, 255, 0.25), rgba(0, 0, 0, 0.2)), -webkit-linear-gradient(left, #488aff, #2776ff);
+        /* Looks great, now animating it */
+        background-size: 25px 14px, 100% 100%, 100% 100%;
+        -webkit-animation: move 5s linear 0 infinite;
+    }
+    
+    
+    /* That's it! Now let's try creating a new stripe pattern and animate it using animation and keyframes properties  */
+    
+    @-webkit-keyframes move {
+        0% {
+            background-position: 0px 0px, 0 0, 0 0
+        }
+        100% {
+            background-position: -100px 0px, 0 0, 0 0
+        }
     }
 }
+
