@@ -12,4 +12,9 @@ export class UserModel {
     profileImageURL: string
     coin: number;
     notificationids: Array<string>;
+    address: string;
+    subdistrict: string;
+    district: string;    
+    province: string;
+    postcode: number;
 }

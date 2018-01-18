@@ -33,6 +33,7 @@ import { ProductdetailProvider } from '../providers/productdetail/productdetail'
 import { CartProvider } from '../providers/cart/cart';
 import { RewardProvider } from '../providers/reward/reward';
 import { QuestionanswerProvider } from '../providers/questionanswer/questionanswer';
+import { ContactbitebiteProvider } from '../providers/contactbitebite/contactbitebite';
 
 
 @NgModule({
@@ -91,6 +92,7 @@ import { QuestionanswerProvider } from '../providers/questionanswer/questionansw
     CartProvider,
     RewardProvider,
     QuestionanswerProvider,
+    ContactbitebiteProvider,
   ]
 })
 export class AppModule { }
