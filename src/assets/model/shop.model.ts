@@ -1,3 +1,5 @@
+import { ItemCategoriyModel } from "./category-master.model";
+
 
 export class ItemShopModel {
     _id: string;

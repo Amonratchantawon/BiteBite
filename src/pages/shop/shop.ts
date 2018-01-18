@@ -16,9 +16,8 @@ export class ShopPage {
 
   shopData: ShopModel = new ShopModel();
   isO: string;
-  category: any = 0;
-  index: number = 0;
-  selectedCateId = '';
+  index: number = 1;
+  selectedCateId: string;
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
@@ -34,16 +33,13 @@ export class ShopPage {
     this.getShop();
   }
 
-  onSelectedConditionCate(index) { // selected category
-    this.category = index;
-  }
-
   getShop() {
     let _id = this.navParams.data;
     console.log(_id);
     this.loading.onLoading();
     this.shop.getShopDetail().then((res) => {
       this.shopData = res;
+      this.selectedCateId = this.shopData.categories[0]._id;
       this.checkOpenShop();
       this.loading.dismiss();
     }, (err) => {
@@ -86,12 +82,17 @@ export class ShopPage {
     this.selectedCateId = cate ? cate._id : '';
   }
 
-  selectProduct(){
-    let modal1 = this.modalCtrl.create('ProductDetailPage');
+  selectProduct(e) {
+    console.log(e);
+    let modal1 = this.modalCtrl.create('ProductDetailPage', e);
     modal1.present();
   }
 
-  addCart(){
+  goToCart() {
     this.navCtrl.push('CartPage');
+  }
+
+  seeAllProduct() {
+    this.navCtrl.push('ProductListPage');
   }
 }

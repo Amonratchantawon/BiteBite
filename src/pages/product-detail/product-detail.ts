@@ -1,14 +1,8 @@
 import { ProductDetailModel } from '../../assets/model/product-detail.model';
-import { ProductdetailProvider } from '../../providers/productdetail/productdetail';
+import { ProductProvider } from '../../providers/product/product';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ViewController } from 'ionic-angular';
-
-/**
- * Generated class for the ProductDetailPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import { LoadingProvider } from '../../providers/loading/loading';
 
 @IonicPage()
 @Component({
@@ -21,7 +15,13 @@ export class ProductDetailPage {
   numberCount: number = 1;
   amount: number = 0;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public productdetailProvider: ProductdetailProvider,public viewCtrl:ViewController) {
+  constructor(
+    public navCtrl: NavController,
+    public navParams: NavParams,
+    private productProvider: ProductProvider,
+    private viewCtrl: ViewController,
+    private loading: LoadingProvider
+  ) {
   }
 
   ionViewDidLoad() {
@@ -30,12 +30,13 @@ export class ProductDetailPage {
   }
 
   getProductDetail() {
-    this.productdetailProvider.getProductDetail().then((res) => {
-      console.log(res);
+    this.loading.onLoading();
+    this.productProvider.getProductDetail().then((res) => {
       this.productData = res;
       this.countPrice();
+      this.loading.dismiss();      
     }, (err) => {
-      // this.loading.dismiss();
+      this.loading.dismiss();
     });
   }
 
@@ -54,11 +55,11 @@ export class ProductDetailPage {
   countPrice() {
     this.amount = this.productData.price * this.numberCount;
   }
-  close(){
+  close() {
     this.viewCtrl.dismiss();
   }
 
-  addToCartSusses(){
+  addToCartSusses() {
     this.viewCtrl.dismiss();
   }
 }

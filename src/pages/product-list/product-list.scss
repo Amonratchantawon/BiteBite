@@ -1,0 +1,19 @@
+page-product-list {
+    // .icon-status{
+    //     position: absolute !important;
+    //     right: 10px !important;
+    //     bottom: 16px !important;
+    // }
+    .icon-cart {
+        left: -10px !important;
+    }
+    .icon-cart.icon-md {
+        // position: absolute !important;
+        left: -36px !important;
+    }
+    .badge-count {
+        position: absolute;
+        right: -3px;
+        top: -3px;
+    }
+}

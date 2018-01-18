@@ -10,13 +10,20 @@ import 'rxjs/add/operator/toPromise';
   and Angular DI.
 */
 @Injectable()
-export class ProductdetailProvider {
+export class ProductProvider {
 
   getProductDetail(): Promise<ProductDetailModel> {
     // return this.http.get(this.API_URL + '/api/customer/home')
     return this.http.get('./assets/json/productDetail.json')
       .toPromise()
       .then(response => response as ProductDetailModel)
+      .catch(this.handleError);
+  }
+
+  getProductsByShop(): Promise<Array<ProductDetailModel>> {
+    return this.http.get('./assets/json/product-list.json')
+      .toPromise()
+      .then(response => response as Array<ProductDetailModel>)
       .catch(this.handleError);
   }
 

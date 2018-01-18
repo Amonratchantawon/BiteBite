@@ -1,3 +1,4 @@
+import { AuthProvider } from '../auth/auth';
 import { Constants } from '../../app/app.constants';
 import { ShopInterestModel } from '../../assets/model/shopinterest.model';
 import { HttpClient } from '@angular/common/http';
@@ -13,14 +14,22 @@ import 'rxjs/add/operator/toPromise';
 @Injectable()
 export class ShopinterestProvider {
   API_URL: string = Constants.URL;
-  constructor(public http: HttpClient) {
+  constructor(public http: HttpClient, public auth: AuthProvider) {
     console.log('Hello ShopinterestProvider Provider');
   }
 
   getShopInterest(): Promise<ShopInterestModel> {
-    return this.http.get(this.API_URL+'/api/shopinterests')
+    return this.http.get(this.API_URL + '/api/shopinterests')
       .toPromise()
       .then(response => response as ShopInterestModel)
+      .catch(this.handleError);
+  }
+
+  postUserinter(userinterest): Promise<any> {
+    let header = this.auth.setHeader();
+    return this.http.post(this.API_URL + '/api/userinterests', userinterest, { headers: header })
+      .toPromise()
+      .then(response => response as any)
       .catch(this.handleError);
   }
 
