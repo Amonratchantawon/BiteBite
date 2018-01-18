@@ -24,7 +24,7 @@ export class CreateReviewPage {
   @ViewChild('myInput') myInput: ElementRef;
   review: any = {};
   maxLengthTitle: number = 30;
-  maxLengthDetail: number = 150;
+  maxLengthDetail: number = 100;
   user: UserModel = new UserModel();
   constructor(
     public navCtrl: NavController,
@@ -41,6 +41,14 @@ export class CreateReviewPage {
 
   ionViewWillEnter() {
     this.user = JSON.parse(window.localStorage.getItem('user@' + Constants.URL));
+  }
+
+  maxLength(data, length) {
+    if (data.length > length) {
+      setTimeout(() => {
+        data = data.substring(0, length);
+      }, 0);
+    }
   }
 
   createRevirw() {

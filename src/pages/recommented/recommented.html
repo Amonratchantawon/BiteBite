@@ -8,23 +8,16 @@
       </button>
     </ion-buttons>
     <ion-title>{{ 'REVIEW' | translate}}</ion-title>
-    <ion-buttons end>
-      <button ion-button icon-only clear end (click)="findShopReview()">
-        <ion-icon name="camera"></ion-icon>
-      </button>
-    </ion-buttons>
   </ion-navbar>
 </ion-header>
 
-
-  
 <ion-content #content>
   <ion-refresher (ionRefresh)="doRefresh($event)">
     <ion-refresher-content pullingIcon="arrow-down" pullingText="{{ 'PULL_TO_REFRESH' | translate }}" refreshingSpinner="dots"
       refreshingText="{{ 'REFRESHING' | translate }}"></ion-refresher-content>
   </ion-refresher>
 
-  <search-input ></search-input>
+  <search-input></search-input>
 
   <ion-card *ngFor="let item of dataReview; let i = index;">
 
@@ -65,8 +58,17 @@
     </ion-row>
 
   </ion-card>
+
+  <ion-fab bottom right>
+    <!-- <button ion-fab (click)="findShopReview()"> -->
+    <button ion-fab (click)="goReview()">
+      <ion-icon name="add"></ion-icon>
+    </button>
+  </ion-fab>
+
   <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
     <ion-infinite-scroll-content loadingSpinner="crescent" loadingText="{{ 'LOAD_MORE' | translate }}">
     </ion-infinite-scroll-content>
   </ion-infinite-scroll>
+
 </ion-content>
