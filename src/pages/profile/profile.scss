@@ -4,7 +4,7 @@ page-profile {
     }
     .scroll-content {
         padding: 0px 0px 0px 0px !important;
-        background-color: #f4f4f4;
+        background-color: $bite-color;
     }
     .size-btn {
         font-size: 1.9rem !important;
@@ -17,10 +17,40 @@ page-profile {
         position: absolute;
         right: 10px;
         top: 10px;
-    }
+    } // 
     .text-coin {
-        color: #eb3841;
+        // color: #eb3841;
+        color: #ffffff;
+        font-size: large;
     }
+    .text-icon {
+        color: #ffffff;
+        font-size: xx-large;
+    }
+    .item-content {
+        background-color: $bite-color;
+    }
+    .justify-content {
+        height: 2em;
+        display: flex;
+        align-items: center;
+    }
+    .text-name {
+        color: #ffffff;
+    }
+    .text-rank {
+        font-size: 12px;
+    }
+    .display {
+        display: inline-block;
+    }
+    .list-item {
+        margin-top: 3px;
+    }
+    .avatar-middle {
+        display: inline-block;
+        vertical-align: middle;
+    } // 
     .item {
         color: #607D8B !important;
     }
@@ -33,5 +63,15 @@ page-profile {
     .datetime-disabled,
     .item-datetime-disabled ion-label {
         opacity: 0.8;
+    } // .segment-md-light .segment-button
+    .segment-button {
+        font-size: medium !important;
     }
+}
+
+ion-badge {
+    position: absolute;
+    bottom: 1.5rem;
+    right: 30px;
+    opacity: 0.9;
 }

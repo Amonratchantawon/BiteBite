@@ -18,10 +18,11 @@ import { UserModel } from '../../assets/model/user.model';
 export class ProfilePage {
 
   user: UserModel = new UserModel();
-  displayName = "อมรรัตน์ จันทะวร";
+  // displayName = "อมรรัตน์ จันทะวร";
   isenabled: boolean = true;
   Edit = "create";
-
+  segment: String = 'collect';
+  makeProfile: Array<any> = [];
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams
@@ -33,6 +34,43 @@ export class ProfilePage {
     if (this.user && this.user.gender) {
       this.user.gender = this.user.gender.toUpperCase();
     }
+    this.makeProfile = [{
+      rank: 1,
+      name: this.user.displayName,
+      image: this.user.profileImageURL,
+      coin: 50000
+    },
+    {
+      rank: 2,
+      name: this.user.displayName,
+      image: this.user.profileImageURL,
+      coin: 50000
+    },
+    {
+      rank: 3,
+      name: this.user.displayName,
+      image: this.user.profileImageURL,
+      coin: 50000
+    },
+    {
+      rank: 4,
+      name: this.user.displayName,
+      image: this.user.profileImageURL,
+      coin: 50000
+    },
+    {
+      rank: 5,
+      name: this.user.displayName,
+      image: this.user.profileImageURL,
+      coin: 50000
+    }];
+  }
+
+  editProfile() {
+    alert('Edit');
+  }
+  segmentChanged(e) {
+    // alert(JSON.stringify(this.segment));
   }
 
   onToAddress() {
