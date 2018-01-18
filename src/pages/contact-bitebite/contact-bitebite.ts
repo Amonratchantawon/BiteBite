@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { ContactbitebiteProvider } from '../../providers/contactbitebite/contactbitebite';
 import { titleModel, contactModel } from '../../assets/model/contactbitebite.model';
+import { LoadingProvider } from '../../providers/loading/loading';
 
 /**
  * Generated class for the ContactBitebitePage page.
@@ -23,7 +24,8 @@ export class ContactBitebitePage {
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
-    public contactService: ContactbitebiteProvider
+    public contactService: ContactbitebiteProvider,
+    private loading: LoadingProvider,
   ) {
   }
 
@@ -32,13 +34,16 @@ export class ContactBitebitePage {
     this.getChoices();
   }
   getChoices() {
+    this.loading.onLoading();
     this.contactService.getContactChoices().then((data) => {
       this.choices = data;
       if (data && data.length > 0) {
         this.selectChoices = data[0]._id
       }
       console.log(data);
+      this.loading.dismiss();
     }, (err) => {
+      this.loading.dismiss();
       console.log(err);
     });
   }
@@ -46,15 +51,18 @@ export class ContactBitebitePage {
   sentContact() {
     let type = '';
     this.choices.forEach((data) => {
-      if(data._id === this.selectChoices){
+      if (data._id === this.selectChoices) {
         type = data.name;
       }
     });
     this.contact.title = this.selectChoices;
+    this.loading.onLoading();    
     this.contactService.createContactBiteBite(this.contact).then((data) => {
-      alert(type+ ' ของคุณถูกส่งเรียบร้อยแล้ว.');
+      this.loading.dismiss();      
+      alert(type + ' ของคุณถูกส่งเรียบร้อยแล้ว.');
       this.navCtrl.pop();
     }, (err) => {
+      this.loading.dismiss();      
       console.log(err);
     });
   }

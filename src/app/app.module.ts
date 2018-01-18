@@ -34,6 +34,8 @@ import { CartProvider } from '../providers/cart/cart';
 import { RewardProvider } from '../providers/reward/reward';
 import { QuestionanswerProvider } from '../providers/questionanswer/questionanswer';
 import { ContactbitebiteProvider } from '../providers/contactbitebite/contactbitebite';
+import { ShopinterestProvider } from '../providers/shopinterest/shopinterest';
+import { PromotioninterestProvider } from '../providers/promotioninterest/promotioninterest';
 
 
 @NgModule({
@@ -93,6 +95,8 @@ import { ContactbitebiteProvider } from '../providers/contactbitebite/contactbit
     RewardProvider,
     QuestionanswerProvider,
     ContactbitebiteProvider,
+    ShopinterestProvider,
+    PromotioninterestProvider,
   ]
 })
 export class AppModule { }

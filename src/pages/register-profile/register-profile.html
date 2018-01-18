@@ -49,7 +49,7 @@
             <span class="danger">*</span>
           </ion-label>
           <!-- provider === 'fb' -->
-          <ion-input type="email" [(ngModel)]="user.email" [disabled]="isDisabled" ></ion-input>
+          <ion-input type="email" [(ngModel)]="user.email" [disabled]="isDisabled"></ion-input>
         </ion-item>
         <ion-item>
           <ion-label floating>{{ 'TEL' | translate}}
@@ -70,15 +70,33 @@
             <ion-option value="male">{{ 'MALE' | translate}}</ion-option>
           </ion-select>
         </ion-item>
-        <p padding-top padding-left>{{ 'BIRTHDAY' | translate}}</p>
+        <p padding-top padding-left>{{ 'BIRTHDAY' | translate}}
+            <span class="danger">*</span>
+        </p>
         <ion-datetime placeholder="{{ 'BIRTHDAY_SELECTED' | translate}}" displayFormat="DD/MM/YYYY" [(ngModel)]="birthday"></ion-datetime>
       </ion-list>
     </ion-col>
   </ion-row>
+  <ion-list>
+    <ion-item>
+      <ion-label>{{ language === 'th' ? promotioninterestData.titleTH:promotioninterestData.titleEN}} <span class="danger">*</span></ion-label>
+      <ion-select [(ngModel)]="promotioninterestPost" multiple="true"  cancelText="NO" okText="YES" (ionChange)="checkData()">
+        <ion-option *ngFor="let item of promotioninterestData.items" value="{{item.promotioninterest}}" selected="false">{{item.promotioninterest}}</ion-option>
+      </ion-select>
+    </ion-item>
+  </ion-list>
+  <ion-list>
+    <ion-item>
+      <ion-label>{{ language === 'th' ? shopinterestData.titleTH:shopinterestData.titleEN}}<span class="danger">*</span></ion-label>
+      <ion-select [(ngModel)]="shopinterestPost" multiple="true" cancelText="NO" okText="YES" (ionChange)="checkData()">
+        <ion-option *ngFor="let item of shopinterestData.items" value="{{item.shopinterest}}" selected="false">{{item.shopinterest}}</ion-option>
+      </ion-select>
+    </ion-item>
+  </ion-list>
 </ion-content>
 
 <ion-footer class="footer-agreement">
   <ion-toolbar>
-    <button ion-button no-shadow block color="bite" (click)="onRegister()" [disabled]="!birthday || birthday === '' ||!user.gender || user.gender === '' || !user.firstName || user.firstName === '' || !user.lastName || user.lastName === ''|| !user.email || user.email === ''|| !user.mobile || user.mobile === ''">{{ 'REGISTER' | translate}}</button>
+    <button ion-button no-shadow block color="bite" (click)="onRegister()" [disabled]="!promotioninterest || promotioninterest.length === 0 || !shopinterest || shopinterest.length === 0 || !birthday || birthday === '' ||!user.gender || user.gender === '' || !user.firstName || user.firstName === '' || !user.lastName || user.lastName === ''|| !user.email || user.email === ''|| !user.mobile || user.mobile === ''">{{ 'REGISTER' | translate}}</button>
   </ion-toolbar>
 </ion-footer>
