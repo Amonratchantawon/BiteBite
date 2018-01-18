@@ -1,0 +1,26 @@
+<ion-header>
+
+  <ion-navbar color="bite">
+    <ion-title>{{ 'DAILY_GAME' | translate}}</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only clear end (click)="onDismiss()" *ngIf="success">
+        <ion-icon name="close"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <ion-row class="row-gift-image">
+    <ion-col col-12 text-center>
+      <preload-image class="gift-image" [ratio]="{w:1, h:1}" [src]="gifImage"></preload-image>
+    </ion-col>
+  </ion-row>
+</ion-content>
+<ion-footer class="footer-gift">
+  <ion-toolbar>
+    <button ion-button block color="bite" (click)="getGift()" [disabled]="success"> {{ 'PLAY' | translate }} </button>
+  </ion-toolbar>
+</ion-footer>

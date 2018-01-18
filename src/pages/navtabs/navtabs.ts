@@ -1,8 +1,8 @@
 import { Component, ViewChild } from '@angular/core';
 import { IonicPage, NavController, Tabs, Platform, ToastController } from 'ionic-angular';
 import { TranslateService } from '@ngx-translate/core';
-// import { AuthProvider } from '../../providers/auth/auth';
-// import { Constants } from '../../app/app.constants';
+import { AuthProvider } from '../../providers/auth/auth';
+import { Constants } from '../../app/app.constants';
 
 /**
  * Generated class for the NavtabsPage tabs.
@@ -32,7 +32,7 @@ export class NavtabsPage {
     private platform: Platform,
     private toastCtrl: ToastController,
     private translate: TranslateService,
-    // private auth: AuthProvider
+    private auth: AuthProvider
   ) {
     platform.ready().then(() => {
       //back button handle
@@ -85,9 +85,9 @@ export class NavtabsPage {
       window.localStorage.setItem('current_page_for_login', 'MorePage');
       this.color = '#EB3841';
     }
-    // let user = JSON.parse(window.localStorage.getItem('user@' + Constants.URL));
-    // if (user) {
-    //   this.auth.getDailyWelcome();
-    // }
+    let user = JSON.parse(window.localStorage.getItem('user@' + Constants.URL));
+    if (user) {
+      this.auth.getDailyWelcome();
+    }
   }
 }
