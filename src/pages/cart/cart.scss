@@ -2,6 +2,9 @@ page-cart {
     .content {
         background-color: #f4f4f4;
     }
+    .scroll-content{
+        overflow: auto;
+    }
     .count-radias {
         height: 32px;
         width: 26px;
@@ -48,9 +51,11 @@ page-cart {
         margin-top: 14px;
     }
     .counter {
+        text-align: right;
         position: absolute;
-        right: 20px;
+        right: 24px;
         top: 44px;
-        z-index: 99;
+        width: 100%;
+        z-index: 999;
     }
 }

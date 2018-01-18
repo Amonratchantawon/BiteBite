@@ -14,15 +14,10 @@ page-profile-edit {
         margin-top: 10px;
     }
     .camera-btn {
-        font-size: 1.3rem;
-        top: 75%;
-        left: 63%;
-        position: absolute;
-        height: 19%;
-        width: 19%;
-        
-        
-        
+        width: 200px;
+        ion-icon {
+            padding-left: 0px !important;
+        }
     }
     .label-md[floating] {
         margin-top: 10px !important;
@@ -44,7 +39,7 @@ page-profile-edit {
             display: none !important;
         }
     }
-    .footer-agreement {
+    .footer-edit {
         .toolbar {
             min-height: 40px !important;
             max-height: 40px !important;

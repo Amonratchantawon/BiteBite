@@ -19,7 +19,7 @@
   <ion-list>
     <ion-item *ngFor="let item of cartData.items">
       <h2>{{item.product.name}}
-        <span class="price-name"> ({{item.product.price}}) {{ 'THB' | translate}}</span>
+        <span class="price-name"> ({{item.product.price}} {{ 'THB' | translate}}) </span>
       </h2>
       <ion-buttons class="icon-trash">
         <ion-icon ios="ios-trash" md="ios-trash"></ion-icon>

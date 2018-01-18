@@ -11,7 +11,8 @@
 
   <ion-slides pager>
     <ion-slide *ngFor="let item of productData.images">
-      <img src="{{item}}" alt="imgErr">
+      <!-- <img src="{{item}}" alt="imgErr"> -->
+      <preload-image [ratio]="{w:1, h:1}" [src]="item" title="ads"></preload-image>
     </ion-slide>
   </ion-slides>
   <h2 text-center>{{productData.name}}</h2>

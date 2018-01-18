@@ -30,12 +30,8 @@ export class ProfileEditPage {
   }
   ionViewDidLoad() {
     this.user = JSON.parse(window.localStorage.getItem('user@' + Constants.URL));
-    if (this.user && this.user.gender) {
-      this.user.gender = this.user.gender.toUpperCase();
-    }
-    console.log('ionViewDidLoad ProfileEditPage');
   }
-  backButton(){
+  updateProfile(){
     this.navCtrl.push('ProfilePage');
   }
 

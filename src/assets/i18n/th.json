@@ -12,7 +12,6 @@
   "PULL_TO_REFRESH": "ดึงเพื่อรีเฟรช",
   "REFRESHING": "กำลังรีเฟรช...",
   "RESTAURANT": "ร้านอาหาร",
-
   "REVIEW": "รีวิว",
   "WRITE_REVIEW": "เขียนรีวิว",
   "WRITE_FIND_SHOP_REVIEW": "แนะนำร้าน",
@@ -21,9 +20,7 @@
   "WRITE_A_CAPTION": "สิ่งที่คุณประทับใจ",
   "REVIEW_ERROR_NAME": "*มีร้านอาหารนี้อยู่ในระบบแล้ว",
   "REWARD": "รางวัล",
-
   "STATUS": "สถานะ",
-
   "MORE": "อื่นๆ",
   "SERVICE_CHARGE": "ค่าบริการ",
   "QUESTIONS_&_ANSWERS": "คำถามที่พบบ่อย",
@@ -31,7 +28,6 @@
   "SETTINGS": "ตั้งค่า",
   "JOIN_WITH_BITEBITE": "ร่วมงานกับ BiteBite",
   "LOGOUT": "ออกจากระบบ",
-
   "SETTING_DETAIL": "การตั้งค่า",
   "LANGUAGE": "ภาษา",
   "ENGLISH": "อังกฤษ",
@@ -47,9 +43,9 @@
   "REGISTER": "ลงทะเบียน",
   "REGISTER_ACCOUNT": "บัญชีผู้ใช้",
   "REGISTER_PROFILE": "ข้อมูลส่วนตัว",
-
   "CHANGE_PROFILE": "เปลี่ยนรูปโปรไฟล์",
   "PROFILE": "ข้อมูลส่วนตัว",
+  "EDIT_PROFILE": "แก้ไขข้อมูลโปรไฟล์",
   "DISPLAY_NAME": "ชื่อ-สกุล",
   "FIRST_NAME": "ชื่อ",
   "LAST_NAME": "สกุล",
@@ -61,7 +57,6 @@
   "TEL": "เบอร์โทร",
   "CITIZEN_ID": "หมายเลขบัตรประชาชน",
   "ADDRESS": "ที่อยู่ของฉัน",
-
   "YOU_HAVE": "คุณมี",
   "COIN": "เหรียญ",
   "SAVE": "บันทึก",
@@ -75,7 +70,6 @@
   "AGREEMENT": "ข้อตกลง",
   "PRIVACY_POLICY": "นโยบาย",
   "TERMS_CONDITIONS": "ข้อตกลงและเงื่อนไข",
-
   "MONTH": "เดือน",
   "JANUARY": "มกราคม",
   "FEBRUARY": "กุมภาพันธ์",
@@ -89,14 +83,12 @@
   "OCTOBER": "ตุลาคม",
   "NOVEMBER": "พฤศจิกายน",
   "DECEMBER": "ธันวาคม",
-
   "OPEN": "เปิด",
   "CLOSE": "ปิด",
   "PRODUCT_CATEGORY": "ประเภทอาหาร",
   "PRODUCT_CATEGORY_ALL": "เมนูทั้งหมด",
   "THB": "บาท",
   "LOAD_MORE": "กำลังโหลดข้อมูล...",
-
   "DAILY_GAME": "เกมประจำวัน",
   "PLAY": "เล่นเลย",
   "PRODUCT_LIST": "รายการสินค้า",
@@ -104,6 +96,9 @@
   "ADD_TO_CART": "เพิ่มสินค้าลงตะกร้า",
   "ADD_MORE": "เพิ่มรายการ",
   "CART": "ตะกร้าสินค้า",
-  "CHECK_OUT": "สั่งซื้อสินค้า"  
-
+  "CHECK_OUT": "สั่งซื้อสินค้า",
+  "SUBDISTRICT": "ตำบล/แขวง",
+  "DISTRICT": "อำเภอ/เขต",
+  "PROVINCE": "จังหวัด",
+  "POSTCODE": "รหัสไปรษณีย์"
 }
