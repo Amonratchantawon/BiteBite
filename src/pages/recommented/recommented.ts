@@ -1,5 +1,12 @@
 import { Component, ViewChild } from '@angular/core';
 import { IonicPage, App, NavController, Content, ActionSheetController, Platform, AlertController } from 'ionic-angular';
+import * as firebase from 'firebase';
+import moment from 'moment';
+import { TranslateService } from '@ngx-translate/core';
+import { ImagePicker } from '@ionic-native/image-picker';
+import { Crop } from '@ionic-native/crop';
+import { Camera, CameraOptions } from '@ionic-native/camera';
+
 import { ReviewModel } from '../../assets/model/review.model';
 import { ReviewProvider } from '../../providers/review/review';
 import { AuthProvider } from '../../providers/auth/auth';
@@ -7,11 +14,6 @@ import { UserModel } from '../../assets/model/user.model';
 import { LoadingProvider } from '../../providers/loading/loading';
 import { Constants } from '../../app/app.constants';
 
-import moment from 'moment';
-import { TranslateService } from '@ngx-translate/core';
-import { ImagePicker } from '@ionic-native/image-picker';
-import { Crop } from '@ionic-native/crop';
-import { Camera, CameraOptions } from '@ionic-native/camera';
 @IonicPage()
 @Component({
   selector: 'page-recommented',
@@ -199,6 +201,7 @@ export class RecommentedPage {
         }
         this.resizeImage(fileUri).then((resizeImageData) => {
           this.app.getRootNav().push('CreateReviewPage', { image: resizeImageData });
+          // alert('ss');
         }, (resizeImageError) => {
 
           let alert = this.alertCtrl.create({

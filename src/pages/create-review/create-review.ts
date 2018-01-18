@@ -24,7 +24,7 @@ export class CreateReviewPage {
   @ViewChild('myInput') myInput: ElementRef;
   review: any = {};
   maxLengthTitle: number = 30;
-  maxLengthDetail: number = 100;
+  maxLengthDetail: number = 90;
   user: UserModel = new UserModel();
   constructor(
     public navCtrl: NavController,
@@ -35,7 +35,7 @@ export class CreateReviewPage {
     private translate: TranslateService
   ) {
     this.review.image = this.navParams.get('image');
-    this.review.title = this.navParams.get('title');
+    this.review.title = '';
     this.review.description = '';
   }
 
@@ -43,10 +43,18 @@ export class CreateReviewPage {
     this.user = JSON.parse(window.localStorage.getItem('user@' + Constants.URL));
   }
 
-  maxLength(data, length) {
-    if (data.length > length) {
+  maxLengthTit() {
+    if (this.review.title.length > this.maxLengthTitle) {
       setTimeout(() => {
-        data = data.substring(0, length);
+        this.review.title = this.review.title.substring(0, this.maxLengthTitle);
+      }, 0);
+    }
+  }
+
+  maxLengthDesc() {
+    if (this.review.description.length > this.maxLengthDetail) {
+      setTimeout(() => {
+        this.review.description = this.review.description.substring(0, this.maxLengthDetail);
       }, 0);
     }
   }

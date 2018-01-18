@@ -34,22 +34,22 @@
           <p *ngIf="review.title.length > 0">{{ 'RESTAURANT_NAME' | translate}}</p>
         </ion-col>
         <ion-col col-6 text-right no-padding>
-          <p>{{maxLengthTitle > title.length ? title.length : maxLengthTitle}}/{{maxLengthTitle}}</p>
+          <p>{{maxLengthTitle > review.title.length ? review.title.length : maxLengthTitle}}/{{maxLengthTitle}}</p>
         </ion-col>
       </ion-row>
       <textarea class="write-review-title" [(ngModel)]="review.title" rows="1" placeholder="{{ 'RESTAURANT_NAME' | translate}}"
-        (input)="maxLength(review.title,maxLengthTitle)"></textarea>
+        (input)="maxLengthTit()"></textarea>
       <hr>
       <ion-row>
         <ion-col col-6 text-left no-padding>
           <p *ngIf="review.description.length > 0">{{ 'WRITE_A_CAPTION' | translate}}</p>
         </ion-col>
         <ion-col col-6 text-right no-padding>
-          <p>{{maxLengthDetail > description.length ? description.length : maxLengthDetail}}/{{maxLengthDetail}}</p>
+          <p>{{maxLengthDetail > review.description.length ? review.description.length : maxLengthDetail}}/{{maxLengthDetail}}</p>
         </ion-col>
       </ion-row>
       <textarea class="write-review-detail" [(ngModel)]="review.description" rows="6" placeholder="{{ 'WRITE_A_CAPTION' | translate}}"
-        (input)="maxLength(review.description,maxLengthDetail)"></textarea>
+        (input)="maxLengthDesc()"></textarea>
     </ion-card-content>
 
   </ion-card>
