@@ -14,12 +14,18 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'contact-bitebite.html',
 })
 export class ContactBitebitePage {
-
+  isUpload: boolean = false;
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ContactBitebitePage');
   }
-
+  uploadImage() {
+    if (this.isUpload) {
+      this.isUpload = false;
+    } else {
+      this.isUpload = true;
+    }
+  }
 }
