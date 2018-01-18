@@ -4,13 +4,13 @@ page-profile {
     }
     .scroll-content {
         padding: 0px 0px 0px 0px !important;
-        background-color: $bite-color;
+        background-color: #ffffff;
     }
     .size-btn {
         font-size: 1.9rem !important;
         margin: 0px 0px 0px 10px !important
     }
-    img {
+    .image-radius {
         border-radius: 100%;
     }
     .camera-btn {
@@ -31,6 +31,18 @@ page-profile {
     .item-datetime-disabled ion-label {
         opacity: 0.8;
     } // .segment-md-light .segment-button
+    // $bite-color
+    .cate-seeall {
+        color: rgb(73, 67, 67);
+        font-family: 'Kanit', sans-serif; // margin-bottom: 40px;
+    }
+    .segment-md-light .segment-button.segment-activated {
+        background-color: #b3222f;
+        opacity: 1;
+    }
+    .bite-color{
+        background-color: $bite-color;
+    }
     .segment-button {
         font-size: medium !important;
     }  
@@ -70,7 +82,7 @@ page-profile {
     .webkit-center {
         text-align: -webkit-center;
     } // 
-    ion-badge {
+    .ion-badge-style {
         position: absolute;
         bottom: 1.5rem;
         // right: 30px;

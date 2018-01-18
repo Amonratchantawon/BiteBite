@@ -6,6 +6,15 @@ export class ItemShopModel {
     image: string;
 }
 
+export class ItemShopModelMock {
+    _id: string;
+    name: string
+    rating: number;
+    distance: number;
+    image: string;
+    isAds: boolean;
+}
+
 // ShopCenterModel
 
 export class ShopModel {
@@ -14,17 +23,17 @@ export class ShopModel {
     name: string;
     detail: string;
     isopen: boolean;
-    promoteimage:Array<Promoteimage>
-    address:AddressModel = new AddressModel(); 
-    products:Array<ProductModel>;
+    promoteimage: Array<Promoteimage>
+    address: AddressModel = new AddressModel();
+    products: Array<ProductModel>;
 }
 
-export class ProductModel{
-        title:string;
-        items: Array<ItemProductModel>
+export class ProductModel {
+    title: string;
+    items: Array<ItemProductModel>
 }
 
-export class ItemProductModel{
+export class ItemProductModel {
     _id: string;
     cateid: string;
     name: string;
@@ -35,10 +44,10 @@ export class ItemProductModel{
     isrecommend: boolean;
 }
 
-export class AddressModel{
-    addressdetail:string;
+export class AddressModel {
+    addressdetail: string;
 }
 
-export class Promoteimage{
-    url:string;
+export class Promoteimage {
+    url: string;
 }
