@@ -72,6 +72,10 @@ export class NavtabsPage {
     if (e === '0') {
       window.localStorage.setItem('current_page_for_login', 'HomePage');
       this.color = '#EB3841';
+      let user = JSON.parse(window.localStorage.getItem('user@' + Constants.URL));
+      if (user) {
+        this.auth.getDailyWelcome();
+      }
     } else if (e === '1') {
       window.localStorage.setItem('current_page_for_login', 'RecommentedPage');
       this.color = '#EB3841';
@@ -85,9 +89,9 @@ export class NavtabsPage {
       window.localStorage.setItem('current_page_for_login', 'MorePage');
       this.color = '#EB3841';
     }
-    let user = JSON.parse(window.localStorage.getItem('user@' + Constants.URL));
-    if (user) {
-      this.auth.getDailyWelcome();
-    }
+    // let user = JSON.parse(window.localStorage.getItem('user@' + Constants.URL));
+    // if (user) {
+    //   this.auth.getDailyWelcome();
+    // }
   }
 }
