@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { ItemShopModel, ShopModel } from '../../assets/model/shop.model';
+import { ItemShopModel, ShopModel, ItemShopModelMock } from '../../assets/model/shop.model';
 import { Constants } from '../../app/app.constants';
 
 /*
@@ -26,6 +26,12 @@ export class ShopProvider {
     return this.http.get('./assets/json/shop.json')
       .toPromise()
       .then(response => response as ShopModel)
+      .catch(this.handleError);
+  }
+  getShopsFavorite(): Promise<Array<ItemShopModelMock>> {
+    return this.http.get('./assets/json/shoplist.json')
+      .toPromise()
+      .then(response => response as Array<ItemShopModelMock>)
       .catch(this.handleError);
   }
 

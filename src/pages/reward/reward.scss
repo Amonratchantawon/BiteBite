@@ -25,21 +25,6 @@ page-reward {
         height: 50px;
     }
 
-    // .coin{
-    //   object-fit: cover;
-    // }
-
-    // p{
-    //     font-size: 8vh;
-    //     position: relative;
-    //     top: -250px;
-    //     color: rgb(149, 170, 173);
-    //     align-self: center ;
-    //     text-align: center !important;
-    //     width: 100%;
-    //     font-weight: 600;
-    // }
-
     .container {
         position: relative;
         text-align: center;
@@ -85,5 +70,15 @@ page-reward {
     }
     .conquest{
         color: rgb(23, 40, 54)
+    }
+
+    .title{
+        margin-top: 0px !important;
+        margin-bottom: 0px !important;
+        font-size: 5vw;
+        margin-left: 3vw;
+    }
+    .col{
+        padding: 0px 1px 0px 0px !important ;
     }
 }

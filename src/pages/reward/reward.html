@@ -20,10 +20,6 @@
       refreshingText="{{ 'REFRESHING' | translate }}"></ion-refresher-content>
   </ion-refresher>
 
-  <!-- {{rewardData | json}} -->
-
-  
-
   <div class="container">
   <img src="{{rewardData.coin.image}}" alt="" class="coin">
   <!-- <img src="img_fjords_wide.jpg" alt="Norway" style="width:100%;"> -->
@@ -33,5 +29,33 @@
   
   <img src="{{rewardData.conquest.image}}" alt="">
   <div class="conquest"><p> {{rewardData.coin.name}} </p> </div>
+
+  <ion-grid>
+      <p class="title">{{rewardData.MakeMerit.title}}</p>
+    <ion-row>
+      <ion-col col-6 *ngFor="let item of rewardData.MakeMerit.items">
+        <img src="{{item.image}}" alt="imgErr">
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-grid>
+      <p class="title">{{rewardData.sendCoin.title}}</p>
+    <ion-row>
+      <ion-col col-6 *ngFor="let item of rewardData.sendCoin.items">
+        <img src="{{item.image}}" alt="imgErr">
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+
+  <ion-grid>
+      <p class="title">{{rewardData.giftAndVouCher.title}}</p>
+    <ion-row>
+      <ion-col col-6 *ngFor="let item of rewardData.giftAndVouCher.items">
+        <img src="{{item.image}}" alt="imgErr">
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 
 </ion-content>

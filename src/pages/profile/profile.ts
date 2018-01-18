@@ -2,7 +2,9 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Constants } from '../../app/app.constants';
 import { UserModel } from '../../assets/model/user.model';
-
+import { ShopProvider } from '../../providers/shop/shop';
+import { LoadingProvider } from '../../providers/loading/loading';
+import { ItemShopModelMock } from '../../assets/model/shop.model';
 /**
  * Generated class for the ProfilePage page.
  *
@@ -22,11 +24,25 @@ export class ProfilePage {
   isenabled: boolean = true;
   Edit = "create";
   segment: String = 'collect';
+  condition: string = '';
+  shopData: Array<ItemShopModelMock> = [];
   makeProfile: Array<any> = [];
   constructor(
     public navCtrl: NavController,
-    public navParams: NavParams
+    public navParams: NavParams,
+    private loading: LoadingProvider,
+    private shopProvider: ShopProvider,
   ) {
+  }
+
+  getShop() {
+    this.loading.onLoading();
+    this.shopProvider.getShopsFavorite().then((data) => {
+      this.shopData = data;
+      this.loading.dismiss();
+    }, (err) => {
+      this.loading.dismiss();
+    });
   }
 
   ionViewDidLoad() {
@@ -63,18 +79,26 @@ export class ProfilePage {
       name: this.user.displayName,
       image: this.user.profileImageURL,
       coin: 50000
+    },
+    {
+      rank: 6,
+      name: this.user.displayName,
+      image: this.user.profileImageURL,
+      coin: 50000
     }];
   }
 
   segmentChanged(e) {
-    // alert(JSON.stringify(this.segment));
+    if (this.segment === 'favorite') {
+      this.getShop();
+    }
   }
 
   onToAddress() {
     this.navCtrl.push('AddressPage');
   }
 
-  ProfileEditPage(){
+  ProfileEditPage() {
     this.navCtrl.push('ProfileEditPage');
   }
 

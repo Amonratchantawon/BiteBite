@@ -3,8 +3,59 @@
         "coinnumber": 150,
         "image": "./assets/imgs/wood_boards_2-wallpaper-2560x720.jpg"
     },
-    "conquest":{
-        "name":"เส้นทางพิชิต coin",
-        "image":"http://www.balkaninsight.com/en/file/show//Images/ADA/Road%20to%20ruin/bechtel-kosovo-motorway%201920%20x%20600.jpg"
+    "conquest": {
+        "name": "เส้นทางพิชิต coin",
+        "image": "http://www.balkaninsight.com/en/file/show//Images/ADA/Road%20to%20ruin/bechtel-kosovo-motorway%201920%20x%20600.jpg"
+    },
+    "MakeMerit": {
+        "title": "บริจาค",
+        "items": [
+            {
+                "image":"https://www.unhcr.or.th/sites/default/files/imagecache/donate_slide/feature-01-TH.jpg"
+            },
+            {
+                "image":"https://www.unhcr.or.th/sites/default/files/imagecache/donate_slide/2017_BangladeshEmergency_LandingPage_Feature_TH_0.jpg"
+            },
+            {
+                "image":"https://www.unhcr.or.th/sites/default/files/imagecache/donate_slide/landing%20page_170731_0001_RZ.jpg"
+            },
+            {
+                "image":"https://www.unhcr.or.th/sites/default/files/imagecache/donate_slide/Untitled-1-01-01.jpg"
+            }
+        ]
+    },
+    "sendCoin":{
+        "title":"ส่งเหรียญให้เพื่อน",
+        "items":[
+            {
+                "name":"Facebook",
+                "image":"https://stocknews.com/wp-content/uploads/2017/07/facebook-fb-alternate.jpg"
+            },
+            {
+                "name":"Email",
+                "image":"http://cdn2.expertreviews.co.uk/sites/expertreviews/files/2016/04/outlook_email.jpg?itok%5Cx3dv9sA_FHs"
+            }
+        ]
+    },
+    "giftAndVouCher":{
+        "title":"Gift and Voucher",
+        "items":[
+            {
+                "name":"Facebook",
+                "image":"https://static1.squarespace.com/static/51d27b69e4b0a433e9c091ad/t/51d653dee4b0a0494bc09e81/1373000672156/CDS_GV.png"
+            },
+            {
+                "name":"Email",
+                "image":"http://dynastyscotland.co.uk/wp-content/uploads/2017/11/DSC_1193-1900x700.jpg"
+            },
+            {
+                "name":"Email",
+                "image":"http://dynastyscotland.co.uk/wp-content/uploads/2017/11/DSC_1140-1900x700.jpg"
+            },
+            {
+                "name":"Email",
+                "image":"http://drakeandmorgan.co.uk/the-otherist/wp-content/uploads/sites/18/2015/09/Otherist-Table-detail-Banner-Media-wisdom-1-1900x700-c-default.jpg"
+            }
+        ]
     }
 }
