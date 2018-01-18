@@ -7,12 +7,36 @@
 <ion-header>
 
   <ion-navbar color="bite">
-    <ion-title>contact-bitebite</ion-title>
+    <ion-title>Contact BiteBite</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
-<ion-content padding>
-
+<ion-content>
+  <ion-list class="user-data-content">
+    <ion-list-header>
+      <h2>To : BiteBite</h2>
+    </ion-list-header>
+    <ion-item>
+      <ion-label>เลือกประเภทการติดต่อ</ion-label>
+      <ion-select [(ngModel)]="selectChoices">
+        <ion-option *ngFor="let item of choices" value="{{item._id}}">{{item.name}}</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>ข้อความ</ion-label>
+      <ion-textarea [(ngModel)]="contact.description" rows="5" type="text"></ion-textarea>
+    </ion-item>
+  </ion-list>
+  <ion-fab right bottom>
+    <button ion-fab color="bite">
+      <ion-icon class="font-2em" name="md-images" ></ion-icon>
+    </button>
+  </ion-fab>
 </ion-content>
+<ion-footer>
+  <ion-toolbar>
+    <button (click)="sentContact()" ion-button block color="bite">ส่ง</button>
+  </ion-toolbar>
+</ion-footer>
