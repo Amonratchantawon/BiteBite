@@ -1,0 +1,121 @@
+[{
+    "_id": "product01",
+    "cateid": "cate01",
+    "name": "ขนมปังชีสโรล",
+    "image": "https://img.kapook.com/u/2016/surauch/cook1/appetizer4.jpg",
+    "price": 200,
+    "ispromotion": true,
+    "ispopular": true,
+    "isrecommend": true
+  },
+  {
+    "_id": "product02",
+    "cateid": "cate02",
+    "name": "น้ำส้ม",
+    "image": "http://more-cliparts.net/images/piqK9AoAT.jpg",
+    "price": 80,
+    "ispromotion": true,
+    "ispopular": false,
+    "isrecommend": true
+  },
+  {
+    "_id": "product06",
+    "cateid": "cate04",
+    "name": "สลัดแซลมอน",
+    "image": "https://www.jessicagavin.com/wp-content/uploads/2016/05/greek-salmon-salad-with-lemon-basil-dressing-1200.jpg",
+    "price": 179,
+    "ispromotion": true,
+    "ispopular": true,
+    "isrecommend": false
+  },
+  {
+    "_id": "product09",
+    "cateid": "cate05",
+    "name": "หอยแมลงภู่",
+    "image": "https://imagesvc.timeincapp.com/v3/mm/image?url=http%3A%2F%2Fcdn-image.foodandwine.com%2Fsites%2Fdefault%2Ffiles%2FHD-201307-r-michael-schlows-mussels-with-white-beans-and-chorizo.jpg&w=700&q=85",
+    "price": 179,
+    "ispromotion": true,
+    "ispopular": false,
+    "isrecommend": false
+  },
+  {
+    "_id": "product10",
+    "cateid": "cate05",
+    "name": "ซุปทะเล",
+    "image": "https://images.ricardocuisine.com/services/recipes/1074x1074_5114-background.jpg",
+    "price": 179,
+    "ispromotion": false,
+    "ispopular": false,
+    "isrecommend": true
+  },
+  {
+    "_id": "product03",
+    "cateid": "cate02",
+    "name": "คาปูชิโน่",
+    "image": "https://static.boredpanda.com/blog/wp-content/uploads/2017/05/Artistic-barista-from-korea-who-draws-art-on-coffee-5912becb06299__700.jpg",
+    "price": 79,
+    "ispromotion": false,
+    "ispopular": false,
+    "isrecommend": true
+  },
+  {
+    "_id": "product04",
+    "cateid": "cate03",
+    "name": "ซูชิแซลมอน",
+    "image": "https://3.bp.blogspot.com/-q2pz66E1rPg/VzI5gXMKXeI/AAAAAAAAWG4/p9nSd3xxLbY0TFLhXRme3zlKtjXSgWlcgCLcB/s1600/Salmon-Nigiri%2Bsushi.jpg",
+    "price": 150,
+    "ispromotion": false,
+    "ispopular": false,
+    "isrecommend": false
+  },
+  {
+    "_id": "product07",
+    "cateid": "cate04",
+    "name": "สลัดทูน่า",
+    "image": "https://chickenofthesea.com/uploads/recipes/Chefs_Tuna_Salad_2.jpg",
+    "price": 189,
+    "ispromotion": false,
+    "ispopular": false,
+    "isrecommend": false
+  },
+  {
+    "_id": "product12",
+    "cateid": "cate01",
+    "name": "ลูกชิ้นปลา",
+    "image": "https://solfoodsweb.files.wordpress.com/2016/10/keep1.jpg?w=300&h=300",
+    "price": 60,
+    "ispromotion": false,
+    "ispopular": false,
+    "isrecommend": false
+  },
+  {
+    "_id": "product11",
+    "cateid": "cate01",
+    "name": "เฟรนฟราย",
+    "image": "https://pbs.twimg.com/profile_images/595149417847463936/2oGqtIHy.jpg",
+    "price": 60,
+    "ispromotion": false,
+    "ispopular": false,
+    "isrecommend": false
+  },
+  {
+    "_id": "product05",
+    "cateid": "cate04",
+    "name": "ซีซาร์สลัด",
+    "image": "https://www.metro.ca/userfiles/image/recipes/salade-cesar-1845.jpg",
+    "price": 200,
+    "ispromotion": false,
+    "ispopular": false,
+    "isrecommend": false
+  },
+  {
+    "_id": "product08",
+    "cateid": "cate05",
+    "name": "หอยนางรม",
+    "image": "http://www.thedeliciouslife.com/wp-content/uploads/2013/08/Instalicious1.jpg",
+    "price": 300,
+    "ispromotion": false,
+    "ispopular": false,
+    "isrecommend": false
+  }
+]

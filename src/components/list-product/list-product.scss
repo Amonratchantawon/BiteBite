@@ -5,4 +5,15 @@ list-product {
     ion-item {
         padding-left: 8px !important;
     }
+    
+    .products-image {
+        img {
+            object-fit: cover;
+            width: 80px !important;
+            height: 80px !important;
+        }
+    }
+    .label {
+        margin: 13px 0px 13px 0 !important;
+    }
 }

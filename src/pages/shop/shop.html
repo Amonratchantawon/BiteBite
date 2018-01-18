@@ -2,7 +2,7 @@
 
   <ion-navbar color="bite">
     <ion-title>{{shopData.name}}</ion-title>
-    <ion-buttons end (click)="addCart()">
+    <ion-buttons end (click)="goToCart()">
       <button ion-button icon-only class="icon-cart">
         <ion-icon name="cart"></ion-icon>
       </button>
@@ -67,5 +67,5 @@
     </ion-row>
   </ion-scroll>
 
-  <list-product [items]="shopData.products" [selectedCateId]="selectedCateId"></list-product>
+  <list-product [items]="shopData.products" [selectedCateId]="selectedCateId" (clickItem)="selectProduct($event)"></list-product>
 </ion-content>

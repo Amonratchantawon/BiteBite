@@ -82,16 +82,17 @@ export class ShopPage {
     this.selectedCateId = cate ? cate._id : '';
   }
 
-  selectProduct() {
-    let modal1 = this.modalCtrl.create('ProductDetailPage');
+  selectProduct(e) {
+    console.log(e);
+    let modal1 = this.modalCtrl.create('ProductDetailPage', e);
     modal1.present();
   }
 
-  addCart() {
+  goToCart() {
     this.navCtrl.push('CartPage');
   }
 
-  seeAllProduct(){
-    
+  seeAllProduct() {
+    this.navCtrl.push('ProductListPage');
   }
 }

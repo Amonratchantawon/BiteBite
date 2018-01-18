@@ -14,8 +14,13 @@ export class ListProductComponent {
 
   @Input('items') products: any;
   @Input() selectedCateId: string;
+  @Output() clickItem: EventEmitter<any> = new EventEmitter<any>();
   constructor() {
 
+  }
+
+  click(item) {
+    this.clickItem.emit(item);
   }
 
 }

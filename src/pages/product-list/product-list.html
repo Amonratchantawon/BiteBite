@@ -6,13 +6,19 @@
 -->
 <ion-header>
 
-  <ion-navbar>
-    <ion-title>product-list</ion-title>
+  <ion-navbar color="bite">
+    <ion-title>{{ 'PRODUCT_LIST' | translate }}</ion-title>
+    <ion-buttons end (click)="goToCart()">
+      <button ion-button icon-only class="icon-cart">
+        <ion-icon name="cart"></ion-icon>
+      </button>
+      <ion-badge color="primary" class="badge-count" item-end>3</ion-badge>
+    </ion-buttons>
   </ion-navbar>
 
 </ion-header>
 
 
-<ion-content padding>
-
+<ion-content>
+  <list-product [items]="products" [selectedCateId]="''" (clickItem)="selectProduct($event)"></list-product>
 </ion-content>
