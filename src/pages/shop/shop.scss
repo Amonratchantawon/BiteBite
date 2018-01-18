@@ -6,7 +6,7 @@ page-shop {
     .open {
         background-color: #4CAF50 !important;
     }
-    ion-grid.grid {
+    .shop-detail {
         position: absolute;
         z-index: 1;
         margin-top: -85px;
@@ -18,27 +18,7 @@ page-shop {
     ion-scroll {
         border-bottom: 1px solid whitesmoke !important;
         height: 28vw;
-    } // ion-segment {
-    //     display: block;
-    //     white-space: nowrap !important;
-    //     overflow-x: scroll !important;
-    //     overflow-y: hidden !important;
-    //     background-color: #ffffff !important;
-    //     height: 40px !important; // margin-top: -4px !important;
-    //     .segment-button {
-    //         display: inline-block !important;
-    //         min-width: auto !important;
-    //         padding-left: 8px !important;
-    //         width: auto !important;
-    //         border: 0 !important;
-    //         color: #607D8B !important;
-    //         font-size: 14px !important;
-    //     }
-    .segment-button.active-page {
-        color: $bite-color !important; // border-bottom: 4px solid !important;
-        background-color: rgba(235, 56, 65, 0.1);
-        width: auto !important;
-    } // }
+    }
     .col-imgpromote {
         padding: 0px !important;
         margin-right: 2px !important;
@@ -63,7 +43,6 @@ page-shop {
         object-fit: cover !important;
     }
     .category-title {
-        padding: 10px;
         margin: 0px !important;
     }
     .like {
@@ -76,15 +55,23 @@ page-shop {
     .selectedCategory {
         img {
             opacity: 1 !important;
+            object-fit: cover;
         }
     }
     .categories-image {
         img {
             opacity: 0.3;
+            object-fit: cover;
+        }
+    }
+    .products-image {
+        img {
+            object-fit: cover;
+            width: 80px !important;
+            height: 80px !important;
         }
     }
     .icon-cart {
-        // position: absolute !important;
         left: -10px !important;
     }
     .icon-cart.icon-md {
@@ -96,10 +83,8 @@ page-shop {
         right: -3px;
         top: -3px;
     }
-    .list-md {
-        margin: 2px 0 16px;
-    }
-    ion-item {
-        padding-left: 8px !important;
+    .seeall {
+        color: rgb(73, 67, 67);
+        font-family: 'Kanit', sans-serif; // margin-bottom: 40px;
     }
 }
