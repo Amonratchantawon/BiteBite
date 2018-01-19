@@ -22,6 +22,8 @@
   "REWARD": "Reward",
   "STATUS": "Status",
   "MORE": "More",
+  "NOTIFICATION": "Notification",
+  "BENEFIT": "Benefit",
   "SERVICE_CHARGE": "Service charge",
   "QUESTIONS_&_ANSWERS": "Questions & Answers",
   "CONTANT_BITEBITE": "Contact BiteBite",
@@ -100,5 +102,8 @@
   "SUBDISTRICT": "Subdistrict",
   "DISTRICT": "District",
   "PROVINCE": "Province",
-  "POSTCODE": "Postcode"
+  "POSTCODE": "Postcode",
+  "TITLE_CONTACT": "Contact title",
+  "TITLE_MESSAGE": "message",
+  "SEND": "Send"
 }

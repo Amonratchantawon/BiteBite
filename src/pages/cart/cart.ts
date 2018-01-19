@@ -35,6 +35,10 @@ export class CartPage {
     })
   }
 
+  onBack(){
+    this.navCtrl.pop();
+  }
+
   checkOut() {
     console.log('object');
   }

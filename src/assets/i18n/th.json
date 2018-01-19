@@ -22,6 +22,8 @@
   "REWARD": "รางวัล",
   "STATUS": "สถานะ",
   "MORE": "อื่นๆ",
+  "NOTIFICATION": "การแจ้งเตือน",
+  "BENEFIT": "สิทธิประโยชน์",
   "SERVICE_CHARGE": "ค่าบริการ",
   "QUESTIONS_&_ANSWERS": "คำถามที่พบบ่อย",
   "CONTANT_BITEBITE": "ติดต่อ BiteBite",
@@ -100,5 +102,8 @@
   "SUBDISTRICT": "ตำบล/แขวง",
   "DISTRICT": "อำเภอ/เขต",
   "PROVINCE": "จังหวัด",
-  "POSTCODE": "รหัสไปรษณีย์"
+  "POSTCODE": "รหัสไปรษณีย์",
+  "TITLE_CONTACT":"หัวข้อการติดต่อ",
+  "TITLE_MESSAGE":"ข้อความ",
+  "SEND": "ส่ง"
 }

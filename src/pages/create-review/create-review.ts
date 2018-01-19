@@ -24,7 +24,7 @@ export class CreateReviewPage {
   @ViewChild('myInput') myInput: ElementRef;
   review: any = {};
   maxLengthTitle: number = 30;
-  maxLengthDetail: number = 90;
+  maxLengthDetail: number = 70;
   user: UserModel = new UserModel();
   constructor(
     public navCtrl: NavController,

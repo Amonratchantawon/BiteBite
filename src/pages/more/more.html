@@ -24,13 +24,11 @@
   <ion-list>
     <button *ngIf="user && user.username" ion-item item-start (click)="onNotification()">
       <ion-icon name="md-notifications" item-start></ion-icon>
-      <!-- {{ 'SERVICE_CHARGE' | translate }} -->
-      Notification
+      {{ 'NOTIFICATION' | translate }}
     </button>
     <button ion-item item-start (click)="onBenefit()">
       <ion-icon name="md-ribbon" item-start></ion-icon>
-      <!-- {{ 'SERVICE_CHARGE' | translate }} -->
-      Benefit
+      {{ 'BENEFIT' | translate }}
     </button>
     <button ion-item item-start (click)="onServiceCharge()">
       <ion-icon name="md-card" item-start></ion-icon>

@@ -20,7 +20,7 @@ export class ProductListPage {
   ) {
   }
 
-  ionViewWillEnter() {
+  ionViewDidLoad() {
     this.getProductsByShop();
   }
 

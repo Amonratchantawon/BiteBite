@@ -1,4 +1,8 @@
 page-shop {
+    .scroll-content {
+        overflow-y: auto !important;
+        overflow-x: hidden !important;
+    }
     .icon-ads {
         // position: absolute;
         background-color: #ff5566;
