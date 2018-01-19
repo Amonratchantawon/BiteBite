@@ -28,12 +28,6 @@ export class RewardPage {
     this.getReward();
   }
 
-  doRefresh(refresher) {
-    setTimeout(() => {
-      refresher.complete();
-    }, 2000);
-  }
-
   goToProfile() {
     this.app.getRootNav().push('ProfilePage');
   }
