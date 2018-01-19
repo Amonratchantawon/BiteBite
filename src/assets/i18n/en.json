@@ -107,5 +107,9 @@
   "TITLE_MESSAGE": "message",
   "SEND": "Send",
   "TO": "To",
-  "CART_NO_ITEM": "No products for this shop."  
+  "CART_NO_ITEM": "No products for this shop.",
+  "RANK": "Rank",
+  "MY_COLLECT": "My Collect",
+  "MY_FAVORTIE": "My Favorite",
+  "HISTORY": "History"
 }

@@ -4,7 +4,7 @@
     <ion-title>{{ 'PROFILE' | translate}}</ion-title>
     <ion-buttons right>
       <button ion-button icon-only (click)="ProfileEditPage()">
-        <ion-icon name="ios-brush"></ion-icon>
+        <ion-icon name="md-create"></ion-icon>
       </button>
     </ion-buttons>
   </ion-navbar>
@@ -26,7 +26,7 @@
       <ion-row>
         <ion-col col-12 class="text-name" padding-top text-center>
           <h4>{{user.displayName}}
-            <span class="text-rank">(Rank : 2)</span>
+            <span class="text-rank">({{ 'RANK' | translate }} : 2)</span>
           </h4>
         </ion-col>
       </ion-row>
@@ -44,13 +44,13 @@
 
     <ion-segment mode="md" [(ngModel)]="segment" color="light" (ionChange)="segmentChanged($event)">
       <ion-segment-button value="collect">
-        My Collect
+        {{ 'MY_COLLECT' | translate }}
       </ion-segment-button>
       <ion-segment-button value="favorite">
-        My Favorite
+        {{ 'MY_FAVORTIE' | translate }}
       </ion-segment-button>
       <ion-segment-button value="history">
-        History
+        {{ 'HISTORY' | translate }}
       </ion-segment-button>
     </ion-segment>
 
@@ -93,7 +93,7 @@
       </ion-list>
 
       <div padding text-right>
-        <button ion-button clear small class="cate-seeall" (click)="seeAllHotPrice()">
+        <button ion-button clear small class="cate-seeall">
           <b>{{ 'SEE_ALL' | translate }} >></b>
         </button>
       </div>

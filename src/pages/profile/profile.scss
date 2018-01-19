@@ -128,12 +128,12 @@ page-profile {
     .rank-icon {
         font-size: 20px;
         ion-icon {
-            margin-left: 16px !important;
+            // margin-left: 16px !important;
             margin-top: 13px !important;
         }
         span {
             position: absolute;
-            margin-left: 16px !important;
+            margin-left: 6px !important;
             margin-top: 9px !important;
         }
     }
@@ -145,6 +145,7 @@ page-profile {
             height: 50px !important;
             border-radius: 100% !important;
             display: table-cell !important;
+            left: 20px;
         }
         img {
             margin: 0px !important;
