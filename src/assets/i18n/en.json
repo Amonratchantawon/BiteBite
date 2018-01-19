@@ -114,5 +114,7 @@
   "HISTORY": "History",
   "REWARDS": "Rewards",
   "DONATE": "Donate",
-  "SEND_COIN_TO_FRIENDS": "Send coins to friends"
+  "SEND_COIN_TO_FRIENDS": "Send coins to friends",
+  "FORGOT_TEXT": "Reset your BiteBite account password by email.",
+  "RESET_PASSWORD": "Reset password"
 }

@@ -114,5 +114,7 @@
   "HISTORY": "ประวัติการสั่งซื้อ",
   "REWARDS": "ของรางวัล",
   "DONATE": "บริจาค",
-  "SEND_COIN_TO_FRIENDS": "ส่งเหรียญให้เพื่อน"
+  "SEND_COIN_TO_FRIENDS": "ส่งเหรียญให้เพื่อน",
+  "FORGOT_TEXT": "รีเซ็ตรหัสผ่านบัญชี BiteBite ทางอีเมล์",
+  "RESET_PASSWORD": "รีเซ็ตรหัสผ่าน"
 }
