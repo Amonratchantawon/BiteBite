@@ -111,5 +111,8 @@
   "RANK": "Rank",
   "MY_COLLECT": "My Collect",
   "MY_FAVORTIE": "My Favorite",
-  "HISTORY": "History"
+  "HISTORY": "History",
+  "REWARDS": "Rewards",
+  "DONATE": "Donate",
+  "SEND_COIN_TO_FRIENDS": "Send coins to friends"
 }

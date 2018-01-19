@@ -24,41 +24,36 @@ page-reward {
     .bar-button {
         height: 50px;
     }
-
     .container {
         position: relative;
         text-align: center;
         color: white;
+        margin-bottom: 4px;
     }
-    
     /* Bottom left text */
     .bottom-left {
         position: absolute;
         bottom: 8px;
         left: 16px;
     }
-    
     /* Top left text */
     .top-left {
         position: absolute;
         top: 8px;
         left: 16px;
     }
-    
     /* Top right text */
     .top-right {
         position: absolute;
         top: 8px;
         right: 16px;
     }
-    
     /* Bottom right text */
     .bottom-right {
         position: absolute;
         bottom: 8px;
         right: 16px;
     }
-    
     /* Centered text */
     .centered {
         position: absolute;
@@ -66,31 +61,30 @@ page-reward {
         left: 50%;
         transform: translate(-50%, -50%);
         font-weight: 200;
-        font-size: 15vw
+        font-size: 15vw;
+        margin-bottom: 0px !important;
     }
-    .conquest{
+    .conquest {
         color: rgb(23, 40, 54)
     }
-
-    .title{
+    .title {
         margin-top: 0px !important;
         margin-bottom: 0px !important;
         font-size: 5vw;
         margin-left: 3vw;
     }
-    .col{
-        padding: 0px 1px 0px 0px !important ;
+    .col {
+        padding: 0px 1px 0px 0px !important;
     }
-
     .row-custom {
         flex-wrap: inherit !important;
     }
     ion-scroll {
-        height: 55vw;
+        height: 54vw;
     }
-    .col-pro{
-        margin: 4px !important;
-        ion-card.card{
+    .col-pro {
+        padding: 2px !important;
+        ion-card.card {
             margin: 0px !important;
             width: 100%;
         }

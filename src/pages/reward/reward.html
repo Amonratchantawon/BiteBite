@@ -17,43 +17,41 @@
 <ion-content>
 
   <div class="container">
-    <img src="{{rewardData.coin.image}}" class="coin">
+    <!-- <img src="{{rewardData.coin.image}}" class="coin"> -->
+    <preload-image [ratio]="{w:3, h:1}" [src]="rewardData.coin.image"></preload-image>
     <div class="centered">
       <p> {{rewardData.coin.coinnumber}} </p>
     </div>
   </div>
 
-  <img src="{{rewardData.conquest.image}}" alt="">
+  <preload-image [ratio]="{w:3, h:1}" [src]="rewardData.conquest.image"></preload-image>
 
-  <div class="conquest">
-    <p> {{rewardData.coin.name}} </p>
-  </div>
-
-  <p class="title">{{rewardData.rewards.title}}</p>
+  <p class="title" padding-top>{{ 'REWARDS' | translate }}</p>
   <ion-scroll scrollX="true">
     <ion-row class="row-custom">
       <ion-col col-4 *ngFor="let item of rewardData.rewards.items" class="col-pro">
         <ion-card>
-          <img src="{{item.image}}" alt="imgErr">
+          <!-- <img src="{{item.image}}" alt="imgErr"> -->
+          <preload-image [ratio]="{w:6, h:9}" [src]="item.image"></preload-image>
         </ion-card>
       </ion-col>
     </ion-row>
   </ion-scroll>
 
   <ion-grid>
-    <p class="title">{{rewardData.MakeMerit.title}}</p>
+    <p class="title">{{ 'DONATE' | translate }}</p>
     <ion-row>
       <ion-col col-6 *ngFor="let item of rewardData.MakeMerit.items">
-        <img src="{{item.image}}" alt="imgErr">
+        <preload-image [ratio]="{w:18, h:7}" [src]="item.image"></preload-image>
       </ion-col>
     </ion-row>
   </ion-grid>
 
   <ion-grid>
-    <p class="title">{{rewardData.sendCoin.title}}</p>
+    <p class="title">{{ 'SEND_COIN_TO_FRIENDS' | translate }}</p>
     <ion-row>
       <ion-col col-6 *ngFor="let item of rewardData.sendCoin.items">
-        <img src="{{item.image}}" alt="imgErr">
+          <preload-image [ratio]="{w:3, h:2}" [src]="item.image"></preload-image>        
       </ion-col>
     </ion-row>
   </ion-grid>
