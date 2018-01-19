@@ -57,5 +57,26 @@
                 "image":"http://drakeandmorgan.co.uk/the-otherist/wp-content/uploads/sites/18/2015/09/Otherist-Table-detail-Banner-Media-wisdom-1-1900x700-c-default.jpg"
             }
         ]
+    },
+    "rewards":{
+        "title":"ของรางวัล",
+        "items":[
+            {
+                "name":"Facebook",
+                "image":"https://static1.squarespace.com/static/51d27b69e4b0a433e9c091ad/t/51d653dee4b0a0494bc09e81/1373000672156/CDS_GV.png"
+            },
+            {
+                "name":"Email",
+                "image":"http://dynastyscotland.co.uk/wp-content/uploads/2017/11/DSC_1193-1900x700.jpg"
+            },
+            {
+                "name":"Email",
+                "image":"http://dynastyscotland.co.uk/wp-content/uploads/2017/11/DSC_1140-1900x700.jpg"
+            },
+            {
+                "name":"Email",
+                "image":"http://drakeandmorgan.co.uk/the-otherist/wp-content/uploads/sites/18/2015/09/Otherist-Table-detail-Banner-Media-wisdom-1-1900x700-c-default.jpg"
+            }
+        ]
     }
 }
