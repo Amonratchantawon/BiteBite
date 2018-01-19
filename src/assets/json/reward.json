@@ -1,11 +1,11 @@
 {
     "coin": {
         "coinnumber": 150,
-        "image": "./assets/imgs/wood_boards_2-wallpaper-2560x720.jpg"
+        "image": "../../assets/imgs/game_pont/pont_coin.png"
     },
     "conquest": {
         "name": "เส้นทางพิชิต coin",
-        "image": "http://www.balkaninsight.com/en/file/show//Images/ADA/Road%20to%20ruin/bechtel-kosovo-motorway%201920%20x%20600.jpg"
+        "image": "./assets/imgs/game_pont/coin_game.png"
     },
     "MakeMerit": {
         "title": "บริจาค",
