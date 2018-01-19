@@ -105,8 +105,11 @@ page-profile {
     progress::-webkit-progress-value {
         border-radius: 50px;
         box-shadow: inset 0 1px 1px 0 #ffffff; // box-shadow: inset 0 1px 1px 0 rgba(255, 255, 255, 0.4);
-        background: -webkit-linear-gradient(45deg, transparent, transparent 33%, rgba(255, 255, 255, 0.25) 33%, rgba(255, 255, 255, 0.25) 66%, transparent 66%), // -webkit-linear-gradient(top, rgba(255, 255, 255, 0.25), rgba(0, 0, 0, 0.2)),
-        -webkit-linear-gradient(top, rgba(255, 255, 255, 0.25), rgba(0, 0, 0, 0.2)), -webkit-linear-gradient(left, #488aff, #2776ff);
+        // background: -webkit-linear-gradient(45deg, transparent, transparent 33%, rgba(255, 255, 255, 0.25) 33%, rgba(255, 255, 255, 0.25) 66%, transparent 66%), 
+        background: -webkit-linear-gradient(45deg, transparent, transparent 33%, #2776ff 33%, #2776ff 66%, transparent 66%), 
+        // -webkit-linear-gradient(top, rgba(255, 255, 255, 0.25), rgba(0, 0, 0, 0.2)),
+        -webkit-linear-gradient(top, #2776ff, #2776ff), 
+        -webkit-linear-gradient(left, #488aff, #2776ff);
         background-size: 25px 14px, 100% 100%, 100% 100%;
         -webkit-animation: move 5s linear 0 infinite;
     }
