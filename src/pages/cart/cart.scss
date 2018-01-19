@@ -1,10 +1,15 @@
 page-cart {
+    .content {
+        background-color: #f4f4f4;
+    }
+    .scroll-content{
+        overflow: auto;
+    }
     .count-radias {
         height: 32px;
         width: 26px;
         border-radius: 81px;
     }
-
     .searchbar-ios .searchbar-input {
         background-color: #eeeded !important;
         border-radius: 15px !important;
@@ -13,12 +18,13 @@ page-cart {
         background: white !important;
         text-align: center;
         border-bottom: none !important;
+        padding: 0px !important;
+        margin-top: 10px;
     }
     .searchbar-input-container {
-        margin-top: 6px;
+        margin-top: 12px;
     }
-
-    .searchbar-ios .searchbar-search-icon{
+    .searchbar-ios .searchbar-search-icon {
         background-image: none;
     }
     .footer-cart {
@@ -27,7 +33,29 @@ page-cart {
             max-height: 40px !important;
         }
     }
-    .price-name{
+    .price-name {
         color: rgb(168, 168, 168);
+    }
+    .icon-cart {
+        font-size: 18px !important;
+        height: 28px !important;
+        right: 0px;
+    }
+    .icon-trash {
+        position: absolute;
+        right: 20px;
+        top: 12px;
+        font-size: 18px;
+    }
+    .price {
+        margin-top: 14px;
+    }
+    .counter {
+        text-align: right;
+        position: absolute;
+        right: 24px;
+        top: 44px;
+        width: 100%;
+        z-index: 999;
     }
 }

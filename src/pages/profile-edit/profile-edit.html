@@ -7,7 +7,7 @@
 <ion-header>
 
   <ion-navbar color="bite">
-    <ion-title>Edit Profile</ion-title>
+    <ion-title>{{ 'EDIT_PROFILE' | translate}}</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -17,11 +17,15 @@
     </ion-col>
     <ion-col col-6 text-center>
       <preload-image [ratio]="{w:1, h:1}" [src]="user.profileImageURL" title="ads"></preload-image>
-      <button ion-button icon-only round color="bite" class="camera-btn">
-        <ion-icon name="md-camera"></ion-icon>
-      </button>
     </ion-col>
     <ion-col col-3>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col col-12 text-center>
+      <button ion-button icon-only round outline color="bite" class="camera-btn">
+        <ion-icon name="md-camera"></ion-icon> {{ 'CHANGE_PROFILE' | translate}}
+      </button>
     </ion-col>
   </ion-row>
   <ion-row>
@@ -70,39 +74,41 @@
         <p padding-top padding-left>{{ 'BIRTHDAY' | translate}}
           <span class="danger">*</span>
         </p>
-        <ion-datetime placeholder="{{ 'BIRTHDAY_SELECTED' | translate}}" displayFormat="DD/MM/YYYY" [(ngModel)]="birthday"></ion-datetime>
-      
-      
-      <ion-item>
-        <ion-label floating>ที่อยู่
-        </ion-label>
-        <ion-input type="text" [(ngModel)]="user.address"></ion-input>
-      </ion-item>
-      <ion-item>
-        <ion-label floating>ตำบล/แขวง
-        </ion-label>
-        <ion-input type="text" [(ngModel)]="user.subdistrict"></ion-input>
-      </ion-item>
-      <ion-item>
-        <ion-label floating>อำเภอ/เขต
-        </ion-label>
-        <ion-input type="text" [(ngModel)]="user.district"></ion-input>
-      </ion-item>
-      <ion-item>
-        <ion-label floating>จังหวัด
-        </ion-label>
-        <ion-input type="text" [(ngModel)]="user.province"></ion-input>
-      </ion-item>
-      <ion-item>
-        <ion-label floating>รหัสไปรษณีย์
-        </ion-label>
-        <ion-input type="number" [(ngModel)]="user.postcode"></ion-input>
-      </ion-item>
-    </ion-list>
+        <ion-datetime placeholder="{{ 'BIRTHDAY_SELECTED' | translate}}" displayFormat="DD/MM/YYYY" [(ngModel)]="user.dateOfBirth"></ion-datetime>
+
+
+        <ion-item>
+          <ion-label floating>{{ 'ADDRESS' | translate }}
+          </ion-label>
+          <ion-input type="text" [(ngModel)]="user.address"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label floating>{{ 'SUBDISTRICT' | translate }}
+          </ion-label>
+          <ion-input type="text" [(ngModel)]="user.subdistrict"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label floating>{{ 'DISTRICT' | translate }}
+          </ion-label>
+          <ion-input type="text" [(ngModel)]="user.district"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label floating>{{ 'PROVINCE' | translate }}
+          </ion-label>
+          <ion-input type="text" [(ngModel)]="user.province"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label floating>{{ 'POSTCODE' | translate }}
+          </ion-label>
+          <ion-input type="number" [(ngModel)]="user.postcode"></ion-input>
+        </ion-item>
+      </ion-list>
     </ion-col>
   </ion-row>
 
 </ion-content>
-<ion-footer>
-  <button ion-button block (click)="backButton()" color="bite">Save</button>
+<ion-footer class="footer-edit">
+  <ion-toolbar>
+    <button ion-button block (click)="updateProfile()" color="bite" [disabled]="!user.firstName || user.firstName ==='' || !user.lastName || user.lastName ==='' || !user.email || user.email ==='' || !user.mobile || user.mobile ==='' || !user.gender || user.gender ==='' || !user.dateOfBirth || user.dateOfBirth ===''">{{ 'SAVE' | translate}}</button>
+  </ion-toolbar>
 </ion-footer>

@@ -12,7 +12,6 @@
   "PULL_TO_REFRESH": "Pull to refresh",
   "REFRESHING": "Refreshing...",
   "RESTAURANT": "Restaurant",
-
   "REVIEW": "Review",
   "WRITE_REVIEW": "Write review",
   "WRITE_FIND_SHOP_REVIEW": "Recommend restaurant",
@@ -21,9 +20,7 @@
   "WRITE_A_CAPTION": "Write a caption...",
   "REVIEW_ERROR_NAME": "Restaurant is already exists.",
   "REWARD": "Reward",
-
   "STATUS": "Status",
-
   "MORE": "More",
   "SERVICE_CHARGE": "Service charge",
   "QUESTIONS_&_ANSWERS": "Questions & Answers",
@@ -31,7 +28,6 @@
   "SETTINGS": "Settings",
   "JOIN_WITH_BITEBITE": "Join with BiteBite",
   "LOGOUT": "Logout",
-
   "SETTING_DETAIL": "Setting detail",
   "LANGUAGE": "Language",
   "ENGLISH": "English",
@@ -47,9 +43,9 @@
   "REGISTER": "Register",
   "REGISTER_ACCOUNT": "Register account",
   "REGISTER_PROFILE": "Register profile",
-
-  "CHANGE_PROFILE": "Change Picture ",
+  "CHANGE_PROFILE": "Change Picture",
   "PROFILE": "Profile",
+  "EDIT_PROFILE": "Edit profile",
   "DISPLAY_NAME": "Display name",
   "FIRST_NAME": "Firstname",
   "LAST_NAME": "Lastname",
@@ -63,7 +59,6 @@
   "WEBSITE": "Website",
   "FEMALE": "female",
   "MALE": "male",
-
   "YOU_HAVE": "You have",
   "COINS": "coins",
   "SAVE": "Save",
@@ -75,7 +70,6 @@
   "AGREEMENT": "Agreement",
   "PRIVACY_POLICY": "Privacy Policy",
   "TERMS_CONDITIONS": "Terms & Conditions",
-
   "MONTH": "Month",
   "JANUARY": "January",
   "FEBRUARY": "February",
@@ -89,16 +83,22 @@
   "OCTOBER": "October",
   "NOVEMBER": "November",
   "DECEMBER": "December",
-
   "OPEN": "Open",
   "CLOSE": "Close",
   "PRODUCT_CATEGORY": "Product category",
   "PRODUCT_CATEGORY_ALL": "All",
   "THB": "THB",
   "LOAD_MORE": "Loading more data...",
-
   "DAILY_GAME": "Daily game",
   "PLAY": "Play now.",
-  "PRODUCT_LIST": "Product list"
-
+  "PRODUCT_LIST": "Product list",
+  "PRODUCT_REMARK": "More detail",
+  "ADD_TO_CART": "Add to cart",
+  "ADD_MORE": "Add more",
+  "CART": "Cart",
+  "CHECK_OUT": "Check out",
+  "SUBDISTRICT": "Subdistrict",
+  "DISTRICT": "District",
+  "PROVINCE": "Province",
+  "POSTCODE": "Postcode"
 }

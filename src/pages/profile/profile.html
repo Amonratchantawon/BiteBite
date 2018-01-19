@@ -19,50 +19,33 @@
 
 
 <ion-content padding>
-  <!-- <progress class="progress" max="100" value="99"></progress> -->
-  <ion-grid>
-    <ion-row>
-      <ion-col col-3>
-      </ion-col>
-      <ion-col col-6 text-center>
-        <preload-image class="preload-profile-image" [ratio]="{w:1, h:1}" [src]="user.profileImageURL" [isIcon]="true"></preload-image>
-        <!-- <button ion-button icon-only round color="light" class="camera-btn">
+  <div class="bite-color">
+    <ion-grid>
+      <ion-row>
+        <ion-col col-3>
+        </ion-col>
+        <ion-col col-6 text-center>
+          <preload-image class="preload-profile-image image-radius" [ratio]="{w:1, h:1}" [src]="user.profileImageURL" [isIcon]="true"></preload-image>
+          <!-- <button ion-button icon-only round color="light" class="camera-btn">
           <ion-icon name="md-camera"></ion-icon>
         </button> -->
-      </ion-col>
-    </ion-row>
-    <!-- <ion-row *ngIf="user.coin">
+        </ion-col>
+      </ion-row>
+      <!-- <ion-row *ngIf="user.coin">
       <ion-col text-center>
         <h2 class="text-coin">{{ 'YOU_HAVE' | translate}} {{user.coin}} {{ 'COINS' | translate}}</h2>
       </ion-col>
     </ion-row> -->
-    <ion-row>
-      <ion-col class="text-name" text-center>
-        <div class="display-flex">
-          <h4>{{user.displayName}}</h4>
-        </div>
-        <span class="text-rank">(Rank : 1)</span>
-      </ion-col>
-    </ion-row>
-    <!-- <ion-row>
-      <ion-col col-6 text-left>
-        <ion-list>
-          <ion-item class="item-content">
-            <ion-icon class="text-icon" name="ios-happy-outline" item-start></ion-icon>
-            <progress class="progress" max="100" value="10"></progress>
-          </ion-item>
-        </ion-list>
-      </ion-col>
-      <ion-col col-6 text-left>
-        <ion-list>
-          <ion-item class="item-content">
-            <ion-icon class="text-icon" name="help-buoy" item-start></ion-icon>
-            <span class="text-coin">100</span>
-          </ion-item>
-        </ion-list>
-      </ion-col>
-    </ion-row> -->
-    <ion-row>
+      <ion-row>
+        <ion-col class="text-name" no-padding text-center>
+          <div class="display-flex">
+            <h4>{{user.displayName}}</h4>
+          </div>
+          <span class="text-rank">(Rank : 5032)</span>
+        </ion-col>
+      </ion-row>
+
+      <!-- <ion-row>
       <ion-col col-1>
         <ion-icon class="text-icon" name="ios-happy-outline" item-start></ion-icon>
       </ion-col>
@@ -79,35 +62,54 @@
           <span class="text-coin">50000</span>
         </div>
       </ion-col>
-    </ion-row>
-  </ion-grid>
+    </ion-row> -->
 
-  <ion-segment [(ngModel)]="segment" color="light" (ionChange)="segmentChanged($event)">
-    <ion-segment-button value="collect">
-      My Collect
-    </ion-segment-button>
-    <ion-segment-button value="favorite">
-      My Favorite
-    </ion-segment-button>
-    <ion-segment-button value="history">
-      History
-    </ion-segment-button>
-  </ion-segment>
+      <ion-row>
+        <ion-col no-padding col-1></ion-col>
+        <ion-col no-padding class="display-flex" col-9 text-center>
+          <div padding>
+            <ion-icon class="text-icon" name="ios-happy-outline" item-start></ion-icon>
+          </div>
+          <progress class="progress" max="100" value="90"></progress>
+          <div padding>
+            <img src="./assets/imgs/profile/coin.png" width="60">
+            <!-- <ion-icon class="text-icon" name="help-buoy" item-start></ion-icon> -->
+          </div>
+          <div class="justify-content">
+            <span class="text-coin">50000</span>
+          </div>
+        </ion-col>
+        <ion-col no-padding col-1></ion-col>
+      </ion-row>
 
-  <div [ngSwitch]="segment" style="margin-top:5px;">
-    <ion-list *ngSwitchCase="'collect'">
-      <ion-item>
-        <ion-row>
-          <ion-col class="webkit-center">
-            <ion-badge>99</ion-badge>
+    </ion-grid>
+    <ion-segment mode="md" [(ngModel)]="segment" color="light" (ionChange)="segmentChanged($event)">
+      <ion-segment-button value="collect">
+        My Collect
+      </ion-segment-button>
+      <ion-segment-button value="favorite">
+        My Favorite
+      </ion-segment-button>
+      <ion-segment-button value="history">
+        History
+      </ion-segment-button>
+    </ion-segment>
+  </div>
+
+  <div [ngSwitch]="segment">
+    <ion-list *ngSwitchCase="'collect'" no-padding>
+      <ion-item no-lines no-padding>
+        <ion-row class="webkit-center">
+          <ion-col>
+            <ion-badge class="ion-badge-style">12</ion-badge>
             <img src="./assets/imgs/profile/vehicle1.png" width="60">
           </ion-col>
           <ion-col>
-            <ion-badge>99</ion-badge>
+            <ion-badge class="ion-badge-style">6</ion-badge>
             <img src="./assets/imgs/profile/vehicle2.png" width="60">
           </ion-col>
           <ion-col>
-            <ion-badge>99</ion-badge>
+            <ion-badge class="ion-badge-style">9</ion-badge>
             <img src="./assets/imgs/profile/vehicle3.png" width="60">
           </ion-col>
         </ion-row>
@@ -116,45 +118,38 @@
       <ion-list class="list-item">
         <ion-item *ngFor="let profile of makeProfile">
           <ion-row>
-            <ion-col class="display-flex" col-2>
+            <ion-col class="display-flex" col-3>
               <div>
                 <ion-icon name="ios-flag"></ion-icon>
                 {{profile.rank}}
               </div>
             </ion-col>
-            <ion-col col-2>
-              <div class="webkit-center">
-                <ion-avatar>
-                  <img src="{{profile.image}}">
-                </ion-avatar>
-              </div>
-            </ion-col>
-            <ion-col class="display-grid" col-5 text-left>
+            <ion-col class="display-grid" col-7 text-left>
               <div text-left>
-                <!-- {{profile.name}} -->
                 <progress class="progress" max="100" value="90"></progress>
               </div>
             </ion-col>
-            <ion-col class="display-flex" col-3>
-              <div>
-                <ion-icon name="help-buoy"></ion-icon>
-                {{profile.coin}}
+            <ion-col col-2>
+              <div class="webkit-center">
+                <ion-avatar>
+                  <img class="object-fit" src="{{profile.image}}">
+                </ion-avatar>
               </div>
             </ion-col>
           </ion-row>
 
         </ion-item>
+        <div no-padding text-right>
+          <button ion-button clear small class="cate-seeall" (click)="seeAllHotPrice()">
+            <b>{{ 'SEE_ALL' | translate }} >></b>
+          </button>
+        </div>
       </ion-list>
     </ion-list>
 
-    <ion-list *ngSwitchCase="'favorite'">
-      <ion-item>
-        <ion-thumbnail item-start>
-          <img src="img/thumbnail-kitten-1.jpg">
-        </ion-thumbnail>
-        <h2>My Favorite</h2>
-      </ion-item>
-    </ion-list>
+    <div *ngSwitchCase="'favorite'">
+      <grid-shop-y [items]="shopData" (selectedItem)="goToDetail($event)"></grid-shop-y>
+    </div>
 
     <ion-list *ngSwitchCase="'history'">
       <ion-item>

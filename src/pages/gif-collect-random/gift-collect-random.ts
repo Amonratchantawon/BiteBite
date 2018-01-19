@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ViewController } from 'ionic-angular';
-import { LoadingProvider } from '../../providers/loading/loading';
+// import { LoadingProvider } from '../../providers/loading/loading';
 
 /**
  * Generated class for the GifCollectRandomPage page.
@@ -21,7 +21,7 @@ export class GiftCollectRandomPage {
     public navCtrl: NavController,
     public navParams: NavParams,
     private viewCtrl: ViewController,
-    private loading: LoadingProvider
+    // private loading: LoadingProvider
   ) {
   }
 
@@ -34,11 +34,11 @@ export class GiftCollectRandomPage {
   }
 
   getGift() {
-    this.loading.onLoading();
+    // this.loading.onLoading();
+    this.success = true;
     setTimeout(() => {
       this.gifImage = './assets/icon/gift/vehicle3.png';
-      this.loading.dismiss();
-      this.success = true;
+      // this.loading.dismiss();
     }, 1000);
   }
 

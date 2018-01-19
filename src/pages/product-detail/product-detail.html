@@ -11,11 +11,12 @@
 
   <ion-slides pager>
     <ion-slide *ngFor="let item of productData.images">
-      <img src="{{item}}" alt="imgErr">
+      <!-- <img src="{{item}}" alt="imgErr"> -->
+      <preload-image [ratio]="{w:1, h:1}" [src]="item" title="ads"></preload-image>
     </ion-slide>
   </ion-slides>
   <h2 text-center>{{productData.name}}</h2>
-  <ion-searchbar mode="ios" placeholder="รายละเอียดเพิ่มเติม">
+  <ion-searchbar mode="ios" placeholder="{{ 'PRODUCT_REMARK' | translate }}">
   </ion-searchbar>
   <div text-center class="count">
     <button ion-button outline color="bite" class="count-radias" (click)="countDelete()">-</button>
@@ -25,17 +26,17 @@
 
   <ion-footer class="footer-product">
     <ion-toolbar>
-      <button ion-button block color="bite" (click)="addToCartSusses()">
+      <button ion-button block color="bite" class="btn-add-cart" (click)="addToCartSusses()">
         <ion-grid>
           <ion-row>
             <ion-col col-4>
               {{numberCount}}
             </ion-col>
             <ion-col col-4>
-              Add to cart
+              {{ 'ADD_TO_CART' | translate }}
             </ion-col>
             <ion-col col-4>
-              {{amount}} ฿
+              {{amount}} {{ 'THB' | translate}}
             </ion-col>
           </ion-row>
         </ion-grid>
