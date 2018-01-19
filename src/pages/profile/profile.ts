@@ -3,7 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Constants } from '../../app/app.constants';
 import { UserModel } from '../../assets/model/user.model';
 import { ShopProvider } from '../../providers/shop/shop';
-import { LoadingProvider } from '../../providers/loading/loading';
+// import { LoadingProvider } from '../../providers/loading/loading';
 import { ItemShopModelMock } from '../../assets/model/shop.model';
 /**
  * Generated class for the ProfilePage page.
@@ -20,9 +20,8 @@ import { ItemShopModelMock } from '../../assets/model/shop.model';
 export class ProfilePage {
 
   user: UserModel = new UserModel();
-  // displayName = "อมรรัตน์ จันทะวร";
+  
   isenabled: boolean = true;
-  Edit = "create";
   segment: String = 'collect';
   condition: string = '';
   shopData: Array<ItemShopModelMock> = [];
@@ -30,18 +29,18 @@ export class ProfilePage {
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
-    private loading: LoadingProvider,
+    // private loading: LoadingProvider,
     private shopProvider: ShopProvider,
   ) {
   }
 
   getShop() {
-    this.loading.onLoading();
+    // this.loading.onLoading();
     this.shopProvider.getShopsFavorite().then((data) => {
       this.shopData = data;
-      this.loading.dismiss();
+      // this.loading.dismiss();
     }, (err) => {
-      this.loading.dismiss();
+      // this.loading.dismiss();
     });
   }
 
@@ -58,7 +57,7 @@ export class ProfilePage {
     {
       rank: 2,
       image: this.user.profileImageURL,
-      value: 80
+      value: 90
     },
     {
       rank: 3,

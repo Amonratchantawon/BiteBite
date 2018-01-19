@@ -1,9 +1,3 @@
-<!--
-  Generated template for the ProfilePage page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-header no-border>
 
   <ion-navbar color="bite">
@@ -17,7 +11,6 @@
 
 </ion-header>
 
-
 <ion-content padding>
   <div class="bite-color">
     <ion-grid>
@@ -25,64 +18,30 @@
         <ion-col col-3>
         </ion-col>
         <ion-col col-6 text-center>
-          <preload-image class="preload-profile-image image-radius" [ratio]="{w:1, h:1}" [src]="user.profileImageURL" [isIcon]="true"></preload-image>
-          <!-- <button ion-button icon-only round color="light" class="camera-btn">
-          <ion-icon name="md-camera"></ion-icon>
-        </button> -->
+          <preload-image class="image-radius" [ratio]="{w:1, h:1}" [src]="user.profileImageURL" [isIcon]="true"></preload-image>
+        </ion-col>
+        <ion-col col-3>
         </ion-col>
       </ion-row>
-      <!-- <ion-row *ngIf="user.coin">
-      <ion-col text-center>
-        <h2 class="text-coin">{{ 'YOU_HAVE' | translate}} {{user.coin}} {{ 'COINS' | translate}}</h2>
-      </ion-col>
-    </ion-row> -->
       <ion-row>
-        <ion-col class="text-name" no-padding text-center>
-          <div class="display-flex">
-            <h4>{{user.displayName}}</h4>
-          </div>
-          <span class="text-rank">(Rank : 2)</span>
+        <ion-col col-12 class="text-name" padding-top text-center>
+          <h4>{{user.displayName}}
+            <span class="text-rank">(Rank : 2)</span>
+          </h4>
         </ion-col>
       </ion-row>
-
-      <!-- <ion-row>
-      <ion-col col-1>
-        <ion-icon class="text-icon" name="ios-happy-outline" item-start></ion-icon>
-      </ion-col>
-      <ion-col col-5>
-        <div class="justify-content">
-          <progress class="progress" max="100" value="90"></progress>
-        </div>
-      </ion-col>
-      <ion-col col-1>
-        <ion-icon class="text-icon" name="help-buoy" item-start></ion-icon>
-      </ion-col>
-      <ion-col col-5>
-        <div class="justify-content">
-          <span class="text-coin">50000</span>
-        </div>
-      </ion-col>
-    </ion-row> -->
-
-      <ion-row>
-        <ion-col no-padding col-1></ion-col>
-        <ion-col no-padding class="display-flex" col-9 text-center>
-          <div padding>
-            <ion-icon class="text-icon" name="ios-flag" item-start></ion-icon>
-          </div>
-          <progress class="progress" max="100" value="90"></progress>
-          <div padding>
-            <img src="./assets/imgs/profile/coin.png" width="60">
-            <!-- <ion-icon class="text-icon" name="help-buoy" item-start></ion-icon> -->
-          </div>
-          <div class="justify-content">
-            <span class="text-coin">1623</span>
-          </div>
+      <ion-row padding-bottom>
+        <ion-col no-padding col-6 text-center class="horizontally-center">
+          <ion-icon class="text-icon" name="ios-flag"></ion-icon>
+          <progress class="progress-me" max="100" value="90"></progress>
         </ion-col>
-        <ion-col no-padding col-1></ion-col>
+        <ion-col no-padding col-6 text-center class="horizontally-center">
+          <img src="./assets/imgs/profile/coin.png">
+          <span class="text-coin">1,623</span>
+        </ion-col>
       </ion-row>
-
     </ion-grid>
+
     <ion-segment mode="md" [(ngModel)]="segment" color="light" (ionChange)="segmentChanged($event)">
       <ion-segment-button value="collect">
         My Collect
@@ -94,21 +53,22 @@
         History
       </ion-segment-button>
     </ion-segment>
+
   </div>
 
   <div [ngSwitch]="segment">
-    <ion-list *ngSwitchCase="'collect'" no-padding>
+    <div *ngSwitchCase="'collect'" no-padding>
       <ion-item no-lines no-padding>
-        <ion-row class="webkit-center">
-          <ion-col>
+        <ion-row>
+          <ion-col col-4 text-center>
             <ion-badge class="ion-badge-style">12</ion-badge>
             <img src="./assets/imgs/profile/vehicle1.png" width="60">
           </ion-col>
-          <ion-col>
+          <ion-col col-4 text-center>
             <ion-badge class="ion-badge-style">6</ion-badge>
             <img src="./assets/imgs/profile/vehicle2.png" width="60">
           </ion-col>
-          <ion-col>
+          <ion-col col-4 text-center>
             <ion-badge class="ion-badge-style">9</ion-badge>
             <img src="./assets/imgs/profile/vehicle3.png" width="60">
           </ion-col>
@@ -118,76 +78,36 @@
       <ion-list class="list-item">
         <ion-item [ngClass]=" profile.rank === 2 ? 'background-active' : ''" *ngFor="let profile of makeProfile">
           <ion-row>
-            <ion-col class="display-flex" col-3>
-              <div>
-                <ion-icon name="ios-flag"></ion-icon>
-                {{profile.rank}}
-              </div>
+            <ion-col col-3 class="rank-icon" text-center>
+              <ion-icon name="ios-flag"></ion-icon>
+              <span>{{profile.rank}}</span>
             </ion-col>
-            <ion-col class="display-grid" col-7 text-left>
-              <div text-left>
-                <progress class="progress" max="100" value="{{profile.value}}"></progress>
-              </div>
+            <ion-col class="display-grid" col-6 text-center>
+              <progress class="progress" max="100" value="{{profile.value}}"></progress>
             </ion-col>
-            <ion-col col-2>
-              <div class="webkit-center">
-                <ion-avatar>
-                  <img class="object-fit" src="{{profile.image}}">
-                </ion-avatar>
-              </div>
+            <ion-col col-3 class="user-image" text-center>
+              <preload-image [ratio]="{w:1, h:1}" [src]="profile.image" [isIcon]="true"></preload-image>
             </ion-col>
           </ion-row>
-
         </ion-item>
-        <div no-padding text-right>
-          <button ion-button clear small class="cate-seeall" (click)="seeAllHotPrice()">
-            <b>{{ 'SEE_ALL' | translate }} >></b>
-          </button>
-        </div>
       </ion-list>
-    </ion-list>
+
+      <div padding text-right>
+        <button ion-button clear small class="cate-seeall" (click)="seeAllHotPrice()">
+          <b>{{ 'SEE_ALL' | translate }} >></b>
+        </button>
+      </div>
+    </div>
 
     <div *ngSwitchCase="'favorite'">
       <grid-shop-y [items]="shopData" (selectedItem)="goToDetail($event)"></grid-shop-y>
     </div>
 
-    <ion-list *ngSwitchCase="'history'">
+    <div *ngSwitchCase="'history'">
       <ion-item>
         <h1>History</h1>
       </ion-item>
-    </ion-list>
+    </div>
   </div>
-  <!-- <ion-list class="user-data-content">
-    <ion-list-header>
-      <p>{{ 'PROFILE' | translate}}</p>
-    </ion-list-header>
-    <ion-item *ngIf="user.displayName">
-      <ion-label stacked>{{ 'DISPLAY_NAME' | translate}}</ion-label>
-      <ion-input [disabled]="true" type="text" [(ngModel)]="user.displayName"></ion-input>
-    </ion-item>
-    <ion-item *ngIf="user.email">
-      <ion-label stacked>{{ 'E_MAIL' | translate}}</ion-label>
-      <ion-input [disabled]="true" type="text" [(ngModel)]="user.email"></ion-input>
-    </ion-item>
-    <ion-item *ngIf="user.mobile">
-      <ion-label stacked>{{ 'TEL' | translate}}</ion-label>
-      <ion-input [disabled]="true" type="text" [(ngModel)]="user.mobile"></ion-input>
-    </ion-item>
-    <ion-item *ngIf="user.gender">
-      <ion-label stacked>{{ 'GENDER' | translate}}</ion-label>
-      <ion-input [disabled]="true" type="text" value="{{ user.gender | translate}}"></ion-input>
-    </ion-item>
-    <ion-item *ngIf="user.dateOfBirth">
-      <ion-label stacked>{{ 'BIRTHDAY' | translate}}</ion-label>
-      <ion-datetime [disabled]="true" displayFormat="DD MMMM YYYY" [(ngModel)]="user.dateOfBirth"></ion-datetime>
-    </ion-item>
-  </ion-list> -->
-
-  <!-- <ion-list>
-    <button ion-item item-start (click)="onToAddress()">
-      <ion-icon name="pin" item-start color="#503f3f"></ion-icon>
-      {{ 'ADDRESS' | translate}}
-    </button>
-  </ion-list> -->
 
 </ion-content>
