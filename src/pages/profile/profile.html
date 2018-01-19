@@ -41,7 +41,7 @@
           <div class="display-flex">
             <h4>{{user.displayName}}</h4>
           </div>
-          <span class="text-rank">(Rank : 5032)</span>
+          <span class="text-rank">(Rank : 2)</span>
         </ion-col>
       </ion-row>
 
@@ -68,7 +68,7 @@
         <ion-col no-padding col-1></ion-col>
         <ion-col no-padding class="display-flex" col-9 text-center>
           <div padding>
-            <ion-icon class="text-icon" name="ios-happy-outline" item-start></ion-icon>
+            <ion-icon class="text-icon" name="ios-flag" item-start></ion-icon>
           </div>
           <progress class="progress" max="100" value="90"></progress>
           <div padding>
@@ -76,7 +76,7 @@
             <!-- <ion-icon class="text-icon" name="help-buoy" item-start></ion-icon> -->
           </div>
           <div class="justify-content">
-            <span class="text-coin">50000</span>
+            <span class="text-coin">1623</span>
           </div>
         </ion-col>
         <ion-col no-padding col-1></ion-col>
@@ -116,7 +116,7 @@
       </ion-item>
 
       <ion-list class="list-item">
-        <ion-item *ngFor="let profile of makeProfile">
+        <ion-item [ngClass]=" profile.rank === 2 ? 'background-active' : ''" *ngFor="let profile of makeProfile">
           <ion-row>
             <ion-col class="display-flex" col-3>
               <div>
@@ -126,7 +126,7 @@
             </ion-col>
             <ion-col class="display-grid" col-7 text-left>
               <div text-left>
-                <progress class="progress" max="100" value="90"></progress>
+                <progress class="progress" max="100" value="{{profile.value}}"></progress>
               </div>
             </ion-col>
             <ion-col col-2>
