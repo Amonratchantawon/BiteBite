@@ -15,10 +15,6 @@
 
 
 <ion-content>
-  <ion-refresher (ionRefresh)="doRefresh($event)">
-    <ion-refresher-content pullingIcon="arrow-down" pullingText="{{ 'PULL_TO_REFRESH' | translate }}" refreshingSpinner="dots"
-      refreshingText="{{ 'REFRESHING' | translate }}"></ion-refresher-content>
-  </ion-refresher>
 
   <div class="container">
   <img src="{{rewardData.coin.image}}" alt="" class="coin">
@@ -26,9 +22,22 @@
     <div class="centered"><p> {{rewardData.coin.coinnumber}}  </p> </div>
   </div>
 
+ 
+
   
   <img src="{{rewardData.conquest.image}}" alt="">
   <div class="conquest"><p> {{rewardData.coin.name}} </p> </div>
+
+  <p class="title">{{rewardData.rewards.title}}</p>
+  <ion-scroll scrollX="true">
+    <ion-row class="row-custom">
+      <ion-col col-4 *ngFor="let item of rewardData.rewards.items" class="col-pro">
+        <ion-card>
+          <img src="{{item.image}}" alt="imgErr">
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-scroll>
 
   <ion-grid>
       <p class="title">{{rewardData.MakeMerit.title}}</p>
