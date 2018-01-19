@@ -41,7 +41,7 @@
           <div class="display-flex">
             <h4>{{user.displayName}}</h4>
           </div>
-          <span class="text-rank">(Rank : 1)</span>
+          <span class="text-rank">(Rank : 5032)</span>
         </ion-col>
       </ion-row>
 
@@ -101,15 +101,15 @@
       <ion-item no-lines no-padding>
         <ion-row class="webkit-center">
           <ion-col>
-            <ion-badge class="ion-badge-style">99</ion-badge>
+            <ion-badge class="ion-badge-style">12</ion-badge>
             <img src="./assets/imgs/profile/vehicle1.png" width="60">
           </ion-col>
           <ion-col>
-            <ion-badge class="ion-badge-style">99</ion-badge>
+            <ion-badge class="ion-badge-style">6</ion-badge>
             <img src="./assets/imgs/profile/vehicle2.png" width="60">
           </ion-col>
           <ion-col>
-            <ion-badge class="ion-badge-style">99</ion-badge>
+            <ion-badge class="ion-badge-style">9</ion-badge>
             <img src="./assets/imgs/profile/vehicle3.png" width="60">
           </ion-col>
         </ion-row>
@@ -118,13 +118,13 @@
       <ion-list class="list-item">
         <ion-item *ngFor="let profile of makeProfile">
           <ion-row>
-            <ion-col class="display-flex" col-2>
+            <ion-col class="display-flex" col-3>
               <div>
                 <ion-icon name="ios-flag"></ion-icon>
                 {{profile.rank}}
               </div>
             </ion-col>
-            <ion-col class="display-grid" col-8 text-left>
+            <ion-col class="display-grid" col-7 text-left>
               <div text-left>
                 <progress class="progress" max="100" value="90"></progress>
               </div>
@@ -132,7 +132,7 @@
             <ion-col col-2>
               <div class="webkit-center">
                 <ion-avatar>
-                  <img src="{{profile.image}}">
+                  <img class="object-fit" src="{{profile.image}}">
                 </ion-avatar>
               </div>
             </ion-col>
