@@ -7,6 +7,7 @@ import { LoadingProvider } from '../../providers/loading/loading';
 import { TranslateService } from '@ngx-translate/core';
 import { AlertProvider } from '../../providers/alert/alert';
 import { Constants } from '../../app/app.constants';
+import { CartProvider } from '../../providers/cart/cart';
 
 @IonicPage()
 @Component({
@@ -26,7 +27,8 @@ export class ShopPage {
     private modalCtrl: ModalController,
     private loading: LoadingProvider,
     private translate: TranslateService,
-    private alert: AlertProvider
+    private alert: AlertProvider,
+    private cartProvider: CartProvider
   ) {
   }
 
@@ -41,6 +43,7 @@ export class ShopPage {
     this.shop.getShopDetail().then((res) => {
       this.shopData = res;
       this.selectedCateId = this.shopData.categories[0]._id;
+      window.localStorage.setItem('select_shop@' + Constants.URL, JSON.stringify(this.shopData));
       this.checkOpenShop();
       this.loading.dismiss();
     }, (err) => {
@@ -84,9 +87,12 @@ export class ShopPage {
   }
 
   selectProduct(e) {
-    window.localStorage.setItem('select_shop@' + Constants.URL, JSON.stringify(this.shopData));
     let modal1 = this.modalCtrl.create('ProductDetailPage', { product: e });
     modal1.present();
+  }
+
+  getBadge() {
+    return this.cartProvider.getBadgeCartByShop();
   }
 
   goToCart() {

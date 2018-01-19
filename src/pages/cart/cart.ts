@@ -2,7 +2,6 @@ import { CartModel } from '../../assets/model/cart.model';
 import { CartProvider } from '../../providers/cart/cart';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { Constants } from '../../app/app.constants';
 
 /**
  * Generated class for the CartPage page.
@@ -29,8 +28,7 @@ export class CartPage {
   }
 
   getCart() {
-    let shop = JSON.parse(window.localStorage.getItem('select_shop@' + Constants.URL));
-    this.cartData = this.cartProvider.getCartByShop(shop);
+    this.cartData = this.cartProvider.getCartByShop();
     console.log(this.cartData);
   }
 
@@ -38,8 +36,9 @@ export class CartPage {
     this.navCtrl.pop();
   }
 
-  checkOut() {
-    console.log('object');
+  removeItem(index) {
+    this.cartData.items.splice(index, 1);
+    this.countPrice();
   }
 
   countDelete(item) {
@@ -63,6 +62,15 @@ export class CartPage {
       this.cartData.qty += e.qty;
       this.cartData.amount += e.amount;
     });
+    this.updateCart();
+  }
+
+  updateCart() {
+    this.cartProvider.updateCart(this.cartData);
+  }
+
+  checkOut() {
+    console.log('object');
   }
 
 }

@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams, ModalController } from 'ionic-angu
 import { ProductProvider } from '../../providers/product/product';
 import { LoadingProvider } from '../../providers/loading/loading';
 import { ProductDetailModel } from '../../assets/model/product-detail.model';
+import { CartProvider } from '../../providers/cart/cart';
 
 @IonicPage()
 @Component({
@@ -16,7 +17,8 @@ export class ProductListPage {
     public navParams: NavParams,
     private product: ProductProvider,
     private loading: LoadingProvider,
-    private modalCtrl: ModalController
+    private modalCtrl: ModalController,
+    private cartProvider: CartProvider
   ) {
   }
 
@@ -33,10 +35,15 @@ export class ProductListPage {
       this.loading.dismiss();
     });
   }
+
   selectProduct(e) {
     console.log(e);
-    let modal1 = this.modalCtrl.create('ProductDetailPage', e);
+    let modal1 = this.modalCtrl.create('ProductDetailPage', { product: e });
     modal1.present();
+  }
+
+  getBadge() {
+    return this.cartProvider.getBadgeCartByShop();
   }
 
   goToCart() {

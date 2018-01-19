@@ -2,13 +2,16 @@ page-cart {
     .content {
         background-color: #f4f4f4;
     }
-    .scroll-content{
+    .scroll-content {
         overflow: auto;
     }
     .count-radias {
         height: 32px;
         width: 26px;
         border-radius: 81px;
+    }
+    .shop-title {
+        margin-bottom: 10px;
     }
     .searchbar-ios .searchbar-input {
         background-color: #eeeded !important;
@@ -32,6 +35,9 @@ page-cart {
             min-height: 40px !important;
             max-height: 40px !important;
         }
+    }
+    .product-name {
+        width: 60vw;
     }
     .price-name {
         color: rgb(168, 168, 168);

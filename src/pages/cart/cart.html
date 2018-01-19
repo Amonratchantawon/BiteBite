@@ -8,9 +8,9 @@
 
 <ion-content>
 
-  <div *ngIf="cartData && cartData.length">
+  <div *ngIf="cartData && cartData.items && cartData.items.length">
 
-    <ion-list>
+    <ion-list class="shop-title">
       <ion-item>
         <h3>{{cartData.shop.name}}</h3>
         <p>{{cartData.shop.detail}}</p>
@@ -19,15 +19,16 @@
     </ion-list>
 
     <ion-list>
-      <ion-item *ngFor="let item of cartData.items">
-        <h2>{{item.product.name}}
-          <span class="price-name"> ({{item.product.price}} {{ 'THB' | translate}}) </span>
+      <ion-item *ngFor="let item of cartData.items; let i = index;">
+        <h2 class="product-name">{{item.product.name}}
+          <span class="price-name"> ({{item.product.price | number:'0.2-2'}} {{ 'THB' | translate}}) </span>
         </h2>
-        <ion-buttons class="icon-trash">
-          <ion-icon ios="ios-trash" md="ios-trash"></ion-icon>
-        </ion-buttons>
 
-        <p class="price">{{item.amount}} {{ 'THB' | translate}}</p>
+        <button ion-button icon-only clear color="dark" class="icon-trash" (click)="removeItem(i)">
+          <ion-icon ios="ios-trash" md="ios-trash"></ion-icon>
+        </button>
+
+        <p class="price">{{item.amount | number:'0.2-2'}} {{ 'THB' | translate}}</p>
 
         <div class="counter">
           <button ion-button icon-only clear color="bite" class="icon-cart" (click)="countDelete(item)">
@@ -48,16 +49,16 @@
 
   </div>
 
-  <ion-row>
+  <ion-row padding>
     <ion-col col-12 text-center>
-      <p padding *ngIf="cartData === null">{{ 'CART_NO_ITEM' | translate }}</p>
+      <p padding *ngIf="cartData === null || !cartData.items || cartData.items.length === 0">{{ 'CART_NO_ITEM' | translate }}</p>
       <button ion-button round outline text-center color="bite" (click)="onBack()">{{ 'ADD_MORE' | translate }}</button>
     </ion-col>
   </ion-row>
 
 </ion-content>
 
-<ion-footer class="footer-cart" *ngIf="cartData && cartData.length">
+<ion-footer class="footer-cart" *ngIf="cartData && cartData.items && cartData.items.length">
   <ion-toolbar>
     <button ion-button block color="bite" (click)="checkOut()">
       <ion-grid>
@@ -69,7 +70,7 @@
             {{ 'CHECK_OUT' | translate }}
           </ion-col>
           <ion-col col-4>
-            {{cartData.amount}} {{ 'THB' | translate }}
+            ({{cartData.amount | number:'0.2-2'}} {{ 'THB' | translate }})
           </ion-col>
         </ion-row>
       </ion-grid>

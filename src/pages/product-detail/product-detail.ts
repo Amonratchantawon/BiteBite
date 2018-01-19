@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ViewController } from 'ionic-angular';
 import { ProductDetailModel } from '../../assets/model/product-detail.model';
 import { CartProvider } from '../../providers/cart/cart';
-import { Constants } from '../../app/app.constants';
 // import { ProductProvider } from '../../providers/product/product';
 // import { LoadingProvider } from '../../providers/loading/loading';
 
@@ -68,7 +67,6 @@ export class ProductDetailPage {
   }
 
   addToCart() {
-    let shop = JSON.parse(window.localStorage.getItem('select_shop@' + Constants.URL));
     let product = {
       product: this.productData,
       remark: this.remark,
@@ -76,7 +74,7 @@ export class ProductDetailPage {
       amount: this.amount
 
     };
-    this.cartProvider.addToCart(shop, product);
+    this.cartProvider.addToCart(product);
     this.viewCtrl.dismiss();
   }
 }

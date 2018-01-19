@@ -6,7 +6,7 @@
       <button ion-button icon-only class="icon-cart">
         <ion-icon name="cart"></ion-icon>
       </button>
-      <ion-badge color="primary" class="badge-count" item-end>3</ion-badge>
+      <ion-badge color="primary" class="badge-count" item-end *ngIf="getBadge() > 0"> {{ getBadge() }} </ion-badge>
     </ion-buttons>
   </ion-navbar>
 
