@@ -103,7 +103,9 @@
   "DISTRICT": "อำเภอ/เขต",
   "PROVINCE": "จังหวัด",
   "POSTCODE": "รหัสไปรษณีย์",
-  "TITLE_CONTACT":"หัวข้อการติดต่อ",
-  "TITLE_MESSAGE":"ข้อความ",
-  "SEND": "ส่ง"
+  "TITLE_CONTACT": "หัวข้อการติดต่อ",
+  "TITLE_MESSAGE": "ข้อความ",
+  "SEND": "ส่ง",
+  "TO": "ถึง",
+  "CART_NO_ITEM": "ไม่มีสินค้าสำหรับร้านนี้"  
 }

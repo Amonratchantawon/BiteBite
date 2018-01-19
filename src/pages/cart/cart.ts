@@ -2,6 +2,7 @@ import { CartModel } from '../../assets/model/cart.model';
 import { CartProvider } from '../../providers/cart/cart';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { Constants } from '../../app/app.constants';
 
 /**
  * Generated class for the CartPage page.
@@ -28,14 +29,12 @@ export class CartPage {
   }
 
   getCart() {
-    this.cartProvider.getCart().then((res) => {
-      this.cartData = res;
-      console.log(res);
-      this.countPrice();
-    })
+    let shop = JSON.parse(window.localStorage.getItem('select_shop@' + Constants.URL));
+    this.cartData = this.cartProvider.getCartByShop(shop);
+    console.log(this.cartData);
   }
 
-  onBack(){
+  onBack() {
     this.navCtrl.pop();
   }
 

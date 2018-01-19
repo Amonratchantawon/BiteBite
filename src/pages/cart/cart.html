@@ -8,49 +8,56 @@
 
 <ion-content>
 
-  <ion-list>
-    <ion-item>
-      <h3>{{cartData.shop.name}}</h3>
-      <p>{{cartData.shop.detail}}</p>
-      <p>{{cartData.shop.address.remark}}</p>
-    </ion-item>
-  </ion-list>
+  <div *ngIf="cartData && cartData.length">
 
-  <ion-list>
-    <ion-item *ngFor="let item of cartData.items">
-      <h2>{{item.product.name}}
-        <span class="price-name"> ({{item.product.price}} {{ 'THB' | translate}}) </span>
-      </h2>
-      <ion-buttons class="icon-trash">
-        <ion-icon ios="ios-trash" md="ios-trash"></ion-icon>
-      </ion-buttons>
+    <ion-list>
+      <ion-item>
+        <h3>{{cartData.shop.name}}</h3>
+        <p>{{cartData.shop.detail}}</p>
+        <p>{{cartData.shop.address.remark}}</p>
+      </ion-item>
+    </ion-list>
 
-      <p class="price">{{item.amount}} {{ 'THB' | translate}}</p>
+    <ion-list>
+      <ion-item *ngFor="let item of cartData.items">
+        <h2>{{item.product.name}}
+          <span class="price-name"> ({{item.product.price}} {{ 'THB' | translate}}) </span>
+        </h2>
+        <ion-buttons class="icon-trash">
+          <ion-icon ios="ios-trash" md="ios-trash"></ion-icon>
+        </ion-buttons>
 
-      <div class="counter">
-        <button ion-button icon-only clear color="bite" class="icon-cart" (click)="countDelete(item)">
-          <ion-icon name="ios-remove-circle-outline"></ion-icon>
-        </button>
-        <button ion-button icon-only clear class="icon-cart" color="dark">
-          {{item.qty}}
-        </button>
-        <button ion-button icon-only clear color="bite" class="icon-cart" (click)="countPlus(item)">
-          <ion-icon name="ios-add-circle-outline"></ion-icon>
-        </button>
-      </div>
+        <p class="price">{{item.amount}} {{ 'THB' | translate}}</p>
 
-      <ion-searchbar mode="ios" placeholder="{{ 'PRODUCT_REMARK' | translate}}" [(ngModel)]="item.remark">
-      </ion-searchbar>
-    </ion-item>
-  </ion-list>
+        <div class="counter">
+          <button ion-button icon-only clear color="bite" class="icon-cart" (click)="countDelete(item)">
+            <ion-icon name="ios-remove-circle-outline"></ion-icon>
+          </button>
+          <button ion-button icon-only clear class="icon-cart" color="dark">
+            {{item.qty}}
+          </button>
+          <button ion-button icon-only clear color="bite" class="icon-cart" (click)="countPlus(item)">
+            <ion-icon name="ios-add-circle-outline"></ion-icon>
+          </button>
+        </div>
 
-  <ion-row justify-content-center>
-    <button ion-button round outline text-center color="bite" (click)="onBack()" >{{ 'ADD_MORE' | translate }}</button>
+        <ion-searchbar mode="ios" placeholder="{{ 'PRODUCT_REMARK' | translate}}" [(ngModel)]="item.remark">
+        </ion-searchbar>
+      </ion-item>
+    </ion-list>
+
+  </div>
+
+  <ion-row>
+    <ion-col col-12 text-center>
+      <p padding *ngIf="cartData === null">{{ 'CART_NO_ITEM' | translate }}</p>
+      <button ion-button round outline text-center color="bite" (click)="onBack()">{{ 'ADD_MORE' | translate }}</button>
+    </ion-col>
   </ion-row>
 
 </ion-content>
 
-<ion-footer class="footer-cart">
+<ion-footer class="footer-cart" *ngIf="cartData && cartData.length">
   <ion-toolbar>
     <button ion-button block color="bite" (click)="checkOut()">
       <ion-grid>

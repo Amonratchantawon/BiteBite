@@ -1,8 +1,10 @@
-import { ProductDetailModel } from '../../assets/model/product-detail.model';
-import { ProductProvider } from '../../providers/product/product';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ViewController } from 'ionic-angular';
-import { LoadingProvider } from '../../providers/loading/loading';
+import { ProductDetailModel } from '../../assets/model/product-detail.model';
+import { CartProvider } from '../../providers/cart/cart';
+import { Constants } from '../../app/app.constants';
+// import { ProductProvider } from '../../providers/product/product';
+// import { LoadingProvider } from '../../providers/loading/loading';
 
 @IonicPage()
 @Component({
@@ -12,15 +14,17 @@ import { LoadingProvider } from '../../providers/loading/loading';
 export class ProductDetailPage {
 
   productData: ProductDetailModel = new ProductDetailModel();
+  remark: string = '';
   numberCount: number = 1;
   amount: number = 0;
 
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
-    private productProvider: ProductProvider,
     private viewCtrl: ViewController,
-    private loading: LoadingProvider
+    private cartProvider: CartProvider
+    // private productProvider: ProductProvider,
+    // private loading: LoadingProvider
   ) {
   }
 
@@ -30,14 +34,18 @@ export class ProductDetailPage {
   }
 
   getProductDetail() {
-    this.loading.onLoading();
-    this.productProvider.getProductDetail().then((res) => {
-      this.productData = res;
-      this.countPrice();
-      this.loading.dismiss();      
-    }, (err) => {
-      this.loading.dismiss();
-    });
+    // this.loading.onLoading();
+    // this.productProvider.getProductDetail().then((res) => {
+    //   this.productData = res;
+    //   this.countPrice();
+    //   this.loading.dismiss();      
+    // }, (err) => {
+    //   this.loading.dismiss();
+    // });
+    this.productData = this.navParams.get('product');
+    this.productData.images = [];
+    this.productData.images[0] = this.navParams.get('product').image;
+    this.countPrice();
   }
 
   countDelete() {
@@ -59,7 +67,16 @@ export class ProductDetailPage {
     this.viewCtrl.dismiss();
   }
 
-  addToCartSusses() {
+  addToCart() {
+    let shop = JSON.parse(window.localStorage.getItem('select_shop@' + Constants.URL));
+    let product = {
+      product: this.productData,
+      remark: this.remark,
+      qty: this.numberCount,
+      amount: this.amount
+
+    };
+    this.cartProvider.addToCart(shop, product);
     this.viewCtrl.dismiss();
   }
 }

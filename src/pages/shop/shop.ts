@@ -6,6 +6,7 @@ import { GalleryModal } from 'ionic-gallery-modal';
 import { LoadingProvider } from '../../providers/loading/loading';
 import { TranslateService } from '@ngx-translate/core';
 import { AlertProvider } from '../../providers/alert/alert';
+import { Constants } from '../../app/app.constants';
 
 @IonicPage()
 @Component({
@@ -83,8 +84,8 @@ export class ShopPage {
   }
 
   selectProduct(e) {
-    console.log(e);
-    let modal1 = this.modalCtrl.create('ProductDetailPage', e);
+    window.localStorage.setItem('select_shop@' + Constants.URL, JSON.stringify(this.shopData));
+    let modal1 = this.modalCtrl.create('ProductDetailPage', { product: e });
     modal1.present();
   }
 

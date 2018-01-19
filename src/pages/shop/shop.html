@@ -15,27 +15,30 @@
 
 <ion-content>
   <search-input></search-input>
-  <preload-image [ratio]="{w:20, h:9}" [src]="shopData.coverimage" [isIcon]="true"></preload-image>
-  <ion-grid class="shop-detail">
-    <ion-row>
-      <ion-col col-12>
-        <ion-row>
-          {{shopData.name}}
-        </ion-row>
-        <ion-row>
-          {{shopData.detail}}
-        </ion-row>
-        <ion-row>
-          <span>{{shopData.address.addressdetail}}</span>&nbsp;
-          <ion-badge class="icon-ads" item-end color="bite" [ngClass]="{'open': shopData.isopen}">{{isO | translate}}</ion-badge>
-        </ion-row>
 
-        <button ion-button icon-left clear large class="like">
-          <ion-icon ios="ios-star-outline" md="md-star-outline"></ion-icon>
-        </button>
-      </ion-col>
-    </ion-row>
-  </ion-grid>
+  <div>
+    <preload-image [ratio]="{w:20, h:9}" [src]="shopData.coverimage" [isIcon]="true"></preload-image>
+    <ion-grid class="shop-detail">
+      <ion-row>
+        <ion-col col-12>
+          <ion-row>
+            {{shopData.name}}
+          </ion-row>
+          <ion-row>
+            {{shopData.detail}}
+          </ion-row>
+          <ion-row>
+            <span>{{shopData.address.addressdetail}}</span>&nbsp;
+            <ion-badge class="icon-ads" item-end color="bite" [ngClass]="{'open': shopData.isopen}">{{isO | translate}}</ion-badge>
+          </ion-row>
+
+          <button ion-button icon-left clear large class="like">
+            <ion-icon ios="ios-star-outline" md="md-star-outline"></ion-icon>
+          </button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
 
   <ion-scroll scrollX="true" *ngIf="shopData.promoteimage && shopData.promoteimage.length > 0">
     <ion-row class="row-custom">

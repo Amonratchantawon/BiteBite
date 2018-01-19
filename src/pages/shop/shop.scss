@@ -1,19 +1,17 @@
 page-shop {
     .scroll-content {
         overflow-y: auto !important;
-        overflow-x: hidden !important;
+        overflow-x: auto !important;
     }
     .icon-ads {
-        // position: absolute;
         background-color: #ff5566;
     }
     .open {
         background-color: #4CAF50 !important;
     }
     .shop-detail {
-        position: absolute;
+        margin-top: -90px;
         z-index: 1;
-        margin-top: -85px;
         color: aliceblue;
     }
     .row-custom {
@@ -52,9 +50,10 @@ page-shop {
     .like {
         position: absolute;
         bottom: -20px;
-        right: -40px;
+        right: 0px;
         color: #e0dd13;
         font-size: 3rem;
+        padding: 0px;
     }
     .selectedCategory {
         img {
@@ -72,7 +71,6 @@ page-shop {
         left: -10px !important;
     }
     .icon-cart.icon-md {
-        // position: absolute !important;
         left: -36px !important;
     }
     .badge-count {
@@ -83,8 +81,5 @@ page-shop {
     .seeall {
         color: rgb(73, 67, 67);
         font-family: 'Kanit', sans-serif; // margin-bottom: 40px;
-    }
-    ion-badge {
-        padding: 6px 8px;
     }
 }

@@ -105,5 +105,7 @@
   "POSTCODE": "Postcode",
   "TITLE_CONTACT": "Contact title",
   "TITLE_MESSAGE": "message",
-  "SEND": "Send"
+  "SEND": "Send",
+  "TO": "To",
+  "CART_NO_ITEM": "No products for this shop."  
 }
