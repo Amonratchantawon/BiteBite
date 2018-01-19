@@ -81,4 +81,18 @@ page-reward {
     .col{
         padding: 0px 1px 0px 0px !important ;
     }
+
+    .row-custom {
+        flex-wrap: inherit !important;
+    }
+    ion-scroll {
+        height: 55vw;
+    }
+    .col-pro{
+        margin: 6px !important;
+        ion-card.card{
+            margin: 0px !important;
+            width: 100%;
+        }
+    }
 }

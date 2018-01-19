@@ -22,10 +22,22 @@
     <div class="centered"><p> {{rewardData.coin.coinnumber}}  </p> </div>
   </div>
 
+ 
+
   
   <img src="{{rewardData.conquest.image}}" alt="">
   <div class="conquest"><p> {{rewardData.coin.name}} </p> </div>
 
+  <ion-scroll scrollX="true">
+    <ion-row class="row-custom">
+      <ion-col col-4 *ngFor="let item of rewardData.rewards.items" class="col-pro">
+        <ion-card>
+          <img src="{{item.image}}" alt="imgErr">
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-scroll>
+  
   <ion-grid>
       <p class="title">{{rewardData.MakeMerit.title}}</p>
     <ion-row>

@@ -3,7 +3,17 @@ export class RewardModel {
     conquest: ConquestModel = new ConquestModel();
     MakeMerit: MakeMeritModel = new MakeMeritModel();
     sendCoin: SendCoinModel = new SendCoinModel();
-    giftAndVouCher:GiftAndVouCherModel = new GiftAndVouCherModel();
+    giftAndVouCher: GiftAndVouCherModel = new GiftAndVouCherModel();
+    rewards: RewardsModel = new RewardsModel();
+}
+
+export class RewardsModel {
+    title: string;
+    items: Array<RewardsItemModel>;
+}
+
+export class RewardsItemModel {
+    image: string;
 }
 
 export class CoinModel {
