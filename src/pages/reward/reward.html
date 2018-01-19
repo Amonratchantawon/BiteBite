@@ -4,7 +4,7 @@
     <ion-buttons start *ngIf="user && user.profileImageURL">
       <button ion-button clear (click)="goToProfile()">
         <ion-avatar class="avatar-profile">
-            <preload-image class="preload-profile-image" [ratio]="{w:1, h:1}" [src]="user.profileImageURL" [isIcon]="true"></preload-image>
+          <preload-image class="preload-profile-image" [ratio]="{w:1, h:1}" [src]="user.profileImageURL" [isIcon]="true"></preload-image>
         </ion-avatar>
       </button>
     </ion-buttons>
@@ -17,16 +17,17 @@
 <ion-content>
 
   <div class="container">
-  <img src="{{rewardData.coin.image}}" alt="" class="coin">
-  <!-- <img src="img_fjords_wide.jpg" alt="Norway" style="width:100%;"> -->
-    <div class="centered"><p> {{rewardData.coin.coinnumber}}  </p> </div>
+    <img src="{{rewardData.coin.image}}" class="coin">
+    <div class="centered">
+      <p> {{rewardData.coin.coinnumber}} </p>
+    </div>
   </div>
 
- 
-
-  
   <img src="{{rewardData.conquest.image}}" alt="">
-  <div class="conquest"><p> {{rewardData.coin.name}} </p> </div>
+
+  <div class="conquest">
+    <p> {{rewardData.coin.name}} </p>
+  </div>
 
   <p class="title">{{rewardData.rewards.title}}</p>
   <ion-scroll scrollX="true">
@@ -40,7 +41,7 @@
   </ion-scroll>
 
   <ion-grid>
-      <p class="title">{{rewardData.MakeMerit.title}}</p>
+    <p class="title">{{rewardData.MakeMerit.title}}</p>
     <ion-row>
       <ion-col col-6 *ngFor="let item of rewardData.MakeMerit.items">
         <img src="{{item.image}}" alt="imgErr">
@@ -49,22 +50,11 @@
   </ion-grid>
 
   <ion-grid>
-      <p class="title">{{rewardData.sendCoin.title}}</p>
+    <p class="title">{{rewardData.sendCoin.title}}</p>
     <ion-row>
       <ion-col col-6 *ngFor="let item of rewardData.sendCoin.items">
         <img src="{{item.image}}" alt="imgErr">
       </ion-col>
     </ion-row>
   </ion-grid>
-
-
-  <ion-grid>
-      <p class="title">{{rewardData.giftAndVouCher.title}}</p>
-    <ion-row>
-      <ion-col col-6 *ngFor="let item of rewardData.giftAndVouCher.items">
-        <img src="{{item.image}}" alt="imgErr">
-      </ion-col>
-    </ion-row>
-  </ion-grid>
-
 </ion-content>
