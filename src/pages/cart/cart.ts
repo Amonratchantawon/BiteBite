@@ -70,7 +70,7 @@ export class CartPage {
   }
 
   checkOut() {
-    console.log('object');
+    this.navCtrl.push('OrderPage');
   }
 
 }
