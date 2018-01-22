@@ -1,0 +1,30 @@
+page-confirmed {
+.fixicon{
+    font-size: 2em;
+}
+.border-row{
+    border-top: solid #c8c7cc 0.5px;
+    border-bottom: solid #c8c7cc 0.5px;
+}
+.border-top-row{
+    border-top: solid #c8c7cc 0.5px;    
+}
+.border-bottom-row{
+    border-bottom: solid #c8c7cc 0.5px;    
+}
+.worning-danger{
+    color: #EB3841;
+}
+.detail-text{
+    color: #8e9093;
+}
+.fontIcon {
+    font-size: x-large
+}
+ion-spinner{
+    width: 28px;
+    height: 28px;
+    stroke: #444;
+    fill: #222;
+  }
+}

@@ -20,7 +20,7 @@ import { ItemShopModelMock } from '../../assets/model/shop.model';
 export class ProfilePage {
 
   user: UserModel = new UserModel();
-  
+
   isenabled: boolean = true;
   segment: String = 'collect';
   condition: string = '';
@@ -49,56 +49,42 @@ export class ProfilePage {
     if (this.user && this.user.gender) {
       this.user.gender = this.user.gender.toUpperCase();
     }
-    this.makeProfile = [{
-      rank: 1,
-      image: 'https://upload.wikimedia.org/wikipedia/commons/f/f4/Sunny_at_Incheon_Airport_on_May_20%2C_2015.jpg',
-      value: 90
-    },
-    {
-      rank: 2,
-      image: this.user.profileImageURL,
-      value: 90
-    },
-    {
-      rank: 3,
-      image: 'https://i.ytimg.com/vi/Cz1EcFnoNmU/maxresdefault.jpg',
-      value: 70
-    },
-    {
-      rank: 4,
-      image: 'http://tv.bectero.com/wp-content/uploads/2017/07/big_147202988557bd64bdb8560.jpg',
-      value: 65
-    },
-    {
-      rank: 5,
-      image: 'http://kpop.youzab.com/wp-content/uploads/2017/10/Girls-Generation-YoonA.jpg',
-      value: 60
-    },
-    {
-      rank: 6,
-      image: 'https://1.soompi.io/wp-content/blogs.dir/12/files/2013/11/girls-generation-seohyun-wide.jpg',
-      value: 55
-    },
-    {
-      rank: 7,
-      image: 'https://sites.google.com/site/soshichotima/_/rsrc/1468857530546/-suny/-suny/-hyoyeon/922a6f268d22132177ab39f9d304555e.jpg?height=300&width=400',
-      value: 53
-    },
-    {
-      rank: 8,
-      image: 'https://image.dek-d.com/27/0456/5187/120458333',
-      value: 50
-    },
-    {
-      rank: 9,
-      image: 'https://1.bp.blogspot.com/-cyY0fYSWpys/VwYDtSPoAvI/AAAAAAAAAFg/Wop9RnoATmUhO81_FznYMkHtoqZ-r-VbA/s1600/7ce499706e4c7712d5a64ba46c453dfc.jpg',
-      value: 45
-    },
-    {
-      rank: 10,
-      image: 'http://topicstock.pantip.com/chalermkrung/topicstock/2011/03/C10370545/C10370545-7.jpg',
-      value: 35
-    }];
+    this.makeProfile = [
+      {
+        rank: 2,
+        // image: this.user.profileImageURL,
+        image: 'https://www.shareicon.net/data/2016/08/18/813780_people_512x512.png',
+        value: 90,
+        check: 'me'
+      }, {
+        rank: 1,
+        image: 'https://www.sonypark360.net/wp-content/uploads/2017/08/profile-pictures.png',
+        value: 90,
+        check: 'first'
+      },
+      {
+        rank: 2,
+        // image: this.user.profileImageURL,
+        image: 'https://www.shareicon.net/data/2016/08/18/813780_people_512x512.png',
+        value: 90,
+        check: 'second'
+      },
+      {
+        rank: 3,
+        image: 'https://www.sonypark360.net/wp-content/uploads/2017/08/profile-pictures.png',
+        value: 70,
+        check: 'third'
+      },
+      {
+        rank: 4,
+        image: 'https://www.sonypark360.net/wp-content/uploads/2017/08/profile-pictures.png',
+        value: 65
+      },
+      {
+        rank: 5,
+        image: 'https://www.sonypark360.net/wp-content/uploads/2017/08/profile-pictures.png',
+        value: 60
+      }];
   }
 
   segmentChanged(e) {
@@ -114,5 +100,14 @@ export class ProfilePage {
   ProfileEditPage() {
     this.navCtrl.push('ProfileEditPage');
   }
+  gotoHistoryDetail(){
+    this.navCtrl.push('HistoryDetailPage')
+  }
+  gotoSeeAll(){
+    this.navCtrl.push('RankingPage')
+  }
 
+  goToFavoritDetail(e) {
+    this.navCtrl.push('ShopPage', e._id);
+  }
 }

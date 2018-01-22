@@ -1,0 +1,66 @@
+<!--
+  Generated template for the PaymentPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="bite">
+    <ion-title>Payment Method</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <ion-row class="border-bottom-row">
+    <ion-col text-center>
+      <img src="./assets/imgs/payment/pay-ment.png" alt="" style="border-radius:50%;" width="30%">
+      <!-- <h4>Payment Method</h4> -->
+    </ion-col>
+  </ion-row>
+
+  <ion-row>
+    <ion-col text-center>
+      <h2>Select Payment Method</h2>
+    </ion-col>
+  </ion-row>
+  <ion-segment mode="md" [(ngModel)]="payment" color="bite" padding>
+    <ion-segment-button value="1" text-capitalize>
+      <!-- <img src="./assets/imgs/payment/pay-ment-credit.png" alt="" width="15%"> -->
+      <!-- <label class="font-color-segment">
+        <img src="./assets/imgs/payment/pay-ment-credit.png" alt="" width="25px">Credit Card</label> -->
+      <label class="font-color-segment">Credit Card</label>
+    </ion-segment-button>
+    <ion-segment-button class="font-color-segment" value="2" text-capitalize>
+      <!-- <img src="./assets/imgs/payment/pay-ment-cod.png" alt="" width="15%"> -->
+      <!-- <label class="font-color-segment">
+        <img src="./assets/imgs/payment/pay-ment-cod.png" alt="" width="25px">Cash On Delivery</label> -->
+      <label class="font-color-segment">Cash On Delivery</label>
+    </ion-segment-button>
+  </ion-segment>
+  <ion-list *ngIf="payment === '1'">
+    <ion-item>
+      <ion-label floating>Credit card number</ion-label>
+      <ion-input type="number"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>Credit holder number</ion-label>
+      <ion-input type="number"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>CVC</ion-label>
+      <ion-input type="number"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>Expiration date: MM/YYYY</ion-label>
+      <ion-input type="number"></ion-input>
+    </ion-item>
+  </ion-list>
+</ion-content>
+<ion-footer class="footer-payment">
+  <ion-toolbar>
+    <button ion-button block color="bite">Submit</button>
+  </ion-toolbar>
+</ion-footer>

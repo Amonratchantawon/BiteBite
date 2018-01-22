@@ -1,0 +1,21 @@
+page-payment {
+    // .border-bottom-row{
+    //     border-bottom: solid #c8c7cc 0.5px;    
+    // }
+    .font-color-segment{
+        color: #545454
+    }
+    .footer-payment {
+        .toolbar {
+            min-height: 40px !important;
+            max-height: 40px !important;
+        }
+    }
+    .segment-button {
+        font-size: medium !important;
+    }
+
+    .list-ios > .item-block:first-child {
+         border-top: none !important; 
+    }
+}
