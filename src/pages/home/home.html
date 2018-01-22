@@ -26,8 +26,10 @@
 
     <ion-slides pager autoplay="3000" loop="true" speed="1500">
       <ion-slide *ngFor="let item of homeData.ads.items" (click)="openAds(item)">
-        <!-- <img src="{{item.image}}" alt="imgErr"> -->
-        <preload-image [ratio]="{w:20, h:10}" [src]="item.image" title="ads"></preload-image>
+        <!-- <div style="height:100%;"> -->
+          <img src="{{item.image}}" alt="imgErr">
+        <!-- </div> -->
+        <!-- <preload-image [ratio]="{w:20, h:10}" [src]="item.image" title="ads"></preload-image> -->
       </ion-slide>
     </ion-slides>
 
