@@ -1,0 +1,56 @@
+page-order {
+    .item {
+        padding: 0px !important;
+    }
+    .item-input {
+        height: 30px !important;
+    }
+    .col {
+        padding: 4px 4px 4px 0px!important;
+    }
+    .footer-order {
+        .toolbar {
+            min-height: 40px !important;
+            max-height: 40px !important;
+        }
+    }
+    ion-list {
+        margin-bottom: 0px !important;
+    }
+    .highlight {
+        border-bottom: 1px solid #dedede;
+        padding: 6px 0px 6px 0px !important;
+        p {
+            font-weight: 600;
+        }
+    }
+    .highlight-color {
+        p {
+            color: #4CAF50 !important;
+        }
+    }
+    .order-description {
+        padding: 6px 0px 6px 0px !important;
+    }
+    .border-none {
+        .item-inner {
+            border-bottom: none !important;
+        }
+    }
+    .button-md {
+        box-shadow: none !important;
+    }
+    .item-inner {
+        background: none !important;
+        padding-right: 0px !important;
+    }
+    .header-order {
+        height: 30px !important;
+        padding-top: 4px !important;
+        font-size: 1em;
+        font-weight: 600;
+    }
+    .remark{
+        color: #a5a5a5;
+    }
+}

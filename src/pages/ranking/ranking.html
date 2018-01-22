@@ -1,0 +1,40 @@
+<!--
+  Generated template for the RankingPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="bite">
+    <ion-title>Ranking</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+    <ion-list>
+        <ion-item [ngClass]=" profile.check === 'second' ? 'background-active' : ''" *ngFor="let profile of makeProfile">
+          <ion-row>
+            <ion-col col-3 class="user-image" text-center>
+                <!-- <img src="{{profile.image}}"> -->
+              <preload-image [ratio]="{w:1, h:1}" [src]="profile.image" [isIcon]="true"></preload-image>
+            </ion-col>
+            <ion-col class="display-grid" col-6 text-center>
+              <progress class="progress" max="100" value="{{profile.value}}"></progress>
+            </ion-col>
+            <ion-col col-3 class="rank-icon">
+              <ion-row>
+                <ion-col col-6 text-right>
+                  <ion-icon *ngIf="profile.check" name="trophy" [ngClass]="profile.check === 'second' ? 'icon-silver' : profile.check === 'first' ? 'icon-gold' : profile.check === 'third' ? 'icon-copper' :''"></ion-icon>
+                </ion-col>
+                <ion-col col-6>
+                  <span>{{profile.rank}}</span>
+                </ion-col>
+              </ion-row>
+            </ion-col>
+          </ion-row>
+        </ion-item>
+      </ion-list>
+</ion-content>

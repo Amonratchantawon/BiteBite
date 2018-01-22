@@ -1,0 +1,17 @@
+page-review-biker {
+    ul {
+        padding: 0px;
+        &.rating li {
+            padding: 5px 5px !important;
+            background: none;
+            color: $bite-color;
+            ion-icon {
+                font-size: 50px;
+            }
+        }
+    }
+
+    .ratting{
+        margin-top: 60vw;
+    }
+}

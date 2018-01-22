@@ -1,7 +1,6 @@
 <ion-header no-border>
-
-  <ion-navbar color="bite">
-    <ion-title>{{ 'PROFILE' | translate}}</ion-title>
+  <ion-navbar transparent color="bite">
+    <!-- <ion-title>{{ 'PROFILE' | translate}}</ion-title> -->
     <ion-buttons right>
       <button ion-button icon-only (click)="ProfileEditPage()">
         <ion-icon name="md-create"></ion-icon>
@@ -11,31 +10,30 @@
 
 </ion-header>
 
-<ion-content padding>
+<ion-content fullscreen padding>
   <div class="bite-color">
     <ion-grid>
       <ion-row>
-        <ion-col col-3>
+        <ion-col>
         </ion-col>
-        <ion-col col-6 text-center>
-          <preload-image class="image-radius" [ratio]="{w:1, h:1}" [src]="user.profileImageURL" [isIcon]="true"></preload-image>
+        <ion-col col-4 text-center>
+          <!-- <preload-image class="image-radius" [ratio]="{w:1, h:1}" [src]="user.profileImageURL" [isIcon]="true"></preload-image> -->
+          <img src="https://www.shareicon.net/data/2016/08/18/813780_people_512x512.png">
         </ion-col>
-        <ion-col col-3>
+        <ion-col>
         </ion-col>
       </ion-row>
       <ion-row>
-        <ion-col col-12 class="text-name" padding-top text-center>
-          <h4>{{user.displayName}}
-            <span class="text-rank">({{ 'RANK' | translate }} : 2)</span>
-          </h4>
+        <ion-col col-12 class="text-name" text-center>
+          <h4>{{user.displayName}}</h4>
         </ion-col>
       </ion-row>
       <ion-row padding-bottom>
-        <ion-col no-padding col-6 text-center class="horizontally-center">
+        <!-- <ion-col no-padding col-6 text-center class="horizontally-center">
           <ion-icon class="text-icon" name="ios-flag"></ion-icon>
           <progress class="progress-me" max="100" value="90"></progress>
-        </ion-col>
-        <ion-col no-padding col-6 text-center class="horizontally-center">
+        </ion-col> -->
+        <ion-col no-padding text-center class="horizontally-center">
           <img src="./assets/imgs/profile/coin.png">
           <span class="text-coin">1,623</span>
         </ion-col>
@@ -53,60 +51,133 @@
         {{ 'HISTORY' | translate }}
       </ion-segment-button>
     </ion-segment>
-
   </div>
 
   <div [ngSwitch]="segment">
     <div *ngSwitchCase="'collect'" no-padding>
-      <ion-item no-lines no-padding>
+      <ion-item no-padding>
         <ion-row>
           <ion-col col-4 text-center>
             <ion-badge class="ion-badge-style">12</ion-badge>
-            <img src="./assets/imgs/profile/vehicle1.png" width="60">
+            <img src="./assets/imgs/profile/Bdelively-1.png" width="80">
           </ion-col>
           <ion-col col-4 text-center>
             <ion-badge class="ion-badge-style">6</ion-badge>
-            <img src="./assets/imgs/profile/vehicle2.png" width="60">
+            <img src="./assets/imgs/profile/Bdelivery-2.png" width="80">
           </ion-col>
           <ion-col col-4 text-center>
             <ion-badge class="ion-badge-style">9</ion-badge>
-            <img src="./assets/imgs/profile/vehicle3.png" width="60">
+            <img src="./assets/imgs/profile/Bdelivery-3.png" width="80">
           </ion-col>
         </ion-row>
       </ion-item>
 
-      <ion-list class="list-item">
-        <ion-item [ngClass]=" profile.rank === 2 ? 'background-active' : ''" *ngFor="let profile of makeProfile">
+      <ion-list>
+        <ion-item [ngClass]=" profile.check === 'second' ? 'background-active' : profile.check === 'me' ? 'background-first' : ''" *ngFor="let profile of makeProfile">
           <ion-row>
-            <ion-col col-3 class="rank-icon" text-center>
-              <ion-icon name="ios-flag"></ion-icon>
-              <span>{{profile.rank}}</span>
+            <ion-col col-3 class="user-image" text-center>
+              <preload-image [ratio]="{w:1, h:1}" [src]="profile.image" [isIcon]="true"></preload-image>
             </ion-col>
             <ion-col class="display-grid" col-6 text-center>
               <progress class="progress" max="100" value="{{profile.value}}"></progress>
             </ion-col>
-            <ion-col col-3 class="user-image" text-center>
-              <preload-image [ratio]="{w:1, h:1}" [src]="profile.image" [isIcon]="true"></preload-image>
+            <ion-col col-3 class="rank-icon">
+              <ion-row>
+                <ion-col col-6 text-right>
+                  <ion-icon *ngIf="profile.check" name="trophy" [ngClass]="profile.check === 'second' || profile.check === 'me' ? 'icon-silver' : profile.check === 'first' ? 'icon-gold' : profile.check === 'third' ? 'icon-copper' :''"></ion-icon>
+                </ion-col>
+                <ion-col col-6>
+                  <span>{{profile.rank}}</span>
+                </ion-col>
+              </ion-row>
             </ion-col>
           </ion-row>
         </ion-item>
       </ion-list>
 
-      <div padding text-right>
-        <button ion-button clear small class="cate-seeall">
+      <div text-right>
+        <button ion-button clear small class="cate-seeall" (click)="gotoSeeAll()">
           <b>{{ 'SEE_ALL' | translate }} >></b>
         </button>
       </div>
     </div>
 
     <div *ngSwitchCase="'favorite'">
-      <grid-shop-y [items]="shopData" (selectedItem)="goToDetail($event)"></grid-shop-y>
+      <grid-shop-y [items]="shopData" (selectedItem)="goToFavoritDetail($event)"></grid-shop-y>
     </div>
 
-    <div *ngSwitchCase="'history'">
-      <ion-item>
-        <h1>History</h1>
-      </ion-item>
+    <div *ngSwitchCase="'history'" padding-left>
+      <ion-list>
+        <ion-item (click)="gotoHistoryDetail()">
+          <ion-row>
+            <ion-col no-padding>
+              <p>09 มีนาคม 2561 12:00 น.</p>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col no-padding>
+              <p>No. BB001</p>
+            </ion-col>
+            <ion-col no-padding text-right>
+              <h2>500 ฿</h2>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col no-padding>
+              <h5>ร้านละมุนภัณฑ์</h5>
+            </ion-col>
+            <ion-col no-padding text-right>
+              <h5 class="paid">ชำระเงินปลายทาง</h5>
+            </ion-col>
+          </ion-row>
+        </ion-item>
+        <ion-item (click)="gotoHistoryDetail()">
+          <ion-row>
+            <ion-col no-padding>
+              <p>09 มีนาคม 2561 16:00 น.</p>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col no-padding>
+              <p>No. BB002</p>
+            </ion-col>
+            <ion-col no-padding text-right>
+              <h2>1500 ฿</h2>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col no-padding>
+              <h5>ร้านละมุนภัณฑ์</h5>
+            </ion-col>
+            <ion-col no-padding text-right>
+              <h5 class="paid">ชำระเงินด้วยบัตรเครดิต</h5>
+            </ion-col>
+          </ion-row>
+        </ion-item>
+        <ion-item (click)="gotoHistoryDetail()">
+          <ion-row>
+            <ion-col no-padding>
+              <p>09 มีนาคม 2561 20:00 น.</p>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col no-padding>
+              <p>No. BB003</p>
+            </ion-col>
+            <ion-col no-padding text-right>
+              <h2>700 ฿</h2>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col no-padding>
+              <h5>ร้านละมุนภัณฑ์</h5>
+            </ion-col>
+            <ion-col no-padding text-right>
+              <h5 class="paid">ชำระเงินปลายทาง</h5>
+            </ion-col>
+          </ion-row>
+        </ion-item>
+      </ion-list>
     </div>
   </div>
 

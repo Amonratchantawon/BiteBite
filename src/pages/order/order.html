@@ -1,0 +1,128 @@
+<!--
+  Generated template for the OrderPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="bite">
+    <ion-title>{{ 'ORDER' | translate}}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <ion-list padding>
+    <button ion-item>
+      <p class="header-order"><b>{{ 'DELIVERY_ADDRESS' | translate }}</b></p>
+      <p>84/176 ถ.ลำลูกกา ตำบล บึงคำพร้อย อำเภอ ลำลูกกา ปทุมธานี 12150</p>
+    </button>
+
+    <ion-item>
+      <ion-input type="text" placeholder="Address detail (Optional)"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input type="text" placeholder="Name" [(ngModel)]="user.displayName"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input type="text" placeholder="Tel" [(ngModel)]="user.mobile"></ion-input>
+    </ion-item>
+  </ion-list>
+
+  <ion-list padding-left padding-right no-lines>
+    <ion-item>
+      <p class="header-order"><b>{{ 'RESTAURANT' | translate }}</b></p>
+      <p>{{order.shop.name}}</p>
+    </ion-item>
+  </ion-list>
+
+  <ion-list padding-left padding-right>
+    <button ion-item>
+      <p class="header-order"><b>{{ 'PRODUCT_MENU' | translate }}</b></p>
+      <ion-row *ngFor="let item of order.items">
+        <ion-col col-6 text-left>
+          <p>{{item.product.name}}</p>
+          <p *ngIf="item.remark && item.remark !==''" class="remark">&nbsp; ({{item.remark}})</p>
+        </ion-col>
+        <ion-col col-6 text-right>
+          <p>{{item.qty}}</p>
+        </ion-col>
+      </ion-row>
+    </button>
+  </ion-list>
+
+  <ion-list padding-left padding-right>
+    <ion-item class="border-none">
+      <p class="header-order"><b>{{ 'COUPON' | translate }}</b></p>
+    </ion-item>
+    <ion-row>
+      <ion-col col-9 text-left>
+        <ion-item class="border-none">
+          <ion-input type="text" placeholder="{{ 'COUPON_CODE' | translate }}"></ion-input>
+        </ion-item>
+      </ion-col>
+      <ion-col col-3 text-right>
+        <button ion-button block color="light">{{ 'COUPON_APPLY' | translate }}</button>
+      </ion-col>
+    </ion-row>
+  </ion-list>
+
+  <ion-list padding>
+    <button ion-item class="border-none">
+      <ion-row>
+        <ion-col col-6 text-left class="highlight">
+          <p>{{ 'DISTANCE' | translate }}</p>
+          <p>{{ 'APPROXIMATELY' | translate }}</p>
+          <p>{{ 'TOTAL_FEE' | translate }}</p>
+        </ion-col>
+        <ion-col col-6 text-right class="highlight highlight-color">
+          <p>38 {{ 'KM' | translate }}</p>
+          <p>40-50 {{ 'MIN' | translate }}</p>
+          <p>{{(order.amount + 406) | number:'0.2-2'}} {{ 'THB' | translate }}</p>
+        </ion-col>
+      </ion-row>
+      <ion-row class="order-description">
+        <ion-col col-6 text-left>
+          <p>
+            <b>{{ 'DISTANCE' | translate }}</b>
+          </p>
+          <p *ngIf="order.qty > 1">{{order.items.length}} {{ 'MENU' | translate }} ({{order.qty}} {{ 'ITEMS' | translate }})</p>
+          <p *ngIf="order.qty === 1">{{order.items.length}} {{ 'MENU' | translate }} ({{order.qty}} {{ 'ITEM' | translate }})</p>
+        </ion-col>
+        <ion-col col-6 text-right>
+          <p>
+            <b>{{ order.amount | number:'0.2-2'}} {{ 'THB' | translate }}</b>
+          </p>
+          <p>{{ order.amount | number:'0.2-2'}} {{ 'THB' | translate }}</p>
+        </ion-col>
+      </ion-row>
+      <ion-row class="order-description">
+        <ion-col col-6 text-left>
+          <p>
+            <b>{{ 'DELIVERY_FEE' | translate }}</b>
+          </p>
+          <p>{{ 'BASE_FARE' | translate }}</p>
+          <p>{{ 'DISTANCE_FEE' | translate }}</p>
+        </ion-col>
+        <ion-col col-6 text-right>
+          <p>
+            <b>406.00 {{ 'THB' | translate }}</b>
+          </p>
+          <p>55 {{ 'THB' | translate }}</p>
+          <p>38 {{ 'KM' | translate }}/351.00 {{ 'THB' | translate }}</p>
+        </ion-col>
+      </ion-row>
+    </button>
+    <button ion-button block color="light" small>{{ 'PRICE_POLICY' | translate }}</button>
+  </ion-list>
+
+</ion-content>
+<ion-footer class="footer-order">
+  <ion-toolbar>
+    <button ion-button block (click)="agreement()" color="bite">{{ 'BUY_ORDER' | translate}}</button>
+  </ion-toolbar>
+</ion-footer>
