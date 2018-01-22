@@ -26,12 +26,36 @@
 
     <ion-slides pager autoplay="3000" loop="true" speed="1500">
       <ion-slide *ngFor="let item of homeData.ads.items" (click)="openAds(item)">
-        <!-- <img src="{{item.image}}" alt="imgErr"> -->
-        <preload-image [ratio]="{w:20, h:10}" [src]="item.image" title="ads"></preload-image>
+        <!-- <div style="height:100%;"> -->
+          <img src="{{item.image}}" alt="imgErr">
+        <!-- </div> -->
+        <!-- <preload-image [ratio]="{w:20, h:10}" [src]="item.image" title="ads"></preload-image> -->
       </ion-slide>
     </ion-slides>
 
-    <div class="hotprices">
+    <div>
+      <ion-grid>
+        <ion-row>
+          <ion-col col-4 text-center class="col-star" (click)="clickHotPrice()">
+            <img src="./assets/imgs/star/star-(1).png" alt="imgErr" class="star">
+            <!-- <img src="./assets/imgs/star/star1.png" alt="" class="star"> -->
+            <p text-center>10 ร้านยอดนิยม</p>
+          </ion-col>
+          <ion-col col-4 text-center class="col-star" (click)="clickHotPrice()">
+            <img src="./assets/imgs/star/star-(2).png" alt="imgErr" class="star">
+            <!-- <img src="./assets/imgs/star/star1.png" alt="" class="star"> -->
+            <p text-center>ซื้อ 1 แถม 1</p>
+          </ion-col>
+          <ion-col col-4 text-center class="col-star" (click)="clickHotPrice()">
+            <img src="./assets/imgs/star/star-(3).png" alt="imgErr" class="star">
+            <!-- <img src="./assets/imgs/star/star1.png" alt="" class="star"> -->
+            <p text-center>ลด 50 %</p>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+
+    <!-- <div class="hotprices">
       <ion-grid>
         <ion-row>
           <ion-col col-6 text-left align-self-center>
@@ -56,7 +80,7 @@
           </ion-col>
         </ion-row>
       </ion-scroll>
-    </div>
+    </div> -->
 
     <div class="categories">
       <ion-grid>
@@ -76,7 +100,7 @@
       </ion-scroll>
     </div>
 
-    <div class="shops">
+    <!-- <div class="shops">
       <div no-padding>
         <ion-segment mode="md" [(ngModel)]="pages">
           <ion-segment-button *ngFor="let segment of homeData.shops; let i = index;" [ngClass]="{'active-page' : i == pages}" (click)="onSelectedPage(i)">
@@ -108,6 +132,6 @@
         </ion-col>
       </ion-row>
 
-    </div>
+    </div> -->
   </div>
 </ion-content>

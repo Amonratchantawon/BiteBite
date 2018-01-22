@@ -4,7 +4,7 @@
     <ion-buttons start *ngIf="user && user.profileImageURL">
       <button ion-button clear (click)="goToProfile()">
         <ion-avatar class="avatar-profile">
-            <preload-image class="preload-profile-image" [ratio]="{w:1, h:1}" [src]="user.profileImageURL" [isIcon]="true"></preload-image>
+          <preload-image class="preload-profile-image" [ratio]="{w:1, h:1}" [src]="user.profileImageURL" [isIcon]="true"></preload-image>
         </ion-avatar>
       </button>
     </ion-buttons>
@@ -20,5 +20,76 @@
   </ion-refresher>
 
   <!-- <search-input></search-input> -->
+  <ion-list>
+    <ion-item (click)="gotoDetail()">
+      <ion-row>
+        <ion-col no-padding>
+          <p>09 มีนาคม 2561 12:00 น.</p>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col no-padding>
+          <p>No. BB001</p>
+        </ion-col>
+        <ion-col no-padding text-right>
+          <h2>500 ฿</h2>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col no-padding>
+          <h5>ร้านละมุนภัณฑ์</h5>
+        </ion-col>
+        <ion-col no-padding text-right>
+          <h5 class="paid">ชำระเงินปลายทาง</h5>
+        </ion-col>
+      </ion-row>
+    </ion-item>
+    <ion-item (click)="gotoDetail()">
+      <ion-row>
+        <ion-col no-padding>
+          <p>09 มีนาคม 2561 16:00 น.</p>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col no-padding>
+          <p>No. BB002</p>
+        </ion-col>
+        <ion-col no-padding text-right>
+          <h2>1500 ฿</h2>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col no-padding>
+          <h5>ร้านละมุนภัณฑ์</h5>
+        </ion-col>
+        <ion-col no-padding text-right>
+          <h5 class="paid">ชำระเงินด้วยบัตรเครดิต</h5>
+        </ion-col>
+      </ion-row>
+    </ion-item>
+    <ion-item (click)="gotoDetail()">
+      <ion-row>
+        <ion-col no-padding>
+          <p>09 มีนาคม 2561 20:00 น.</p>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col no-padding>
+          <p>No. BB003</p>
+        </ion-col>
+        <ion-col no-padding text-right>
+          <h2>700 ฿</h2>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col no-padding>
+          <h5>ร้านละมุนภัณฑ์</h5>
+        </ion-col>
+        <ion-col no-padding text-right>
+          <h5 class="paid">ชำระเงินปลายทาง</h5>
+        </ion-col>
+      </ion-row>
+    </ion-item>
+  </ion-list>
 
 </ion-content>

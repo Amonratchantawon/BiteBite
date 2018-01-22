@@ -20,6 +20,7 @@ page-shop {
     ion-scroll {
         border-bottom: 1px solid whitesmoke !important;
         height: 28vw;
+        margin: 6px;
     }
     .col-imgpromote {
         padding: 0px !important;
@@ -81,5 +82,13 @@ page-shop {
     .seeall {
         color: rgb(73, 67, 67);
         font-family: 'Kanit', sans-serif; // margin-bottom: 40px;
+    }
+    .item {
+        padding-left: 6px !important;
+    }
+    .list-product {
+        preload-image {
+            width: 80px;
+        }
     }
 }
