@@ -1,0 +1,71 @@
+page-ranking {
+    .display-grid {
+        align-items: center;
+        height: 100% !important;
+        display: flex !important;
+        justify-content: center !important;
+        progress {
+            margin-top: 16px;
+            margin-bottom: auto;
+        }
+    }
+    .progress-me {
+        width: 30vw !important;
+        margin-top: auto;
+        margin-bottom: auto;
+        margin-left: 8px;
+    }
+    progress {
+        width: 45vw !important;
+        -webkit-appearance: none;
+        border: none;
+    }
+    progress::-webkit-progress-bar {
+        background: #e0e0e0;
+        opacity: 1;
+        border-radius: 0px;
+        padding: 1px;
+    }
+    progress::-webkit-progress-value {
+        border-radius: 0px;
+        background: $bite-color;
+    }
+    .rank-icon {
+        font-size: 20px;
+        ion-icon {
+            margin-top: 13px !important;
+        }
+        span {
+            position: absolute;
+            margin-left: 6px !important;
+            margin-top: 9px !important;
+        }
+    }
+    .user-image {
+        align-items: center !important;
+        text-align: -webkit-center;
+        preload-image {
+            width: 50px !important;
+            height: 50px !important;
+            border-radius: 100% !important;
+            display: table-cell !important;
+            left: 20px;
+        }
+        img {
+            margin: 0px !important;
+            object-fit: cover !important;
+        }
+    }
+    .icon-gold {
+        color: gold;
+    }
+    .icon-silver {
+        color: rgb(156, 156, 156);
+    }
+    .icon-copper {
+        color: #B87333;
+    }
+    .background-active {
+        background-color: rgba(176, 176, 176, 0.2);
+    }
+}

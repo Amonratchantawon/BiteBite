@@ -55,8 +55,7 @@ export class ProfilePage {
         // image: this.user.profileImageURL,
         image: 'https://www.shareicon.net/data/2016/08/18/813780_people_512x512.png',
         value: 90,
-        check: 'second',
-        me: 'me'
+        check: 'me'
       }, {
         rank: 1,
         image: 'https://www.sonypark360.net/wp-content/uploads/2017/08/profile-pictures.png',
@@ -101,5 +100,14 @@ export class ProfilePage {
   ProfileEditPage() {
     this.navCtrl.push('ProfileEditPage');
   }
+  gotoHistoryDetail(){
+    this.navCtrl.push('HistoryDetailPage')
+  }
+  gotoSeeAll(){
+    this.navCtrl.push('RankingPage')
+  }
 
+  goToFavoritDetail(e) {
+    this.navCtrl.push('ShopPage', e._id);
+  }
 }

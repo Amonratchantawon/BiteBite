@@ -97,10 +97,10 @@ page-profile {
             margin-left: 30px;
         }
     }
-    ion-item {
-        padding: 0px !important;
-        height: 70px !important;
-    }
+    // ion-item {
+    //     padding: 0px !important;
+    //     height: 70px !important;
+    // }
     .rank-icon {
         font-size: 20px;
         ion-icon {
@@ -138,6 +138,9 @@ page-profile {
     }
     .icon-copper {
         color: #B87333;
+    }
+    .paid {
+        color: #4CAF50;
     } // .item-content {
     //     background-color: $bite-color;
     // }
