@@ -27,6 +27,7 @@
         <ion-icon name="md-camera"></ion-icon> {{ 'CHANGE_PROFILE' | translate}}
       </button>
     </ion-col>
+    <ion-label class="idcolor">ID : 561116013</ion-label>
   </ion-row>
   <ion-row>
     <ion-col col-12>
@@ -53,20 +54,20 @@
           <ion-label floating>{{ 'E_MAIL' | translate}}
             <span class="danger">*</span>
           </ion-label>
-          <ion-input type="email" [(ngModel)]="user.email"></ion-input>
+          <ion-input disabled="true" type="email" [(ngModel)]="user.email"></ion-input>
         </ion-item>
         <ion-item>
           <ion-label floating>{{ 'TEL' | translate}}
             <span class="danger">*</span>
           </ion-label>
-          <ion-input type="number" [(ngModel)]="user.mobile"></ion-input>
+          <ion-input disabled="true" type="number" [(ngModel)]="user.mobile"></ion-input>
         </ion-item>
         <ion-item class="gender-selected">
           <ion-label>{{ 'GENDER' | translate}}
             <span class="danger">*</span>
           </ion-label>
           <span class="danger">*</span>
-          <ion-select [(ngModel)]="user.gender" okText="{{ 'OK' | translate }}" cancelText="{{ 'CANCEL' | translate }}">
+          <ion-select [(ngModel)]="user.gender" okText="{{ 'OK' | translate }}" cancelText="{{ 'CANCEL' | translate }}" disabled="true">
             <ion-option value="female">{{ 'FEMALE' | translate}}</ion-option>
             <ion-option value="male">{{ 'MALE' | translate}}</ion-option>
           </ion-select>
@@ -74,7 +75,7 @@
         <p padding-top padding-left>{{ 'BIRTHDAY' | translate}}
           <span class="danger">*</span>
         </p>
-        <ion-datetime placeholder="{{ 'BIRTHDAY_SELECTED' | translate}}" displayFormat="DD/MM/YYYY" [(ngModel)]="user.dateOfBirth"></ion-datetime>
+        <ion-datetime placeholder="{{ 'BIRTHDAY_SELECTED' | translate}}" displayFormat="DD/MM/YYYY" [(ngModel)]="user.dateOfBirth" disabled="true"></ion-datetime>
 
 
         <ion-item>

@@ -3,31 +3,12 @@ page-profile {
         padding: 0px 0px 0px 0px !important;
         background-color: #ffffff;
     }
-    .size-btn {
-        font-size: 1.9rem !important;
-        margin: 0px 0px 0px 10px !important
-    }
     .image-radius {
         border-radius: 100%;
     }
-  
-    // .item {
-    //     color: #607D8B !important;
-    // }
-    // .text-input {
-    //     color: #607D8B !important;
-    // }
-    // .text-input[disabled] {
-    //     opacity: 0.8 !important;
-    // }
-    // .datetime-disabled,
-    // .item-datetime-disabled ion-label {
-    //     opacity: 0.8;
-    // } // .segment-md-light .segment-button
-    // // $bite-color
     .cate-seeall {
         color: rgb(73, 67, 67);
-        font-family: 'Kanit', sans-serif; // margin-bottom: 40px;
+        font-family: 'Kanit', sans-serif;
     }
     .segment-md-light .segment-button.segment-activated {
         border: none;
@@ -36,6 +17,7 @@ page-profile {
     }
     .bite-color {
         background-color: $bite-color;
+        padding-top: 33px;
     }
     .segment-button {
         font-size: medium !important;
@@ -48,19 +30,8 @@ page-profile {
         color: #ffffff;
         font-size: xx-large;
     }
-    .item-content {
-        background-color: $bite-color;
-    }
-    .justify-content {
-        height: 2em;
-        display: flex;
-        align-items: center;
-    }
     .text-name {
         color: #ffffff;
-    }
-    .text-rank {
-        font-size: 12px;
     }
     .display-grid {
         align-items: center;
@@ -72,17 +43,23 @@ page-profile {
             margin-bottom: auto;
         }
     }
-    .list-item {
-        margin-top: 3px;
-    }
     .background-active {
         background-color: rgba(176, 176, 176, 0.2);
     }
+    .background-first {
+        background-color: rgba(32, 32, 32, 0.2);
+    }
     .ion-badge-style {
         position: absolute;
-        bottom: 1.5rem; // right: 30px;
+        bottom: 1.5rem;
         margin-left: 50px;
         opacity: 0.9;
+    }
+    .list-ios {
+        margin: -1px 0 0px !important;
+    }
+    .list-md {
+        margin: -1px 0 0px !important;
     }
     .progress-me {
         width: 30vw !important;
@@ -103,7 +80,7 @@ page-profile {
     }
     progress::-webkit-progress-value {
         border-radius: 0px;
-        background: #2776ff;
+        background: $bite-color;
     }
     .horizontally-center {
         height: 100% !important;
@@ -112,8 +89,7 @@ page-profile {
         img {
             width: 30px;
             height: 30px;
-            margin-right: 10px;
-            margin-left: -40px;
+            margin-right: 10px; // margin-left: -40px;
         }
         ion-icon {
             width: 30px;
@@ -121,14 +97,13 @@ page-profile {
             margin-left: 30px;
         }
     }
-    ion-item {
-        padding: 0px !important;
-        height: 70px !important;
-    }
+    // ion-item {
+    //     padding: 0px !important;
+    //     height: 70px !important;
+    // }
     .rank-icon {
         font-size: 20px;
         ion-icon {
-            // margin-left: 16px !important;
             margin-top: 13px !important;
         }
         span {
@@ -152,4 +127,30 @@ page-profile {
             object-fit: cover !important;
         }
     }
+    .segment-button {
+        text-transform: none !important;
+    }
+    .icon-gold {
+        color: gold;
+    }
+    .icon-silver {
+        color: rgb(156, 156, 156);
+    }
+    .icon-copper {
+        color: #B87333;
+    }
+    .paid {
+        color: #4CAF50;
+    } // .item-content {
+    //     background-color: $bite-color;
+    // }
+    // .justify-content {
+    //     height: 2em;
+    //     display: flex;
+    //     align-items: center;
+    // }
+    // .size-btn {
+    //     font-size: 1.9rem !important;
+    //     margin: 0px 0px 0px 10px !important
+    // }
 }
