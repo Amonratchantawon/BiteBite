@@ -17,6 +17,8 @@ import { Base64 } from '@ionic-native/base64';
 import { Camera } from '@ionic-native/camera';
 import { Facebook } from '@ionic-native/facebook';
 import { Geolocation } from '@ionic-native/geolocation';
+import { GoogleMaps } from '@ionic-native/google-maps';
+import { NativeGeocoder } from '@ionic-native/native-geocoder';
 
 import { HomeProvider } from '../providers/home/home';
 import { ReviewProvider } from '../providers/review/review';
@@ -36,7 +38,6 @@ import { QuestionanswerProvider } from '../providers/questionanswer/questionansw
 import { ContactbitebiteProvider } from '../providers/contactbitebite/contactbitebite';
 import { ShopinterestProvider } from '../providers/shopinterest/shopinterest';
 import { PromotioninterestProvider } from '../providers/promotioninterest/promotioninterest';
-
 
 @NgModule({
   declarations: [
@@ -72,6 +73,8 @@ import { PromotioninterestProvider } from '../providers/promotioninterest/promot
     Camera,
     Facebook,
     Geolocation,
+    GoogleMaps,
+    NativeGeocoder,
     { provide: ErrorHandler, useClass: IonicErrorHandler },
     {
       provide: HAMMER_GESTURE_CONFIG,
