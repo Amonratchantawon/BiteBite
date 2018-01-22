@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { LoadingController } from 'ionic-angular/components/loading/loading-controller';
+import { LoadingProvider } from '../../providers/loading/loading';
 
 /**
  * Generated class for the ConfirmedPage page.
@@ -14,15 +16,24 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'confirmed.html',
 })
 export class ConfirmedPage {
-
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  isSpin: boolean = true;
+  constructor(
+    public navCtrl: NavController,
+    public navParams: NavParams,
+    public loadingCtrl: LoadingProvider
+  ) {
   }
 
   ionViewDidLoad() {
+    // this.loadingCtrl.onLoading();
+    setTimeout(() => {
+      // this.loadingCtrl.dismiss();
+      this.isSpin = false;
+    }, 5000);
     console.log('ionViewDidLoad ConfirmedPage');
   }
 
-  payment(){
+  payment() {
     this.navCtrl.push('PaymentPage');
   }
 }
