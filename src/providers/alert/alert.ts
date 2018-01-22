@@ -54,20 +54,21 @@ export class AlertProvider {
       mode: 'ios',
       buttons: [
         {
-          text: cancelText,
-          role: 'cancel',
-          cssClass: 'cancel',
-          handler: () => {
-            console.log('Cancel clicked');
-          }
-        },
-        {
           text: confirmText,
+          cssClass: 'confirm',
           handler: () => {
             let gifModal = this.modalCtrl.create('GiftCollectRandomPage', {}, {
               enableBackdropDismiss: false
             });
             gifModal.present();
+          }
+        },
+        {
+          text: cancelText,
+          role: 'cancel',
+          cssClass: 'cancel',
+          handler: () => {
+            console.log('Cancel clicked');
           }
         }
       ],

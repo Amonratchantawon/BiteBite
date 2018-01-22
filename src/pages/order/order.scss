@@ -2,9 +2,6 @@ page-order {
     .item {
         padding: 0px !important;
     }
-    .item-input {
-        height: 30px !important;
-    }
     .col {
         padding: 4px 4px 4px 0px!important;
     }
@@ -46,11 +43,48 @@ page-order {
     }
     .header-order {
         height: 30px !important;
-        padding-top: 4px !important;
-        font-size: 1em;
+        // font-size: 1em;
         font-weight: 600;
     }
-    .remark{
-        color: #a5a5a5;
+    .remark {
+        color: #a5a5a5 !important;
+    }
+    .input-fixed-height {
+        max-height: 44px !important;
+        min-height: 44px !important;
+        .input-cover {
+            height: 44px !important;
+        }
+        .item-inner {
+            max-height: 44px !important;
+            min-height: 44px !important;
+        }
+        ion-input {
+            height: 44px !important;
+        }
+    }
+    ion-item-divider {
+        b {
+            padding-left: 16px !important;
+        }
+    }
+    p {
+        color: #000000 !important;
+    }
+    .button-coupon {
+        margin: 0px !important;
+        height: 44px !important;
+    }
+    .item-border {
+        border-bottom: 1px solid #c8c7cc !important;
+    }
+    .list {
+        margin: 1px 0 16px !important;
+    }
+    .list-ios>.item-block:first-child {
+        border-top: 0px !important;
+    }
+    .item-divider-md{
+        border-bottom: 0px !important;
     }
 }

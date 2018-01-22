@@ -75,11 +75,11 @@ page-profile {
     progress::-webkit-progress-bar {
         background: #e0e0e0;
         opacity: 1;
-        border-radius: 0px;
+        border-radius: 10px;
         padding: 1px;
     }
     progress::-webkit-progress-value {
-        border-radius: 0px;
+        border-radius: 10px;
         background: $bite-color;
     }
     .horizontally-center {

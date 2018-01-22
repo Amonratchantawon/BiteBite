@@ -119,6 +119,7 @@
   "RESET_PASSWORD": "Reset password",
   "ORDER": "Order",
   "DELIVERY_ADDRESS": "Delivery address",
+  "ADDRESS_DETAIL": "Address detail",
   "PRODUCT_MENU": "Menu",
   "COUPON": "Coupon",
   "COUPON_APPLY": "Apply",
@@ -144,6 +145,8 @@
   "QTY": "Qty",
   "PRICE": "Price",
   "REMARK": "Remark",
-  "SELECT_ADDRESS":"Tap to search for your address"
+  "SELECT_ADDRESS": "Tap to search for your address",
+  "ORDER_DELIVERY": "Shipping information",
+  "ORDER_MENU": "Order Information"  
 
 }

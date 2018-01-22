@@ -17,6 +17,7 @@ export class GoogleMapsPage {
   private placesService: any;
   private address: any = '';
   showInfo: Boolean = false;
+  isShowMap: Boolean = false;
   constructor(
     public navCtrl: NavController,
     public navParam: NavParams,
@@ -31,6 +32,7 @@ export class GoogleMapsPage {
 
   ionViewDidLoad() {
     this.platform.ready().then(() => {
+      this.isShowMap = true;
       this.initialMap();
     });
   }
@@ -52,20 +54,23 @@ export class GoogleMapsPage {
       },
       'camera': {
         'bearing': 0,
-        'tilt': 0
+        'tilt': 0,
+        'zoom': 15
       }
     });
 
     this.map.one(GoogleMapsEvent.MAP_READY).then(() => {
       this.map.getMyLocation().then((res) => {
         this.location = res.latLng;
-        let options = {
-          target: this.location,
-          zoom: 15,
-          duration: 1000
-        };
+        // let options = {
+        //   target: this.location,
+        //   zoom: 15,
+        //   duration: 0
+        // };
 
-        this.map.animateCamera(options);
+        // this.map.animateCamera(options);
+        // this.map.moveCamera(options);
+        this.map.setCameraTarget(this.location);
         this.reverseGeocode();
         this.onMapMove();
         this.onMyLocationClick();
@@ -122,7 +127,7 @@ export class GoogleMapsPage {
           loading.present();
         });
         marker.on(GoogleMapsEvent.INFO_CLICK).subscribe(() => {
-          alert('Info edit');
+          // alert('Info edit');
         });
       });
   }
@@ -173,7 +178,7 @@ export class GoogleMapsPage {
   }
 
   doConfirm() {
-    window.localStorage.setItem('select_address',JSON.stringify(this.address));
+    window.localStorage.setItem('select_address', JSON.stringify(this.address));
     this.navCtrl.pop();
   }
 

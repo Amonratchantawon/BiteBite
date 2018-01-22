@@ -1,9 +1,3 @@
-<!--
-  Generated template for the OrderPage page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-header>
 
   <ion-navbar color="bite">
@@ -14,7 +8,14 @@
 
 
 <ion-content>
-  <ion-list padding>
+
+  <ion-item-divider color="light">
+    <h2>
+      <b>{{ 'ORDER_DELIVERY' | translate }}</b>
+    </h2>
+  </ion-item-divider>
+
+  <ion-list padding-left padding-right padding-bottom>
     <button ion-item (click)="openMap()">
       <p class="header-order">
         <b>{{ 'DELIVERY_ADDRESS' | translate }}</b>
@@ -24,20 +25,29 @@
     </button>
 
     <ion-item>
-      <ion-input type="text" placeholder="Address detail (Optional)"></ion-input>
+      <ion-label floating>{{ 'ADDRESS_DETAIL' | translate }}</ion-label>
+      <ion-input type="text" [(ngModel)]="addressDetail"></ion-input>
     </ion-item>
 
     <ion-item>
-      <ion-input type="text" placeholder="Name" [(ngModel)]="user.displayName"></ion-input>
+      <ion-label floating>{{ 'DISPLAY_NAME' | translate }}</ion-label>
+      <ion-input type="text" [(ngModel)]="user.displayName"></ion-input>
     </ion-item>
 
     <ion-item>
-      <ion-input type="text" placeholder="Tel" [(ngModel)]="user.mobile"></ion-input>
+      <ion-label floating>{{ 'TEL' | translate }}</ion-label>
+      <ion-input type="number" [(ngModel)]="user.mobile"></ion-input>
     </ion-item>
   </ion-list>
 
-  <ion-list padding-left padding-right no-lines>
-    <ion-item>
+  <ion-item-divider color="light">
+    <h2>
+      <b>{{ 'ORDER_MENU' | translate }}</b>
+    </h2>
+  </ion-item-divider>
+
+  <ion-list padding-left padding-right no-lines no-lines>
+    <ion-item class="item-border">
       <p class="header-order">
         <b>{{ 'RESTAURANT' | translate }}</b>
       </p>
@@ -45,8 +55,8 @@
     </ion-item>
   </ion-list>
 
-  <ion-list padding-left padding-right>
-    <button ion-item>
+  <ion-list padding-left padding-right no-lines>
+    <ion-item class="item-border">
       <p class="header-order">
         <b>{{ 'PRODUCT_MENU' | translate }}</b>
       </p>
@@ -59,7 +69,7 @@
           <p>{{item.qty}}</p>
         </ion-col>
       </ion-row>
-    </button>
+    </ion-item>
   </ion-list>
 
   <ion-list padding-left padding-right>
@@ -70,26 +80,27 @@
     </ion-item>
     <ion-row>
       <ion-col col-9 text-left>
-        <ion-item class="border-none">
+        <ion-item class="border-none" class="input-fixed-height">
           <ion-input type="text" placeholder="{{ 'COUPON_CODE' | translate }}"></ion-input>
         </ion-item>
       </ion-col>
       <ion-col col-3 text-right>
-        <button ion-button block color="light" (click)="applyCode()">{{ 'COUPON_APPLY' | translate }}</button>
+        <button ion-button block color="light" class="button-coupon" (click)="applyCode()">{{ 'COUPON_APPLY' | translate }}</button>
       </ion-col>
     </ion-row>
-  </ion-list>
-  <ion-list padding *ngIf="isPromotionCode">
-    <button ion-item class="border-none">
-      <ion-row>
-        <ion-col col-6 text-left>
-          <p>{{ 'DISCOUNT' | translate }}</p>
-        </ion-col>
-        <ion-col col-6 text-right class="highlight-color">
-          <p>{{100 | number:'0.2-2'}} {{ 'THB' | translate }}</p>
-        </ion-col>
-      </ion-row>
-    </button>
+
+    <ion-row *ngIf="isPromotionCode">
+      <ion-col col-6 text-left>
+        <p>
+          <b>{{ 'DISCOUNT' | translate }}</b>
+        </p>
+      </ion-col>
+      <ion-col col-6 text-right class="highlight-color">
+        <p>
+          <b>{{100 | number:'0.2-2'}} {{ 'THB' | translate }}</b>
+        </p>
+      </ion-col>
+    </ion-row>
   </ion-list>
   <!-- 
   <ion-list padding>
@@ -144,6 +155,7 @@
 </ion-content>
 <ion-footer class="footer-order">
   <ion-toolbar>
-    <button ion-button block (click)="confirmOrder()" color="bite" [disabled]="!address || address===''">{{ 'BUY_ORDER' | translate}}</button>
+    <button ion-button block (click)="confirmOrder()" color="bite">{{ 'BUY_ORDER' | translate}}</button>
+    <!-- <button ion-button block (click)="confirmOrder()" color="bite" [disabled]="!address || address===''">{{ 'BUY_ORDER' | translate}}</button> -->
   </ion-toolbar>
 </ion-footer>

@@ -119,10 +119,11 @@
   "RESET_PASSWORD": "รีเซ็ตรหัสผ่าน",
   "ORDER": "รายการสั่งซื้อ",
   "DELIVERY_ADDRESS": "สถานที่จัดส่ง",
+  "ADDRESS_DETAIL": "รายละเอียดเพิ่มเติมของสถานที่จัดส่ง",
   "PRODUCT_MENU": "รายการอาหาร",
   "COUPON": "คูปอง",
   "COUPON_APPLY": "ใช้คูปอง",
-  "COUPON_CODE": "รหัส",
+  "COUPON_CODE": "รหัสคูปอง",
   "DISTANCE": "ระยะทาง",
   "APPROXIMATELY": "ประมาณ",
   "TOTAL_FEE": "ราคารวม",
@@ -144,6 +145,8 @@
   "QTY": "จำนวน",
   "PRICE": "ราคา",
   "REMARK": "หมายเหตุ",
-  "SELECT_ADDRESS": "แตะเพื่อค้นหาที่อยู่ในการจัดส่ง"
+  "SELECT_ADDRESS": "แตะเพื่อค้นหาที่อยู่ในการจัดส่ง",
+  "ORDER_DELIVERY": "ข้อมูลการจัดส่ง",
+  "ORDER_MENU": "ข้อมูลรายการสั่งซื้อ"  
 
 }
