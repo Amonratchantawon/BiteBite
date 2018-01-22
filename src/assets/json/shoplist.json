@@ -4,7 +4,7 @@
     "rating": 5,
     "distance": 5.2,
     "image": "./assets/imgs/shop/shop1.png",
-    "isAds": true
+    "isAds": false
   },
   {
     "_id": "pro0002",
@@ -12,7 +12,7 @@
     "rating": 4,
     "distance": 10.5,
     "image": "./assets/imgs/shop/shop2.png",
-    "isAds": true
+    "isAds": false
   },
   {
     "_id": "pro0003",
