@@ -133,8 +133,16 @@
   "DELIVERY_FEE": "Delivery fee",
   "BASE_FARE": "Base fare",
   "DISTANCE_FEE": "Approximately",
-  "KM":"km.",
-  "MIN":"min",
-  "PRICE_POLICY":"Price policy",
-  "BUY_ORDER":"Confirm order"   
+  "KM": "km.",
+  "MIN": "min",
+  "PRICE_POLICY": "Price policy",
+  "BUY_ORDER": "Confirm order",
+  "DISCOUNT": "Descount",
+  "PAYMENT": "Payment",
+  "ORDER_NUMBER": "Order No.",
+  "PRODUCT_NAME": "Product name",
+  "QTY": "Qty",
+  "PRICE": "Price",
+  "REMARK": "Remark"
+
 }

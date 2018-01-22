@@ -20,6 +20,7 @@ import { Constants } from '../../app/app.constants';
 export class OrderPage {
   order: CartModel = new CartModel();
   user: UserModel = new UserModel();
+  isPromotionCode: Boolean = false;
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
@@ -30,6 +31,14 @@ export class OrderPage {
   ionViewWillEnter() {
     this.order = this.cartProvider.getCartByShop();
     this.user = this.user = JSON.parse(window.localStorage.getItem('user@' + Constants.URL));
+  }
+
+  confirmOrder() {
+    this.navCtrl.push('ConfirmedPage');
+  }
+
+  applyCode(){
+    this.isPromotionCode = true;
   }
 
 }

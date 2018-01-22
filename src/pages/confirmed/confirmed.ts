@@ -1,7 +1,10 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { LoadingController } from 'ionic-angular/components/loading/loading-controller';
-import { LoadingProvider } from '../../providers/loading/loading';
+import { CartModel } from '../../assets/model/cart.model';
+import { UserModel } from '../../assets/model/user.model';
+import { CartProvider } from '../../providers/cart/cart';
+import { Constants } from '../../app/app.constants';
+// import { LoadingProvider } from '../../providers/loading/loading';
 
 /**
  * Generated class for the ConfirmedPage page.
@@ -16,12 +19,16 @@ import { LoadingProvider } from '../../providers/loading/loading';
   templateUrl: 'confirmed.html',
 })
 export class ConfirmedPage {
+  order: CartModel = new CartModel();
+  user: UserModel = new UserModel();
   isSpin: boolean = true;
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
-    public loadingCtrl: LoadingProvider
+    private cartProvider : CartProvider
   ) {
+    this.order = this.cartProvider.getCartByShop();
+    this.user = this.user = JSON.parse(window.localStorage.getItem('user@' + Constants.URL));
   }
 
   ionViewDidLoad() {

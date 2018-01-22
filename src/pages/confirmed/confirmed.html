@@ -1,58 +1,40 @@
-<!--
-  Generated template for the ConfirmedPage page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
-<ion-header no-border>
-
-  <ion-navbar transparent>
-    <ion-title></ion-title>
-  </ion-navbar>
-
-</ion-header>
-
-
-<ion-content padding>
-  <ion-row>
-    <ion-col>
-      BB001
-    </ion-col>
-  </ion-row>
-  <ion-row>
-    <ion-col>
-      9.00 PM
-    </ion-col>
-  </ion-row>
-  <!-- <ion-row>
-    <ion-col>
-      No : XXXXXX
-    </ion-col>
-  </ion-row> -->
-  <ion-row>
+<ion-content>
+  <ion-grid padding-top padding-left>
+    <ion-row>
+      <ion-col>
+        {{ 'ORDER_NUMBER' | translate }} BB001
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        22/01/18 12:30น.
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-row class="align-self-center">
     <ion-col col-2 text-center>
       <ion-icon name="md-person" color="bite" class="fontIcon"></ion-icon>
     </ion-col>
     <ion-col col-10>
-      ตาหวาน สุดใจ
+      {{ user.displayName }}
     </ion-col>
     <ion-col col-2 text-center>
       <ion-icon name="md-pin" color="bite" class="fontIcon"></ion-icon>
     </ion-col>
     <ion-col col-10>
-      960 ถนนพระรามที่ 4 แขวงสีลม เขตบางรัก กรุงเทพมหานคร 10500
+      <p>84/176 ถ.ลำลูกกา ตำบล บึงคำพร้อย อำเภอ ลำลูกกา ปทุมธานี 12150</p>
     </ion-col>
     <ion-col col-2 text-center *ngIf="!isSpin">
       <ion-icon name="md-bicycle" color="bite" class="fontIcon"></ion-icon>
     </ion-col>
     <ion-col col-10 *ngIf="!isSpin">
-      นายสมศักด์ ขับรถ
+      <p>นายสมศักด์ ขับรถ</p>
     </ion-col>
     <ion-col col-2 text-center *ngIf="!isSpin">
       <ion-icon name="md-home" color="bite" class="fontIcon"></ion-icon>
     </ion-col>
     <ion-col col-10 *ngIf="!isSpin">
-      ร้านละมุนภัณฑ์
+      <p>{{ order.shop.name }}</p>
     </ion-col>
   </ion-row>
   <div text-center *ngIf="isSpin">
@@ -61,70 +43,36 @@
 
   <ion-grid *ngIf="!isSpin">
     <ion-row class="border-row">
-      <ion-col col-1 text-center>
-      </ion-col>
-      <ion-col col-3>
-        ชื่อสินค้า
+      <ion-col col-3 text-left>
+        <p><b>{{ 'PRODUCT_NAME' | translate }}</b></p>
       </ion-col>
       <ion-col col-2 text-center>
-        จำนวน
+        <p><b>{{ 'QTY' | translate }}</b></p>
       </ion-col>
-      <ion-col col-2 text-right>
-        ราคา
+      <ion-col col-3 text-right>
+        <p><b>{{ 'PRICE' | translate }}</b></p>
       </ion-col>
       <ion-col col-4 text-center>
-        หมายเหตุ
+        <p><b>{{ 'REMARK' | translate }}</b></p>
       </ion-col>
     </ion-row>
-    <ion-row>
-      <ion-col col-1 text-center>
-      </ion-col>
-      <ion-col col-3>
-        โกโก้
+    <ion-row *ngFor="let item of order.items">
+      <ion-col col-3 text-left>
+        <p>{{item.product.name}}</p>
+        <p class="detail-text" *ngIf="item.remark && item.remark !== ''">({{item.remark}})</p>
       </ion-col>
       <ion-col col-2 text-center>
-        1
+        <p>{{item.qty}}</p>
       </ion-col>
-      <ion-col col-2 text-right>
-        40฿
+      <ion-col col-3 text-right>
+        <p>{{item.amount | number:'0.2-2'}}฿</p>
       </ion-col>
-      <ion-col col-4>
-
-      </ion-col>
-    </ion-row>
-    <ion-row>
-      <ion-col col-1 text-center>
-      </ion-col>
-      <ion-col col-3 class="detail-text">
-        ไม่หวาน
-      </ion-col>
-      <ion-col col-2 text-center>
-
-      </ion-col>
-      <ion-col col-2 text-right>
-
-      </ion-col>
-      <ion-col col-4>
-
+      <ion-col col-4 text-center class=" worning-danger ">
+        <p *ngIf="item.qty === 3">สินค้าหมด</p>
       </ion-col>
     </ion-row>
-    <ion-row>
-      <ion-col col-1 text-center>
-      </ion-col>
-      <ion-col col-3>
-        มอคค่า
-      </ion-col>
-      <ion-col col-2 text-center>
-        1
-      </ion-col>
-      <ion-col col-2 text-right>
-        50฿
-      </ion-col>
-      <ion-col col-4 text-center class="worning-danger">
-        สินค้าหมด
-      </ion-col>
-    </ion-row>
-    <ion-row class="border-top-row">
+
+    <!-- <ion-row class="border-top-row ">
       <ion-col col-1 text-center>
       </ion-col>
       <ion-col col-5>
@@ -150,7 +98,7 @@
 
       </ion-col>
     </ion-row>
-    <ion-row class="border-bottom-row">
+    <ion-row class="border-bottom-row ">
       <ion-col col-1 text-center>
       </ion-col>
       <ion-col col-5>
@@ -163,7 +111,7 @@
 
       </ion-col>
     </ion-row>
-    <ion-row class="border-bottom-row">
+    <ion-row class="border-bottom-row ">
       <ion-col col-1 text-center>
       </ion-col>
       <ion-col col-5>
@@ -175,14 +123,76 @@
       <ion-col col-4>
 
       </ion-col>
-    </ion-row>
+    </ion-row> -->
+
+
+    <ion-list>
+      <button ion-item class="border-none">
+        <ion-row>
+          <ion-col col-6 text-left class="highlight ">
+            <p>{{ 'DISTANCE' | translate }}</p>
+            <p>{{ 'APPROXIMATELY' | translate }}</p>
+            <p>{{ 'TOTAL_FEE' | translate }}</p>
+          </ion-col>
+          <ion-col col-6 text-right class="highlight highlight-color ">
+            <p>38 {{ 'KM' | translate }}</p>
+            <p>40-50 {{ 'MIN' | translate }}</p>
+            <p>{{((order.amount + 406) - 100) | number:'0.2-2'}} {{ 'THB' | translate }}</p>
+          </ion-col>
+        </ion-row>
+        <ion-row class="order-description ">
+          <ion-col col-6 text-left>
+            <p>
+              <b>{{ 'PRODUCT_MENU' | translate }}</b>
+            </p>
+            <p *ngIf="order.qty> 1"> - {{order.items.length}} {{ 'MENU' | translate }} ({{order.qty}} {{ 'ITEMS' | translate }})</p>
+            <p *ngIf="order.qty === 1"> - {{order.items.length}} {{ 'MENU' | translate }} ({{order.qty}} {{ 'ITEM' | translate }})</p>
+          </ion-col>
+          <ion-col col-6 text-right>
+            <p>
+              <b>{{ order.amount | number:'0.2-2'}} {{ 'THB' | translate }}</b>
+            </p>
+            <p>{{ order.amount | number:'0.2-2'}} {{ 'THB' | translate }}</p>
+          </ion-col>
+        </ion-row>
+        <ion-row class="order-description">
+          <ion-col col-6 text-left>
+            <p>
+              <b>{{ 'DELIVERY_FEE' | translate }}</b>
+            </p>
+            <p> - {{ 'BASE_FARE' | translate }}</p>
+            <p> - {{ 'DISTANCE_FEE' | translate }}</p>
+          </ion-col>
+          <ion-col col-6 text-right>
+            <p>
+              <b>406.00 {{ 'THB' | translate }}</b>
+            </p>
+            <p>55 {{ 'THB' | translate }}</p>
+            <p>38 {{ 'KM' | translate }}/351.00 {{ 'THB' | translate }}</p>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col col-6 text-left>
+            <p>
+              <b>{{ 'DISCOUNT' | translate }}</b>
+            </p>
+          </ion-col>
+          <ion-col col-6 text-right>
+            <p>
+              <b>{{100 | number:'0.2-2'}} {{ 'THB' | translate }}</b>
+            </p>
+          </ion-col>
+        </ion-row>
+      </button>
+      <!-- <button ion-button block color="light" small>{{ 'PRICE_POLICY' | translate }}</button> -->
+    </ion-list>
   </ion-grid>
   <ion-row *ngIf="!isSpin">
     <ion-col col-6 text-center>
-      <button ion-button round no-shadow color="bite" (click)="payment()">ชำระเงิน</button>
+      <button ion-button round no-shadow color="bite" (click)="payment()">{{ 'PAYMENT' | translate }}</button>
     </ion-col>
     <ion-col col-6 text-center>
-      <button ion-button round no-shadow color="bite">ยกเลิก</button>
+      <button ion-button round no-shadow color="bite">{{ 'CANCEL' | translate }}</button>
     </ion-col>
   </ion-row>
 </ion-content>
