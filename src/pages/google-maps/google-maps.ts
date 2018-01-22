@@ -174,6 +174,7 @@ export class GoogleMapsPage {
 
   doConfirm() {
     window.localStorage.setItem('select_address',JSON.stringify(this.address));
+    this.navCtrl.pop();
   }
 
 }

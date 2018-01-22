@@ -144,6 +144,6 @@
 </ion-content>
 <ion-footer class="footer-order">
   <ion-toolbar>
-    <button ion-button block (click)="confirmOrder()" color="bite">{{ 'BUY_ORDER' | translate}}</button>
+    <button ion-button block (click)="confirmOrder()" color="bite" [disabled]="!address || address===''">{{ 'BUY_ORDER' | translate}}</button>
   </ion-toolbar>
 </ion-footer>
