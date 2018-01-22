@@ -97,7 +97,7 @@ export class HomePage {
     }
   }
 
-  seeAllHotPrice() {
+  clickHotPrice() {
     this.app.getRootNav().push('HotpriceListPage');
   }
 

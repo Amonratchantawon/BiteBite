@@ -70,6 +70,7 @@ export class CartPage {
   }
 
   checkOut() {
+    this.updateCart();    
     this.navCtrl.push('OrderPage');
   }
 
