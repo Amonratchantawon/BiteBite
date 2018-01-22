@@ -1,0 +1,30 @@
+<!--
+  Generated template for the ReviewBikerPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="bite">
+    <ion-title>ประเมิณความพึ่งพอใจ</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <div text-center class="ratting">
+    <h2>ท่านได้รับสินค้าเรียบร้อยแล้ว</h2>
+    <h5>กรุณาประเมินความพึงพอใจในการส่งสินค้า</h5>
+    <p>คนขับเตอร์ไซค์ : คุณสมศักดิ์ ใจดี</p>
+    <rating [(ngModel)]="rate" readOnly="false" max="5" emptyStarIconName="star-outline" halfStarIconName="star-half" starIconName="star"
+      nullable="false" (ngModelChange)="onModelChange($event)"></rating>
+    <ion-buttons text-center>
+      <button ion-button color="bite">ยืนยัน</button>
+    </ion-buttons>
+  </div>
+
+
+
+</ion-content>
