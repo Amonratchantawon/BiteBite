@@ -22,4 +22,8 @@ export class PaymentPage {
     console.log('ionViewDidLoad PaymentPage');
   }
 
+  onPayment(){
+    this.navCtrl.push('NavtabsPage');
+  }
+
 }

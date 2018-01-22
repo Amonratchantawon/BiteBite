@@ -143,6 +143,7 @@
   "PRODUCT_NAME": "Product name",
   "QTY": "Qty",
   "PRICE": "Price",
-  "REMARK": "Remark"
+  "REMARK": "Remark",
+  "SELECT_ADDRESS":""
 
 }

@@ -16,7 +16,7 @@
       <ion-icon name="md-person" color="bite" class="fontIcon"></ion-icon>
     </ion-col>
     <ion-col col-10>
-      {{ user.displayName }}
+      <p>{{ user.displayName }}</p>
     </ion-col>
     <ion-col col-2 text-center>
       <ion-icon name="md-pin" color="bite" class="fontIcon"></ion-icon>
@@ -44,16 +44,24 @@
   <ion-grid *ngIf="!isSpin">
     <ion-row class="border-row">
       <ion-col col-3 text-left>
-        <p><b>{{ 'PRODUCT_NAME' | translate }}</b></p>
+        <p>
+          <b>{{ 'PRODUCT_NAME' | translate }}</b>
+        </p>
       </ion-col>
       <ion-col col-2 text-center>
-        <p><b>{{ 'QTY' | translate }}</b></p>
+        <p>
+          <b>{{ 'QTY' | translate }}</b>
+        </p>
       </ion-col>
       <ion-col col-3 text-right>
-        <p><b>{{ 'PRICE' | translate }}</b></p>
+        <p>
+          <b>{{ 'PRICE' | translate }}</b>
+        </p>
       </ion-col>
       <ion-col col-4 text-center>
-        <p><b>{{ 'REMARK' | translate }}</b></p>
+        <p>
+          <b>{{ 'REMARK' | translate }}</b>
+        </p>
       </ion-col>
     </ion-row>
     <ion-row *ngFor="let item of order.items">
@@ -135,9 +143,9 @@
             <p>{{ 'TOTAL_FEE' | translate }}</p>
           </ion-col>
           <ion-col col-6 text-right class="highlight highlight-color ">
-            <p>38 {{ 'KM' | translate }}</p>
-            <p>40-50 {{ 'MIN' | translate }}</p>
-            <p>{{((order.amount + 406) - 100) | number:'0.2-2'}} {{ 'THB' | translate }}</p>
+            <p class="total">38 {{ 'KM' | translate }}</p>
+            <p class="total">40-50 {{ 'MIN' | translate }}</p>
+            <p class="total">{{((order.amount + 406) - 100) | number:'0.2-2'}} {{ 'THB' | translate }}</p>
           </ion-col>
         </ion-row>
         <ion-row class="order-description ">

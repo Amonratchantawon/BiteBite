@@ -21,6 +21,7 @@ export class OrderPage {
   order: CartModel = new CartModel();
   user: UserModel = new UserModel();
   isPromotionCode: Boolean = false;
+  address: string = '';
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
@@ -31,14 +32,19 @@ export class OrderPage {
   ionViewWillEnter() {
     this.order = this.cartProvider.getCartByShop();
     this.user = this.user = JSON.parse(window.localStorage.getItem('user@' + Constants.URL));
+    this.address = JSON.parse(window.localStorage.getItem('select_address'));
   }
 
   confirmOrder() {
     this.navCtrl.push('ConfirmedPage');
   }
 
-  applyCode(){
+  applyCode() {
     this.isPromotionCode = true;
+  }
+
+  openMap() {
+    this.navCtrl.push('GoogleMapsPage');
   }
 
 }

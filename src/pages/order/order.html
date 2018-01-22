@@ -15,11 +15,12 @@
 
 <ion-content>
   <ion-list padding>
-    <button ion-item>
+    <button ion-item (click)="openMap()">
       <p class="header-order">
         <b>{{ 'DELIVERY_ADDRESS' | translate }}</b>
       </p>
-      <p>84/176 ถ.ลำลูกกา ตำบล บึงคำพร้อย อำเภอ ลำลูกกา ปทุมธานี 12150</p>
+      <p *ngIf="address">{{ address }}</p>
+      <p *ngIf="!address || address ===''">{{ 'SELECT_ADDRESS' | translate }}</p>
     </button>
 
     <ion-item>

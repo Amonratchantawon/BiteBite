@@ -41,7 +41,7 @@ page-confirmed {
         }
     }
     .highlight-color {
-        p {
+        .total {
             color: #4CAF50 !important;
         }
     }
@@ -51,7 +51,7 @@ page-confirmed {
     }
     .border-none {
         padding: 4px !important;
-        .label{
+        .label {
             margin-right: 0px;
         }
         .item-inner {
@@ -62,7 +62,7 @@ page-confirmed {
         }
         p {
             margin: 4px;
-            color: #000 !important;
+            color: #000;
         }
     }
     p {

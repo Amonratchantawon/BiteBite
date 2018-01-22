@@ -99,7 +99,7 @@ export class GoogleMapsPage {
     this.map.clear();
 
     this.map.addMarker({
-      // title: this.address,
+      title: this.address,
       // snippet: "Edit detail. Click here!",
       icon: {
         url: './assets/icon/pin_transparent.png',
@@ -112,18 +112,14 @@ export class GoogleMapsPage {
     })
       .then((marker) => {
         this.map.setCameraTarget(position);
+        marker.showInfoWindow();
         marker.on(GoogleMapsEvent.MARKER_CLICK).subscribe(() => {
-          // marker.showInfoWindow();
           let loading = this.loadingCtrl.create({
             spinner: 'hide',
             cssClass: 'loading-hide',
             duration: 1,
           });
           loading.present();
-          this.address = +new Date();
-          this.showInfo = true;
-          // marker.target(position);
-          // loading.dismiss();
         });
         marker.on(GoogleMapsEvent.INFO_CLICK).subscribe(() => {
           alert('Info edit');
@@ -177,7 +173,7 @@ export class GoogleMapsPage {
   }
 
   doConfirm() {
-    this.reverseGeocode();
+    window.localStorage.setItem('select_address',JSON.stringify(this.address));
   }
 
 }
