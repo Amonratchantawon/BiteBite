@@ -32,9 +32,9 @@ export class MyApp {
     firebase.initializeApp(config);
     let agr = JSON.parse(window.localStorage.getItem('Agreement@' + Constants.URL));
     if (agr && agr.status) {
-      this.rootPage = 'NavtabsPage';
+      this.rootPage = 'ConfirmedPage';
     } else {
-      this.rootPage = 'WalkthroughPage';
+      this.rootPage = 'ConfirmedPage';
     }
 
     translate.addLangs(['en', 'th']);
