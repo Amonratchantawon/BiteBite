@@ -34,7 +34,7 @@ page-confirmed {
         fill: #222;
     }
     .highlight {
-        border-bottom: 1px solid #dedede;
+        // border-bottom: 1px solid #dedede;
         padding: 6px 0px 6px 0px !important;
         p {
             font-weight: 600;
@@ -67,5 +67,15 @@ page-confirmed {
     }
     p {
         margin: 4px;
+    }
+
+    .item-divider-md {
+        border-bottom: 0px !important;
+    }
+
+    ion-item-divider {
+        b {
+            padding-left: 16px !important;
+        }
     }
 }

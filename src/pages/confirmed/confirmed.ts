@@ -36,7 +36,7 @@ export class ConfirmedPage {
     setTimeout(() => {
       // this.loadingCtrl.dismiss();
       this.isSpin = false;
-    }, 5000);
+    }, 1000);
     console.log('ionViewDidLoad ConfirmedPage');
   }
 
