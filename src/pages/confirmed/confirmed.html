@@ -1,3 +1,11 @@
+<ion-header>
+
+  <ion-navbar color="bite" hideBackButton>
+    <ion-title></ion-title>
+  </ion-navbar>
+
+</ion-header>
+
 <ion-content>
   <ion-grid padding-top padding-left>
     <ion-row>
@@ -40,9 +48,21 @@
   <div text-center *ngIf="isSpin">
     <ion-spinner name="bubbles"></ion-spinner>
   </div>
+  <!-- <ion-list >
+    
+      <ion-row *ngFor="let item of order.items">
+        <ion-col col-9 text-left>
+          <p>{{item.product.name}} X <span>{{item.qty}}</span> <br> <span class="detail-text" *ngIf="item.remark && item.remark !== ''">({{item.remark}})</span></p>
+        </ion-col>
+        <ion-col col-3 text-right>
+          <p>{{item.amount | number:'0.2-2'}}฿</p>
+        </ion-col>
+      </ion-row>
+    
+  </ion-list> -->
 
   <ion-grid *ngIf="!isSpin">
-    <ion-row class="border-row">
+    <!-- <ion-row class="border-row">
       <ion-col col-3 text-left>
         <p>
           <b>{{ 'PRODUCT_NAME' | translate }}</b>
@@ -63,8 +83,9 @@
           <b>{{ 'REMARK' | translate }}</b>
         </p>
       </ion-col>
-    </ion-row>
-    <ion-row *ngFor="let item of order.items">
+    </ion-row> -->
+
+    <!-- <ion-row *ngFor="let item of order.items">
       <ion-col col-3 text-left>
         <p>{{item.product.name}}</p>
         <p class="detail-text" *ngIf="item.remark && item.remark !== ''">({{item.remark}})</p>
@@ -78,117 +99,50 @@
       <ion-col col-4 text-center class=" worning-danger ">
         <p *ngIf="item.qty === 3">สินค้าหมด</p>
       </ion-col>
-    </ion-row>
-
-    <!-- <ion-row class="border-top-row ">
-      <ion-col col-1 text-center>
-      </ion-col>
-      <ion-col col-5>
-        รหัสส่วนลด : BB1547
-      </ion-col>
-      <ion-col col-2 text-right>
-        20฿
-      </ion-col>
-      <ion-col col-4>
-
-      </ion-col>
-    </ion-row>
-    <ion-row>
-      <ion-col col-1 text-center>
-      </ion-col>
-      <ion-col col-5>
-        ราคาสินค้า
-      </ion-col>
-      <ion-col col-2 text-right>
-        20฿
-      </ion-col>
-      <ion-col col-4>
-
-      </ion-col>
-    </ion-row>
-    <ion-row class="border-bottom-row ">
-      <ion-col col-1 text-center>
-      </ion-col>
-      <ion-col col-5>
-        ค่าจัดส่ง
-      </ion-col>
-      <ion-col col-2 text-right>
-        50฿
-      </ion-col>
-      <ion-col col-4>
-
-      </ion-col>
-    </ion-row>
-    <ion-row class="border-bottom-row ">
-      <ion-col col-1 text-center>
-      </ion-col>
-      <ion-col col-5>
-        ยอดชำระ
-      </ion-col>
-      <ion-col col-2 text-right>
-        70฿
-      </ion-col>
-      <ion-col col-4>
-
-      </ion-col>
     </ion-row> -->
+    <ion-item-divider color="light">
+      <h2>
+        <b>สินค้า</b>
+      </h2>
+    </ion-item-divider>
+    <ion-row *ngFor="let item of order.items">
+      <ion-col col-9 text-left>
+        <p>{{item.product.name}} X
+          <span>{{item.qty}}</span>
+          <br>
+          <span class="detail-text" *ngIf="item.remark && item.remark !== ''">({{item.remark}})</span>
+          <br>
+          <span class=" worning-danger " *ngIf="item.qty === 3">*สินค้าหมด</span>
+        </p>
+      </ion-col>
+      <ion-col col-3 text-right>
+        <p>{{item.amount | number:'0.2-2'}}฿</p>
+      </ion-col>
+    </ion-row>
 
-
+    <!-- <ion-item-divider color="light">
+        <h2>
+          <b>รวมทั้งหมด</b>
+        </h2>
+      </ion-item-divider> -->
     <ion-list>
       <button ion-item class="border-none">
         <ion-row>
-          <ion-col col-6 text-left class="highlight ">
+          <ion-col col-6 text-left class="highlight">
             <p>{{ 'DISTANCE' | translate }}</p>
             <p>{{ 'APPROXIMATELY' | translate }}</p>
+            <p>{{ 'PRODUCT_MENU' | translate }}</p>
+            <p>{{ 'DELIVERY_FEE' | translate }}</p>
+            <p>{{ 'DISCOUNT' | translate }}</p>
             <p>{{ 'TOTAL_FEE' | translate }}</p>
           </ion-col>
           <ion-col col-6 text-right class="highlight highlight-color ">
-            <p class="total">38 {{ 'KM' | translate }}</p>
-            <p class="total">40-50 {{ 'MIN' | translate }}</p>
-            <p class="total">{{((order.amount + 406) - 100) | number:'0.2-2'}} {{ 'THB' | translate }}</p>
-          </ion-col>
-        </ion-row>
-        <ion-row class="order-description ">
-          <ion-col col-6 text-left>
-            <p>
-              <b>{{ 'PRODUCT_MENU' | translate }}</b>
-            </p>
-            <p *ngIf="order.qty> 1"> - {{order.items.length}} {{ 'MENU' | translate }} ({{order.qty}} {{ 'ITEMS' | translate }})</p>
-            <p *ngIf="order.qty === 1"> - {{order.items.length}} {{ 'MENU' | translate }} ({{order.qty}} {{ 'ITEM' | translate }})</p>
-          </ion-col>
-          <ion-col col-6 text-right>
-            <p>
-              <b>{{ order.amount | number:'0.2-2'}} {{ 'THB' | translate }}</b>
-            </p>
+            <p>38 {{ 'KM' | translate }}</p>
+            <p>40-50 {{ 'MIN' | translate }}</p>
             <p>{{ order.amount | number:'0.2-2'}} {{ 'THB' | translate }}</p>
-          </ion-col>
-        </ion-row>
-        <ion-row class="order-description">
-          <ion-col col-6 text-left>
-            <p>
-              <b>{{ 'DELIVERY_FEE' | translate }}</b>
-            </p>
-            <p> - {{ 'BASE_FARE' | translate }}</p>
-            <p> - {{ 'DISTANCE_FEE' | translate }}</p>
-          </ion-col>
-          <ion-col col-6 text-right>
-            <p>
-              <b>406.00 {{ 'THB' | translate }}</b>
-            </p>
-            <p>55 {{ 'THB' | translate }}</p>
-            <p>38 {{ 'KM' | translate }}/351.00 {{ 'THB' | translate }}</p>
-          </ion-col>
-        </ion-row>
-        <ion-row>
-          <ion-col col-6 text-left>
-            <p>
-              <b>{{ 'DISCOUNT' | translate }}</b>
-            </p>
-          </ion-col>
-          <ion-col col-6 text-right>
-            <p>
-              <b>{{100 | number:'0.2-2'}} {{ 'THB' | translate }}</b>
-            </p>
+            <p>406.00 {{ 'THB' | translate }}</p>
+            <p>{{100 | number:'0.2-2'}} {{ 'THB' | translate }}</p>
+            <p class="total">{{((order.amount + 406) - 100) | number:'0.2-2'}} {{ 'THB' | translate }}</p>
           </ion-col>
         </ion-row>
       </button>
@@ -197,10 +151,10 @@
   </ion-grid>
   <ion-row *ngIf="!isSpin">
     <ion-col col-6 text-center>
-      <button ion-button round no-shadow color="bite" (click)="payment()">{{ 'PAYMENT' | translate }}</button>
+      <button ion-button block color="bite" (click)="payment()">{{ 'PAYMENT' | translate }}</button>
     </ion-col>
     <ion-col col-6 text-center>
-      <button ion-button round no-shadow color="bite">{{ 'CANCEL' | translate }}</button>
+      <button ion-button block color="light">{{ 'CANCEL' | translate }}</button>
     </ion-col>
   </ion-row>
 </ion-content>
