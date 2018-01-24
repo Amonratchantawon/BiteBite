@@ -29,6 +29,9 @@ page-google-maps {
         background-size: 22px 40px;
         pointer-events: none;
     }
+    .google-search{
+        position: fixed;
+    }
     .scroll-content {
         overflow: hidden !important;
     }

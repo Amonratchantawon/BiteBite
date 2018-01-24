@@ -1,5 +1,5 @@
 import { Component, ViewChild, ElementRef } from '@angular/core';
-import { IonicPage, NavController, NavParams, Platform, ModalController, LoadingController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, Platform, LoadingController } from 'ionic-angular';
 import { GoogleMaps, GoogleMap, LatLng, GoogleMapsEvent } from '@ionic-native/google-maps';
 import { NativeGeocoder, NativeGeocoderReverseResult } from '@ionic-native/native-geocoder';
 declare let google: any;
@@ -12,6 +12,7 @@ declare let google: any;
 export class GoogleMapsPage {
 
   @ViewChild('map') mapElement: ElementRef;
+
   private map: GoogleMap;
   private location: LatLng;
   private placesService: any;
@@ -21,7 +22,6 @@ export class GoogleMapsPage {
     public navParam: NavParams,
     private platform: Platform,
     private googleMaps: GoogleMaps,
-    private modalCtrl: ModalController,
     private nativeGeocoder: NativeGeocoder,
     private loadingCtrl: LoadingController
   ) {
@@ -30,9 +30,9 @@ export class GoogleMapsPage {
 
   ionViewDidLoad() {
     this.platform.ready().then(() => {
-      this.initplaces();
       this.initialMap();
     });
+    this.initplaces();
   }
 
   initplaces() {
@@ -40,10 +40,10 @@ export class GoogleMapsPage {
     let input = document.getElementById('places');
     let autocomplete = new google.maps.places.Autocomplete(input);
     google.maps.event.addListener(autocomplete, 'place_changed', () => {
-
       let place = autocomplete.getPlace();
-      this.location.lat = place.geometry.location.lat();
-      this.location.lng = place.geometry.location.lng();
+      this.location = new LatLng(place.geometry.location.lat(), place.geometry.location.lng());
+      this.address = place.name + ' ' + place.formatted_address;
+      this.getPlaceDetail(place.place_id);
       console.log(place);
     });
 
@@ -151,17 +151,6 @@ export class GoogleMapsPage {
         this.addMarker();
       })
       .catch((error: any) => console.log('error ' + error));
-  }
-
-  googleMapsAutocomplete() {
-    let googleMapsAutocompleteModal = this.modalCtrl.create('GoogleMapsAutocompletePage');
-    googleMapsAutocompleteModal.onDidDismiss(data => {
-      if (data) {
-        console.log(data);
-        this.getPlaceDetail(data.place_id);
-      }
-    })
-    googleMapsAutocompleteModal.present();
   }
 
   getPlaceDetail(place_id: string) {

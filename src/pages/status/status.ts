@@ -38,7 +38,7 @@ export class StatusPage {
     this.app.getRootNav().push('ProfilePage');
   }
   gotoDetail(){
-    this.navCtrl.push('StatusDetailPage')
+    this.app.getRootNav().push('StatusDetailPage')
   }
 
 }
