@@ -147,6 +147,7 @@
   "REMARK": "Remark",
   "SELECT_ADDRESS": "Tap to search for your address",
   "ORDER_DELIVERY": "Shipping information",
-  "ORDER_MENU": "Order Information"  
+  "ORDER_MENU": "Order Information",
+  "ESTIMATE_PRICE": "Estimate Price"
 
 }

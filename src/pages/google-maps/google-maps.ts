@@ -15,9 +15,7 @@ export class GoogleMapsPage {
   private map: GoogleMap;
   private location: LatLng;
   private placesService: any;
-  private address: any = '';
-  showInfo: Boolean = false;
-  isShowMap: Boolean = false;
+  private address: string = '';
   constructor(
     public navCtrl: NavController,
     public navParam: NavParams,
@@ -32,45 +30,55 @@ export class GoogleMapsPage {
 
   ionViewDidLoad() {
     this.platform.ready().then(() => {
-      this.isShowMap = true;
+      this.initplaces();
       this.initialMap();
     });
+  }
+
+  initplaces() {
+
+    let input = document.getElementById('places');
+    let autocomplete = new google.maps.places.Autocomplete(input);
+    google.maps.event.addListener(autocomplete, 'place_changed', () => {
+
+      let place = autocomplete.getPlace();
+      this.location.lat = place.geometry.location.lat();
+      this.location.lng = place.geometry.location.lng();
+      console.log(place);
+    });
+
   }
 
   initialMap() {
     let element = this.mapElement.nativeElement;
     this.map = this.googleMaps.create(element, {
-      'controls': {
-        'compass': true,
-        'myLocationButton': true,
-        'indoorPicker': true,
-        'zoom': true,
+      controls: {
+        compass: true,
+        myLocationButton: true,
+        indoorPicker: true,
+        zoom: true,
       },
-      'gestures': {
-        'scroll': true,
-        'tilt': true,
-        'rotate': true,
-        'zoom': true
+      gestures: {
+        scroll: true,
+        tilt: true,
+        rotate: true,
+        zoom: true
       },
-      'camera': {
-        'bearing': 0,
-        'tilt': 0,
-        'zoom': 15
+      camera: {
+        bearing: 0,
+        tilt: 0,
+        zoom: 16
       }
     });
 
     this.map.one(GoogleMapsEvent.MAP_READY).then(() => {
       this.map.getMyLocation().then((res) => {
         this.location = res.latLng;
-        // let options = {
-        //   target: this.location,
-        //   zoom: 15,
-        //   duration: 0
-        // };
-
-        // this.map.animateCamera(options);
-        // this.map.moveCamera(options);
-        this.map.setCameraTarget(this.location);
+        let camera = {
+          target: this.location,
+          zoom: 16
+        }
+        this.map.moveCamera(camera);
         this.reverseGeocode();
         this.onMapMove();
         this.onMyLocationClick();
@@ -101,11 +109,8 @@ export class GoogleMapsPage {
       lat: this.location.lat,
       lng: this.location.lng
     };
-    this.map.clear();
-
-    this.map.addMarker({
-      title: this.address,
-      // snippet: "Edit detail. Click here!",
+    let markerOption = {
+      // title: this.address,
       icon: {
         url: './assets/icon/pin_transparent.png',
         size: {
@@ -114,22 +119,21 @@ export class GoogleMapsPage {
         }
       },
       position: position
-    })
-      .then((marker) => {
-        this.map.setCameraTarget(position);
-        marker.showInfoWindow();
-        marker.on(GoogleMapsEvent.MARKER_CLICK).subscribe(() => {
-          let loading = this.loadingCtrl.create({
-            spinner: 'hide',
-            cssClass: 'loading-hide',
-            duration: 1,
-          });
-          loading.present();
-        });
-        marker.on(GoogleMapsEvent.INFO_CLICK).subscribe(() => {
-          // alert('Info edit');
-        });
+    }
+    this.map.clear();
+
+    this.map.addMarker(markerOption).then((marker) => {
+
+      let loading = this.loadingCtrl.create({
+        spinner: 'hide',
+        cssClass: 'loading-hide',
+        duration: 1,
       });
+      loading.present();
+
+      marker.on(GoogleMapsEvent.MARKER_CLICK).subscribe(() => {
+      });
+    });
   }
 
   reverseGeocode() {
@@ -146,7 +150,7 @@ export class GoogleMapsPage {
         this.address += (result.countryName ? result.countryName : '');
         this.addMarker();
       })
-      .catch((error: any) => alert('error ' + JSON.stringify(error)));
+      .catch((error: any) => console.log('error ' + error));
   }
 
   googleMapsAutocomplete() {
@@ -178,7 +182,8 @@ export class GoogleMapsPage {
   }
 
   doConfirm() {
-    window.localStorage.setItem('select_address', JSON.stringify(this.address));
+    window.localStorage.setItem('native_map_address_detail', this.address);
+    window.localStorage.setItem('native_map_location', JSON.stringify(this.location));
     this.navCtrl.pop();
   }
 

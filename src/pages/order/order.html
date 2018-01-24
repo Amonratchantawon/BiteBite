@@ -7,7 +7,7 @@
 </ion-header>
 
 
-<ion-content>
+<ion-content #content>
 
   <ion-item-divider color="light">
     <h2>
@@ -20,23 +20,23 @@
       <p class="header-order">
         <b>{{ 'DELIVERY_ADDRESS' | translate }}</b>
       </p>
-      <p *ngIf="address">{{ address }}</p>
-      <p *ngIf="!address || address ===''">{{ 'SELECT_ADDRESS' | translate }}</p>
+      <p *ngIf="order.shippingAddress.address">{{ order.shippingAddress.address }}</p>
+      <p *ngIf="!order.shippingAddress.address || order.shippingAddress.address ===''">{{ 'SELECT_ADDRESS' | translate }}</p>
     </button>
 
     <ion-item>
       <ion-label floating>{{ 'ADDRESS_DETAIL' | translate }}</ion-label>
-      <ion-input type="text" [(ngModel)]="addressDetail"></ion-input>
+      <ion-input type="text" [(ngModel)]="order.shippingAddress.addressDetail"></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label floating>{{ 'DISPLAY_NAME' | translate }}</ion-label>
-      <ion-input type="text" [(ngModel)]="user.displayName"></ion-input>
+      <ion-input type="text" [(ngModel)]="order.shippingAddress.name"></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label floating>{{ 'TEL' | translate }}</ion-label>
-      <ion-input type="number" [(ngModel)]="user.mobile"></ion-input>
+      <ion-input type="number" [(ngModel)]="order.shippingAddress.tel"></ion-input>
     </ion-item>
   </ion-list>
 
@@ -61,11 +61,11 @@
         <b>{{ 'PRODUCT_MENU' | translate }}</b>
       </p>
       <ion-row *ngFor="let item of order.items">
-        <ion-col col-6 text-left>
+        <ion-col col-9 text-left>
           <p>{{item.product.name}}</p>
           <p *ngIf="item.remark && item.remark !==''" class="remark"> &nbsp;&nbsp; ({{item.remark}})</p>
         </ion-col>
-        <ion-col col-6 text-right>
+        <ion-col col-3 text-right>
           <p>{{item.qty}}</p>
         </ion-col>
       </ion-row>
@@ -81,7 +81,7 @@
     <ion-row>
       <ion-col col-9 text-left>
         <ion-item class="border-none" class="input-fixed-height">
-          <ion-input type="text" placeholder="{{ 'COUPON_CODE' | translate }}"></ion-input>
+          <ion-input type="text" placeholder="{{ 'COUPON_CODE' | translate }}" [(ngModel)]="couponCode"></ion-input>
         </ion-item>
       </ion-col>
       <ion-col col-3 text-right>
@@ -89,7 +89,7 @@
       </ion-col>
     </ion-row>
 
-    <ion-row *ngIf="isPromotionCode">
+    <ion-row *ngIf="order.coupon">
       <ion-col col-6 text-left>
         <p>
           <b>{{ 'DISCOUNT' | translate }}</b>
@@ -102,19 +102,32 @@
       </ion-col>
     </ion-row>
   </ion-list>
-  <!-- 
-  <ion-list padding>
-    <button ion-item class="border-none">
+
+  <ion-list class="no-icon" padding-left padding-right *ngIf="order.distance">
+  <!-- <ion-list class="no-icon" padding-left padding-right> -->
+    <ion-item class="border-none">
       <ion-row>
-        <ion-col col-6 text-left class="highlight">
-          <p>{{ 'DISTANCE' | translate }}</p>
-          <p>{{ 'APPROXIMATELY' | translate }}</p>
-          <p>{{ 'TOTAL_FEE' | translate }}</p>
+        <ion-col col-6 text-left class="highlight ">
+          <p>
+            <b>{{ 'DISTANCE' | translate }}</b>
+          </p>
+          <p>
+            <b>{{ 'APPROXIMATELY' | translate }}</b>
+          </p>
+          <p>
+            <b>{{ 'TOTAL_FEE' | translate }}</b>
+          </p>
         </ion-col>
-        <ion-col col-6 text-right class="highlight highlight-color">
-          <p>38 {{ 'KM' | translate }}</p>
-          <p>40-50 {{ 'MIN' | translate }}</p>
-          <p>{{(order.amount + 406) | number:'0.2-2'}} {{ 'THB' | translate }}</p>
+        <ion-col col-6 text-right class="highlight highlight-color ">
+          <p class="total">
+            <b>38 {{ 'KM' | translate }}</b>
+          </p>
+          <p class="total">
+            <b>40-50 {{ 'MIN' | translate }}</b>
+          </p>
+          <p class="total">
+            <b>{{((order.amount + 406) - 100) | number:'0.2-2'}} {{ 'THB' | translate }}</b>
+          </p>
         </ion-col>
       </ion-row>
       <ion-row class="order-description">
@@ -122,8 +135,8 @@
           <p>
             <b>{{ 'PRODUCT_MENU' | translate }}</b>
           </p>
-          <p *ngIf="order.qty > 1">{{order.items.length}} {{ 'MENU' | translate }} ({{order.qty}} {{ 'ITEMS' | translate }})</p>
-          <p *ngIf="order.qty === 1">{{order.items.length}} {{ 'MENU' | translate }} ({{order.qty}} {{ 'ITEM' | translate }})</p>
+          <p *ngIf="order.qty> 1"> - {{order.items.length}} {{ 'MENU' | translate }} ({{order.qty}} {{ 'ITEMS' | translate }})</p>
+          <p *ngIf="order.qty === 1"> - {{order.items.length}} {{ 'MENU' | translate }} ({{order.qty}} {{ 'ITEM' | translate }})</p>
         </ion-col>
         <ion-col col-6 text-right>
           <p>
@@ -137,8 +150,8 @@
           <p>
             <b>{{ 'DELIVERY_FEE' | translate }}</b>
           </p>
-          <p>{{ 'BASE_FARE' | translate }}</p>
-          <p>{{ 'DISTANCE_FEE' | translate }}</p>
+          <p> - {{ 'BASE_FARE' | translate }}</p>
+          <p> - {{ 'DISTANCE_FEE' | translate }}</p>
         </ion-col>
         <ion-col col-6 text-right>
           <p>
@@ -148,14 +161,27 @@
           <p>38 {{ 'KM' | translate }}/351.00 {{ 'THB' | translate }}</p>
         </ion-col>
       </ion-row>
-    </button>
-    <button ion-button block color="light" small>{{ 'PRICE_POLICY' | translate }}</button>
-  </ion-list> -->
+      <ion-row *ngIf="order.discount > 0">
+        <ion-col col-6 text-left>
+          <p>
+            <b>{{ 'DISCOUNT' | translate }}</b>
+          </p>
+        </ion-col>
+        <ion-col col-6 text-right>
+          <p>
+            <b>{{order.discount | number:'0.2-2'}} {{ 'THB' | translate }}</b>
+          </p>
+        </ion-col>
+      </ion-row>
+    </ion-item>
+    <!-- <button ion-button block color="light" small>{{ 'PRICE_POLICY' | translate }}</button> -->
+  </ion-list>
 
 </ion-content>
 <ion-footer class="footer-order">
   <ion-toolbar>
-    <button ion-button block (click)="confirmOrder()" color="bite">{{ 'BUY_ORDER' | translate}}</button>
-    <!-- <button ion-button block (click)="confirmOrder()" color="bite" [disabled]="!address || address===''">{{ 'BUY_ORDER' | translate}}</button> -->
+    <button ion-button block (click)="estimatedPrice()" *ngIf="!order.distance" color="bite" [disabled]="!order.shippingAddress.address || order.shippingAddress.address ===''">{{ 'ESTIMATE_PRICE' | translate}}</button>
+    <button ion-button block (click)="confirmOrder()" *ngIf="order.distance" color="bite">{{ 'BUY_ORDER' | translate}}</button>
+    <!-- <button ion-button block (click)="confirmOrder()" color="bite">{{ 'BUY_ORDER' | translate}}</button> -->
   </ion-toolbar>
 </ion-footer>

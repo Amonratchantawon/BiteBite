@@ -4,6 +4,17 @@ page-google-maps {
         justify-content: center;
         display: flex!important;
         align-items: center!important;
+        .arrow-down {
+            width: 0;
+            height: 0;
+            border-left: 20px solid transparent;
+            border-right: 20px solid transparent;
+            border-top: 18px solid #212121;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin: -62px 0 0 -20px;
+        }
     }
     .map:after {
         width: 22px;
@@ -14,7 +25,7 @@ page-google-maps {
         top: 50%;
         left: 50%;
         margin: -40px 0 0 -11px;
-        background: url('https://maps.gstatic.com/mapfiles/api-3/images/spotlight-poi_hdpi.png');
+        background: url('../assets/icon/map-pin.png');
         background-size: 22px 40px;
         pointer-events: none;
     }
@@ -27,39 +38,34 @@ page-google-maps {
         width: 50vw !important;
         left: 25vw !important;
     }
-    .z-index {
-        z-index: 0 !important;
-    }
     .info-item {
-        width: 64vw !important;
+        width: auto !important;
+        min-width: 30vw !important;
+        height: 70px !important;
         max-width: 300px !important;
         margin: 0px !important;
-        bottom: -29vh !important;
+        bottom: 90px !important;
         z-index: 9999 !important;
-        height: 80px !important;
         padding-left: 0px !important;
-        border-radius: 20px !important;
-        ion-thumbnail {
-            margin: 5px 0px 0px 10px !important;
-            height: 60px !important;
-            width: 60px !important;
-            min-width: 60px;
-            min-height: 60px;
-            img {
-                height: 60px !important;
-                width: 60px !important;
-                border-radius: 20px !important;
-            }
-        }
+        border-radius: 5px !important;
+        color: #ffffff !important;
+        background-color: #212121 !important;
         .item-inner {
-            margin-left: 12px !important;
+            margin-left: 6px !important;
             height: 70px !important;
             border-bottom: none !important;
             h2 {
-                color: #f53d3d;
-                font-weight: 600;
+                font: bold;
+            }
+            p {
+                color: #ffffff !important;
             }
         }
+    }
+    .item-ios,
+    .item-inner {
+        background-image: none !important;
+        padding-right: 0px !important;
     }
 }
 

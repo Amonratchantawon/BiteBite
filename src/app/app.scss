@@ -19,6 +19,20 @@ ion-app {
 .tabs-ios .tab-button {
     -webkit-text-stroke: 1px !important;
 }
-.scroll-content{
+
+.scroll-content {
     overflow: auto !important;
+}
+
+ion-footer {
+    .toolbar-md {
+        padding: 0px !important;
+    }
+    .toolbar-ios {
+        padding: 0px !important;
+    }
+}
+
+.footer-md::before {
+    background-image: none !important;
 }
