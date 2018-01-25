@@ -184,8 +184,8 @@
 </ion-content>
 <ion-footer class="footer-order">
   <ion-toolbar>
-    <!-- <button ion-button block (click)="estimatedPrice()" *ngIf="!order.distance" color="bite" [disabled]="!order.shippingAddress.address || order.shippingAddress.address ==='' || !order.shippingAddress.name || order.shippingAddress.name ==='' || !order.shippingAddress.tel || order.shippingAddress.tel ===''">{{ 'ESTIMATE_PRICE' | translate}}</button>
-    <button ion-button block (click)="confirmOrder()" *ngIf="order.distance" color="bite">{{ 'BUY_ORDER' | translate}}</button> -->
-    <button ion-button block (click)="confirmOrder()" color="bite">{{ 'BUY_ORDER' | translate}}</button>
+    <button ion-button block (click)="estimatedPrice()" *ngIf="!order.distance" color="bite" [disabled]="!order.shippingAddress.address || order.shippingAddress.address ==='' || !order.shippingAddress.name || order.shippingAddress.name ==='' || !order.shippingAddress.tel || order.shippingAddress.tel ===''">{{ 'ESTIMATE_PRICE' | translate}}</button>
+    <button ion-button block (click)="confirmOrder()" *ngIf="order.distance" color="bite">{{ 'BUY_ORDER' | translate}}</button>
+    <!-- <button ion-button block (click)="confirmOrder()" color="bite">{{ 'BUY_ORDER' | translate}}</button> -->
   </ion-toolbar>
 </ion-footer>
