@@ -1,7 +1,7 @@
 <ion-header>
 
   <ion-navbar color="bite" hideBackButton>
-    <ion-title></ion-title>
+    <ion-title>{{ 'CONFIRMED' | translate }}</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -65,7 +65,7 @@
   
     <ion-item-divider color="light">
       <h2>
-        <b>สินค้า</b>
+        <b>{{ 'PRODUCT_NAME' | translate }}</b>
       </h2>
     </ion-item-divider>
     <ion-row *ngFor="let item of order.items">
