@@ -2,7 +2,6 @@ import { Component, ViewChild, ElementRef } from '@angular/core';
 import { IonicPage, NavController, NavParams, Platform, LoadingController } from 'ionic-angular';
 import { GoogleMaps, GoogleMap, LatLng, GoogleMapsEvent } from '@ionic-native/google-maps';
 import { NativeGeocoder, NativeGeocoderReverseResult } from '@ionic-native/native-geocoder';
-import { Keyboard } from '@ionic-native/keyboard';
 declare let google: any;
 
 @IonicPage()
@@ -23,13 +22,8 @@ export class GoogleMapsPage {
     private platform: Platform,
     private googleMaps: GoogleMaps,
     private nativeGeocoder: NativeGeocoder,
-    private loadingCtrl: LoadingController,
-    private keyboard: Keyboard
+    private loadingCtrl: LoadingController
   ) {
-
-    this.keyboard.onKeyboardHide().subscribe(() => {
-      
-    });
   }
 
   ionViewDidLoad() {

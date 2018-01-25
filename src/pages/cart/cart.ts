@@ -19,11 +19,14 @@ export class CartPage {
 
   cartData: CartModel = new CartModel();
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public cartProvider: CartProvider) {
+  constructor(
+    public navCtrl: NavController,
+    public navParams: NavParams,
+    public cartProvider: CartProvider
+  ) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad CartPage');
     this.getCart();
   }
 
@@ -70,7 +73,7 @@ export class CartPage {
   }
 
   checkOut() {
-    this.updateCart();    
+    this.updateCart();
     this.navCtrl.push('OrderPage');
   }
 

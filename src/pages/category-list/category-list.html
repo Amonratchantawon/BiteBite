@@ -34,6 +34,6 @@
         </ion-segment>
       </div>
     </div>
-    <grid-shop-y *ngIf="shopByCate && shopByCate.length && shopByCate[pages]" [items]="shopByCate[pages].items"></grid-shop-y>
+    <grid-shop-y *ngIf="shopByCate && shopByCate.length && shopByCate[pages]" [items]="shopByCate[pages].items" (selectedItem)="goToDetail($event)"></grid-shop-y>
   </div>
 </ion-content>

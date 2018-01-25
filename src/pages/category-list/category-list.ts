@@ -47,10 +47,10 @@ export class CategoryListPage {
         let scroll = document.getElementById('scroll');
         scroll.scrollLeft = 90 * this.cate;
       }, 0);
-      this.loading.dismiss();      
+      this.loading.dismiss();
       this.getCurrentPosition();
     }, (err) => {
-      this.loading.dismiss();      
+      this.loading.dismiss();
     });
   }
 
@@ -103,6 +103,10 @@ export class CategoryListPage {
     this.cate = index;
     this._id = item._id;
     this.getCurrentPosition();
+  }
+
+  goToDetail(e) {
+    this.navCtrl.push('ShopPage', e._id);
   }
 
 }

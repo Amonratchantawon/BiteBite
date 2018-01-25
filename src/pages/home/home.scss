@@ -156,9 +156,10 @@ page-home {
     .star{
         width: 20vw;
     }
-
-    // .col-star{
-    //     border: 1px solid;
-    //     color: #bba5a5
-    // }
+    
+    .div-hungry{
+        ion-col{
+            padding: 2px !important;
+        }
+    }
 }
