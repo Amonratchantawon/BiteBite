@@ -42,7 +42,7 @@ page-order {
     {
         background-image: url("data:image/svg+xml;charset=utf-8,<svg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2012%2020'><path%20d='M2,20l-2-2l8-8L0,2l2-2l10,10L2,20z'%20fill='%23c8c7cc'/></svg>");
         padding-right: 16px;
-        background-position: right 0px center;        
+        background-position: right 0px center;
     }
     button.item-md:not([detail-none]) .item-inner,
     {
@@ -102,8 +102,11 @@ page-order {
             background-image: none !important;
             padding-right: 0px !important;
         }
-        .label{
+        .label {
             margin-right: 0px !important;
         }
+    }
+    .danger {
+        color: #F44336 !important;
     }
 }

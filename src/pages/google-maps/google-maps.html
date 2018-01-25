@@ -13,6 +13,10 @@
 
 
 <ion-content>
+
+</ion-content>
+
+<ion-footer>
   <ion-searchbar #places class="google-search"></ion-searchbar>
   <div #map class="map">
     <button ion-item text-wrap text-center class="info-item" *ngIf="address">
@@ -21,4 +25,4 @@
     <div class="arrow-down" *ngIf="address"></div>
   </div>
   <button ion-button color="danger" class="btn-cf" (click)="doConfirm()" [disabled]="!address || address ===''">{{ 'CONFIRM' | translate }}</button>
-</ion-content>
+</ion-footer>

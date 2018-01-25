@@ -1,8 +1,9 @@
 page-google-maps {
     .map {
         height: 100% !important;
-        // justify-content: center;
-        // align-items: center!important;
+        justify-content: center;
+        display: flex !important;
+        align-items: center!important;
         background-color: #ffffff;
         .arrow-down {
             width: 0;
@@ -61,6 +62,10 @@ page-google-maps {
             margin-left: 6px !important;
             height: 70px !important;
             border-bottom: none !important;
+            .input-wrapper {
+                height: 65px;
+                margin: auto;
+            }
             p {
                 color: #ffffff !important;
                 max-height: 70px !important;
