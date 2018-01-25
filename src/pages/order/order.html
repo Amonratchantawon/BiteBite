@@ -67,7 +67,7 @@
       <ion-row *ngFor="let item of order.items">
         <ion-col col-9 text-left>
           <p>{{item.product.name}}</p>
-          <p *ngIf="item.remark && item.remark !==''" class="remark"> &nbsp;&nbsp; ({{item.remark}})</p>
+          <p *ngIf="item.remark && item.remark !==''" class="remark">({{item.remark}})</p>
         </ion-col>
         <ion-col col-3 text-right>
           <p>{{item.qty}}</p>

@@ -24,26 +24,29 @@
             <span class="price-name"> ({{item.product.price | number:'0.2-2'}} {{ 'THB' | translate}}) </span>
           </h2>
 
-          <button ion-button icon-only clear color="dark" class="icon-trash" (click)="removeItem(i)">
-            <ion-icon ios="ios-trash" md="ios-trash"></ion-icon>
-          </button>
-
           <p class="price">{{item.amount | number:'0.2-2'}} {{ 'THB' | translate}}</p>
-          <div class="counter">
-            <button ion-button icon-only clear color="bite" class="icon-cart" (click)="countDelete(item)">
-              <ion-icon name="ios-remove-circle-outline"></ion-icon>
-            </button>
-            <button ion-button icon-only clear class="icon-cart" color="dark">
-              {{item.qty}}
-            </button>
-            <button ion-button icon-only clear color="bite" class="icon-cart" (click)="countPlus(item)">
-              <ion-icon name="ios-add-circle-outline"></ion-icon>
-            </button>
-          </div>
           <!-- <ion-searchbar mode="ios" placeholder="{{ 'PRODUCT_REMARK' | translate}}" [(ngModel)]="item.remark">
             </ion-searchbar> -->
         </ion-label>
-        <ion-input type="text" placeholder="{{ 'PRODUCT_REMARK' | translate}}"></ion-input>
+        <ion-input type="text" placeholder="{{ 'PRODUCT_REMARK' | translate}}" [(ngModel)]="item.remark"></ion-input>
+
+
+        <button ion-button icon-only item-right clear color="dark" class="icon-trash" (click)="removeItem(i)">
+          <ion-icon ios="ios-trash" md="ios-trash"></ion-icon>
+        </button>
+
+        <div class="counter" item-right>
+          <button ion-button icon-only clear color="bite" class="icon-cart" (tap)="countDelete(item)">
+            <ion-icon name="ios-remove-circle-outline"></ion-icon>
+          </button>
+          <button ion-button icon-only clear class="icon-cart" color="dark">
+            {{item.qty}}
+          </button>
+          <button ion-button icon-only clear color="bite" class="icon-cart" (tap)="countPlus(item)">
+            <ion-icon name="ios-add-circle-outline"></ion-icon>
+          </button>
+        </div>
+
       </ion-item>
     </ion-list>
   </div>

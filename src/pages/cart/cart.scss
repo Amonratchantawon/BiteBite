@@ -54,8 +54,9 @@ page-cart {
     .icon-trash {
         position: absolute;
         right: 0px;
-        top: -2px;
-        font-size: 16px;
+        top: 2px;
+        font-size: 16px !important;
+        z-index: 9999;
     }
     .price {
         margin-top: 14px;
@@ -64,7 +65,7 @@ page-cart {
         text-align: right;
         position: absolute;
         right: 0px;
-        top: 38px;
+        top: 34px;
         width: 100%;
         z-index: 9999;
     }
@@ -104,5 +105,8 @@ page-cart {
     }
     .item{
         padding-left: 14px !important;
+    }
+    .input-cover{
+        height: 0px;
     }
 }
