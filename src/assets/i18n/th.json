@@ -148,5 +148,15 @@
   "SELECT_ADDRESS": "แตะเพื่อค้นหาที่อยู่ในการจัดส่ง",
   "ORDER_DELIVERY": "ข้อมูลการจัดส่ง",
   "ORDER_MENU": "ข้อมูลรายการสั่งซื้อ",
-  "ESTIMATE_PRICE": "คำนวณราคา"
+  "ESTIMATE_PRICE": "คำนวณราคา",
+  "HISTORY_DETAIL": "รายละเอียด",
+  "PAYMENT_DESTINATION":"ชำระเงินปลายทาง",
+  "CONFIRMED":"ยืนยันการสั่งซื้อ",
+  "SELECT_PAYMENT_METHOD":"กรุณาเลือกการชำระเงิน",
+  "CREDIT_CARD":"บัตรเครดิต",
+  "CARD_HOLDER":"ชื่อผู้ถือบัตร",
+  "CARD_NUMBER":"เลขที่บัตร",
+  "EXPIRED_DATE":"วันหมดอายุ"
+
+
 }

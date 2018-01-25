@@ -7,7 +7,7 @@
 <ion-header>
 
   <ion-navbar color="bite">
-    <ion-title>History Detail</ion-title>
+    <ion-title>{{ 'HISTORY_DETAIL' | translate }}</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -17,10 +17,10 @@
   <ion-grid padding-top padding-left>
     <ion-row>
       <ion-col col-6>
-       Order No. BB001
+        {{ 'ORDER_NUMBER' | translate }} BB001
       </ion-col>
       <ion-col col-6 text-right >
-       <p class="payment-desc">ชำระเงินปลายทาง</p> 
+       <p class="payment-desc">{{ 'PAYMENT_DESTINATION' | translate }}</p> 
       </ion-col>
     </ion-row>
     <ion-row>
@@ -34,7 +34,7 @@
       <ion-icon name="md-person" color="bite" class="fontIcon"></ion-icon>
     </ion-col>
     <ion-col col-10>
-      <p>คุณ อมรรัตน์ จันทะวร</p>
+      <p>อมรรัตน์ จันทะวร</p>
     </ion-col>
     <ion-col col-2 text-center>
       <ion-icon name="md-pin" color="bite" class="fontIcon"></ion-icon>
@@ -60,7 +60,7 @@
   
     <ion-item-divider color="light">
       <h2>
-        <b>สินค้า</b>
+        <b>{{ 'PRODUCT_NAME' | translate }}</b>
       </h2>
     </ion-item-divider>
     <ion-row >
@@ -69,8 +69,8 @@
           <span>5</span>
           <br>
           <span class="detail-text" >(ไม่กินเผ็ด)</span>
-          <br>
-          <span class=" worning-danger " >*สินค้าหมด</span>
+          <!-- <br> -->
+          <!-- <span class=" worning-danger " >*สินค้าหมด</span> -->
         </p>
       </ion-col>
       <ion-col col-3 text-right>

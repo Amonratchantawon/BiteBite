@@ -7,7 +7,7 @@
 <ion-header>
 
   <ion-navbar color="bite">
-    <ion-title>การชำระเงิน</ion-title>
+    <ion-title>{{ 'PAYMENT' | translate }}</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -23,7 +23,7 @@
 
   <ion-row>
     <ion-col text-center>
-      <h2>กรุณาเลือกการชำระเงิน</h2>
+      <h2>{{ 'SELECT_PAYMENT_METHOD' | translate }}</h2>
     </ion-col>
   </ion-row>
   <ion-segment mode="md" [(ngModel)]="payment" color="bite" padding>
@@ -31,22 +31,22 @@
       <!-- <img src="./assets/imgs/payment/pay-ment-credit.png" alt="" width="15%"> -->
       <!-- <label class="font-color-segment">
         <img src="./assets/imgs/payment/pay-ment-credit.png" alt="" width="25px">Credit Card</label> -->
-      <label class="font-color-segment">บัตรเครดิต</label>
+      <label class="font-color-segment">{{ 'CREDIT_CARD' | translate }}</label>
     </ion-segment-button>
     <ion-segment-button class="font-color-segment" value="2" text-capitalize>
       <!-- <img src="./assets/imgs/payment/pay-ment-cod.png" alt="" width="15%"> -->
       <!-- <label class="font-color-segment">
         <img src="./assets/imgs/payment/pay-ment-cod.png" alt="" width="25px">Cash On Delivery</label> -->
-      <label class="font-color-segment">เก็บเงินปลายทาง</label>
+      <label class="font-color-segment">{{ 'PAYMENT_DESTINATION' | translate }}</label>
     </ion-segment-button>
   </ion-segment>
   <ion-list *ngIf="payment === '1'">
     <ion-item>
-      <ion-label floating>เลขที่บัตร</ion-label>
+      <ion-label floating>{{ 'CARD_NUMBER' | translate }}</ion-label>
       <ion-input type="number"></ion-input>
     </ion-item>
     <ion-item>
-      <ion-label floating>ชื่อ</ion-label>
+      <ion-label floating>{{ 'NAME' | translate }}</ion-label>
       <ion-input type="number"></ion-input>
     </ion-item>
     <ion-item>
@@ -54,7 +54,7 @@
       <ion-input type="number"></ion-input>
     </ion-item>
     <ion-item>
-      <ion-label floating>วันหมดอายุ</ion-label>
+      <ion-label floating>{{ 'EXPIRED_DATE' | translate }}</ion-label>
       <ion-input type="number"></ion-input>
     </ion-item>
   </ion-list>
