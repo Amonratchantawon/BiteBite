@@ -13,104 +13,92 @@
 </ion-header>
 
 
-<ion-content padding>
-  <ion-row>
-    <ion-col>
-      No.BB001
-    </ion-col>
-  </ion-row>
-  <ion-row>
-    <ion-col>
-      09 มีนาคม 2561 12:00 น.
-    </ion-col>
-  </ion-row>
-  <ion-row>
+<ion-content>
+  <ion-grid padding-top padding-left>
+    <ion-row>
+      <ion-col col-6>
+       Order No. BB001
+      </ion-col>
+      <ion-col col-6 text-right >
+       <p class="payment-desc">ชำระเงินปลายทาง</p> 
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        22/01/18 12:30น.
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-row class="align-self-center">
     <ion-col col-2 text-center>
       <ion-icon name="md-person" color="bite" class="fontIcon"></ion-icon>
     </ion-col>
     <ion-col col-10>
-      คุณตาหวาน สุดใจ
+      <p>คุณ อมรรัตน์ จันทะวร</p>
     </ion-col>
-  </ion-row>
-  <ion-row>
     <ion-col col-2 text-center>
       <ion-icon name="md-pin" color="bite" class="fontIcon"></ion-icon>
     </ion-col>
     <ion-col col-10>
-      960 ถนนพระรามที่ 4 แขวงสีลม เขตบางรัก กรุงเทพมหานคร 10500
+      <p>84/176 ถ.ลำลูกกา ตำบล บึงคำพร้อย อำเภอ ลำลูกกา ปทุมธานี 12150</p>
     </ion-col>
-  </ion-row>
-  <ion-row>
-    <ion-col col-2 text-center>
+    <ion-col col-2 text-center >
       <ion-icon name="md-bicycle" color="bite" class="fontIcon"></ion-icon>
     </ion-col>
-    <ion-col col-10>
-      นายสมศักดิ์ ขับรถ
+    <ion-col col-10 >
+      <p>นายสมศักด์ ขับรถ</p>
     </ion-col>
-  </ion-row>
-  <ion-row>
-    <ion-col col-2 text-center>
+    <ion-col col-2 text-center >
       <ion-icon name="md-home" color="bite" class="fontIcon"></ion-icon>
     </ion-col>
-    <ion-col col-10>
-      ร้านละมุนภัณฑ์
+    <ion-col col-10 >
+      <p>ครัวคุณ แอส</p>
     </ion-col>
   </ion-row>
-  <div>
-    <ion-row class="border-top border-bottom">
-      <ion-col>
-        ชื่อสินค้า
+
+  <ion-grid >
+  
+    <ion-item-divider color="light">
+      <h2>
+        <b>สินค้า</b>
+      </h2>
+    </ion-item-divider>
+    <ion-row >
+      <ion-col col-9 text-left>
+        <p>ลูกชิ้นปลาชะโด X
+          <span>5</span>
+          <br>
+          <span class="detail-text" >(ไม่กินเผ็ด)</span>
+          <br>
+          <span class=" worning-danger " >*สินค้าหมด</span>
+        </p>
       </ion-col>
-      <ion-col text-center>
-        จำนวน
-      </ion-col>
-      <ion-col text-right>
-        ราคา
-      </ion-col>
-    </ion-row>
-    <ion-row>
-      <ion-col>
-        โกโก้
-        <div class="fontDes">ไม่หวาน</div>
-      </ion-col>
-      <ion-col text-center>
-        1
-      </ion-col>
-      <ion-col text-right>
-        40฿
+      <ion-col col-3 text-right>
+        <p>{{500 | number:'0.2-2'}}฿</p>
       </ion-col>
     </ion-row>
-    <ion-row class="border-top">
-      <ion-col>
-        รหัสส่วนลด : BB1547
-      </ion-col>
-      <ion-col text-right>
-        20฿
-      </ion-col>
-    </ion-row>
-    <ion-row>
-      <ion-col>
-        ราคาสินค้า
-      </ion-col>
-      <ion-col text-right>
-        20฿
-      </ion-col>
-    </ion-row>
-    <ion-row>
-      <ion-col>
-        ค่าจัดส่ง
-      </ion-col>
-      <ion-col text-right>
-        50฿
-      </ion-col>
-    </ion-row>
-    <ion-row class="border-top border-bottom">
-      <ion-col>
-        ยอดชำระ
-      </ion-col>
-      <ion-col text-right>
-        70฿
-      </ion-col>
-    </ion-row>
-  </div>
+
+    <ion-list>
+      <button ion-item class="border-none">
+        <ion-row>
+          <ion-col col-6 text-left class="highlight">
+            <p>{{ 'DISTANCE' | translate }}</p>
+            <p>{{ 'APPROXIMATELY' | translate }}</p>
+            <p>{{ 'DELIVERY_FEE' | translate }}</p>
+            <p>{{ 'PRODUCT_MENU' | translate }}</p>
+            <p>{{ 'DISCOUNT' | translate }}</p>
+            <p>{{ 'TOTAL_FEE' | translate }}</p>
+          </ion-col>
+          <ion-col col-6 text-right class="highlight highlight-color ">
+            <p>38 {{ 'KM' | translate }}</p>
+            <p>40-50 {{ 'MIN' | translate }}</p>
+            <p>{{ 100 | number:'0.2-2'}} {{ 'THB' | translate }}</p>
+            <p>{{ 500 | number:'0.2-2'}} {{ 'THB' | translate }}</p>   
+            <p>{{100 | number:'0.2-2'}} {{ 'THB' | translate }}</p>
+            <p class="total">{{500 | number:'0.2-2'}} {{ 'THB' | translate }}</p>
+          </ion-col>
+        </ion-row>
+      </button>
+    </ion-list>
+  </ion-grid>
 </ion-content>

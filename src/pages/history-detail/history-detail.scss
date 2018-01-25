@@ -1,17 +1,83 @@
 page-history-detail {
+    .align-self-center {
+        ion-col {
+            align-self: center !important;
+        }
+    }
+    .fixicon {
+        font-size: 2em;
+    }
+    .border-row {
+        border-top: solid #c8c7cc 1px;
+        border-bottom: solid #c8c7cc 1px;
+    }
+    .border-top-row {
+        border-top: solid #c8c7cc 1px;
+    }
+    .border-bottom-row {
+        border-bottom: solid #c8c7cc 1px;
+    }
+    .worning-danger {
+        color: #EB3841;
+    }
+    .detail-text {
+        color: #a5a5a5;
+        margin-top: -4px;
+    }
     .fontIcon {
         font-size: x-large
     }
-    .fontDes {
-        color: #c8c7cc;
+    ion-spinner {
+        width: 28px;
+        height: 28px;
+        stroke: #444;
+        fill: #222;
     }
-    .fontGray {
-        color: #8e9093;
+    .highlight {
+        // border-bottom: 1px solid #dedede;
+        padding: 6px 0px 6px 0px !important;
+        p {
+            font-weight: 600;
+        }
     }
-    .border-top {
-        border-top: solid 1px #c8c7cc;
+    .highlight-color {
+        .total {
+            color: #4CAF50 !important;
+        }
     }
-    .border-bottom {
-        border-bottom: solid 1px #c8c7cc;
+    .item-inner {
+        background: none !important;
+        padding-right: 0px !important;
+    }
+    .border-none {
+        padding: 4px !important;
+        .label {
+            margin-right: 0px;
+        }
+        .item-inner {
+            border-bottom: none !important;
+        }
+        ion-col {
+            padding: 0px !important;
+        }
+        p {
+            margin: 4px;
+            color: #000;
+        }
+    }
+    p {
+        margin: 4px;
+    }
+    .item-divider-md {
+        border-bottom: 0px !important;
+    }
+    ion-item-divider {
+        b {
+            padding-left: 16px !important;
+        }
+    }
+    .payment-desc{
+        color: #4CAF50 !important;
+        margin: 0px 0px 0px 0px !important
     }
 }
