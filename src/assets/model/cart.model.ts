@@ -1,5 +1,5 @@
 export class CartModel {
-    shop: ShopModel = new ShopModel();
+    shop: ShopCartModel = new ShopCartModel();
     items: Array<ItemCartModel>;
     qty: number;
     amount: number;
@@ -17,7 +17,7 @@ export class ProductCartModel {
     price: number;
 }
 
-export class ShopModel {
+export class ShopCartModel {
     _id: string;
     name: string;
     detail: string;
