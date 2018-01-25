@@ -57,6 +57,7 @@ export class AlertProvider {
           text: confirmText,
           cssClass: 'confirm',
           handler: () => {
+            // game
             let gifModal = this.modalCtrl.create('GiftCollectRandomPage', {}, {
               enableBackdropDismiss: false
             });
