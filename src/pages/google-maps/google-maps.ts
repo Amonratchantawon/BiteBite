@@ -26,8 +26,7 @@ export class GoogleMapsPage {
     private loadingCtrl: LoadingController,
     private keyboard: Keyboard
   ) {
-    // Keyboard.disableScroll(true);
-    this.keyboard.disableScroll(true);
+
     this.keyboard.onKeyboardHide().subscribe(() => {
       
     });
@@ -135,7 +134,7 @@ export class GoogleMapsPage {
         duration: 1,
       });
       loading.present();
-      
+
     });
   }
 

@@ -5,6 +5,8 @@ page-google-maps {
         display: flex !important;
         align-items: center!important;
         background-color: #ffffff;
+        overflow: hidden !important;
+        padding: 0px !important;
         .arrow-down {
             width: 0;
             height: 0;
@@ -31,11 +33,11 @@ page-google-maps {
         pointer-events: none;
     }
     .google-search {
-        position: fixed;
+        // position: fixed;
         z-index: 9999;
-        width: 76vw;
-        padding: 8px;
-        margin: 6px 12vw 0px 12vw;
+        // width: 76vw;
+        // padding: 8px;
+        // margin: 6px 12vw 0px 12vw;
     }
     .scroll-content {
         overflow: hidden !important;
@@ -49,8 +51,8 @@ page-google-maps {
     .info-item {
         width: auto !important;
         min-width: 30vw !important;
-        height: 70px !important;
         max-width: 300px !important;
+        height: 70px !important;
         margin: 0px !important;
         bottom: 90px !important;
         z-index: 99 !important;
@@ -63,8 +65,8 @@ page-google-maps {
             height: 70px !important;
             border-bottom: none !important;
             .input-wrapper {
-                height: 65px;
-                margin: auto;
+                height: 65px !important;
+                margin: auto !important;
             }
             p {
                 color: #ffffff !important;

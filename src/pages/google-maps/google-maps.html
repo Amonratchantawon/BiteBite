@@ -1,23 +1,19 @@
 <ion-header>
 
   <ion-navbar color="danger">
-    <ion-title>Native map</ion-title>
+    <!-- <ion-title>Native map</ion-title> -->
     <!-- <ion-buttons end>
       <button ion-button icon-only clear end (click)="googleMapsAutocomplete()">
         <ion-icon name="search"></ion-icon>
       </button>
     </ion-buttons> -->
+    <ion-searchbar mode="ios" #places class="google-search" placeholder="ค้นหาสถานที่"></ion-searchbar>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content>
-
-</ion-content>
-
-<ion-footer>
-  <ion-searchbar #places class="google-search"></ion-searchbar>
   <div #map class="map">
     <button ion-item text-wrap text-center class="info-item" *ngIf="address">
       <p>{{address}}</p>
@@ -25,4 +21,4 @@
     <div class="arrow-down" *ngIf="address"></div>
   </div>
   <button ion-button color="danger" class="btn-cf" (click)="doConfirm()" [disabled]="!address || address ===''">{{ 'CONFIRM' | translate }}</button>
-</ion-footer>
+</ion-content>

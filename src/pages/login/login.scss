@@ -6,12 +6,12 @@ page-login {
         z-index: 999;
     }
     .scroll-content {
-        overflow-y: auto !important;
+        overflow: auto !important;
         padding-bottom: 0px !important;
     }
-    .no-scroll .scroll-content {
-        overflow: hidden;
-    }
+    // .no-scroll .scroll-content {
+    //     overflow: hidden;
+    // }
     .login {
         position: absolute;
         height: 100%;
