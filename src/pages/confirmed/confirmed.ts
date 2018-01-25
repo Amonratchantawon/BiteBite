@@ -82,7 +82,7 @@ export class ConfirmedPage {
         {
           text: ok,
           handler: () => {
-            this.navCtrl.setRoot('ShopPage');
+            this.navCtrl.popTo('Order');
           }
         }
       ]
