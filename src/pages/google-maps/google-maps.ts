@@ -2,6 +2,7 @@ import { Component, ViewChild, ElementRef } from '@angular/core';
 import { IonicPage, NavController, NavParams, Platform, LoadingController } from 'ionic-angular';
 import { GoogleMaps, GoogleMap, LatLng, GoogleMapsEvent } from '@ionic-native/google-maps';
 import { NativeGeocoder, NativeGeocoderReverseResult } from '@ionic-native/native-geocoder';
+import { Keyboard } from '@ionic-native/keyboard';
 declare let google: any;
 
 @IonicPage()
@@ -12,10 +13,9 @@ declare let google: any;
 export class GoogleMapsPage {
 
   @ViewChild('map') mapElement: ElementRef;
-
+  @ViewChild('places', { read: ElementRef }) places: ElementRef;
   private map: GoogleMap;
   private location: LatLng;
-  private placesService: any;
   private address: string = '';
   constructor(
     public navCtrl: NavController,
@@ -23,28 +23,35 @@ export class GoogleMapsPage {
     private platform: Platform,
     private googleMaps: GoogleMaps,
     private nativeGeocoder: NativeGeocoder,
-    private loadingCtrl: LoadingController
+    private loadingCtrl: LoadingController,
+    private keyboard: Keyboard
   ) {
-
+    // Keyboard.disableScroll(true);
+    this.keyboard.disableScroll(true);
+    this.keyboard.onKeyboardHide().subscribe(() => {
+      
+    });
   }
 
   ionViewDidLoad() {
     this.platform.ready().then(() => {
-      this.initialMap();
+      setTimeout(() => {
+        this.initialMap();
+      }, 1000);
     });
     this.initplaces();
   }
 
   initplaces() {
 
-    let input = document.getElementById('places');
+    let input = this.places.nativeElement.querySelector('.searchbar-input');
     let autocomplete = new google.maps.places.Autocomplete(input);
     google.maps.event.addListener(autocomplete, 'place_changed', () => {
       let place = autocomplete.getPlace();
       this.location = new LatLng(place.geometry.location.lat(), place.geometry.location.lng());
       this.address = place.name + ' ' + place.formatted_address;
-      this.getPlaceDetail(place.place_id);
-      console.log(place);
+      this.map.setCameraTarget(this.location);
+      this.addMarker();
     });
 
   }
@@ -110,7 +117,6 @@ export class GoogleMapsPage {
       lng: this.location.lng
     };
     let markerOption = {
-      // title: this.address,
       icon: {
         url: './assets/icon/pin_transparent.png',
         size: {
@@ -121,7 +127,6 @@ export class GoogleMapsPage {
       position: position
     }
     this.map.clear();
-
     this.map.addMarker(markerOption).then((marker) => {
 
       let loading = this.loadingCtrl.create({
@@ -130,9 +135,7 @@ export class GoogleMapsPage {
         duration: 1,
       });
       loading.present();
-
-      marker.on(GoogleMapsEvent.MARKER_CLICK).subscribe(() => {
-      });
+      
     });
   }
 
@@ -151,23 +154,6 @@ export class GoogleMapsPage {
         this.addMarker();
       })
       .catch((error: any) => console.log('error ' + error));
-  }
-
-  getPlaceDetail(place_id: string) {
-    let request = {
-      placeId: place_id
-    };
-    this.placesService = new google.maps.places.PlacesService(this.mapElement.nativeElement);
-    this.placesService.getDetails(request, (place, status) => {
-      if (status == google.maps.places.PlacesServiceStatus.OK) {
-        this.address = place.name + ' ' + place.formatted_address;
-        this.location = new LatLng(place.geometry.location.lat(), place.geometry.location.lng());
-        this.map.setCameraTarget(this.location);
-        this.addMarker();
-      } else {
-        console.log('page > getPlaceDetail > status > ', status);
-      }
-    });
   }
 
   doConfirm() {
