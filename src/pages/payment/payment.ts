@@ -53,6 +53,7 @@ export class PaymentPage {
       }
       
       let alert = this.alertCtrl.create({
+        mode: 'ios',
         title: title,
         message: massage,
         buttons: [

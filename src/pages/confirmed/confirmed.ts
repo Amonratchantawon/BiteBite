@@ -69,6 +69,7 @@ export class ConfirmedPage {
     }
 
     let alert = this.alertCtrl.create({
+      mode: 'ios',
       title: title,
       message: description,
       buttons: [
