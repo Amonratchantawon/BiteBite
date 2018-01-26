@@ -33,8 +33,8 @@ export class GoogleMapsPage {
   }
 
   ionViewDidLoad() {
-    this.loading.onLoading();
     this.platform.ready().then(() => {
+      this.loading.onLoading();
       setTimeout(() => {
         this.initialMap();
         this.initplaces();
