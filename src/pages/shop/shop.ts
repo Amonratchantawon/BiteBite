@@ -40,6 +40,7 @@ export class ShopPage {
     let _id = this.navParams.data;
     console.log(_id);
     this.loading.onLoading();
+    // '5a53436b3df1d81300b2659f'
     this.shop.getShopDetail(_id).then((res) => {
       this.shopData = res;
       this.selectedCateId = this.shopData.categories[0]._id;

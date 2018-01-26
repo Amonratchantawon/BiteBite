@@ -16,60 +16,85 @@
 <ion-content>
   <search-input></search-input>
 
-  <div>
-    <preload-image [ratio]="{w:20, h:9}" [src]="shopData.coverimage" [isIcon]="true"></preload-image>
+  <div *ngIf="shopData.coverimage">
+    <preload-image [ratio]="{w:21, h:12}" [src]="shopData.coverimage" [isIcon]="true">
+      <!-- <ion-grid class="shop-detail">
+        <ion-row>
+          <ion-col col-12>
+            <ion-row>
+              <label class="shop-title">{{shopData.name}}</label>
+            </ion-row>
+            <ion-row>
+              <label class="shop-title">{{shopData.detail}}</label>
+            </ion-row>
+            <ion-row>
+              <label class="shop-title" *ngIf="shopData.address.addressdetail">{{shopData.address.addressdetail}}&nbsp;</label>
+              <ion-badge class="icon-ads" item-end color="bite" [ngClass]="{'open': shopData.isopen}">{{isO | translate}}</ion-badge>
+            </ion-row>
+
+            <button ion-button icon-left clear large class="favorite" (click)="onFavorite()">
+              <ion-icon *ngIf="!shopData.isFavorite" name="md-star-outline"></ion-icon>
+              <ion-icon *ngIf="shopData.isFavorite" name="md-star"></ion-icon>
+            </button>
+          </ion-col>
+        </ion-row>
+      </ion-grid> -->
+    </preload-image>
     <ion-grid class="shop-detail">
       <ion-row>
         <ion-col col-12>
           <ion-row>
-            {{shopData.name}}
+            <label class="shop-title">
+              <b>{{shopData.name}}</b>
+            </label>
           </ion-row>
           <ion-row>
-            {{shopData.detail}}
+            <label class="shop-title">{{shopData.detail}}</label>
           </ion-row>
           <ion-row>
-            <span>{{shopData.address.addressdetail}}</span>&nbsp;
-            <ion-badge class="icon-ads" item-end color="bite" [ngClass]="{'open': shopData.isopen}">{{isO | translate}}</ion-badge>
+            <label class="shop-title" *ngIf="shopData.address.addressdetail">{{shopData.address.addressdetail}}&nbsp;</label>
+            <ion-badge class="badge-status close" item-end color="bite" [ngClass]="{'open': shopData.isopen}">{{isO | translate}}</ion-badge>
           </ion-row>
 
-          <button ion-button icon-left clear large class="like" (click)="onFavorite()">
+          <button ion-button icon-left clear large class="favorite" (click)="onFavorite()">
             <ion-icon *ngIf="!shopData.isFavorite" name="md-star-outline"></ion-icon>
             <ion-icon *ngIf="shopData.isFavorite" name="md-star"></ion-icon>
           </button>
         </ion-col>
       </ion-row>
     </ion-grid>
+
+    <ion-scroll scrollX="true" *ngIf="shopData.promoteimage && shopData.promoteimage.length > 0">
+      <ion-row class="row-custom">
+        <ion-col col-3 *ngFor="let item of shopData.promoteimage; let i = index;" class="col-imgpromote">
+          <preload-image [ratio]="{w:1, h:1}" [src]="item" (click)="showPhoto(i)"></preload-image>
+        </ion-col>
+      </ion-row>
+    </ion-scroll>
+
+    <ion-grid>
+      <ion-row>
+        <ion-col col-6 text-left align-self-center>
+          <h5 class="category-title">{{'PRODUCT_CATEGORY' | translate}}</h5>
+        </ion-col>
+        <ion-col col-6 text-right>
+          <button class="seeall" ion-button clear small (click)="seeAllProduct()">
+            <b>{{ 'SEE_ALL' | translate }} >></b>
+          </button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <ion-scroll scrollX="true">
+      <ion-row class="row-custom">
+        <ion-col col-3 *ngFor="let cate of shopData.categories; let ii = index;" class="col-imgpromote" (click)="selectCate(ii + 1,cate)">
+          <preload-image class="categories-image" [ratio]="{w:1, h:1}" [src]="cate.image" [ngClass]="cate._id === selectedCateId ? 'selectedCategory' : ''"></preload-image>
+          <p class="cate-order">{{cate.name}}</p>
+        </ion-col>
+      </ion-row>
+    </ion-scroll>
+
+    <list-product class="list-product" [items]="shopData.products" [selectedCateId]="selectedCateId" (clickItem)="selectProduct($event)"></list-product>
+
   </div>
-
-  <ion-scroll scrollX="true" *ngIf="shopData.promoteimage && shopData.promoteimage.length > 0">
-    <ion-row class="row-custom">
-      <ion-col col-3 *ngFor="let item of shopData.promoteimage; let i = index;" class="col-imgpromote">
-        <preload-image [ratio]="{w:1, h:1}" [src]="item" (click)="showPhoto(i)"></preload-image>
-      </ion-col>
-    </ion-row>
-  </ion-scroll>
-
-  <ion-grid>
-    <ion-row>
-      <ion-col col-6 text-left align-self-center>
-        <h5 class="category-title">{{'PRODUCT_CATEGORY' | translate}}</h5>
-      </ion-col>
-      <ion-col col-6 text-right>
-        <button class="seeall" ion-button clear small (click)="seeAllProduct()">
-          <b>{{ 'SEE_ALL' | translate }} >></b>
-        </button>
-      </ion-col>
-    </ion-row>
-  </ion-grid>
-
-  <ion-scroll scrollX="true">
-    <ion-row class="row-custom">
-      <ion-col col-3 *ngFor="let cate of shopData.categories; let ii = index;" class="col-imgpromote" (click)="selectCate(ii + 1,cate)">
-        <preload-image class="categories-image" [ratio]="{w:1, h:1}" [src]="cate.image" [ngClass]="cate._id === selectedCateId ? 'selectedCategory' : ''"></preload-image>
-        <p class="cate-order">{{cate.name}}</p>
-      </ion-col>
-    </ion-row>
-  </ion-scroll>
-
-  <list-product class="list-product" [items]="shopData.products" [selectedCateId]="selectedCateId" (clickItem)="selectProduct($event)"></list-product>
 </ion-content>

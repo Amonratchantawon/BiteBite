@@ -35,11 +35,13 @@ preload-image {
         top: 0px;
         visibility: hidden;
         opacity: 0; // @include transition(visibility 0s linear, opacity 0.5s linear);
-        width: 100% !important;
-        height: inherit !important; // To reset min/max-width/height
+        // height: inherit !important; // To reset min/max-width/height
         max-width: inherit !important;
         max-height: inherit !important;
         min-width: inherit !important;
         min-height: inherit !important;
+        object-fit: cover !important;
+        width: 100% !important;
+        height: 100% !important;
     }
 }

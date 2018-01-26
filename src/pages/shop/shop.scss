@@ -3,16 +3,29 @@ page-shop {
         overflow-y: auto !important;
         overflow-x: auto !important;
     }
-    .icon-ads {
+    .badge-status{
+        position: absolute;
+        right: 0px;
+        top: 0px;
+    }
+    .close {
         background-color: #ff5566;
     }
     .open {
         background-color: #4CAF50 !important;
     }
     .shop-detail {
-        margin-top: -90px;
         z-index: 1;
-        color: aliceblue;
+        color: aliceblue; // position: absolute;
+        bottom: 0px;
+        background-color: rgba(0, 0, 0, 0.76);
+        min-height: 70px;
+        .shop-title {
+            // white-space: nowrap;
+            // overflow: hidden;
+            // text-overflow: ellipsis;
+            width: calc(100% - 50px);
+        }
     }
     .row-custom {
         flex-wrap: inherit !important;
@@ -20,7 +33,7 @@ page-shop {
     ion-scroll {
         border-bottom: 1px solid whitesmoke !important;
         height: 28vw;
-        margin: 6px;
+        margin: 2px 0px 0px 0px !important;
     }
     .col-imgpromote {
         padding: 0px !important;
@@ -48,13 +61,14 @@ page-shop {
     .category-title {
         margin: 0px !important;
     }
-    .like {
+    .favorite {
         position: absolute;
-        bottom: -20px;
-        right: 0px;
+        bottom: -10px;
+        right: -10px;
         color: #e0dd13;
         font-size: 3rem;
         padding: 0px;
+        height: 32px;
     }
     .selectedCategory {
         img {
