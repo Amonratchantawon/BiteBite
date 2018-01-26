@@ -28,7 +28,8 @@ export class ProductListPage {
 
   getProductsByShop() {
     this.loading.onLoading();
-    this.product.getProductsByShop().then((res) => {
+    let shopId = this.navParams.data;
+    this.product.getProductsByShop(shopId).then((res) => {
       this.products = res;
       this.loading.dismiss();
     }, (err) => {

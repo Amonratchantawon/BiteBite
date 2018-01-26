@@ -2,8 +2,8 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ViewController } from 'ionic-angular';
 import { ProductDetailModel } from '../../assets/model/product-detail.model';
 import { CartProvider } from '../../providers/cart/cart';
-// import { ProductProvider } from '../../providers/product/product';
-// import { LoadingProvider } from '../../providers/loading/loading';
+import { ProductProvider } from '../../providers/product/product';
+import { LoadingProvider } from '../../providers/loading/loading';
 
 @IonicPage()
 @Component({
@@ -21,9 +21,9 @@ export class ProductDetailPage {
     public navCtrl: NavController,
     public navParams: NavParams,
     private viewCtrl: ViewController,
-    private cartProvider: CartProvider
-    // private productProvider: ProductProvider,
-    // private loading: LoadingProvider
+    private cartProvider: CartProvider,
+    private productProvider: ProductProvider,
+    private loading: LoadingProvider
   ) {
   }
 
@@ -33,18 +33,15 @@ export class ProductDetailPage {
   }
 
   getProductDetail() {
-    // this.loading.onLoading();
-    // this.productProvider.getProductDetail().then((res) => {
-    //   this.productData = res;
-    //   this.countPrice();
-    //   this.loading.dismiss();      
-    // }, (err) => {
-    //   this.loading.dismiss();
-    // });
-    this.productData = this.navParams.get('product');
-    this.productData.images = [];
-    this.productData.images[0] = this.navParams.get('product').image;
-    this.countPrice();
+    this.loading.onLoading();
+    let productId = this.navParams.get('productId');
+    this.productProvider.getProductDetail(productId).then((res) => {
+      this.productData = res;
+      this.countPrice();
+      this.loading.dismiss();
+    }, (err) => {
+      this.loading.dismiss();
+    });
   }
 
   countDelete() {

@@ -40,7 +40,7 @@ export class ShopPage {
     let _id = this.navParams.data;
     console.log(_id);
     this.loading.onLoading();
-    this.shop.getShopDetail().then((res) => {
+    this.shop.getShopDetail(_id).then((res) => {
       this.shopData = res;
       this.selectedCateId = this.shopData.categories[0]._id;
       window.localStorage.setItem('select_shop@' + Constants.URL, JSON.stringify(this.shopData));
@@ -87,7 +87,7 @@ export class ShopPage {
   }
 
   selectProduct(e) {
-    let modal1 = this.modalCtrl.create('ProductDetailPage', { product: e });
+    let modal1 = this.modalCtrl.create('ProductDetailPage', { productId: e._id });
     modal1.present();
   }
 
@@ -100,6 +100,6 @@ export class ShopPage {
   }
 
   seeAllProduct() {
-    this.navCtrl.push('ProductListPage');
+    this.navCtrl.push('ProductListPage', this.shopData._id);
   }
 }

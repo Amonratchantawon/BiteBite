@@ -22,8 +22,8 @@ export class ShopProvider {
       .catch(this.handleError);
   }
 
-  getShopDetail(): Promise<ShopModel> {
-    return this.http.get('./assets/json/shop.json')
+  getShopDetail(shopId): Promise<ShopModel> {
+    return this.http.get(this.API_URL + '/api/customershopdetail/' + shopId)
       .toPromise()
       .then(response => response as ShopModel)
       .catch(this.handleError);
