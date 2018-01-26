@@ -2,7 +2,7 @@
 
   <ion-navbar color="bite">
     <ion-title>{{shopData.name}}</ion-title>
-    <ion-buttons end (click)="goToCart()">
+    <ion-buttons end (click)="goToCart()" *ngIf="shopData.products">
       <button ion-button icon-only class="icon-cart">
         <ion-icon name="cart"></ion-icon>
       </button>
@@ -16,7 +16,7 @@
 <ion-content>
   <search-input></search-input>
 
-  <div *ngIf="shopData.coverimage">
+  <div *ngIf="shopData.products">
     <preload-image [ratio]="{w:21, h:12}" [src]="shopData.coverimage" [isIcon]="true">
       <!-- <ion-grid class="shop-detail">
         <ion-row>

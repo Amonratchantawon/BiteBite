@@ -25,10 +25,10 @@ export class SearchInputComponent {
 
   getItems(e) {
     if (e.keyCode == 13) {
-      this.loading.onLoading();
       let activeElement = <HTMLElement>document.activeElement;
       activeElement && activeElement.blur && activeElement.blur();
       if (this.searchText !== '') {
+        this.loading.onLoading();
         this.search.searchKeyword(this.searchText).then((res) => {
           this.app.getRootNav().push('SearchResultPage', { keyword: this.searchText, items: res })
           this.searchText = '';

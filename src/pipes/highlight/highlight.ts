@@ -16,7 +16,7 @@ export class HighlightPipe implements PipeTransform {
     }).join('|');
     var regex = new RegExp(pattern, 'gi');
 
-    return search ? text.replace(regex, (match) => `<span class="highlight">${match}</span>`) : text;
+    return search ? text.replace(regex, (match) => `<span class="highlight"><b>${match}</b></span>`) : text;
   }
 }
 // <b innerHTML="{{ item.user.displayName | highlight:searchText}}"></b>
