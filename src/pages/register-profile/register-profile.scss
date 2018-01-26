@@ -17,7 +17,8 @@ page-register-profile {
         margin-top: 10px !important;
     }
     .item {
-        padding-right: 2px !important;
+        padding-right: 6px !important;
+        padding-left: 6px !important;
     }
     .list-ios>.item-block:first-child {
         border-top: none !important;
@@ -28,7 +29,18 @@ page-register-profile {
     preload-image {
         border-radius: 100% !important;
     }
+    .datetime-birthday{
+        z-index: 9999;
+        height: 49px;
+        margin-top: 8px;
+        margin-bottom: 8px;
+        p{
+            // color: #999 !important;
+            font-size: 15px !important;
+        }
+    }
     ion-datetime {
+        padding: 18px 8px 0px 16px !important;
         .item-cover {
             display: none !important;
         }

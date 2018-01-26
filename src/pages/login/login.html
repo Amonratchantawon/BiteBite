@@ -25,7 +25,7 @@
             <ion-input type="password" [(ngModel)]="credentials.password"></ion-input>
           </ion-item>
         </ion-list>
-        <button ion-button no-shadow block color="bite" (click)="onLogin(credentials)">{{ 'LOGIN' | translate}}</button>
+        <button ion-button no-shadow block color="bite" (click)="onLogin(credentials)" [disabled]="!credentials.username || credentials.username === '' || !credentials.password || credentials.password === ''">{{ 'LOGIN' | translate}}</button>
         <hr>
         <button ion-button outline block color="dark" (click)="onFacebook()">
           <ion-grid>

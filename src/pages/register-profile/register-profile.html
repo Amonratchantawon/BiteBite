@@ -51,16 +51,14 @@
           <!-- provider === 'fb' -->
           <ion-input type="email" [(ngModel)]="user.email" [disabled]="isDisabled"></ion-input>
         </ion-item>
+        
         <ion-item>
           <ion-label floating>{{ 'TEL' | translate}}
             <span class="danger">*</span>
           </ion-label>
           <ion-input type="number" [(ngModel)]="user.mobile"></ion-input>
         </ion-item>
-        <!-- <ion-item>
-          <ion-label floating>{{ 'CITIZEN_ID' | translate}}</ion-label>
-          <ion-input type="number" [(ngModel)]="user.citizenid"></ion-input>
-        </ion-item> -->
+
         <ion-item class="gender-selected">
           <ion-label>{{ 'GENDER' | translate}}
             <span class="danger">*</span>
@@ -70,33 +68,42 @@
             <ion-option value="male">{{ 'MALE' | translate}}</ion-option>
           </ion-select>
         </ion-item>
-        <p padding-top padding-left>{{ 'BIRTHDAY' | translate}}
-          <span class="danger">*</span>
-        </p>
-        <ion-datetime placeholder="{{ 'BIRTHDAY_SELECTED' | translate}}" displayFormat="DD/MM/YYYY" [(ngModel)]="birthday"></ion-datetime>
+
+        <!-- <ion-item> -->
+          <ion-row class="datetime-birthday">
+            <ion-col col-6>
+              <p>{{ 'BIRTHDAY' | translate}}
+                <span class="danger">*</span>
+              </p>
+            </ion-col>
+            <ion-col col-6 text-right>
+              <ion-datetime placeholder="{{ 'BIRTHDAY_SELECTED' | translate}}" displayFormat="DD/MM/YYYY" [(ngModel)]="birthday"></ion-datetime>
+            </ion-col>
+          </ion-row>
+        <!-- </ion-item> -->
+
+        <ion-item>
+          <ion-label>{{ language === 'th' ? promotioninterestData.titleTH:promotioninterestData.titleEN}}
+            <span class="danger">*</span>
+          </ion-label>
+          <ion-select [(ngModel)]="promotioninterestPost" multiple="true" cancelText="{{ 'CANCEL' | translate }}" okText="{{ 'OK' | translate }}"
+            (ionChange)="checkData()">
+            <ion-option *ngFor="let item of promotioninterestData.items" [value]="item" selected="false">{{item.promotioninterest}}</ion-option>
+          </ion-select>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>{{ language === 'th' ? shopinterestData.titleTH:shopinterestData.titleEN}}
+            <span class="danger">*</span>
+          </ion-label>
+          <ion-select [(ngModel)]="shopinterestPost" multiple="true" cancelText="{{ 'CANCEL' | translate }}" okText="{{ 'OK' | translate }}"
+            (ionChange)="checkData()">
+            <ion-option *ngFor="let item of shopinterestData.items" [value]="item" selected="false">{{item.shopinterest}}</ion-option>
+          </ion-select>
+        </ion-item>
       </ion-list>
     </ion-col>
   </ion-row>
-  <ion-list>
-    <ion-item>
-      <ion-label>{{ language === 'th' ? promotioninterestData.titleTH:promotioninterestData.titleEN}}
-        <span class="danger">*</span>
-      </ion-label>
-      <ion-select [(ngModel)]="promotioninterestPost" multiple="true" cancelText="{{ 'CANCEL' | translate }}" okText="{{ 'OK' | translate }}" (ionChange)="checkData()">
-        <ion-option *ngFor="let item of promotioninterestData.items" [value]="item" selected="false">{{item.promotioninterest}}</ion-option>
-      </ion-select>
-    </ion-item>
-  </ion-list>
-  <ion-list>
-    <ion-item>
-      <ion-label>{{ language === 'th' ? shopinterestData.titleTH:shopinterestData.titleEN}}
-        <span class="danger">*</span>
-      </ion-label>
-      <ion-select [(ngModel)]="shopinterestPost" multiple="true" cancelText="{{ 'CANCEL' | translate }}" okText="{{ 'OK' | translate }}" (ionChange)="checkData()">
-        <ion-option *ngFor="let item of shopinterestData.items" [value]="item" selected="false">{{item.shopinterest}}</ion-option>
-      </ion-select>
-    </ion-item>
-  </ion-list>
 </ion-content>
 
 <ion-footer class="footer-agreement">
