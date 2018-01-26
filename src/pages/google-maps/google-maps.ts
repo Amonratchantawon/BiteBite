@@ -1,7 +1,9 @@
 import { Component, ViewChild, ElementRef } from '@angular/core';
-import { IonicPage, NavController, NavParams, Platform, LoadingController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, Platform, LoadingController, AlertController } from 'ionic-angular';
 import { GoogleMaps, GoogleMap, LatLng, GoogleMapsEvent } from '@ionic-native/google-maps';
 import { NativeGeocoder, NativeGeocoderReverseResult } from '@ionic-native/native-geocoder';
+import { TranslateService } from '@ngx-translate/core';
+
 declare let google: any;
 
 @IonicPage()
@@ -22,7 +24,9 @@ export class GoogleMapsPage {
     private platform: Platform,
     private googleMaps: GoogleMaps,
     private nativeGeocoder: NativeGeocoder,
-    private loadingCtrl: LoadingController
+    private loadingCtrl: LoadingController,
+    private alertCtrl: AlertController,
+    private translate: TranslateService,
   ) {
   }
 
@@ -42,9 +46,10 @@ export class GoogleMapsPage {
     google.maps.event.addListener(autocomplete, 'place_changed', () => {
       let place = autocomplete.getPlace();
       this.location = new LatLng(place.geometry.location.lat(), place.geometry.location.lng());
-      this.address = place.name + ' ' + place.formatted_address;
+      // this.address = place.name + ' ' + place.formatted_address;
       this.map.setCameraTarget(this.location);
-      this.addMarker();
+      this.reverseGeocode();
+      // this.addMarker();
     });
 
   }
@@ -153,6 +158,56 @@ export class GoogleMapsPage {
     window.localStorage.setItem('native_map_address_detail', this.address);
     window.localStorage.setItem('native_map_location', JSON.stringify(this.location));
     this.navCtrl.pop();
+  }
+
+  updateAddress() {
+    let language = this.translate.currentLang;
+    let title = '';
+    let cancel = '';
+    let ok = '';
+
+    if (language === 'th') {
+      title = "ที่อยู่ของฉัน"
+      cancel = 'ยกเลิก'
+      ok = 'ยืนยัน'
+    } else if (language === 'en') {
+      title = "Address"
+      cancel = 'Cancal'
+      ok = 'Confirm'
+    }
+
+    let alert = this.alertCtrl.create({
+      title: title,
+      mode: 'ios',
+      inputs: [
+        {
+          name: 'address',
+          value: this.address
+        }
+      ],
+      buttons: [
+        {
+          text: ok,
+          handler: data => {
+            if (data.address) {
+              this.address = data.address;
+            } else {
+              // invalid login
+              return false;
+            }
+          }
+        },
+        {
+          text: cancel,
+          role: 'cancel',
+          cssClass: 'cancel',
+          handler: data => {
+
+          }
+        }
+      ]
+    });
+    alert.present();
   }
 
 }

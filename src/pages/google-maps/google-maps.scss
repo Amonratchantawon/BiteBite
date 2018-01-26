@@ -34,8 +34,7 @@ page-google-maps {
     }
     .google-search {
         // position: fixed;
-        z-index: 9999;
-        // width: 76vw;
+        z-index: 9999; // width: 76vw;
         // padding: 8px;
         // margin: 6px 12vw 0px 12vw;
     }
@@ -79,10 +78,13 @@ page-google-maps {
         background-image: none !important;
         padding-right: 0px !important;
     }
-}
-
-ion-modal {
-    background-color: rgba(0, 0, 0, 0.32) !important;
+    .confirm {
+        font-weight: bold !important;
+    }
+    .cancel {
+        color: #eb3841 !important;
+        font-weight: 100 !important;
+    }
 }
 
 .loading-hide {

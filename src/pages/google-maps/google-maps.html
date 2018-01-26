@@ -7,7 +7,7 @@
         <ion-icon name="search"></ion-icon>
       </button>
     </ion-buttons> -->
-    <ion-searchbar mode="ios" #places class="google-search" placeholder="ค้นหาสถานที่"></ion-searchbar>
+    <ion-searchbar mode="ios" #places class="google-search" placeholder="{{ 'SEARCH_LOCATION' | translate }}"></ion-searchbar>
   </ion-navbar>
 
 </ion-header>
@@ -15,10 +15,10 @@
 
 <ion-content>
   <div #map class="map">
-    <button ion-item text-wrap text-center class="info-item" *ngIf="address">
+    <button ion-item text-wrap text-center class="info-item" *ngIf="address" (click)="updateAddress()">
       <p>{{address}}</p>
     </button>
     <div class="arrow-down" *ngIf="address"></div>
   </div>
-  <button ion-button color="danger" class="btn-cf" (click)="doConfirm()" [disabled]="!address || address ===''">{{ 'CONFIRM' | translate }}</button>
+  <button ion-button color="danger" class="btn-cf" (click)="doConfirm()" [disabled]="!address || address ===''">{{ 'CONFIRM_LOCATION' | translate }}</button>
 </ion-content>

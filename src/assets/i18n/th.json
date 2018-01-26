@@ -150,13 +150,14 @@
   "ORDER_MENU": "ข้อมูลรายการสั่งซื้อ",
   "ESTIMATE_PRICE": "คำนวณราคา",
   "HISTORY_DETAIL": "รายละเอียด",
-  "PAYMENT_DESTINATION":"ชำระเงินปลายทาง",
-  "CONFIRMED":"ยืนยันการสั่งซื้อ",
-  "SELECT_PAYMENT_METHOD":"กรุณาเลือกการชำระเงิน",
-  "CREDIT_CARD":"บัตรเครดิต",
-  "CARD_HOLDER":"ชื่อผู้ถือบัตร",
-  "CARD_NUMBER":"เลขที่บัตร",
-  "EXPIRED_DATE":"วันหมดอายุ"
-
+  "PAYMENT_DESTINATION": "ชำระเงินปลายทาง",
+  "CONFIRMED": "ยืนยันการสั่งซื้อ",
+  "SELECT_PAYMENT_METHOD": "กรุณาเลือกการชำระเงิน",
+  "CREDIT_CARD": "บัตรเครดิต",
+  "CARD_HOLDER": "ชื่อผู้ถือบัตร",
+  "CARD_NUMBER": "เลขที่บัตร",
+  "EXPIRED_DATE": "วันหมดอายุ",
+  "CONFIRM_LOCATION": "ยืนยันตำแหน่งนี้",
+  "SEARCH_LOCATION": "ค้นหาสถานที่"
 
 }
