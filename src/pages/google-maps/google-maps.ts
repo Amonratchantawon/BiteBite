@@ -144,7 +144,7 @@ export class GoogleMapsPage {
         this.address += (result.administrativeArea ? result.administrativeArea + ' ' : '')
         this.address += (result.postalCode ? result.postalCode + ' ' : '')
         this.address += (result.countryName ? result.countryName : '');
-        this.addMarker();
+        // this.addMarker();
       })
       .catch((error: any) => console.log('error ' + error));
   }
