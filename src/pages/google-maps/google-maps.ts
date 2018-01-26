@@ -34,14 +34,15 @@ export class GoogleMapsPage {
     this.platform.ready().then(() => {
       setTimeout(() => {
         this.initialMap();
+        this.initplaces();
       }, 1000);
     });
-    this.initplaces();
   }
 
   initplaces() {
 
     let input = this.places.nativeElement.querySelector('.searchbar-input');
+    // let input = document.getElementById('places');
     let autocomplete = new google.maps.places.Autocomplete(input);
     google.maps.event.addListener(autocomplete, 'place_changed', () => {
       let place = autocomplete.getPlace();

@@ -158,6 +158,7 @@
   "CARD_NUMBER": "เลขที่บัตร",
   "EXPIRED_DATE": "วันหมดอายุ",
   "CONFIRM_LOCATION": "ยืนยันตำแหน่งนี้",
-  "SEARCH_LOCATION": "ค้นหาสถานที่"
+  "SEARCH_LOCATION": "ค้นหาสถานที่",
+  "USER_ID":"รหัสสมาชิก"
 
 }

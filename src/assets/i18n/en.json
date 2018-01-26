@@ -159,6 +159,7 @@
   "CARD_NUMBER": "Card number",
   "EXPIRED_DATE": "Expired date",
   "CONFIRM_LOCATION": "Confirm this location",
-  "SEARCH_LOCATION": "Search place"
+  "SEARCH_LOCATION": "Search place",
+  "USER_ID":"ID"
 
 }
