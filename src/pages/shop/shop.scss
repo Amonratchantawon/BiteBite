@@ -64,11 +64,15 @@ page-shop {
     .favorite {
         position: absolute;
         bottom: -10px;
-        right: -10px;
+        right: 0px;
         color: #e0dd13;
         font-size: 3rem;
         padding: 0px;
         height: 32px;
+        width: auto;
+        ion-icon{
+            padding: 0px !important;
+        }
     }
     .selectedCategory {
         img {

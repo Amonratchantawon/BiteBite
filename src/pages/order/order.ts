@@ -5,7 +5,6 @@ import { UserModel } from '../../assets/model/user.model';
 import { Constants } from '../../app/app.constants';
 import { OrderModel } from '../../assets/model/order.model';
 import { LoadingProvider } from '../../providers/loading/loading';
-
 /**
  * Generated class for the OrderPage page.
  *
@@ -31,27 +30,37 @@ export class OrderPage {
   ) {
   }
 
-  ionViewDidLoad() {
+  // ionViewDidLoad() {
 
-    let location = window.localStorage.getItem('native_map_location') ? JSON.parse(window.localStorage.getItem('native_map_location')) : null;
+  //   this.auth.authenticated().then((res) => {
+  //     if (res) {
+  //       let location = window.localStorage.getItem('native_map_location') ? JSON.parse(window.localStorage.getItem('native_map_location')) : null;
 
-    this.user = JSON.parse(window.localStorage.getItem('user@' + Constants.URL));
-    this.order = this.cartProvider.getCartByShop();
-    this.order.shippingAddress = {
-      name: this.user.displayName,
-      tel: this.user.mobile,
-      address: window.localStorage.getItem('native_map_address_detail'),
-      addressDetail: '',
-      location: location
-    }
-    this.order.discount = 0;
-    this.order.distance = null;
-  }
+  //       this.user = JSON.parse(window.localStorage.getItem('user@' + Constants.URL));
+  //       this.order = this.cartProvider.getCartByShop();
+  //       this.order.shippingAddress = {
+  //         name: this.user.displayName,
+  //         tel: this.user.mobile,
+  //         address: window.localStorage.getItem('native_map_address_detail'),
+  //         addressDetail: '',
+  //         location: location
+  //       }
+  //       this.order.discount = 0;
+  //       this.order.distance = null;
+  //     } else {
+  //       this.user = null;
+  //       this.navCtrl.push('LoginPage');
+  //     }
+  //   });
+
+  // }
 
   ionViewWillEnter() {
 
     let location_old = window.localStorage.getItem('native_map_location_old') ? JSON.parse(window.localStorage.getItem('native_map_location_old')) : null;
     let location = window.localStorage.getItem('native_map_location') ? JSON.parse(window.localStorage.getItem('native_map_location')) : null;
+    this.order = this.cartProvider.getCartByShop();
+    this.user = JSON.parse(window.localStorage.getItem('user@' + Constants.URL));
     if (location_old) {
       if (location_old.lat !== location.lat || location_old.lng !== location.lng) {
         this.order.distance = null;
@@ -64,6 +73,7 @@ export class OrderPage {
       addressDetail: '',
       location: location
     }
+
   }
 
   openMap() {

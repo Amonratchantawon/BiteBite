@@ -2,6 +2,7 @@ import { CartModel } from '../../assets/model/cart.model';
 import { CartProvider } from '../../providers/cart/cart';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { AuthProvider } from '../../providers/auth/auth';
 
 /**
  * Generated class for the CartPage page.
@@ -22,7 +23,8 @@ export class CartPage {
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
-    public cartProvider: CartProvider
+    public cartProvider: CartProvider,
+    private auth: AuthProvider
   ) {
   }
 
@@ -74,7 +76,13 @@ export class CartPage {
 
   checkOut() {
     this.updateCart();
-    this.navCtrl.push('OrderPage');
+    this.auth.authenticated().then((res) => {
+      if (res) {
+        this.navCtrl.push('OrderPage');
+      } else {
+        this.navCtrl.push('LoginPage');
+      }
+    });
   }
 
 }

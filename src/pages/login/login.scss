@@ -4,8 +4,7 @@ page-login {
         top: 2px;
         right: 2px;
         z-index: 999;
-    }
-    // .scroll-content {
+    } // .scroll-content {
     //     overflow: auto !important;
     //     padding-bottom: 0px !important;
     // }
@@ -50,5 +49,14 @@ page-login {
     }
     .list-ios>.item-block:first-child {
         border-top: none !important;
+    }
+    .bar-button-default-ios {
+        color: $bite-color;
+    }
+    .bar-button-default-md {
+        color: $bite-color;
+    }
+    .header-md::after {
+        background-image: none !important;
     }
 }
