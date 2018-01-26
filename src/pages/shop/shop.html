@@ -46,6 +46,9 @@
           <ion-row>
             <label class="shop-title">
               <b>{{shopData.name}}</b>
+
+              <ion-badge class="badge-status close" item-end color="bite" [ngClass]="{'open': shopData.isopen}">{{isO | translate}}</ion-badge>
+
             </label>
           </ion-row>
           <ion-row>
@@ -53,7 +56,6 @@
           </ion-row>
           <ion-row>
             <label class="shop-title" *ngIf="shopData.address.addressdetail">{{shopData.address.addressdetail}}&nbsp;</label>
-            <ion-badge class="badge-status close" item-end color="bite" [ngClass]="{'open': shopData.isopen}">{{isO | translate}}</ion-badge>
           </ion-row>
 
           <button ion-button icon-left clear large class="favorite" (click)="onFavorite()">
@@ -85,7 +87,7 @@
       </ion-row>
     </ion-grid>
 
-    <ion-scroll scrollX="true">
+    <ion-scroll scrollX="true" class="category">
       <ion-row class="row-custom">
         <ion-col col-3 *ngFor="let cate of shopData.categories; let ii = index;" class="col-imgpromote" (click)="selectCate(ii + 1,cate)">
           <preload-image class="categories-image" [ratio]="{w:1, h:1}" [src]="cate.image" [ngClass]="cate._id === selectedCateId ? 'selectedCategory' : ''"></preload-image>

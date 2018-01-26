@@ -3,8 +3,8 @@ page-shop {
         overflow-y: auto !important;
         overflow-x: auto !important;
     }
-    .badge-status{
-        position: absolute;
+    .badge-status {
+        // position: absolute;
         right: 0px;
         top: 0px;
     }
@@ -58,6 +58,9 @@ page-shop {
     img {
         object-fit: cover !important;
     }
+    .category {
+        margin-left: 6px !important;
+    }
     .category-title {
         margin: 0px !important;
     }
@@ -70,7 +73,7 @@ page-shop {
         padding: 0px;
         height: 32px;
         width: auto;
-        ion-icon{
+        ion-icon {
             padding: 0px !important;
         }
     }
