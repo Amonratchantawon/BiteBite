@@ -38,6 +38,7 @@ import { QuestionanswerProvider } from '../providers/questionanswer/questionansw
 import { ContactbitebiteProvider } from '../providers/contactbitebite/contactbitebite';
 import { ShopinterestProvider } from '../providers/shopinterest/shopinterest';
 import { PromotioninterestProvider } from '../providers/promotioninterest/promotioninterest';
+import { SearchKeywordProvider } from '../components/search-input/search-input.service';
 
 @NgModule({
   declarations: [
@@ -75,6 +76,7 @@ import { PromotioninterestProvider } from '../providers/promotioninterest/promot
     Geolocation,
     GoogleMaps,
     NativeGeocoder,
+    SearchKeywordProvider,
     { provide: ErrorHandler, useClass: IonicErrorHandler },
     {
       provide: HAMMER_GESTURE_CONFIG,
