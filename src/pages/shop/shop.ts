@@ -43,7 +43,9 @@ export class ShopPage {
     // '5a53436b3df1d81300b2659f'
     this.shop.getShopDetail(_id).then((res) => {
       this.shopData = res;
-      this.selectedCateId = this.shopData.categories[0]._id;
+      if (this.shopData.categories[0]) {
+        this.selectedCateId = this.shopData.categories[0]._id;
+      }
       window.localStorage.setItem('select_shop@' + Constants.URL, JSON.stringify(this.shopData));
       this.checkOpenShop();
       this.onCheckFavorite();
