@@ -14,7 +14,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'forgot-password.html',
 })
 export class ForgotPasswordPage {
-
+  email: string = '';
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
