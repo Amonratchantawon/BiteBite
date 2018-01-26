@@ -45,6 +45,7 @@ export class ShopPage {
       this.selectedCateId = this.shopData.categories[0]._id;
       window.localStorage.setItem('select_shop@' + Constants.URL, JSON.stringify(this.shopData));
       this.checkOpenShop();
+      this.onCheckFavorite();
       this.loading.dismiss();
     }, (err) => {
       this.loading.dismiss();
@@ -101,5 +102,13 @@ export class ShopPage {
 
   seeAllProduct() {
     this.navCtrl.push('ProductListPage', this.shopData._id);
+  }
+
+  onCheckFavorite() {
+    this.shopData.isFavorite = this.shop.checkShopsFavorite(this.shopData._id);
+  }
+
+  onFavorite() {
+    this.shopData.isFavorite = this.shop.onShopsFavorite(this.shopData);
   }
 }

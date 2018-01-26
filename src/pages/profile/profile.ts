@@ -34,17 +34,8 @@ export class ProfilePage {
   ) {
   }
 
-  getShop() {
-    // this.loading.onLoading();
-    this.shopProvider.getShopsFavorite().then((data) => {
-      this.shopData = data;
-      // this.loading.dismiss();
-    }, (err) => {
-      // this.loading.dismiss();
-    });
-  }
-
-  ionViewDidLoad() {
+  ionViewWillEnter() {
+    this.getShop();
     this.user = JSON.parse(window.localStorage.getItem('user@' + Constants.URL));
     if (this.user && this.user.gender) {
       this.user.gender = this.user.gender.toUpperCase();
@@ -87,6 +78,10 @@ export class ProfilePage {
       }];
   }
 
+  getShop() {
+    this.shopData = this.shopProvider.getShopsFavorite();
+  }
+
   segmentChanged(e) {
     if (this.segment === 'favorite') {
       this.getShop();
@@ -100,10 +95,10 @@ export class ProfilePage {
   ProfileEditPage() {
     this.navCtrl.push('ProfileEditPage');
   }
-  gotoHistoryDetail(){
+  gotoHistoryDetail() {
     this.navCtrl.push('HistoryDetailPage')
   }
-  gotoSeeAll(){
+  gotoSeeAll() {
     this.navCtrl.push('RankingPage')
   }
 

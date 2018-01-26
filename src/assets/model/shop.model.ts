@@ -29,6 +29,7 @@ export class ShopModel {
     address: AddressModel = new AddressModel();
     categories: Array<ItemCategoriyModel>;
     products: Array<ProductModel>;
+    isFavorite: Boolean;
 }
 
 export class ProductModel {

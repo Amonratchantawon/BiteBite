@@ -32,8 +32,9 @@
             <ion-badge class="icon-ads" item-end color="bite" [ngClass]="{'open': shopData.isopen}">{{isO | translate}}</ion-badge>
           </ion-row>
 
-          <button ion-button icon-left clear large class="like">
-            <ion-icon ios="ios-star-outline" md="md-star-outline"></ion-icon>
+          <button ion-button icon-left clear large class="like" (click)="onFavorite()">
+            <ion-icon *ngIf="!shopData.isFavorite" name="md-star-outline"></ion-icon>
+            <ion-icon *ngIf="shopData.isFavorite" name="md-star"></ion-icon>
           </button>
         </ion-col>
       </ion-row>
