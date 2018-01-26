@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams, Platform, LoadingController, Alert
 import { GoogleMaps, GoogleMap, LatLng, GoogleMapsEvent } from '@ionic-native/google-maps';
 import { NativeGeocoder, NativeGeocoderReverseResult } from '@ionic-native/native-geocoder';
 import { TranslateService } from '@ngx-translate/core';
+import { LoadingProvider } from '../../providers/loading/loading';
 
 declare let google: any;
 
@@ -27,14 +28,17 @@ export class GoogleMapsPage {
     private loadingCtrl: LoadingController,
     private alertCtrl: AlertController,
     private translate: TranslateService,
+    private loading: LoadingProvider
   ) {
   }
 
   ionViewDidLoad() {
+    this.loading.onLoading();
     this.platform.ready().then(() => {
       setTimeout(() => {
         this.initialMap();
         this.initplaces();
+        this.loading.dismiss();
       }, 1000);
     });
   }
