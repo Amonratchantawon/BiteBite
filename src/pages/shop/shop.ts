@@ -8,6 +8,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { AlertProvider } from '../../providers/alert/alert';
 import { Constants } from '../../app/app.constants';
 import { CartProvider } from '../../providers/cart/cart';
+import { UserModel } from '../../assets/model/user.model';
 
 @IonicPage()
 @Component({
@@ -17,6 +18,7 @@ import { CartProvider } from '../../providers/cart/cart';
 export class ShopPage {
 
   shopData: ShopModel = new ShopModel();
+  user: UserModel = new UserModel();
   isO: string;
   index: number = 1;
   selectedCateId: string;
@@ -32,7 +34,8 @@ export class ShopPage {
   ) {
   }
 
-  ionViewDidLoad() {
+  ionViewWillEnter() {
+    this.user = JSON.parse(window.localStorage.getItem('user@' + Constants.URL));
     this.getShop();
   }
 
@@ -52,6 +55,7 @@ export class ShopPage {
       this.loading.dismiss();
     }, (err) => {
       this.loading.dismiss();
+      this.navCtrl.pop();
       let language = this.translate.currentLang;
       if (language === 'th') {
         this.alert.onAlert('ร้านค้า', 'โหลดข้อมูลร้านค้าล้มเหลว', 'ตกลง');

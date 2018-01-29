@@ -58,7 +58,7 @@
             <label class="shop-title" *ngIf="shopData.address.addressdetail">{{shopData.address.addressdetail}}&nbsp;</label>
           </ion-row>
 
-          <button ion-button icon-left clear large class="favorite" (click)="onFavorite()">
+          <button ion-button icon-left clear large *ngIf="user" class="favorite" (click)="onFavorite()">
             <ion-icon *ngIf="!shopData.isFavorite" name="md-star-outline"></ion-icon>
             <ion-icon *ngIf="shopData.isFavorite" name="md-star"></ion-icon>
           </button>

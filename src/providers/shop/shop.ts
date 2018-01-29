@@ -58,10 +58,13 @@ export class ShopProvider {
         }), 1);
         res = false;
       } else {
+        shop.image = shop.coverimage;
         favorite.push(shop);
         res = true;
       }
     } else {
+      shop.image = shop.coverimage;
+      
       favorite = [shop];
       res = true;
     }
