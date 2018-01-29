@@ -19,6 +19,7 @@
     <button ion-item (click)="openMap()">
       <p class="header-order">
         <b>{{ 'DELIVERY_ADDRESS' | translate }}</b>
+        <span class="danger">*</span>
       </p>
       <p *ngIf="order.shippingAddress.address">{{ order.shippingAddress.address }}</p>
       <p *ngIf="!order.shippingAddress.address || order.shippingAddress.address ===''">{{ 'SELECT_ADDRESS' | translate }}</p>
@@ -124,13 +125,13 @@
         </ion-col>
         <ion-col col-6 text-right class="highlight highlight-color ">
           <p class="total">
-            <b>38 {{ 'KM' | translate }}</b>
+            <b>0 {{ 'KM' | translate }}</b>
           </p>
           <p class="total">
-            <b>40-50 {{ 'MIN' | translate }}</b>
+            <b>0 {{ 'MIN' | translate }}</b>
           </p>
           <p class="total">
-            <b>{{((order.amount + 406) - 100) | number:'0.2-2'}} {{ 'THB' | translate }}</b>
+            <b>{{0.00 | number:'0.2-2'}} {{ 'THB' | translate }}</b>
           </p>
         </ion-col>
       </ion-row>
@@ -159,10 +160,10 @@
         </ion-col>
         <ion-col col-6 text-right>
           <p>
-            <b>406.00 {{ 'THB' | translate }}</b>
+            <b>0.00 {{ 'THB' | translate }}</b>
           </p>
-          <p>55 {{ 'THB' | translate }}</p>
-          <p>38 {{ 'KM' | translate }}/351.00 {{ 'THB' | translate }}</p>
+          <p>0 {{ 'THB' | translate }}</p>
+          <p>0 {{ 'KM' | translate }}/0.00 {{ 'THB' | translate }}</p>
         </ion-col>
       </ion-row>
       <ion-row *ngIf="order.discount > 0">

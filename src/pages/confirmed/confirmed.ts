@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, App } from 'ionic-angular';
-import { CartModel } from '../../assets/model/cart.model';
+import moment from 'moment';
+
 import { UserModel } from '../../assets/model/user.model';
-import { CartProvider } from '../../providers/cart/cart';
 import { Constants } from '../../app/app.constants';
 import { TranslateService } from '@ngx-translate/core';
 import { AlertController } from 'ionic-angular';
+import { OrderModel } from '../../assets/model/order.model';
 // import { LoadingProvider } from '../../providers/loading/loading';
 
 /**
@@ -21,32 +22,34 @@ import { AlertController } from 'ionic-angular';
   templateUrl: 'confirmed.html',
 })
 export class ConfirmedPage {
-  order: CartModel = new CartModel();
+  order: OrderModel = new OrderModel();
   user: UserModel = new UserModel();
-  isSpin: boolean = true;
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
-    private cartProvider: CartProvider,
     public app: App,
     private translate: TranslateService,
     private alertCtrl: AlertController
   ) {
-    this.order = this.cartProvider.getCartByShop();
+    this.order = this.navParams.data;
     this.user = this.user = JSON.parse(window.localStorage.getItem('user@' + Constants.URL));
   }
 
   ionViewDidLoad() {
-    // this.loadingCtrl.onLoading();
-    setTimeout(() => {
-      // this.loadingCtrl.dismiss();
-      this.isSpin = false;
-    }, 1000);
-    console.log('ionViewDidLoad ConfirmedPage');
+  }
+
+  getMoment(date) {
+    let language = this.translate.currentLang;
+    if (language === 'th') {
+      moment.locale('th');
+    } else if (language === 'en') {
+      moment.locale('en');
+    }
+    return moment(date).format("DD MMMM YYYY HH:mm:ss");
   }
 
   payment() {
-    this.navCtrl.push('PaymentPage');
+    this.navCtrl.push('PaymentPage', this.order);
   }
 
   cancelOrder() {
@@ -74,16 +77,18 @@ export class ConfirmedPage {
       message: description,
       buttons: [
         {
-          text: cancel,
-          role: 'cancel',
+          text: ok,
+          cssClass: 'confirm',
           handler: () => {
-            console.log('Cancel clicked');
+            this.navCtrl.popTo('Order');
           }
         },
         {
-          text: ok,
+          text: cancel,
+          role: 'cancel',
+          cssClass: 'cancel',
           handler: () => {
-            this.navCtrl.popTo('Order');
+            console.log('Cancel clicked');
           }
         }
       ]

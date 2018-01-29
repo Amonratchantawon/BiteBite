@@ -39,6 +39,8 @@ import { ContactbitebiteProvider } from '../providers/contactbitebite/contactbit
 import { ShopinterestProvider } from '../providers/shopinterest/shopinterest';
 import { PromotioninterestProvider } from '../providers/promotioninterest/promotioninterest';
 import { SearchKeywordProvider } from '../components/search-input/search-input.service';
+import { OrderProvider } from '../providers/order/order';
+import { OmiseProvider } from '../providers/omise/omise';
 
 @NgModule({
   declarations: [
@@ -76,7 +78,6 @@ import { SearchKeywordProvider } from '../components/search-input/search-input.s
     Geolocation,
     GoogleMaps,
     NativeGeocoder,
-    SearchKeywordProvider,
     { provide: ErrorHandler, useClass: IonicErrorHandler },
     {
       provide: HAMMER_GESTURE_CONFIG,
@@ -102,6 +103,9 @@ import { SearchKeywordProvider } from '../components/search-input/search-input.s
     ContactbitebiteProvider,
     ShopinterestProvider,
     PromotioninterestProvider,
+    SearchKeywordProvider,
+    OrderProvider,
+    OmiseProvider,
   ]
 })
 export class AppModule { }

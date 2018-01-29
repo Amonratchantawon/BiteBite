@@ -6,6 +6,8 @@ export class OrderModel {
     items: Array<ItemCartModel>;
     shippingAddress: ShippingAddressModel = new ShippingAddressModel();
     coupon: CouponModel = new CouponModel();
+    payment: PaymentModel = new PaymentModel();
+    omiseToken: string;
     qty: number;
     amount: number;
     discount: number;
@@ -28,4 +30,12 @@ export class LocationModel {
 export class CouponModel {
     code: string;
     discount: number;
+}
+
+export class PaymentModel {
+    paymenttype: String;
+    creditno: String;
+    creditname: String;
+    expdate: String;
+    creditcvc: String;
 }

@@ -5,6 +5,9 @@ import { UserModel } from '../../assets/model/user.model';
 import { Constants } from '../../app/app.constants';
 import { OrderModel } from '../../assets/model/order.model';
 import { LoadingProvider } from '../../providers/loading/loading';
+import { OrderProvider } from '../../providers/order/order';
+import { TranslateService } from '@ngx-translate/core';
+import { AlertProvider } from '../../providers/alert/alert';
 /**
  * Generated class for the OrderPage page.
  *
@@ -26,7 +29,10 @@ export class OrderPage {
     public navCtrl: NavController,
     public navParams: NavParams,
     private cartProvider: CartProvider,
-    private loading: LoadingProvider
+    private loading: LoadingProvider,
+    private orderProvider: OrderProvider,
+    private translate: TranslateService,
+    private alert: AlertProvider
   ) {
   }
 
@@ -94,11 +100,23 @@ export class OrderPage {
       setTimeout(() => {
         this.content.scrollToBottom();
       }, 500);
-    }, 3000);
+    }, 1000);
   }
 
   confirmOrder() {
     console.log(this.order);
-    this.navCtrl.push('ConfirmedPage');
+    this.loading.onLoading();
+    this.orderProvider.saveOrder(this.order).then((res) => {
+      this.navCtrl.push('ConfirmedPage', res);
+      this.loading.dismiss();
+    }, (err) => {
+      this.loading.dismiss();      
+      let language = this.translate.currentLang;
+      if (language === 'th') {
+        this.alert.onAlert('ออเดอร์', 'สั่งซื้อไม่สำเร็จ กรุณาลองใหม่อีกครั้ง', 'ตกลง');
+      } else if (language === 'en') {
+        this.alert.onAlert('Order', 'Order failed. Please try again.', 'OK');
+      }
+    });
   }
 }

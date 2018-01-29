@@ -10,12 +10,12 @@
   <ion-grid padding-top padding-left>
     <ion-row>
       <ion-col>
-        {{ 'ORDER_NUMBER' | translate }} BB001
+        {{ 'ORDER_NUMBER' | translate }} {{ order._id }}
       </ion-col>
     </ion-row>
     <ion-row>
       <ion-col>
-        22/01/18 12:30น.
+        {{ getMoment(order.created) }}
       </ion-col>
     </ion-row>
   </ion-grid>
@@ -24,13 +24,13 @@
       <ion-icon name="md-person" color="bite" class="fontIcon"></ion-icon>
     </ion-col>
     <ion-col col-10>
-      <p>{{ user.displayName }}</p>
+      <p>{{ order.shippingAddress.name }}</p>
     </ion-col>
     <ion-col col-2 text-center>
       <ion-icon name="md-pin" color="bite" class="fontIcon"></ion-icon>
     </ion-col>
     <ion-col col-10>
-      <p>84/176 ถ.ลำลูกกา ตำบล บึงคำพร้อย อำเภอ ลำลูกกา ปทุมธานี 12150</p>
+      <p>{{ order.shippingAddress.address }} {{ order.shippingAddress.tel }}</p>
     </ion-col>
     <ion-col col-2 text-center *ngIf="!isSpin">
       <ion-icon name="md-bicycle" color="bite" class="fontIcon"></ion-icon>
@@ -48,21 +48,9 @@
   <div text-center *ngIf="isSpin">
     <ion-spinner name="bubbles"></ion-spinner>
   </div>
-  <!-- <ion-list >
-    
-      <ion-row *ngFor="let item of order.items">
-        <ion-col col-9 text-left>
-          <p>{{item.product.name}} X <span>{{item.qty}}</span> <br> <span class="detail-text" *ngIf="item.remark && item.remark !== ''">({{item.remark}})</span></p>
-        </ion-col>
-        <ion-col col-3 text-right>
-          <p>{{item.amount | number:'0.2-2'}}฿</p>
-        </ion-col>
-      </ion-row>
-    
-  </ion-list> -->
 
   <ion-grid *ngIf="!isSpin">
-  
+
     <ion-item-divider color="light">
       <h2>
         <b>{{ 'PRODUCT_NAME' | translate }}</b>
@@ -70,12 +58,12 @@
     </ion-item-divider>
     <ion-row *ngFor="let item of order.items">
       <ion-col col-9 text-left>
-        <p>{{item.product.name}} X
+        <p>{{item.product[0].name}} X
           <span>{{item.qty}}</span>
           <br>
           <span class="detail-text" *ngIf="item.remark && item.remark !== ''">({{item.remark}})</span>
           <br>
-          <span class=" worning-danger " *ngIf="item.qty === 3">*สินค้าหมด</span>
+          <!-- <span class=" worning-danger " *ngIf="item.qty === 3">*สินค้าหมด</span> -->
         </p>
       </ion-col>
       <ion-col col-3 text-right>
@@ -95,24 +83,28 @@
             <p>{{ 'TOTAL_FEE' | translate }}</p>
           </ion-col>
           <ion-col col-6 text-right class="highlight highlight-color ">
-            <p>38 {{ 'KM' | translate }}</p>
-            <p>40-50 {{ 'MIN' | translate }}</p>
-            <p>{{ 406 | number:'0.2-2'}} {{ 'THB' | translate }}</p>
-            <p>{{ order.amount | number:'0.2-2'}} {{ 'THB' | translate }}</p>   
-            <p>{{100 | number:'0.2-2'}} {{ 'THB' | translate }}</p>
-            <p class="total">{{((order.amount + 406) - 100) | number:'0.2-2'}} {{ 'THB' | translate }}</p>
+            <p>0 {{ 'KM' | translate }}</p>
+            <p>0 {{ 'MIN' | translate }}</p>
+            <p>{{ 0 | number:'0.2-2'}} {{ 'THB' | translate }}</p>
+            <p>{{ order.amount | number:'0.2-2'}} {{ 'THB' | translate }}</p>
+            <p>{{0 | number:'0.2-2'}} {{ 'THB' | translate }}</p>
+            <p class="total">{{order.amount | number:'0.2-2'}} {{ 'THB' | translate }}</p>
           </ion-col>
         </ion-row>
       </button>
       <!-- <button ion-button block color="light" small>{{ 'PRICE_POLICY' | translate }}</button> -->
     </ion-list>
   </ion-grid>
-  <ion-row *ngIf="!isSpin">
-    <ion-col col-6 text-center>
-      <button ion-button block color="bite" (click)="payment()">{{ 'PAYMENT' | translate }}</button>
-    </ion-col>
-    <ion-col col-6 text-center>
-      <button ion-button block color="light" (click)="cancelOrder()">{{ 'CANCEL' | translate }}</button>
-    </ion-col>
-  </ion-row>
 </ion-content>
+<ion-footer class="footer-order">
+  <ion-toolbar>
+    <ion-row>
+      <ion-col col-6 text-center>
+        <button ion-button block color="bite" (click)="payment()">{{ 'PAYMENT' | translate }}</button>
+      </ion-col>
+      <ion-col col-6 text-center>
+        <button ion-button block color="light" (click)="cancelOrder()">{{ 'CANCEL' | translate }}</button>
+      </ion-col>
+    </ion-row>
+  </ion-toolbar>
+</ion-footer>

@@ -1,5 +1,6 @@
 export class ProductDetailModel {
-    name: string
-    images: Array<string>
-    price: number
+    _id: string;
+    name: string;
+    images: Array<string>;
+    price: number;
 }
