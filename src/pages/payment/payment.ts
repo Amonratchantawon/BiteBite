@@ -7,6 +7,7 @@ import { OrderModel } from '../../assets/model/order.model';
 import { OrderProvider } from '../../providers/order/order';
 import { OmiseProvider } from '../../providers/omise/omise';
 import { Constants } from '../../app/app.constants';
+import { CartProvider } from '../../providers/cart/cart';
 
 /**
  * Generated class for the PaymentPage page.
@@ -39,7 +40,8 @@ export class PaymentPage {
     private translate: TranslateService,
     private alertCtrl: AlertController,
     private orderProvider: OrderProvider,
-    private omiseProvider: OmiseProvider
+    private omiseProvider: OmiseProvider,
+    private cart: CartProvider
   ) {
   }
 
@@ -105,6 +107,7 @@ export class PaymentPage {
           {
             text: button,
             handler: () => {
+              this.cart.clearCart();
               this.navCtrl.push('NavtabsPage');
             }
           }

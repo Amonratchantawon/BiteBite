@@ -81,4 +81,10 @@ export class CartProvider {
     return;
   }
 
+  clearCart() {
+    let shop = JSON.parse(window.localStorage.getItem('select_shop@' + Constants.URL));
+    window.localStorage.removeItem('cart@' + Constants.URL + 'by#' + shop._id);
+    return;
+  }
+
 }
