@@ -41,7 +41,7 @@
       <ion-label floating>{{ 'TEL' | translate }}
         <span class="danger">*</span>
       </ion-label>
-      <ion-input type="number" [(ngModel)]="order.shippingAddress.tel"></ion-input>
+      <ion-input type="number" [(ngModel)]="order.shippingAddress.tel" (ionChange)="maxLength()"></ion-input>
     </ion-item>
   </ion-list>
 

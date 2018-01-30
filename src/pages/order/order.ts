@@ -88,6 +88,13 @@ export class OrderPage {
     this.navCtrl.push('GoogleMapsPage');
   }
 
+  maxLength() {
+    if (this.order.shippingAddress.tel.length > 10) {
+      setTimeout(() => {
+        this.order.shippingAddress.tel = this.order.shippingAddress.tel.substring(0, 10);
+      }, 0);
+    }
+  }
 
   applyCode() {
 
