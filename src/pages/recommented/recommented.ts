@@ -250,7 +250,7 @@ export class RecommentedPage {
   resizeImage(fileUri): Promise<any> {
 
     return new Promise((resolve, reject) => {
-      this.crop.crop(fileUri, { quality: 100 }).then((cropData) => {
+      this.crop.crop(fileUri).then((cropData) => {
         this.uploadImage(cropData).then((uploadImageData) => {
           resolve(uploadImageData);
         }, (uploadImageError) => {
