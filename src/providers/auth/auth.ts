@@ -42,20 +42,19 @@ export class AuthProvider {
     });
   }
 
+  updateUser(user) {
+    let header = this.setHeader();
+    return this.http.put(this.API_URL + '/api/usermanage/' + user._id, user, { headers: header })
+      .toPromise()
+      .then(response => this.updateSuccess(response))
+      .catch(this.handleError);
+  }
+
   login(credentials) {
     return this.http.post(this.API_URL + "/api/auth/signin", credentials)
       .toPromise()
       .then(response => this.loginSuccess(response))
       .catch(this.handleError);
-  }
-
-  getDailyWelcome() {
-    // let header = this.setHeader();
-    // return this.http.get(this.API_URL + "/api/customer/todaywelcome", { headers: header })
-    //   .toPromise()
-    //   .then(response => this.showDailyWelcome(response))
-    //   .catch(this.handleError);
-    this.showDailyWelcome(null)
   }
 
   signup(credentials) {
@@ -72,6 +71,15 @@ export class AuthProvider {
     console.log('logout');
   }
 
+  getDailyWelcome() {
+    let header = this.setHeader();
+    return this.http.get(this.API_URL + "/api/customer/todaywelcome", { headers: header })
+      .toPromise()
+      .then(response => this.showDailyWelcome(response))
+      .catch(this.handleError);
+    // this.showDailyWelcome(null)
+  }
+
   private loginSuccess(res) {
     window.localStorage.setItem('user@' + this.API_URL, JSON.stringify(res));
     window.localStorage.setItem('token', res.loginToken);
@@ -79,16 +87,21 @@ export class AuthProvider {
   }
 
   private showDailyWelcome(dailywelcome) {
-    // if (dailywelcome.title) {
-    if (this.translate.currentLang === 'th') {
-      // this.alert.onDailyWelcomeAlert(dailywelcome.image, dailywelcome.title, dailywelcome.description, dailywelcome.remark, 'ยืนยัน');
-      this.alert.onDailyWelcomeAlertGif('./assets/icon/gift/gift-box-open.png', 'เกมประจำวัน', 'หมายเหตุ: 1 ครั้ง ต่อวัน', 'ออก', 'เล่นเกม');
-    } else {
-      // this.alert.onDailyWelcomeAlert(dailywelcome.image, dailywelcome.title, dailywelcome.description, dailywelcome.remark, 'OK');
-      this.alert.onDailyWelcomeAlertGif('./assets/icon/gift/gift-box-open.png', 'Daily game', 'Remark: One time a day.', 'Exit', 'Play');
+    if (dailywelcome.title) {
+      if (this.translate.currentLang === 'th') {
+        // this.alert.onDailyWelcomeAlert(dailywelcome.image, dailywelcome.title, dailywelcome.description, dailywelcome.remark, 'ยืนยัน');
+        this.alert.onDailyWelcomeAlertGif('./assets/icon/gift/gift-box-open.png', 'เกมประจำวัน', 'หมายเหตุ: 1 ครั้ง ต่อวัน', 'ออก', 'เล่นเกม');
+      } else {
+        // this.alert.onDailyWelcomeAlert(dailywelcome.image, dailywelcome.title, dailywelcome.description, dailywelcome.remark, 'OK');
+        this.alert.onDailyWelcomeAlertGif('./assets/icon/gift/gift-box-open.png', 'Daily game', 'Remark: One time a day.', 'Exit', 'Play');
+      }
     }
-    // }
     return;
+  }
+
+  private updateSuccess(res) {
+    window.localStorage.setItem('user@' + this.API_URL, JSON.stringify(res));
+    return res;
   }
 
   private registerSuccess(res) {

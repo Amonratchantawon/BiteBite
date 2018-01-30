@@ -2,14 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Constants } from '../../app/app.constants';
 import { UserModel } from '../../assets/model/user.model';
-
-
-/**
- * Generated class for the ProfileEditPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import { AuthProvider } from '../../providers/auth/auth';
 
 @IonicPage()
 @Component({
@@ -23,16 +16,23 @@ export class ProfileEditPage {
   birthday: string;
   provider: string;
   isDisabled: boolean = false;
-  
-  constructor(public navCtrl: NavController,
-    public navParams: NavParams
+
+  constructor(
+    public navCtrl: NavController,
+    public navParams: NavParams,
+    private auth: AuthProvider
   ) {
   }
+
   ionViewDidLoad() {
     this.user = JSON.parse(window.localStorage.getItem('user@' + Constants.URL));
   }
-  updateProfile(){
-    this.navCtrl.push('ProfilePage');
+
+  updateProfile() {
+    this.auth.updateUser(this.user).then((res) => {
+      this.navCtrl.push('ProfilePage');
+    });
+
   }
 
 }
