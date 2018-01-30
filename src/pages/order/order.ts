@@ -72,6 +72,7 @@ export class OrderPage {
         this.order.distance = null;
       }
     }
+
     this.order.shippingAddress = {
       name: this.user.displayName,
       tel: this.user.mobile,
@@ -95,6 +96,15 @@ export class OrderPage {
   estimatedPrice() {
     this.loading.onLoading();
     setTimeout(() => {
+      this.order.estimateprice = {
+        tripDuration: 5589,
+        normalPrice: 180.0,
+        netPrice: 162.0,
+        discount: 18.0,
+        distance: 11.0,
+        responseCode: "200",
+        responseDesc: "Success"
+      };
       this.order.distance = 1;
       this.loading.dismiss();
       setTimeout(() => {
@@ -110,7 +120,7 @@ export class OrderPage {
       this.navCtrl.push('ConfirmedPage', res);
       this.loading.dismiss();
     }, (err) => {
-      this.loading.dismiss();      
+      this.loading.dismiss();
       let language = this.translate.currentLang;
       if (language === 'th') {
         this.alert.onAlert('ออเดอร์', 'สั่งซื้อไม่สำเร็จ กรุณาลองใหม่อีกครั้ง', 'ตกลง');

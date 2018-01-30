@@ -7,6 +7,7 @@ export class OrderModel {
     shippingAddress: ShippingAddressModel = new ShippingAddressModel();
     coupon: CouponModel = new CouponModel();
     payment: PaymentModel = new PaymentModel();
+    estimateprice: EstimatePriceModel = new EstimatePriceModel();
     omiseToken: string;
     qty: number;
     amount: number;
@@ -33,9 +34,19 @@ export class CouponModel {
 }
 
 export class PaymentModel {
-    paymenttype: String;
-    creditno: String;
-    creditname: String;
-    expdate: String;
-    creditcvc: String;
+    paymenttype: string;
+    creditno: string;
+    creditname: string;
+    expdate: string;
+    creditcvc: string;
+}
+
+export class EstimatePriceModel {
+    tripDuration: number;
+    normalPrice: number;
+    netPrice: number;
+    discount: number;
+    distance: number;
+    responseCode: string;
+    responseDesc: string;
 }

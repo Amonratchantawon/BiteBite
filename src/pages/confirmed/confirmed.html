@@ -58,8 +58,8 @@
     </ion-item-divider>
     <ion-row *ngFor="let item of order.items">
       <ion-col col-9 text-left>
-        <p>{{item.product[0].name}} X
-          <span>{{item.qty}}</span>
+        <p>{{item.product[0].name}} 
+          <span class="detail-text">({{item.qty}})</span>
           <br>
           <span class="detail-text" *ngIf="item.remark && item.remark !== ''">({{item.remark}})</span>
           <br>

@@ -125,13 +125,13 @@
         </ion-col>
         <ion-col col-6 text-right class="highlight highlight-color ">
           <p class="total">
-            <b>0 {{ 'KM' | translate }}</b>
+            <b>{{order.estimateprice.distance}} {{ 'KM' | translate }}</b>
           </p>
           <p class="total">
-            <b>0 {{ 'MIN' | translate }}</b>
+            <b>{{order.estimateprice.tripDuration}} {{ 'MIN' | translate }}</b>
           </p>
           <p class="total">
-            <b>{{0.00 | number:'0.2-2'}} {{ 'THB' | translate }}</b>
+            <b>{{order.estimateprice.netPrice | number:'0.2-2'}} {{ 'THB' | translate }}</b>
           </p>
         </ion-col>
       </ion-row>
