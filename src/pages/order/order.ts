@@ -118,6 +118,16 @@ export class OrderPage {
     console.log(this.order);
     this.loading.onLoading();
     this.orderProvider.saveOrder(this.order).then((res) => {
+      res.estimateprice = {
+        tripDuration: 5589,
+        normalPrice: 180.0,
+        netPrice: 162.0,
+        discount: 18.0,
+        distance: 11.0,
+        responseCode: "200",
+        responseDesc: "Success"
+      };
+      res.netamount = res.estimateprice.netPrice + res.amount;
       this.navCtrl.push('ConfirmedPage', res);
       this.loading.dismiss();
     }, (err) => {
@@ -130,4 +140,24 @@ export class OrderPage {
       }
     });
   }
+
+  secondsToTime(d) {
+    d = Number(d);
+    let h = Math.floor(d / 3600);
+    let m = Math.floor(d % 3600 / 60);
+    // let s = Math.floor(d % 3600 % 60);
+    let hDisplay;
+    let mDisplay;
+    let language = this.translate.currentLang;
+    if (language === 'th') {
+      hDisplay = h > 0 ? h + ' ชม. ' : '';
+      mDisplay = m + ' นาที';
+    } else if (language === 'en') {
+      hDisplay = h > 0 ? h + (h == 1 ? ' hour ' : ' hours ') : '';
+      mDisplay = m > 0 ? m + (m == 1 ? ' minute ' : ' minutes ') : '';
+    }
+    // let sDisplay = s > 0 ? s + (s == 1 ? " second" : " seconds") : "";
+    return hDisplay + mDisplay;
+  }
+
 }

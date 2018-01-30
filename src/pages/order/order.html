@@ -128,7 +128,7 @@
             <b>{{order.estimateprice.distance}} {{ 'KM' | translate }}</b>
           </p>
           <p class="total">
-            <b>{{order.estimateprice.tripDuration}} {{ 'MIN' | translate }}</b>
+            <b>{{secondsToTime(order.estimateprice.tripDuration)}}</b>
           </p>
           <p class="total">
             <b>{{order.netamount | number:'0.2-2'}} {{ 'THB' | translate }}</b>
@@ -155,15 +155,16 @@
           <p>
             <b>{{ 'DELIVERY_FEE' | translate }}</b>
           </p>
-          <p>{{ 'DISCOUNT' | translate }}</p>
           <p>{{ 'DISTANCE_FEE' | translate }}</p>
+          <p>{{ 'DISCOUNT' | translate }}</p>
         </ion-col>
         <ion-col col-6 text-right>
           <p>
             <b>{{ order.estimateprice.netPrice | number:'0.2-2'}} {{ 'THB' | translate }}</b>
           </p>
+          <p>{{order.estimateprice.distance}} {{ 'KM' | translate }}/{{ order.estimateprice.normalPrice | number:'0.2-2'}} {{
+            'THB' | translate }}</p>
           <p>{{ order.estimateprice.discount | number:'0.2-2'}} {{ 'THB' | translate }}</p>
-          <p>0 {{ 'KM' | translate }}/0.00 {{ 'THB' | translate }}</p>
         </ion-col>
       </ion-row>
       <ion-row *ngIf="order.discount > 0">
