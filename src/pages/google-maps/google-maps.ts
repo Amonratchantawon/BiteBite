@@ -39,7 +39,7 @@ export class GoogleMapsPage {
         this.initialMap();
         this.initplaces();
         this.loading.dismiss();
-      }, 1000);
+      }, 500);
     });
   }
 
