@@ -30,7 +30,7 @@ export class ProfileEditPage {
 
   updateProfile() {
     this.auth.updateUser(this.user).then((res) => {
-      this.navCtrl.push('ProfilePage');
+      this.navCtrl.pop();
     });
 
   }
