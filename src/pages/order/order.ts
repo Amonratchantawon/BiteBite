@@ -150,11 +150,11 @@ export class OrderPage {
     let mDisplay;
     let language = this.translate.currentLang;
     if (language === 'th') {
-      hDisplay = h + " ชม. ";
-      mDisplay = m + " นาที";
+      hDisplay = h > 0 ? h + ' ชม. ' : '';
+      mDisplay = m + ' นาที';
     } else if (language === 'en') {
-      hDisplay = h > 0 ? h + (h == 1 ? " hour " : " hours ") : "";
-      mDisplay = m > 0 ? m + (m == 1 ? " minute " : " minutes ") : "";
+      hDisplay = h > 0 ? h + (h == 1 ? ' hour ' : ' hours ') : '';
+      mDisplay = m > 0 ? m + (m == 1 ? ' minute ' : ' minutes ') : '';
     }
     // let sDisplay = s > 0 ? s + (s == 1 ? " second" : " seconds") : "";
     return hDisplay + mDisplay;
