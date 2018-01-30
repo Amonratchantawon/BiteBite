@@ -31,8 +31,9 @@
             <ion-label floating>{{ 'E_MAIL' | translate}}
               <span class="danger">*</span>
             </ion-label>
-            <ion-input type="email" [(ngModel)]="user.email"></ion-input>
+            <ion-input type="email" [(ngModel)]="user.email" (ionChange)="emailValid()"></ion-input>
           </ion-item>
+          <span class="danger" *ngIf="isInvalid">*{{ 'E_MAIL_FAIL' | translate}}</span>
           <ion-item>
             <ion-label floating>{{ 'PASSWORD' | translate}}
               <span class="danger">*</span>
@@ -40,7 +41,7 @@
             <ion-input type="password" [(ngModel)]="user.password"></ion-input>
           </ion-item>
         </ion-list>
-        <button ion-button no-shadow block color="bite" [disabled]="!user.email || user.email === '' || !user.password || user.password === ''"
+        <button ion-button no-shadow block color="bite" [disabled]="!user.email || user.email === '' || !user.password || user.password === '' || isInvalid"
           (click)="onNext()">{{ 'NEXT' | translate}}</button>
       </ion-col>
     </ion-row>

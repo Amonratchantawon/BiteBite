@@ -55,6 +55,7 @@
   "BIRTHDAY": "วันเกิด",
   "BIRTHDAY_SELECTED": "กรุณาเลือกวันเกิด",
   "E_MAIL": "อีเมล์",
+  "E_MAIL_FAIL": "อีเมล์ไม่ถูกต้อง",
   "WEBSITE": "เว็บไซต์",
   "TEL": "เบอร์โทร",
   "CITIZEN_ID": "หมายเลขบัตรประชาชน",
@@ -161,6 +162,6 @@
   "EXPIRED_DATE": "วันหมดอายุ",
   "CONFIRM_LOCATION": "ยืนยันตำแหน่งนี้",
   "SEARCH_LOCATION": "ค้นหาสถานที่",
-  "USER_ID":"รหัสสมาชิก"
+  "USER_ID": "รหัสสมาชิก"
 
 }

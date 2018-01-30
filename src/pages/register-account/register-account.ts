@@ -20,6 +20,7 @@ import { LoadingProvider } from '../../providers/loading/loading';
 export class RegisterAccountPage {
   inApp: Boolean = false;
   user: any = {};
+  isInvalid: Boolean = false;
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
@@ -32,6 +33,19 @@ export class RegisterAccountPage {
   }
 
   ionViewDidLoad() {
+  }
+
+  emailValid() {
+    if (this.user.email.indexOf('@') === -1) {
+      this.isInvalid = true;
+    } else {
+      let email = this.user.email.split('@')[1];
+      if (email && email.indexOf('.') !== -1) {
+        this.isInvalid = false;
+      } else {
+        this.isInvalid = true;
+      }
+    }
   }
 
   onNext() {

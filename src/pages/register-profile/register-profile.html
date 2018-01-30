@@ -56,7 +56,7 @@
           <ion-label floating>{{ 'TEL' | translate}}
             <span class="danger">*</span>
           </ion-label>
-          <ion-input type="number" [(ngModel)]="user.mobile"></ion-input>
+          <ion-input type="number" [(ngModel)]="user.mobile" (ionChange)="maxLength()"></ion-input>
         </ion-item>
 
         <ion-item class="gender-selected">

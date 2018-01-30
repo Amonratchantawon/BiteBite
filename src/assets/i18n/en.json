@@ -55,6 +55,7 @@
   "BIRTHDAY": "Birthday",
   "BIRTHDAY_SELECTED": "Select birthday",
   "E_MAIL": "E-mail",
+  "E_MAIL_FAIL":"E-mail is invalid.",
   "TEL": "Tel",
   "CITIZEN_ID": "Citizen id",
   "ADDRESS": "Address",

@@ -116,4 +116,12 @@ export class RegisterProfilePage {
     console.log(this.promotioninterestPost);
   }
 
+  maxLength() {
+    if (this.user.mobile.length > 10) {
+      setTimeout(() => {
+        this.user.mobile = this.user.mobile.substring(0, 10);
+      }, 0);
+    }
+  }
+
 }
