@@ -105,7 +105,8 @@ export class OrderPage {
         responseCode: "200",
         responseDesc: "Success"
       };
-      this.order.distance = 1;
+      this.order.netamount = this.order.estimateprice.netPrice + this.order.amount;
+      this.order.distance = this.order.estimateprice.distance;
       this.loading.dismiss();
       setTimeout(() => {
         this.content.scrollToBottom();

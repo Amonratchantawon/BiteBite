@@ -11,6 +11,7 @@ export class OrderModel {
     omiseToken: string;
     qty: number;
     amount: number;
+    netamount: number;
     discount: number;
     distance: number;
 }
