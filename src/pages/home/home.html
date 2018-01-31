@@ -20,18 +20,18 @@
       refreshingText="{{ 'REFRESHING' | translate }}"></ion-refresher-content>
   </ion-refresher>
 
-  <div *ngIf="homeData.ads.items">
+  <div>
 
     <search-input></search-input>
 
-    <ion-slides pager autoplay="3000" loop="true" speed="1500">
+    <!-- <ion-slides pager autoplay="3000" loop="true" speed="1500" *ngIf="homeData.ads.items">
       <ion-slide *ngFor="let item of homeData.ads.items" (click)="openAds(item)">
         <div style="height:100%;">
           <img src="{{item.image}}" alt="imgErr">
-        </div>
+        </div> -->
         <!-- <preload-image [ratio]="{w:20, h:10}" [src]="item.image" title="ads"></preload-image> -->
-      </ion-slide>
-    </ion-slides>
+      <!-- </ion-slide>
+    </ion-slides> -->
 
     <!-- <div>
       <ion-grid>
@@ -52,7 +52,7 @@
       </ion-grid>
     </div> -->
 
-    <div class="hotprices">
+    <div class="hotprices" *ngIf="homeData.hotprices.items1">
       <ion-grid>
         <ion-row>
           <ion-col col-6 text-left align-self-center>

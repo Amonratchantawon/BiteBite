@@ -53,13 +53,13 @@ page-product-detail {
         padding: 0px;
     }
     .bar-button-default-ios {
-        color: #eb3841 !important;
+        color: $bite-color !important;
     }
     .bar-button-default-md {
-        color: #eb3841 !important;
+        color: $bite-color !important;
     }
     .swiper-pagination-bullet-active {
-        background: #eb3841 !important;
+        background: $bite-color !important;
         opacity: 1;
     }
     .footer-product {
